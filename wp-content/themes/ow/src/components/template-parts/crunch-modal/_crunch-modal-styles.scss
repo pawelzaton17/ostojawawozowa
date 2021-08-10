@@ -1,0 +1,46 @@
+/**
+ * Crunch Modal Template Part Styles
+ */
+
+
+body.modal-open {
+    #cookie-notice {
+        z-index: 10;
+    }
+}
+
+.crunch-modal {
+    .modal-dialog {
+        @include media-breakpoint-down(xs) {
+            margin: 0;
+        }
+    }
+
+    .modal-content {
+        @include fluid(padding, 1rem, 4rem);
+    }
+
+    .close {
+        @include c-transition(transform);
+
+        @include fluid((
+            right: (
+                min: 0.5,
+                max: 1.5rem,
+            ),
+            top: (
+                min: 0.5,
+                max: 1.5rem,
+            ),
+        ));
+
+        &:hover,
+        &:focus {
+            transform: rotate(90deg);
+        }
+    }
+
+    &__close-icon {
+        pointer-events: none;
+    }
+}

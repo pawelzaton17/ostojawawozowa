@@ -1,0 +1,35 @@
+/**
+ * Return to top Part Styles
+ */
+
+.return-to-top {
+    right: 3rem;
+    bottom: 3rem;
+    z-index: 5;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: #aaa;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+
+    &--is-visible {
+        opacity: 0.75;
+        visibility: visible;
+
+        @include c-transition(opacity);
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__chevron {
+        width: 1.5rem;
+        height: 0.8125rem;
+
+        path {
+            fill: currentColor;
+        }
+    }
+}

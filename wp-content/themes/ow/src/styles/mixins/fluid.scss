@@ -1,0 +1,397 @@
+/* stylelint-disable */
+
+/**
+ * Fluid
+ */
+
+/* ~~~~~~~~ String split ~~~~~~~~ */
+
+@function str-split($string, $separator) {
+    $split-arr: ();
+    $index: str-index($string, $separator);
+
+    @while $index != null {
+        $item: str-slice($string, 1, $index - 1);
+        $split-arr: append($split-arr, $item);
+        $string: str-slice($string, $index + 1);
+        $index: str-index($string, $separator);
+    }
+
+    @return append($split-arr, $string);
+}
+
+/* ~~~~~~~~ String replace ~~~~~~~~ */
+
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace +
+            str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+/* ~~~~~~~~ Join sign with number  ~~~~~~~~ */
+
+@function number-with-sign($str) {
+    @return str-replace(str-replace($str, '+ ', '+'), '- ', '-');
+}
+
+@function number-without-sign($str) {
+    $no-signs: str-replace(str-replace($str, '+', '+ '), '-', '- ');
+    @return str-replace($no-signs, '  ', ' ');
+}
+
+/* ~~~~~~~~~~ String to number conversion by Hugo Giraudel ~~~~~~~~~~ */
+
+@function to-number($value) {
+    $result: 0;
+
+    @if type-of($value) == 'number' {
+        @return $value;
+    } @else if type-of($value) != 'string' {
+        @error "Value for `to-number` should be a number or a string.";
+    }
+
+    @if str-slice($value, 1, 1) == '+' {
+        $value: str-replace($value, '+', '');
+    }
+
+    $digits: 0;
+    $minus: str-slice($value, 1, 1) == '-';
+    $numbers: (
+        '0': 0,
+        '1': 1,
+        '2': 2,
+        '3': 3,
+        '4': 4,
+        '5': 5,
+        '6': 6,
+        '7': 7,
+        '8': 8,
+        '9': 9,
+    );
+
+    @for $i from if($minus, 2, 1) through str-length($value) {
+        $character: str-slice($value, $i, $i);
+
+        @if not(index(map-keys($numbers), $character) or $character == '.') {
+            @return to-length(if($minus, -$result, $result), str-slice($value, $i));
+        }
+
+        @if $character == '.' {
+            $digits: 1;
+        } @else if $digits == 0 {
+            $result: $result * 10 + map-get($numbers, $character);
+        } @else {
+            $digits: $digits * 10;
+            $result: $result + map-get($numbers, $character) / $digits;
+        }
+    }
+
+    @return if($minus, '-' + $result, '+' + $result);
+}
+
+@function to-length($value, $unit) {
+    $units: (
+        'px': 1px,
+        'cm': 1cm,
+        'mm': 1mm,
+        '%': 1%,
+        'ch': 1ch,
+        'pc': 1pc,
+        'in': 1in,
+        'em': 1em,
+        'rem': 1rem,
+        'pt': 1pt,
+        'ex': 1ex,
+        'vw': 1vw,
+        'vh': 1vh,
+        'vmin': 1vmin,
+        'vmax': 1vmax,
+    );
+
+    @if not index(map-keys($units), $unit) {
+        @error "Invalid unit `#{$unit}`.";
+    }
+
+    @return $value * map-get($units, $unit);
+}
+
+/* ~~~~~ Helper for fluid function ~~~~~ */
+
+@function fluid-default-output($keys) {
+    $output: ();
+
+    @each $key in $keys {
+        $output: map-merge($output, (#{$key}: ()));
+    }
+
+    @return $output;
+}
+
+/* ~~~~~ Letter-spacing functions ~~~~~ */
+
+@function return-letter-spacing($fluid-defaults, $values) {
+    $val: null;
+
+    @if type-of($values) == 'number' {
+        $val: $values;
+    } @else {
+        $val: map-get($values, 'min');
+    }
+
+    $min: calculate-letter-spacing($val, 'min');
+    $max: calculate-letter-spacing($val, 'max');
+
+    @return map-merge(
+        $fluid-defaults,
+        (
+            min: $min,
+            max: $max,
+        )
+    );
+}
+
+@function calculate-letter-spacing($value, $type) {
+    $letter-spacing: 0;
+
+    @if $design-source == 'adobe' {
+        @if ($type == 'min') {
+            $letter-spacing: ($value * 0.0002) * 1em;
+        }
+
+        @if ($type == 'max') {
+            $letter-spacing: ($value * 0.001) * 1em;
+        }
+    } @else {
+        @if ($type == 'min') {
+            $letter-spacing: ($value * 0.2) * 1px;
+        }
+
+        @if ($type == 'max') {
+            $letter-spacing: $value * 1px;
+        }
+    }
+
+    @return $letter-spacing;
+}
+
+/* ~~~~~~~~ Return index of array diff ~~~~~~~~ */
+
+@function return-array-diff($arr1, $arr2) {
+    $indexes: ();
+
+    @if length($arr1) == length($arr2) {
+        @for $i from 1 through length($arr1) {
+            $v1: nth($arr1, $i);
+            $v2: nth($arr2, $i);
+
+            @if $v1 != $v2 {
+                $indexes: append($indexes, $i);
+            }
+        }
+
+        @if length($indexes) == 1 {
+            @return nth($indexes, 1);
+        } @else {
+            @error "Given Arrays aren't similar.";
+        }
+    } @else {
+        @error "Given arrays have different length.";
+    }
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~ Fluid ~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@mixin fluid(
+    $prop: '',
+    $min: map-get($fluid-defaults, min),
+    $max: map-get($fluid-defaults, max),
+    $from: map-get($fluid-defaults, from),
+    $to: map-get($fluid-defaults, to),
+    $important: map-get($fluid-defaults, important)
+) {
+    $out: ();
+
+    @if type-of($prop) == 'map' {
+        @each $prop, $values in $prop {
+            $valuesMerged: ();
+
+            @if type-of($values) == 'map' {
+                $valuesMerged: map-merge($fluid-defaults, $values);
+            }
+
+            @if $prop == 'letter-spacing' {
+                $valuesMerged: return-letter-spacing($fluid-defaults, $values);
+            }
+
+            $out: map-merge($out, (#{$prop}: $valuesMerged));
+        }
+    } @else {
+        $valuesMerged: map-merge(
+            $fluid-defaults,
+            (
+                min: $min,
+                max: $max,
+                from: $from,
+                to: $to,
+                important: $important,
+            )
+        );
+
+        @if $prop == 'letter-spacing' {
+            $valuesMerged: return-letter-spacing($fluid-defaults, $min);
+        }
+
+        $out: map-merge($out, (#{$prop}: $valuesMerged));
+    }
+
+    // margins/padding - vertical or horizontal
+    @each $prop, $values in $out {
+        @if $prop == 'margin-x' OR $prop == 'margin-y' OR $prop == 'padding-x' OR $prop == 'padding-y' {
+            // remove old one
+            $out: map-remove($out, $prop);
+
+            // add new one
+            $p: str-split($prop, '-');
+
+            $prop1: '';
+            $prop2: '';
+
+            @if nth($p, 2) == 'x' {
+                $prop1: nth($p, 1) + '-left';
+                $prop2: nth($p, 1) + '-right';
+            } @else {
+                $prop1: nth($p, 1) + '-top';
+                $prop2: nth($p, 1) + '-bottom';
+            }
+
+            $out: map-merge($out, (#{$prop1}: $values, #{$prop2}: $values));
+        }
+    }
+
+    @include fluid-translate($out);
+}
+
+@mixin fluid-translate($map) {
+    $breakpoints: $crunch-breakpoints;
+    $keys: map-keys($breakpoints);
+    $output: fluid-default-output($keys);
+
+    $breakpoint-first: nth($keys, 1);
+    $breakpoint-last: nth($keys, -1);
+
+    @each $prop, $values in $map {
+        $important: '';
+        $max-arr: null;
+        $calc-diff: null;
+
+        $index-from: index($keys, map-get($values, from));
+        $index-to: index($keys, map-get($values, to));
+
+        $max-v: map-get($values, max);
+        $min-v: map-get($values, min);
+
+        $is-calc: str-index(inspect($min-v), 'calc') != null AND str-index(inspect($max-v), 'calc') != null;
+
+        @if $is-calc {
+            $max-v: inspect($max-v);
+            $min-v: inspect($min-v);
+
+            $calc-max: number-with-sign(str-slice($max-v, 6, -2));
+            $calc-min: number-with-sign(str-slice($min-v, 6, -2));
+
+            $max-arr: str-split($calc-max, ' ');
+            $min-arr: str-split($calc-min, ' ');
+
+            $calc-diff: return-array-diff($max-arr, $min-arr);
+
+            $max-v: to-number(nth($max-arr, $calc-diff));
+            $min-v: to-number(nth($min-arr, $calc-diff));
+        }
+
+        @if $min-v == null {
+            @if $max-v == null {
+                $min-v: 1em;
+            } @else {
+                $min-v: $max-v * 0.8;
+            }
+        }
+
+        @if $max-v == null {
+            $max-v: $min-v * 1.25;
+        }
+
+        @if unit($min-v) == '' AND unit($max-v) != '' {
+            $min-v: $min-v * $max-v;
+        }
+
+        @if unit($min-v) != '' AND unit($max-v) == '' {
+            $max-v: $min-v * $max-v;
+        }
+
+        @if map-get($values, important) {
+            $important: ' !important';
+        }
+
+        // for each breakpoint
+        @for $i from $index-from through $index-to {
+            $breakpoint: nth($keys, $i);
+            $value: null;
+
+            @if $i == $index-from {
+                $value: $min-v;
+            } @else if $i == $index-to {
+                $value: $max-v;
+            } @else {
+                $diff: ($max-v - $min-v) / ($index-to - $index-from);
+                $value: $min-v + ($i - $index-from) * $diff;
+            }
+
+            @if $is-calc {
+                $value: inspect($value);
+
+                @if (str-slice($value, 1, 1) != '-') {
+                    $value: '+' + $value;
+                }
+
+                $ins: inspect(set-nth($max-arr, $calc-diff, unquote($value)));
+                $nth: number-without-sign($ins);
+                $value: calc(#{$nth});
+            }
+
+            // output
+            $current: map-get($output, $breakpoint);
+            $valuesForBreakpoint: map-merge($current, (#{$prop}: #{$value + $important}));
+
+            $output: map-merge($output, (#{$breakpoint}: $valuesForBreakpoint));
+        }
+    }
+
+    & {
+        @each $breakpoint, $styles in $output {
+            @if length($styles) > 0 {
+                @if $breakpoint == $breakpoint-first {
+                    @include fluid-export($styles);
+                } @else {
+                    $break: map-get($breakpoints, $breakpoint);
+
+                    @media (min-width: #{$break}) {
+                        @include fluid-export($styles);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin fluid-export($styles) {
+    @each $prop, $value in $styles {
+        #{$prop}: $value;
+    }
+}

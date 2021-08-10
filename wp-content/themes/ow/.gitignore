@@ -1,0 +1,9 @@
+.idea
+.sass-cache/
+.env
+node_modules/
+.eslintcache
+dist/
+images/favicon/
+vendor/
+sftp-config.json

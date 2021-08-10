@@ -1,0 +1,75 @@
+/**
+ * Social Icons Template Part Styles
+ */
+
+.social-icons {
+    &__item {
+        & + & {
+            @include fluid(margin-left, 0.25rem, 0.5rem);
+        }
+
+        .social-link {
+            width: 2.5rem;
+            height: 2.5rem;
+            border: 2px solid currentColor;
+            color: $body-color;
+
+            &:hover,
+            &:focus {
+                border: 2px solid $body-color;
+                background-color: $body-color;
+                color: #fff;
+            }
+
+            &__icon {
+                $multiplier: 1; // You can change that o increase or decrease size of icons
+                fill: currentColor;
+
+                &--twitter {
+                    width: calc(1rem * #{$multiplier});
+                    height: calc(1rem * #{$multiplier});
+                }
+
+                &--youtube {
+                    width: calc(1.125rem * #{$multiplier});
+                    height: calc(1rem * #{$multiplier});
+                }
+
+                &--pinterest {
+                    width: calc(1rem * #{$multiplier});
+                    height: calc(1rem * #{$multiplier});
+                }
+
+                &--facebook {
+                    width: calc(1.25rem * #{$multiplier});
+                    height: calc(1.125rem * #{$multiplier});
+                }
+
+                &--instagram {
+                    width: calc(1.25rem * #{$multiplier});
+                    height: calc(1.25rem * #{$multiplier});
+                }
+
+                &--google {
+                    width: calc(1.25rem * #{$multiplier});
+                    height: calc(1rem * #{$multiplier});
+                }
+
+                &--linkedin {
+                    width: calc(1.125rem * #{$multiplier});
+                    height: calc(1.125rem * #{$multiplier});
+                }
+
+                &--rss {
+                    width: calc(0.875rem * #{$multiplier});
+                    height: calc(1rem * #{$multiplier});
+                }
+
+                &--envelope {
+                    width: calc(1.375rem * #{$multiplier});
+                    height: calc(0.9375rem * #{$multiplier});
+                }
+            }
+        }
+    }
+}

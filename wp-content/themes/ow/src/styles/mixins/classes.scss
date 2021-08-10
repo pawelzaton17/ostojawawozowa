@@ -1,0 +1,211 @@
+/* stylelint-disable */
+
+/**
+ * Classes
+ */
+
+$directions-list: '' top right bottom left x y;
+
+@mixin media-queries-helper($is-first, $breakpoint-width) {
+    @if $is-first {
+        @content;
+    } @else {
+        @media (min-width: $breakpoint-width) {
+            @content;
+        }
+    }
+}
+
+@mixin generate-classes-helper($sizing, $d, $v) {
+    @if $d == '' {
+        #{$sizing}: $v !important;
+    } @else {
+        @if $d == 'top' or $d == 'y' {
+            #{$sizing}-top: $v !important;
+        }
+
+        @if $d == 'bottom' or $d == 'y' {
+            #{$sizing}-bottom: $v !important;
+        }
+
+        @if $d == 'left' or $d == 'x' {
+            #{$sizing}-left: $v !important;
+        }
+
+        @if $d == 'right' or $d == 'x' {
+            #{$sizing}-right: $v !important;
+        }
+    }
+}
+
+@mixin generate-sizing-classes($params) {
+    $breakpoints: map-get($params, 'breakpoints');
+    $breakpoints-keys: map-keys($breakpoints);
+    $spacers: map-get($params, 'spacers');
+    $spacers-keys: map-keys($spacers);
+    $prefix: map-get($params, 'prefix');
+
+    $breakpoint-first: nth($breakpoints-keys, 1);
+    $breakpoint-last: nth($breakpoints-keys, -1);
+
+    $output: fluid-default-output($breakpoints-keys);
+
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        $breakpoint-name: '';
+
+        @if $breakpoint != $breakpoint-first {
+            $breakpoint-name: '-' + $breakpoint;
+        }
+
+        @each $attr, $letter in ('margin': 'm', 'padding': 'p') {
+            $infix: $prefix + $letter; // "c-m", "c-p"
+
+            @each $direction in $directions-list {
+                $direction-letter: str-slice($direction, 0, 1);
+
+                $property: $attr;
+                @if $direction != '' {
+                    $property: $attr + '-' + $direction;
+                }
+
+                @each $s, $spacers-max in $spacers {
+                    $spacers-min: $spacers-max;
+                    $diff: 0;
+
+                    @if $s > 1 {
+                        $spacers-min: $spacers-max / 2;
+                        $diff: ($spacers-max - $spacers-min) / (length($breakpoints-keys) - 1);
+                    }
+
+                    $className: $infix + $direction-letter + $breakpoint-name + '-' + $s;
+
+                    .#{$className} {
+                        $index: index($breakpoints-keys, $breakpoint);
+
+                        @if $s == 1 {
+                            $value: $spacers-min;
+
+                            $valuesForBreakpoint: map-merge(
+                                map-get($output, $breakpoint),
+                                (#{$className}: ($property, $value))
+                            );
+
+                            $output: map-merge($output, (#{$breakpoint}: $valuesForBreakpoint));
+                        } @else {
+                            @for $i from $index through length($breakpoints-keys) {
+                                $break: nth($breakpoints-keys, $i);
+                                $value: $spacers-min + ($i - 1) * $diff;
+
+                                $valuesForBreakpoint: map-merge(
+                                    map-get($output, $break),
+                                    (#{$className}: ($property, $value))
+                                );
+
+                                $output: map-merge($output, (#{$break}: $valuesForBreakpoint));
+                            }
+                        }
+                    }
+
+                    // Generate class only for specicif spacer, exaple: c-mt-only-5
+
+                    $spacers-min: $spacers-max;
+
+                    $classNameOnlyOneSpacer: $infix + $direction-letter + $breakpoint-name + '-only-' + $s;
+
+                    .#{$classNameOnlyOneSpacer} {
+                        $index: index($breakpoints-keys, $breakpoint);
+                        $value: $spacers-min !important;
+
+                        $valuesForBreakpoint: map-merge(
+                            map-get($output, $breakpoint),
+                            (#{$classNameOnlyOneSpacer}: ($property, $value))
+                        );
+
+                        $output: map-merge($output, (#{$breakpoint}: $valuesForBreakpoint));
+                    }
+                }
+            }
+        }
+    }
+
+    @each $breakpoint, $classes in $output {
+        $break: map-get($breakpoints, $breakpoint);
+        $is-first: $breakpoint == $breakpoint-first;
+
+        @include media-queries-helper($is-first, $break) {
+            @each $class, $styles in $classes {
+                $_property: nth($styles, 1);
+                $_value: nth($styles, 2);
+
+                .#{$class} {
+                    @if $_property ==
+                        'margin-x'
+                        OR
+                        $_property ==
+                        'margin-y'
+                        OR
+                        $_property ==
+                        'padding-x'
+                        OR
+                        $_property ==
+                        'padding-y'
+                    {
+                        $p: str-split($_property, '-');
+
+                        $prop1: '';
+                        $prop2: '';
+
+                        @if nth($p, 2) == 'x' {
+                            $prop1: nth($p, 1) + '-left';
+                            $prop2: nth($p, 1) + '-right';
+                        } @else {
+                            $prop1: nth($p, 1) + '-top';
+                            $prop2: nth($p, 1) + '-bottom';
+                        }
+
+                        #{$prop1}: $_value;
+                        #{$prop2}: $_value;
+                    } @else {
+                        #{$_property}: $_value;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin generate-reset-classes($params) {
+    $breakpoints: map-get($params, 'breakpoints');
+    $breakpoints-keys: map-keys($breakpoints);
+    $sizing-list: map-get($params, 'properties');
+    $prefix: map-get($params, 'prefix');
+
+    $breakpoint-first: nth($breakpoints-keys, 1);
+    $breakpoint-last: nth($breakpoints-keys, -1);
+
+    @each $sizing in $sizing-list {
+        $infix: $prefix + str-slice($sizing, 0, 1);
+
+        @each $prop, $value in $breakpoints {
+            $break: '';
+
+            @if $prop != $breakpoint-first {
+                $break: '-' + $prop;
+            }
+
+            @each $d in $directions-list {
+                $dir: str-slice($d, 0, 1);
+
+                .#{$infix}#{$dir}#{$break}-0 {
+                    @if $prop == $breakpoint-first {
+                        @include generate-classes-helper($sizing, $d, 0);
+                    } @else {
+                        @media (min-width: $value) {
+                            @include generate-classes-helper($sizing, $d, 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

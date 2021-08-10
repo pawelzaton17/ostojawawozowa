@@ -1,0 +1,60 @@
+/**
+ * Main Styles
+ */
+
+@charset "UTF-8";
+
+/* ~~~~~~~~~~ Bootstrap ~~~~~~~~~~ */
+
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+/**
+ * Include functions first (so you can manipulate colors, SVGs, calc, etc)
+ */
+@import "~bootstrap/scss/functions";
+
+/**
+ * Include any default variable overrides here
+ */
+@import "base/bootstrap-variables";
+
+/**
+ * Include remainder of required Bootstrap stylesheets
+ */
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+/**
+ * Include any optional Bootstrap components as you like
+ */
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+
+/**
+ * Add additional utilities
+ */
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/utilities/api";
+
+/* ~~~~~~~~~~ Base Styles ~~~~~~~~~~ */
+
+@import "base/typography";
+@import "base/wp-admin-bar";
+@import "base/ie";
+@import "base/font-faces";
+
+/* ~~~~~~~~~~ Helpers ~~~~~~~~~~ */
+
+@import "helpers/bootstrap-breakpoints-styles";
+@import "helpers/hash-scroll-animation";
+@import "helpers/lazyload";
+@import "helpers/repeaters";
+@import "helpers/animations";
+@import "helpers/glightbox";

@@ -1,0 +1,153 @@
+/**
+ * Mobile Navigation Template Part Styles
+ */
+
+.mm-menu {
+    --mm-color-background: #4f4f4f;
+
+    &__logo-wrapper {
+        @include fluid(
+            (
+                width: (
+                    min: 12.75rem,
+                    max: 1.5,
+                    to: md,
+                ),
+                height: (
+                    min: 2.25rem,
+                    max: 1.5,
+                    to: md,
+                ),
+            )
+        );
+
+        @extend %hover-opacity-0-75;
+    }
+
+    .mm-panel {
+        .mm-navbar {
+            border-color: rgba(#808080, 0.3);
+            color: $white;
+            font-size: 0.9em;
+
+            &__btn {
+                &:before {
+                    border-color: rgba($white, 0.75);
+
+                    @include c-transition(border-color);
+                }
+
+                &:hover,
+                &:focus {
+                    &:before {
+                        border-color: $primary;
+                    }
+                }
+            }
+
+            &__title {
+                color: $white;
+
+                &:hover,
+                &:focus {
+                    color: $primary;
+                }
+            }
+        }
+
+        .mm-listview {
+            &:first-of-type {
+                margin-bottom: 0;
+            }
+
+            &:nth-of-type(2) {
+                margin-top: 0;
+            }
+
+            .mm-listitem {
+                font-size: 0.8em;
+
+                &:after {
+                    border-color: rgba(#808080, 0.3);
+                }
+
+                &.current-menu-item,
+                &.current_page_item {
+                    color: $primary;
+
+                    .mm-btn_next {
+                        &:after {
+                            border-color: $primary;
+                        }
+                    }
+                }
+
+                // If you have navbar-button uncomments this. Remember to check button and text colors before and after hover.
+
+                // &.navbar-button {
+                //     @include fluid-margin(x, 3);
+                //     @include fluid-margin(top, 5);
+                //     @include fluid-margin(bottom, 3);
+
+                //     &::after {
+                //         display: none;
+                //     }
+
+                //     a {
+                //         min-width: 10rem;
+                //         color: $white !important;
+
+                //         @extend %crunch-button,
+                //                 %crunch-button__full-background,
+                //                 %crunch-button__full-background--primary-color,
+                //                 %crunch-button__full-background--medium;
+
+                //         &:hover,
+                //         &:focus {
+                //             color: $white !important;
+                //         }
+                //     }
+                // }
+
+                &__text {
+                    color: rgba($white, 0.75);
+
+                    &:hover,
+                    &:focus {
+                        color: $primary;
+                    }
+                }
+
+                &__btn {
+                    border-left-color: rgba(#808080, 0.3);
+
+                    &:after {
+                        border-color: rgba($white, 0.75);
+
+                        @include c-transition(border-color);
+                    }
+
+                    &:hover,
+                    &:focus {
+                        &:after {
+                            border-color: $primary;
+                        }
+
+                        + a {
+                            color: $primary;
+                        }
+                    }
+                }
+
+                &.mm-listitem_selected {
+                    .mm-listitem {
+                        &__text {
+                            background: none;
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

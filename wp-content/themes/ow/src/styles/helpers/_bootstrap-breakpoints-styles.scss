@@ -1,0 +1,60 @@
+/**
+ * Bootstrap Breakpoints Template Part Styles
+ */
+
+.main-content {
+    &::before {
+        content: 'XS (<575px)';
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+        padding: 0.5rem;
+        border-top-left-radius: 0.3125rem;
+        background: #841eac;
+        color: $white;
+        font-weight: $font-weight-bold;
+        font-size: 0.75rem;
+        line-height: 1;
+
+        @include media-breakpoint-up(sm) {
+            content: 'SM (576px - 767px)';
+            background: #3f88d2;
+        }
+
+        @include media-breakpoint-up(md) {
+            content: 'MD (768px - 991px)';
+            background: #489f3e;
+        }
+
+        @include media-breakpoint-up(lg) {
+            content: 'LG (992px - 1199px)';
+            background: #f1aa3c;
+            color: $black;
+        }
+
+        @include media-breakpoint-up(xl) {
+            content: 'XL (>1200px)';
+            background: #db3141;
+            color: $white;
+        }
+
+        @include respond-to('xxl') {
+            content: 'XXL (>1500px)';
+            background: #41f4bb;
+            color: $white;
+        }
+    }
+}
+
+.admin-bar {
+    .main-content {
+        &::before {
+            bottom: 2.9rem;
+
+            @include media-breakpoint-up(md) {
+                bottom: 2rem;
+            }
+        }
+    }
+}

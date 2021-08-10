@@ -1,0 +1,110 @@
+/**
+ * Spacings
+ */
+
+    @mixin fluid-spacing(
+        $prop: "",
+        $min: map-get($fluid-defaults, min),
+        $max: map-get($fluid-defaults, max),
+        $from: map-get($fluid-defaults, from),
+        $to: map-get($fluid-defaults, to),
+        $output: true
+    ) {
+        $breakpoints: $crunch-breakpoints;
+        $breakpoints-keys: map-keys($breakpoints);
+        $breakpoint-first: nth($breakpoints-keys, 1);
+
+        $diff: ($max - $min) / (length($breakpoints-keys) - 1);
+
+        @for $i from index($breakpoints-keys, $from) through index($breakpoints-keys, $to) {
+            $value: $min + ($i - 1) * $diff;
+            $break: nth($breakpoints-keys, $i);
+
+            $p: ();
+            $xy: "";
+
+            @if $prop == "margin-x" OR $prop == "margin-y" OR $prop == "padding-x" OR $prop == "padding-y" {
+                $p: str-split($prop, "-");
+                $xy: nth($p, 2);
+            }
+
+            @if $break == $breakpoint-first {
+                @if $xy == "x" {
+                    $prop1: nth($p, 1) + "-left";
+                    $prop2: nth($p, 1) + "-right";
+
+                    #{$prop1}: $value !important;
+                    #{$prop2}: $value !important;
+                } @else if $xy == "y" {
+                    $prop1: nth($p, 1) + "-top";
+                    $prop2: nth($p, 1) + "-bottom";
+
+                    #{$prop1}: $value !important;
+                    #{$prop2}: $value !important;
+                } @else {
+                    #{$prop}: $value !important;
+                }
+            } @else if ($value != $min) {
+                $breakpoint-value: map-get($breakpoints, $break);
+
+                @media (min-width: $breakpoint-value) {
+                    @if $xy == "x" {
+                        $prop1: nth($p, 1) + "-left";
+                        $prop2: nth($p, 1) + "-right";
+
+                        #{$prop1}: $value !important;
+                        #{$prop2}: $value !important;
+                    } @else if $xy == "y" {
+                        $prop1: nth($p, 1) + "-top";
+                        $prop2: nth($p, 1) + "-bottom";
+
+                        #{$prop1}: $value !important;
+                        #{$prop2}: $value !important;
+                    } @else {
+                        #{$prop}: $value !important;
+                    }
+                }
+            }
+        }
+    }
+
+    @mixin fluid-spacing-helper($prop, $max, $from, $to) {
+        $max-size: crunch-spacer($max);
+        $min-size: $max-size;
+
+        @if ($max > 1) {
+            $min-size: crunch-spacer($max) / 2;
+        }
+
+        @include fluid-spacing($prop, $min-size, $max-size, $from: $from, $to: $to);
+    }
+
+    @mixin fluid-margin(
+        $direction,
+        $max,
+        $from: map-get($fluid-defaults, from),
+        $to: map-get($fluid-defaults, to)
+    ) {
+        $prop: "margin";
+
+        @if $direction != "all" {
+            $prop: "margin-#{$direction}";
+        }
+
+        @include fluid-spacing-helper($prop, $max, $from, $to);
+    }
+
+    @mixin fluid-padding(
+        $direction,
+        $max,
+        $from: map-get($fluid-defaults, from),
+        $to: map-get($fluid-defaults, to)
+    ) {
+        $prop: "padding";
+
+        @if $direction != "all" {
+            $prop: "padding-#{$direction}";
+        }
+
+        @include fluid-spacing-helper($prop, $max, $from, $to);
+    }

@@ -1,0 +1,49 @@
+/**
+ * Animations
+ */
+
+@keyframes rotate360 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+// @keyframes float {
+//     50% {
+//         transform: translate(0, 1.5rem);
+//     }
+// }
+
+// @keyframes organic {
+//     0% {
+//         border-radius: 30% 70% 70% 30%/30% 30% 70% 70%
+//     }
+
+//     25% {
+//         border-radius: 70% 30% 30% 70%/70% 70% 30% 30%
+//     }
+
+//     50% {
+//         border-radius: 30% 70% 70% 30%/30% 30% 70% 70%
+//     }
+
+//     100% {
+//         border-radius: 70% 30% 30% 70%/70% 70% 30% 30%
+//     }
+// }
+
+// .c-animation-rotate {
+//     animation: rotate360 20s linear infinite;
+// }
+
+// .c-animation-float {
+//     animation: float 5s ease-out infinite;
+// }
+
+// .c-animation-organic {
+//     animation: organic 10s infinite alternate ease-in-out;
+// }

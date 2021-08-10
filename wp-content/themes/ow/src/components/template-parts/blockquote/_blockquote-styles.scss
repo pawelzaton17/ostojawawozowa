@@ -1,0 +1,38 @@
+/**
+ * Blockquote Template Part Styles
+ */
+
+.acf-block-blockquote,
+.entry-content .blockquote {
+    margin-bottom: 0;
+    border-style: solid;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left-color: $primary;
+    font-size: initial;
+
+    @include fluid(
+        (
+            margin-top: (
+                min: 0.5,
+                max: crunch-spacer(4),
+            ),
+            padding-left: (
+                min: 1rem,
+                max: 1.5rem,
+            ),
+            border-left-width: (
+                min: 0.125rem,
+                max: 0.35rem,
+            ),
+        )
+    );
+
+    cite {
+        display: block;
+        font-weight: $font-weight-bold;
+
+        @include fluid(margin-top, 0.5, crunch-spacer(4));
+    }
+}

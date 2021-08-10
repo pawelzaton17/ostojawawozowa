@@ -1,0 +1,68 @@
+/**
+ * Pagination Template Part Styles
+ */
+
+.crunch-pagination {
+    .page-item {
+        > * {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: $white;
+            box-shadow: 0 0 0.625rem rgba($black, 0.15);
+
+            @include fluid(
+                (
+                    height: (
+                        min: 0.75,
+                        max: 3rem,
+                    ),
+                    min-width: (
+                        min: 0.75,
+                        max: 3rem,
+                    ),
+                )
+            );
+        }
+
+        &.prev,
+        &.next {
+            a {
+                &:hover,
+                &:focus {
+                    path {
+                        stroke: $secondary;
+                    }
+                }
+
+                svg {
+                    path {
+                        @include c-transition(stroke);
+                    }
+                }
+            }
+        }
+
+        &.prev {
+            a {
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .page-numbers {
+            &:not(.current):not(.dots) {
+                &:hover,
+                &:focus {
+                    color: darken($primary, 10%);
+                }
+            }
+
+            &.current {
+                color: $primary;
+            }
+        }
+    }
+}

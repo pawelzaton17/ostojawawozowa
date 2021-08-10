@@ -1,0 +1,387 @@
+/* prettier-ignore */
+
+/**
+ * Repeaters
+ */
+
+    /* ~~~~~~~~~~ Background cover ~~~~~~~~~~ */
+
+        .background-cover {
+            @extend %background-cover;
+        }
+
+
+    /* ~~~~~~~~~~ Object Fit ~~~~~~~~~~ */
+
+        .object-fit-cover {
+            @extend %object-fit-cover;
+
+            &--centered {
+                @extend %object-fit-cover--centered;
+            }
+
+            &--centered-x {
+                @extend %object-fit-cover--centered-x;
+            }
+        }
+
+
+    /* ~~~~~~~~~~ Hide ~~~~~~~~~~ */
+
+        .hide {
+            @extend %hide;
+        }
+
+
+    /* ~~~~~~~~~~ Element paddings and margins ~~~~~~~~~~ */
+
+        @include generate-sizing-classes((
+            breakpoints: $crunch-breakpoints,
+            spacers: $crunch-spacers,
+            prefix: ("c-"),
+        ));
+
+        @include generate-reset-classes((
+            breakpoints: $crunch-breakpoints,
+            properties: ("margin", "padding"),
+            prefix: ("c-"),
+        ));
+
+
+    /* ~~~~~~~~~~ Adjustable Element ~~~~~~~~~~ */
+
+        .adjustable-element {
+            @extend %adjustable-element;
+        }
+
+    /* ~~~~~~~~~~ Font Weight Classes ~~~~~~~~~~ */
+
+        .font-family-primary {
+            font-family: $font-family-primary;
+        }
+
+        .font-family-secondary {
+            font-family: $font-family-secondary;
+        }
+
+        .font-family-tertiary {
+            font-family: $font-family-tertiary;
+        }
+
+    /* ~~~~~~~~~~ Font Weight Classes ~~~~~~~~~~ */
+
+         .font-weight-thin {
+             font-weight: $font-weight-thin;
+         }
+
+         .font-weight-light {
+             font-weight: $font-weight-light;
+         }
+
+         .font-weight-regular {
+             font-weight: $font-weight-regular;
+         }
+
+         .font-weight-medium {
+             font-weight: $font-weight-medium;
+         }
+
+         .font-weight-semibold {
+             font-weight: $font-weight-semibold;
+         }
+
+         .font-weight-bold {
+             font-weight: $font-weight-bold;
+         }
+
+    /* ~~~~~~~~~~ Fill the whole space ~~~~~~~~~~ */
+
+        .fill-the-whole-space {
+            @extend %fill-the-whole-space;
+        }
+
+    /* ~~~~~~~~~~ Optimize image contrast ~~~~~~~~~~ */
+
+        img {
+            @extend %optimize-image-contrast;
+        }
+
+
+    /* ~~~~~~~~~~ Font Size Classes ~~~~~~~~~~ */
+
+        .font-size-10 {
+            @extend %font-size-10;
+        }
+
+        .font-size-11 {
+            @extend %font-size-11;
+        }
+
+        .font-size-12 {
+            @extend %font-size-12;
+        }
+
+        .font-size-13 {
+            @extend %font-size-13;
+        }
+
+        .font-size-14 {
+            @extend %font-size-14;
+        }
+
+        .font-size-15 {
+            @extend %font-size-15;
+        }
+
+        .font-size-16 {
+            @extend %font-size-16;
+        }
+
+        .font-size-17 {
+            @extend %font-size-17;
+        }
+
+        .font-size-18 {
+            @extend %font-size-18;
+        }
+
+        .font-size-19 {
+            @extend %font-size-19;
+        }
+
+        .font-size-20 {
+            @extend %font-size-20;
+        }
+
+        .font-size-21 {
+            @extend %font-size-21;
+        }
+
+        .font-size-22 {
+            @extend %font-size-22;
+        }
+
+        .font-size-23 {
+            @extend %font-size-23;
+        }
+
+        .font-size-24 {
+            @extend %font-size-24;
+        }
+
+        .font-size-25 {
+            @extend %font-size-25;
+        }
+
+        .font-size-26 {
+            @extend %font-size-26;
+        }
+
+        .font-size-27 {
+            @extend %font-size-27;
+        }
+
+        .font-size-28 {
+            @extend %font-size-28;
+        }
+
+        .font-size-29 {
+            @extend %font-size-29;
+        }
+
+        .font-size-30 {
+            @extend %font-size-30;
+        }
+
+        .font-size-31 {
+            @extend %font-size-31;
+        }
+
+        .font-size-32 {
+            @extend %font-size-32;
+        }
+
+        .font-size-33 {
+            @extend %font-size-33;
+        }
+
+        .font-size-34 {
+            @extend %font-size-34;
+        }
+
+        .font-size-35 {
+            @extend %font-size-35;
+        }
+
+        .font-size-36 {
+            @extend %font-size-36;
+        }
+
+        .font-size-37 {
+            @extend %font-size-37;
+        }
+
+        .font-size-38 {
+            @extend %font-size-38;
+        }
+
+        .font-size-39 {
+            @extend %font-size-39;
+        }
+
+        .font-size-40 {
+            @extend %font-size-40;
+        }
+
+        .font-size-41 {
+            @extend %font-size-41;
+        }
+
+        .font-size-42 {
+            @extend %font-size-42;
+        }
+
+        .font-size-43 {
+            @extend %font-size-43;
+        }
+
+        .font-size-44 {
+            @extend %font-size-44;
+        }
+
+        .font-size-45 {
+            @extend %font-size-45;
+        }
+
+        .font-size-46 {
+            @extend %font-size-46;
+        }
+
+        .font-size-47 {
+            @extend %font-size-47;
+        }
+
+        .font-size-48 {
+            @extend %font-size-48;
+        }
+
+        .font-size-49 {
+            @extend %font-size-49;
+        }
+
+        .font-size-50 {
+            @extend %font-size-50;
+        }
+
+        .font-size-51 {
+            @extend %font-size-51;
+        }
+
+        .font-size-52 {
+            @extend %font-size-52;
+        }
+
+        .font-size-53 {
+            @extend %font-size-53;
+        }
+
+        .font-size-54 {
+            @extend %font-size-54;
+        }
+
+        .font-size-55 {
+            @extend %font-size-55;
+        }
+
+        .font-size-56 {
+            @extend %font-size-56;
+        }
+
+        .font-size-57 {
+            @extend %font-size-57;
+        }
+
+        .font-size-58 {
+            @extend %font-size-58;
+        }
+
+        .font-size-59 {
+            @extend %font-size-59;
+        }
+
+        .font-size-60 {
+            @extend %font-size-60;
+        }
+
+
+    /* ~~~~~~~~~~ Letter Spacing Classes ~~~~~~~~~~ */
+
+        // .letter-spacing-25 {
+        //     @extend %letter-spacing-25;
+        // }
+
+        // .letter-spacing-50 {
+        //     @extend %letter-spacing-50;
+        // }
+
+        // .letter-spacing-100 {
+        //    @extend %letter-spacing-100;
+        // }
+
+
+    /* ~~~~~~~~~~ Animated Border Bottom ~~~~~~~~~~ */
+
+        .animated-border-bottom {
+            @extend %animated-border-bottom;
+
+            &--width-2 {
+                @extend %animated-border-bottom--width-2;
+            }
+
+            &--reverse {
+                @extend %animated-border-bottom--reverse;
+            }
+        }
+
+
+    /* ~~~~~~~~~~ Lock Postion ~~~~~~~~~~ */
+
+        .lock-position {
+            @extend %lock-position;
+        }
+
+
+    /* ~~~~~~~~~~ Hover opacity classes ~~~~~~~~~~ */
+
+        .hover-opacity-0-75 {
+            @extend %hover-opacity-0-75;
+        }
+
+
+    /* ~~~~~~~~~~ Flex 0 0 auto ~~~~~~~~~~ */
+
+        .flex-0-0-auto {
+            @extend %flex-0-0-auto;
+        }
+
+    /* ~~~~~ Color classes ~~~~~ */
+
+        @each $name, $color in $theme-colors {
+            a.text-hover-#{$name},
+            button.text-hover-#{$name},
+            .text-hover-#{$name} {
+                &:hover,
+                &:focus {
+                    color: $color !important;
+                }
+            }
+
+            a.bg-hover-#{$name},
+            button.bg-hover-#{$name},
+            .bg-hover-#{$name} {
+                &:hover,
+                &:focus {
+                    background-color: $color !important;
+                }
+            }
+        }

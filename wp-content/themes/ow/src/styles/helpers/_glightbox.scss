@@ -1,0 +1,27 @@
+/**
+ * GLightbox
+ */
+
+    .glightbox-container {
+        .gcontainer {
+            .gslider {
+                .gslide {
+                    .gslide-inner-content {
+                        .gvideo-container {
+                            .gslide-media {
+                                .gvideo-wrapper {
+                                    .plyr {
+                                        .plyr__video-wrapper {
+                                            .plyr__poster {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }

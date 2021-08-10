@@ -1,0 +1,88 @@
+/* stylelint-disable */
+
+/**
+ * Mixins
+ */
+
+/* ~~~~~~~~~~ Helper Functions ~~~~~~~~~~ */
+
+/* ~~~~~ Strip Unit ~~~~~ */
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+/* ~~~~~ Convert to REM ~~~~~ */
+
+@function rem($value, $base-value: 16px) {
+    $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+    @return $value;
+}
+
+/* ~~~~~ Get Crunch Spacer ~~~~~ */
+
+@function crunch-spacer($index) {
+    @if (map-has-key($crunch-spacers, $index)) {
+        @return map-get($crunch-spacers, $index);
+    }
+}
+
+/* ~~~~~~~~~~~~ Fluid  ~~~~~~~~~~~~ */
+
+@import '../mixins/fluid.scss';
+
+/* ~~~~~~~~~ Fluid margin/padding helpers ~~~~~~~~~ */
+
+@import '../mixins/spacings.scss';
+
+/* ~~~~~~~~~~ Sizing Class Generator ~~~~~~~~~~ */
+
+@import '../mixins/classes.scss';
+
+/* ~~~~~~~~~~ Respond to specific brekpoint ~~~~~~~~~~ */
+
+@mixin respond-to($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($grid-breakpoints, $breakpoint) {
+        // Prints a media query based on the value
+        @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}
+
+/* ~~~~~~~~~~ Bootsrap Container Max Width ~~~~~~~~~~ */
+
+@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+    @each $breakpoint, $container-max-width in $max-widths {
+        @include media-breakpoint-up($breakpoint, $breakpoints) {
+            max-width: $container-max-width;
+        }
+    }
+}
+
+@mixin make-container-max-widths-minus-gutter-width(
+    $max-widths: $container-max-widths,
+    $breakpoints: $grid-breakpoints
+) {
+    @each $breakpoint, $container-max-width in $max-widths {
+        @include media-breakpoint-up($breakpoint, $breakpoints) {
+            max-width: calc(#{$container-max-width} - #{$grid-gutter-width});
+        }
+    }
+}
+
+/* ~~~~~~~~~~ Transition ~~~~~~~~~~ */
+
+@mixin c-transition($properties: all, $duration: 0.2s, $timing-function: ease-in-out, $delay: null) {
+    $value: ();
+    @each $property in $properties {
+        @if length($value) > 0 {
+            $value: append($value, unquote(',') #{$property} $duration $timing-function $delay);
+        } @else {
+            $value: append($value, #{$property} $duration $timing-function $delay);
+        }
+    }
+
+    transition: $value;
+}

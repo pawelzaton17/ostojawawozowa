@@ -1,0 +1,617 @@
+/**
+ * Entry Content Template Part Styles
+ */
+
+[class*='acf-block-'] + .container > .entry-content > *:first-of-type:not(.first-element-fix),
+.list-styles + .container > .entry-content > *:first-of-type:not(.first-element-fix),
+.panel + .container > .entry-content > *:first-of-type:not(.first-element-fix) {
+    @include fluid(margin-top, 0.5, 1.5em);
+}
+
+.entry-content,
+.wp-bootstrap-blocks-container,
+.wp-bootstrap-blocks-row [class*='col-'] {
+    /* ~~~~~~~~~~ Headlines ~~~~~~~~~~ */
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6,
+    > .heading {
+        @include fluid(margin-top, 0.5, 1.75em);
+    }
+
+    /* ~~~~~~~~~~ Text elements ~~~~~~~~~~ */
+
+    > p {
+        @include fluid(margin-top, 0.5, 2em);
+
+        > a[class*='-button'] {
+            @include fluid(margin-top, 0.5, 1.5em);
+        }
+    }
+
+    p a,
+    ul li a,
+    ol li a,
+    figcaption a,
+    .wp-block-file a {
+        &:not([class*='-button']):not([class*='__button']) {
+            color: $primary;
+
+            @extend %animated-border-bottom, %animated-border-bottom--reverse;
+
+            &[href*='http'] {
+                word-wrap: break-word;
+                word-break: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+        }
+
+        &[class*='-button'] {
+            @include fluid(margin-top, 0.5, 1.5em);
+        }
+    }
+
+    sup {
+        top: -.75em;
+        font-size: 50%;
+    }
+    
+    sub {
+        bottom: -.25em;
+        font-size: 50%;
+    }
+
+    > .crunch-button-wrapper {
+        @include fluid(margin-top, 0.5, 1.5em);
+    }
+
+    /* ~~~~~~~~~~ ul, ol lists ~~~~~~~~~~ */
+
+    > ul:not(.wp-block-gallery) {
+        list-style-type: disc;
+    }
+
+    > ol:not(.wp-block-gallery) {
+        list-style-type: decimal;
+    }
+
+    > ul:not(.wp-block-gallery),
+    > ol:not(.wp-block-gallery) {
+        margin-right: 0;
+        margin-bottom: 0;
+        list-style-position: outside;
+
+        @include fluid(
+            (
+                margin-top: (
+                    min: 0.5,
+                    max: 2em,
+                ),
+                margin-left: (
+                    min: 0.5,
+                    max: 1.5em,
+                ),
+            )
+        );
+
+        ul,
+        ol {
+            margin-right: 0;
+            list-style-position: outside;
+
+            @include fluid(
+                (
+                    margin-top: (
+                        min: 0.5,
+                        max: 1em,
+                    ),
+                    margin-left: (
+                        min: 0.5,
+                        max: 1em,
+                    ),
+                    margin-bottom: (
+                        min: 0.5,
+                        max: 1.5em,
+                    ),
+                )
+            );
+        }
+
+        ul {
+            list-style-type: circle;
+        }
+
+        ol {
+            list-style-type: lower-latin;
+        }
+
+        li {
+            @include fluid(margin-top, 0.5, 1em);
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+
+    // > ol:not(.wp-block-gallery) {
+    //     list-style: none;
+    //     counter-reset: li;
+
+    //     > li {
+    //         counter-increment: li;
+
+    //         &:before {
+    //             content: counter(li) ". ";
+    //             color: var(--primary);
+    //             font-weight: bold;
+    //             display: inline-block;
+    //             width: 1em;
+    //             margin-left: -1em;
+    //         }
+    //     }
+    // }
+
+    > .list-styles {
+        ul {
+            margin-left: 0;
+            list-style: none;
+
+            li {
+                &:first-child {
+                    margin-top: 0 !important;
+                }
+            }
+        }
+    }
+
+    /* ~~~~~~~~~~ Images ~~~~~~~~~~ */
+
+    > * > img,
+    > img,
+    > .wp-caption,
+    [class*='wp-image'] {
+        // this line will affect all images added by "Add Media", Image Inner Block and All Standard Wordpress Blocks
+        display: block;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+
+        @include fluid(margin-top, 0.5, 3em);
+
+        &.add-margin-bottom {
+            @include fluid(margin-bottom, 0.5, 3em);
+        }
+
+        &.alignleft {
+            float: left;
+            width: auto;
+            max-width: 100%;
+            margin-top: 0;
+            margin-left: 0;
+
+            @include fluid(
+                (
+                    margin-right: (
+                        min: 0.5,
+                        max: 1.5em,
+                    ),
+                    margin-bottom: (
+                        min: 0.5,
+                        max: 1em,
+                    ),
+                )
+            );
+        }
+
+        &.alignright {
+            float: right;
+            width: auto;
+            max-width: 100%;
+            margin-top: 0;
+            margin-right: 0;
+
+            @include fluid(
+                (
+                    margin-left: (
+                        min: 0.5,
+                        max: 1.5em,
+                    ),
+                    margin-bottom: (
+                        min: 0.5,
+                        max: 1em,
+                    ),
+                )
+            );
+        }
+
+        &.aligncenter {
+            width: auto;
+            max-width: 100%;
+
+            @include media-breakpoint-up(sm) {
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+
+        .wp-caption-text {
+            font-style: italic !important;
+            text-align: center;
+
+            @include fluid(
+                (
+                    margin-top: (
+                        min: 0.5,
+                        max: 1em,
+                    ),
+                    font-size: (
+                        min: 0.8125em,
+                        max: 0.875em,
+                    ),
+                )
+            );
+        }
+    }
+
+    > .wp-caption,
+    > .gallery-caption {
+        display: inline-block;
+        margin-bottom: 0;
+
+        img {
+            margin: 0;
+        }
+    }
+
+    /* ~~~~~~~~~~ iFrame ~~~~~~~~~~ */
+
+    > iframe {
+        width: 100%;
+
+        @include fluid(
+            (
+                margin-top: (
+                    min: 0.5,
+                    max: 1.5em,
+                ),
+                height: (
+                    min: 14rem,
+                    max: 40rem,
+                ),
+            )
+        );
+    }
+
+    /* ~~~~~~~~~~ Gallery ~~~~~~~~~~ */
+
+    > .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2.5rem -0.3125rem 0 !important;
+
+        &.gallery-columns-2 {
+            .gallery-item {
+                width: calc(50% - 0.625rem) !important;
+            }
+        }
+
+        &.gallery-columns-3 {
+            .gallery-item {
+                width: calc(33.33% - 0.625rem) !important;
+            }
+        }
+
+        &.gallery-columns-4 {
+            .gallery-item {
+                width: calc(50% - 0.625rem) !important;
+
+                @include media-breakpoint-up(sm) {
+                    width: calc(25% - 0.625rem) !important;
+                }
+            }
+        }
+
+        &.gallery-columns-5 {
+            .gallery-item {
+                width: calc(33.33% - 0.625rem) !important;
+
+                @include media-breakpoint-up(sm) {
+                    width: calc(20% - 0.625rem) !important;
+                }
+            }
+        }
+
+        &.gallery-columns-6 {
+            .gallery-item {
+                width: calc(33.33% - 0.625rem) !important;
+
+                @include media-breakpoint-up(sm) {
+                    width: calc(25% - 0.625rem) !important;
+                }
+
+                @include media-breakpoint-up(md) {
+                    width: calc(16.66% - 0.625rem) !important;
+                }
+            }
+        }
+
+        &.gallery-columns-7 {
+            .gallery-item {
+                width: calc(33.33% - 0.625rem) !important;
+
+                @include media-breakpoint-up(sm) {
+                    width: calc(25% - 0.625rem) !important;
+                }
+
+                @include media-breakpoint-up(md) {
+                    width: calc(14.28% - 0.625rem) !important;
+                }
+            }
+        }
+
+        &.gallery-columns-8 {
+            .gallery-item {
+                width: calc(25% - 0.625rem) !important;
+
+                @include media-breakpoint-up(md) {
+                    width: calc(12.5% - 0.625rem) !important;
+                }
+            }
+        }
+
+        &.gallery-columns-9 {
+            .gallery-item {
+                width: calc(25% - 0.625rem) !important;
+
+                @include media-breakpoint-up(md) {
+                    width: calc(11.1% - 0.625rem) !important;
+                }
+            }
+        }
+
+        .gallery-item {
+            flex-shrink: 0;
+            margin: 0 0.3125rem;
+
+            .gallery-icon {
+                display: block;
+                margin-right: auto;
+                margin-left: auto;
+
+                a {
+                    img {
+                        margin: 0;
+                        border: none !important;
+                    }
+                }
+            }
+        }
+    }
+
+    /* ~~~~~~~~~~ Preformatted ~~~~~~~~~~ */
+
+    > pre {
+        display: block;
+        border-radius: $border-radius;
+        background: #3a3a3a;
+        color: $white;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+
+        @include fluid(
+            (
+                margin-top: (
+                    min: 0.5,
+                    max: 1.5em,
+                ),
+                padding: (
+                    min: 0.5,
+                    max: 1em,
+                ),
+            )
+        );
+    }
+
+    > code {
+        padding-right: 0.25em;
+        padding-left: 0.25em;
+        border: 1px solid darken(#f4f4f9, 10%);
+        background: #f4f4f9;
+        color: #ce375c;
+        font-style: italic;
+    }
+
+    /* ~~~~~~~~~ Figure ~~~~~~~~~~ */
+
+    > figure {
+        @include fluid(margin-y, 0.5, 3em);
+
+        img {
+            margin: 0 !important;
+        }
+
+        > a[href*='.jpg'],
+        > a[href*='.jpeg'],
+        > a[href*='.png'] {
+            @extend %hover-opacity-0-75;
+        }
+
+        figcaption {
+            border-bottom: 2px solid $body-color;
+            color: $body-color;
+            font-size: 0.75em;
+            text-align: left;
+
+            @include fluid(padding-top, 0.5, crunch-spacer(2));
+            @include fluid(padding-bottom, 0.5, crunch-spacer(3));
+        }
+
+        iframe {
+            width: 100%;
+
+            @include fluid(height, 14rem, 40rem);
+        }
+    }
+
+    /* ~~~~~~~~~~ Table ~~~~~~~~~~ */
+
+    > table,
+    .wp-calendar-table {
+        // this line will affect Wordpress Calendar Block
+        @include fluid(margin-top, 0.5, 3em);
+
+        td,
+        th {
+            vertical-align: middle;
+            min-width: 5rem;
+            padding: 1em;
+
+            img {
+                margin-top: 0;
+            }
+        }
+
+        &.is-style-stripes {
+            border: 1px solid #e5e5e5;
+            border-bottom: none;
+
+            td,
+            th {
+                border-right: 1px solid #e5e5e5;
+                border-bottom: 1px solid #e5e5e5;
+
+                &:last-child {
+                    border-right: 0;
+                }
+            }
+        }
+
+        &:not(.wp-block-table) {
+            border: 1px solid #e5e5e5;
+
+            tr {
+                border-bottom: 1px solid #e5e5e5;
+
+                &:last-child:not(:first-child) {
+                    border: 0;
+                }
+            }
+
+            td,
+            th {
+                border-right: 1px solid #e5e5e5;
+
+                &:last-child {
+                    border: 0;
+                }
+            }
+        }
+    }
+
+    /* ~~~~~~~~~~ WP Blocks ~~~~~~~~~~ */
+
+    /* ~~~~~~~~~~ Button ~~~~~~~~~~ */
+
+    .wp-block-button {
+        margin-bottom: 0;
+
+        @include fluid(margin-top, 0.5, 2em);
+
+        &__link {
+            &:hover,
+            &:focus {
+                opacity: 0.85;
+            }
+        }
+    }
+
+    /* ~~~~~~~~~~ Cover ~~~~~~~~~~ */
+
+    .wp-block-cover {
+        min-height: 12.5rem;
+        margin-bottom: 0;
+
+        @include fluid(height, 12.5rem, 26rem);
+
+        @include fluid(margin-y, 0.5, 3em);
+    }
+
+    /* ~~~~~~~~~~ Gallery ~~~~~~~~~~ */
+
+    .wp-block-gallery {
+        @include fluid(margin-y, 0.5, 3em);
+
+        .blocks-gallery-item {
+            figure {
+                margin: 0 !important;
+            }
+        }
+    }
+
+    /* ~~~~~~~~~~ Blockquote ~~~~~~~~~~ */
+
+    .wp-block-quote {
+        @include fluid(margin-y, 0.5, 3em);
+    }
+
+    /* ~~~~~~~~~~ File ~~~~~~~~~~ */
+
+    .wp-block-file {
+        margin-bottom: 0;
+
+        @include fluid(margin-top, 0.5, 2em);
+
+        &__button {
+            display: inline-block;
+        }
+    }
+
+    /* ~~~~~~~~~~ Columns ~~~~~~~~~~ */
+
+    .wp-block-columns {
+        margin-bottom: 0;
+        @include fluid(margin-y, 0.5, 3em);
+
+        .wp-block-column {
+            margin-bottom: 0;
+        }
+    }
+
+    /* ~~~~~~~~~~ Media Text ~~~~~~~~~~ */
+
+    .wp-block-media-text {
+        @include fluid(margin-y, 0.5, 3em);
+
+        &__media {
+            margin: 0 !important;
+        }
+    }
+
+    /* ~~~~~~~~~~ First element fix ~~~~~~~~~~ */
+
+    .first-element-fix,
+    .acf-block-spacer {
+        & + *,
+        & + p > a > img,
+        & + p > img,
+        & + div.list-styles > ul,
+        & + div.list-styles > ul > li:first-of-type,
+        & + .lead {
+            margin-top: 0 !important;
+        }
+    }
+
+    /* ~~~~~~~~~~ Last element fix ~~~~~~~~~~ */
+
+    * {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

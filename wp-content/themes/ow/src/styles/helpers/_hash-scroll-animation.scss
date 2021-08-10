@@ -1,0 +1,7 @@
+html {
+  /* CSS custom property for the polyfill */
+  --scroll-behavior: unset;
+
+  /* Normal CSS property for browsers with native support */
+  scroll-behavior: unset;
+}

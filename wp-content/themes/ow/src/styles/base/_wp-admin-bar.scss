@@ -1,0 +1,29 @@
+/**
+ * WP Admin Bar
+ */
+
+div#wpadminbar {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+}
+
+.ab-sub-wrapper {
+    bottom: 2.875rem;
+
+    @media screen and (min-width: rem(783px)) {
+        bottom: 2rem;
+    }
+}
+
+.admin-bar {
+    margin-bottom: 2.875rem !important;
+
+    @media screen and (min-width: rem(783px)) {
+        margin-bottom: 2rem !important;
+    }
+}
+
+html[lang] {
+    margin-top: 0 !important;
+}

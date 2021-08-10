@@ -1,0 +1,89 @@
+/*
+ * Crunch Button Template Part Styles
+ */
+ 
+.crunch-button-wrapper {
+    &.aligncenter {
+        text-align: center;
+    }
+
+    &.alignright {
+        text-align: right;
+    }
+}
+
+.crunch-button {
+    @extend %crunch-button;
+
+    &__text-only,
+    &__text-only-with-border-bottom {
+        @extend %crunch-button__text-only;
+
+        &--small {
+            @extend %crunch-button__text-only--small;
+        }
+
+        &--medium {
+            @extend %crunch-button__text-only--medium;
+        }
+
+        &--large {
+            @extend %crunch-button__text-only--large;
+        }
+
+        &--white-color {
+            @extend %crunch-button__text-only--white-color;
+        }
+    }
+
+    &__text-only-with-border-bottom {
+        @extend %crunch-button__text-only-with-border-bottom,
+                %animated-border-bottom--reverse;
+    }
+
+    &__outline,
+    &__full-background {
+        &--small {
+            @extend %crunch-button__outline--small;
+        }
+
+        &--medium {
+            @extend %crunch-button__outline--medium;
+        }
+
+        &--large {
+            @extend %crunch-button__outline--large;
+        }
+    }
+
+    &__outline {
+        @extend %crunch-button__outline;
+
+        &--white-color {
+            @extend %crunch-button__outline--white-color;
+        }
+    }
+
+    &__full-background {
+        @extend %crunch-button__full-background;
+
+        &--white-color {
+            @extend %crunch-button__full-background--white-color;
+        }
+    }
+}
+
+@each $name, $color in $button-colors {
+    .crunch-button__text-only--#{$name}-color,
+    .crunch-button__text-only-with-border-bottom--#{$name}-color {
+        @extend %crunch-button__text-only--#{$name}-color;
+    }
+
+    .crunch-button__full-background--#{$name}-color {
+        @extend %crunch-button__full-background--#{$name}-color;
+    }
+
+    .crunch-button__outline--#{$name}-color {
+        @extend %crunch-button__outline--#{$name}-color;
+    }
+}

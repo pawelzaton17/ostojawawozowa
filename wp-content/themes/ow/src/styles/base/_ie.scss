@@ -1,0 +1,15 @@
+.alert--ie {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000000;
+    padding: 2rem;
+    background: #cd5c5c;
+    color: #fff;
+    text-align: center;
+
+    a {
+        text-decoration: underline;
+    }
+}

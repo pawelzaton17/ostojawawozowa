@@ -1,0 +1,216 @@
+/**
+ * Header Template Part Styles
+ */
+
+.main-header {
+    z-index: 10;
+    background-color: $white;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px 0px 1.875rem 0px rgba($black, 0.1);
+        opacity: 0;
+        visibility: hidden;
+
+        @include c-transition(opacity);
+    }
+
+    .navbar {
+        .navbar-brand {
+            @include fluid(
+                (
+                    width: (
+                        min: 0.75,
+                        max: 8rem,
+                    ),
+                    height: (
+                        min: 0.75,
+                        max: 4.5rem,
+                    ),
+                )
+            );
+        }
+
+        .navbar-nav {
+            li {
+                position: initial;
+
+                @include fluid(padding-y, 0.75rem, 1.125rem, $from: md);
+
+                .nav-link {
+                    @include fluid(margin-x, 0.75rem, 1.125rem, $from: md);
+                    @extend %animated-border-bottom;
+
+                    &.active {
+                        @extend %animated-border-bottom--reverse;
+                    }
+                }
+
+                // If you have a button in Main Navigation for example regiter
+                // &:nth-last-child(2)  {
+                //     padding-right: 0;
+                // }
+
+                &.dropdown {
+                    // If you want to have dropdown on hover not on click
+                    // Remove also $atts['data-toggle']  = 'dropdown'; from line 131 in inc/bs4navwalker.php
+                    // &:hover {
+                    //     .dropdown-wrapper {
+                    //         color: $primary;
+
+                    //         .dropdown-menu {
+                    //             opacity: 1;
+                    //             visibility: visible;
+                    //             transition: opacity .2s ease-in-out;
+                    //         }
+                    //     }
+                    // }
+
+                    .dropdown-wrapper {
+                        position: relative;
+
+                        .dropdown-toggle {
+                            position: relative;
+                            display: flex;
+                            align-items: flex-end;
+                            padding-right: 1.125rem;
+                            border: none;
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                top: 50%;
+                                right: 0;
+                                bottom: 0;
+                                display: block;
+                                width: 0.675rem;
+                                height: 0.375rem;
+                                margin-left: 0;
+                                border: none;
+                                background: url('~images/icon__angle-down--black-color.svg') no-repeat;
+                                transform: translateY(-50%);
+
+                                @include c-transition(transform);
+                            }
+                        }
+
+                        .dropdown-menu {
+                            position: absolute;
+                            display: block;
+                            padding: 0;
+                            border: 1px solid #e8e8e8;
+                            border-radius: 0;
+                            opacity: 0;
+                            visibility: hidden;
+                            transition: visibility 0s 0.2s, opacity 0.2s ease-in-out;
+
+                            &.show {
+                                opacity: 1;
+                                visibility: visible;
+                                transition: opacity 0.2s ease-in-out;
+                            }
+
+                            .dropdown-item {
+                                display: block;
+                                padding: 0.625rem 1rem;
+                                background-color: $white;
+                                color: $primary;
+
+                                @extend %font-size-15;
+
+                                &:not(:first-of-type) {
+                                    border-top: 1px solid #e8e8e8;
+                                }
+
+                                &.active {
+                                    background-color: $primary;
+                                    color: $white;
+                                }
+
+                                &:hover,
+                                &:focus {
+                                    background-color: $primary;
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // If you have a button in Main Navigation for example regiter
+                // &.navbar-button {
+                //     &.current-menu-ancestor,
+                //     &.current-menu-item {
+                //         a {
+                //             @extend %crunch-button__full-background--primary-color--focus;
+                //         }
+                //     }
+
+                //     a {
+                //         @extend %crunch-button,
+                //                 %crunch-button__full-background,
+                //                 %crunch-button__full-background--primary-color;
+                //     }
+                // }
+
+                .nav-link {
+                    display: block;
+                    border-bottom: 1px solid transparent;
+                    line-height: 1;
+
+                    @extend %font-size-16;
+                }
+            }
+        }
+
+        .mburger {
+            --mb-button-size: 3rem;
+            --mb-bar-height: 0.125rem;
+            --mb-bar-spacing: 0.375rem;
+            color: $body-color;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    &--is-window-scrolled {
+        &::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .navbar {
+            .navbar-brand {
+                @include fluid(
+                    (
+                        width: (
+                            min: 0.75,
+                            max: 6rem,
+                        ),
+                        height: (
+                            min: 0.75,
+                            max: 3.375rem,
+                        ),
+                    )
+                );
+            }
+        }
+    }
+}
+
+// Change z-index of header when mobile navigation is opened
+.mm-wrapper_opening {
+    .mm-menu_opened ~ .mm-slideout.main-header {
+        z-index: 2;
+        background-color: transparent;
+    }
+}

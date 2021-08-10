@@ -1,0 +1,224 @@
+{
+    "key": "group_5ce6e6ea048ef",
+    "title": "Spacer",
+    "fields": [
+        {
+            "key": "field_5e93282444a0a",
+            "label": "Spacer",
+            "name": "spacer",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e92bbd4f8986",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "1 (mobile: 4px desktop: 4px)",
+                "2": "2 (mobile: 4px desktop: 8px)",
+                "3": "3 (mobile: 8px desktop: 16px)",
+                "4": "4 (mobile: 12px desktop: 24px)",
+                "5": "5 (mobile: 16px desktop: 32px)",
+                "6": "6 (mobile: 24px desktop: 48px)",
+                "7": "7 (mobile: 32px desktop: 64px)",
+                "8": "8 (mobile: 40px desktop: 80px)",
+                "9": "9 (mobile: 50px desktop: 100px)",
+                "10": "10 (mobile: 64px desktop: 128px)"
+            },
+            "default_value": [
+                4
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5e92b6f3f8985",
+            "label": "Spacer Visibility",
+            "name": "spacer_visibility",
+            "type": "select",
+            "instructions": "<b>All Breakpoints:<\/b><br>\r\nXS: 0px - 575px<br>\r\nSM: 576px - 767px<br>\r\nMD: 768px - 991px<br>\r\nLG: 992px - 1199px<br>\r\nXL: >1200px<br>",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e92bbd4f8986",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "all-breakpoints": "All Breakpoints",
+                "xs": "XS only",
+                "sm-xl": "SM to XL",
+                "md-xl": "MD to XL",
+                "lg-xl": "LG to XL",
+                "xl": "XL only"
+            },
+            "default_value": [
+                "all-breakpoints"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5e92bbd4f8986",
+            "label": "Custom Classes Enable",
+            "name": "custom_classes_enable",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5e93310c09fa0",
+            "label": "Custom Classes",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e92bbd4f8986",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5e92bc07f8987",
+            "label": "Custom Classes",
+            "name": "custom_classes",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e92bbd4f8986",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5e93312109fa1",
+            "label": "Custom Classes Instruction",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e92bbd4f8986",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5e93313e09fa2",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e92bbd4f8986",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<b>Custom Classes:<\/b><br>\r\nIf you enable it you can define custom classes. How to build a class?<br>\r\nThe first letter is \"c\"<br>\r\nThen You add add \"-\" padding with a shortcut like \"p\" - padding<br>\r\nNext you add a direction like \"t\" - top, \"r\" - right, \"b\" - bottom, \"l\" - left, or \"x\" for  left and right and the same \"y\" for top and bottom<br>\r\nThen optional you can add the breakpoint(defined below) from it should work, example: \"c-pt-md\"<br>\r\nLast is a number of spacers defined below, we have 10 spacers, also you can add class to remove padding for example: c-pt-md-0<br>\r\n<br>\r\n<b>Spacers:<\/b><br>\r\n1 (mobile: 4px desktop: 4px)<br>\r\n2 (mobile: 4px desktop: 8px)<br>\r\n3 (mobile: 8px desktop: 16px)<br>\r\n4 (mobile: 12px desktop: 24px)<br>\r\n5 (mobile: 16px desktop: 32px)<br>\r\n6 (mobile: 24px desktop: 48px)<br>\r\n7 (mobile: 32px desktop: 64px)<br>\r\n8 (mobile: 40px desktop: 80px)<br>\r\n9 (mobile: 50px desktop: 100px)<br>\r\n10 (mobile: 64px desktop: 128px)<br>\r\n<br>\r\n<b>All Breakpoints:<\/b><br>\r\nxs: 0px - 575px<br>\r\nsm: 576px - 767px<br>\r\nmd: 768px - 991px<br>\r\nlg: 992px - 1199px<br>\r\nxl: >1200px<br>\r\n<br>\r\n<b>Examples of classes:<\/b><br>\r\nc-pt-6,<br>\r\nc-pt-5 c-pt-lg-7 c-pt-xl-8,<br>\r\nc-pt-5 c-pt-md-0,<br>\r\nc-px-5 c-px-md-4<br>\r\n<br>\r\nYou could also define a class with the same spacer for all breakpoints. How to build it?<br>\r\nthe same as above but you need to add the word \"only\". <br>\r\n<br>\r\n<b>Examples of classes:<\/b><br>\r\nc-pt-only-3,<br>\r\nc-pt-md-only-2<br>",
+            "new_lines": "",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/spacer"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+}

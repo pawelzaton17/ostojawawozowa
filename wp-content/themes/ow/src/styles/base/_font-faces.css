@@ -1,0 +1,15 @@
+/**
+ * Font Faces
+ */
+
+    /** @font-face {
+        font-family: ExampleFont;
+        src: url(../../fonts/examplefont.woff) format('woff'),
+            url(../../fonts/examplefont.eot) format('eot');
+        font-weight: 400;
+        font-style: normal;
+
+        /* Remember to add line like below to your font-faces
+
+        font-display: swap;
+    } */

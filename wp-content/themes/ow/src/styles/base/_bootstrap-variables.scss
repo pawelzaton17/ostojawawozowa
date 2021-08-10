@@ -1,0 +1,111 @@
+/**
+ * Bootstrap Variables
+ */
+
+/*
+ * Color system
+ */
+$primary: #72832C;
+$secondary: #FFD600;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "black": $black,
+);
+
+$theme-colors: map-remove($theme-colors, "success", "info", "warning", "danger", "light", "dark");
+
+$body-bg: $white !important;
+$body-color: $black;
+
+/**
+ * Grid
+ */
+// stylelint-disable
+// $grid-breakpoints: (
+//     xs: 0,
+//     sm: 576px,
+//     md: 768px,
+//     lg: 992px,
+//     xl: 1200px,
+//     xxl: 1500px,
+// );
+
+// $container-max-widths: (
+//     sm: 540px,
+//     md: 720px,
+//     lg: 960px,
+//     xl: 1140px,
+//     xxl: 1440px,
+// );
+// stylelint-enable
+
+// $grid-columns: 12;
+$grid-gutter-width: 1.875rem;
+
+/**
+ * Border Radius
+ */
+$border-radius: 0.5rem;
+
+/**
+ * Fonts
+ */
+ $font-family-primary: "Josefin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+ $font-family-secondary: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+ $font-family-tertiary: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+/**
+ * Crunch Utilities
+ */
+$utilities: () !default;
+
+$utilities: map-merge(
+    (
+        "line-height": (
+            property: line-height,
+            class: "line-height",
+            values: (
+                1: 1,
+                "1-1": 1.1,
+                "1-2": 1.2,
+                "1-3": 1.3,
+                "1-4": 1.4,
+                "1-5": 1.5,
+                "1-6": 1.6,
+                "1-7": 1.7,
+                "1-8": 1.8,
+                "1-9": 1.9,
+                2: 2,
+            ),
+        ),
+        "z-index": (
+            property: z-index,
+            class: "z-index",
+            values: (
+                "minus-1": -1,
+                "minus-2": -2,
+                "1": 1,
+                "2": 2,
+            ),
+        ),
+        "height": (
+            property: height,
+            class: "h",
+            responsive: true,
+            values: (
+                "100": 100%,
+            ),
+        ),
+        "width": (
+            property: width,
+            class: "w",
+            responsive: true,
+            values: (
+                "100": 100%,
+            ),
+        ),
+    ),
+    $utilities
+);

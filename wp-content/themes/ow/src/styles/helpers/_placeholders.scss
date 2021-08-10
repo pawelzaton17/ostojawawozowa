@@ -1,0 +1,594 @@
+/**
+ * Placeholders Template Part Styles
+ */
+
+/* ~~~~~~~~~~ Background cover ~~~~~~~~~~ */
+
+%background-cover {
+    background-position: center;
+    background-size: cover;
+}
+
+/* ~~~~~~~~~~ Object Fit ~~~~~~~~~~ */
+
+%object-fit-cover {
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+
+    &--centered {
+        top: 50%;
+        bottom: 0;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        transform: translate(-50%, -50%);
+    }
+
+    &--centered-x {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        transform: translateX(-50%);
+    }
+}
+
+/* ~~~~~~~~~~ Hide ~~~~~~~~~~ */
+
+%hide {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    text-indent: -998em;
+}
+
+/* ~~~~~~~~~~ Adjustable Element ~~~~~~~~~~ */
+
+%adjustable-element {
+    flex-shrink: 0;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
+/* ~~~~~~~~~~ Fill the whole space ~~~~~~~~~~ */
+
+%fill-the-whole-space {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* ~~~~~~~~~~ Optimize image contrast ~~~~~~~~~~ */
+
+%optimize-image-contrast {
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* ~~~~~~~~~~ Font Size Classes ~~~~~~~~~~ */
+
+%font-size-10 {
+    font-size: 0.625rem;
+}
+
+%font-size-11 {
+    font-size: 0.6875rem;
+}
+
+%font-size-12 {
+    font-size: 0.75rem;
+}
+
+%font-size-13 {
+    font-size: 0.8125rem;
+}
+
+%font-size-14 {
+    font-size: 0.875rem;
+}
+
+%font-size-15 {
+    font-size: 0.9375rem;
+}
+
+%font-size-16 {
+    font-size: 1rem;
+}
+
+%font-size-17 {
+    font-size: 1.0625rem;
+}
+
+%font-size-18 {
+    @include fluid(font-size, 1.0625rem, 1.125rem); // 17px 18px
+}
+
+%font-size-19 {
+    @include fluid(font-size, 1.125rem, 1.1875rem); // 18px 19px
+}
+
+%font-size-20 {
+    @include fluid(font-size, 1.125rem, 1.25rem); // 18px 20px
+}
+
+%font-size-21 {
+    @include fluid(font-size, 1.1875rem, 1.3125rem); // 19px 21px
+}
+
+%font-size-22 {
+    @include fluid(font-size, 1.1875rem, 1.375rem); // 19px 22px
+}
+
+%font-size-23 {
+    @include fluid(font-size, 1.25rem, 1.4375rem); // 20px 23px
+}
+
+%font-size-24 {
+    @include fluid(font-size, 1.25rem, 1.5rem); // 20px 24px
+}
+
+%font-size-25 {
+    @include fluid(font-size, 1.3125rem, 1.5625rem); // 21px 25px
+}
+
+%font-size-26 {
+    @include fluid(font-size, 1.3125rem, 1.625rem); // 21px 26px
+}
+
+%font-size-27 {
+    @include fluid(font-size, 1.375rem, 1.6875rem); // 22px 27px
+}
+
+%font-size-28 {
+    @include fluid(font-size, 1.375rem, 1.75rem); // 22px 28px
+}
+
+%font-size-29 {
+    @include fluid(font-size, 1.375rem, 1.8125rem); // 23px 29px
+}
+
+%font-size-30 {
+    @include fluid(font-size, 1.375rem, 1.875rem); // 23px 30px
+}
+
+%font-size-31 {
+    @include fluid(font-size, 1.5rem, 1.9375rem); // 24px 31px
+}
+
+%font-size-32 {
+    @include fluid(font-size, 1.5rem, 2rem); // 24px 32px
+}
+
+%font-size-33 {
+    @include fluid(font-size, 1.5625rem, 2.0625rem); // 25px 33px
+}
+
+%font-size-34 {
+    @include fluid(font-size, 1.5625rem, 2.125rem); // 25px 34px
+}
+
+%font-size-35 {
+    @include fluid(font-size, 1.625rem, 2.1875rem); // 26px 35px
+}
+
+%font-size-36 {
+    @include fluid(font-size, 1.625rem, 2.25rem); // 26px 36px
+}
+
+%font-size-37 {
+    @include fluid(font-size, 1.6875rem, 2.3125rem); // 27px 37px
+}
+
+%font-size-38 {
+    @include fluid(font-size, 1.6875rem, 2.375rem); // 27px 38px
+}
+
+%font-size-39 {
+    @include fluid(font-size, 1.75rem, 2.4375rem); // 28px 39px
+}
+
+%font-size-40 {
+    @include fluid(font-size, 1.75rem, 2.5rem); // 28px 40px
+}
+
+%font-size-41 {
+    @include fluid(font-size, 1.8125rem, 2.5625rem); // 29px 41px
+}
+
+%font-size-42 {
+    @include fluid(font-size, 1.8125rem, 2.625rem); // 29px 42px
+}
+
+%font-size-43 {
+    @include fluid(font-size, 1.875rem, 2.6875rem); // 30px 43px
+}
+
+%font-size-44 {
+    @include fluid(font-size, 1.875rem, 2.75rem); // 30px 44px
+}
+
+%font-size-45 {
+    @include fluid(font-size, 1.9375rem, 2.8125rem); // 31px 45px
+}
+
+%font-size-46 {
+    @include fluid(font-size, 1.9375rem, 2.875rem); // 31px 46px
+}
+
+%font-size-47 {
+    @include fluid(font-size, 2rem, 2.9375rem); // 32px 47px
+}
+
+%font-size-48 {
+    @include fluid(font-size, 2rem, 3rem); // 32px 48px
+}
+
+%font-size-49 {
+    @include fluid(font-size, 2.0625rem, 3.0625rem); // 33px 49px
+}
+
+%font-size-50 {
+    @include fluid(font-size, 2.0625rem, 3.125rem); // 33px 50px
+}
+
+%font-size-51 {
+    @include fluid(font-size, 2.125rem, 3.1875rem); // 34px 51px
+}
+
+%font-size-52 {
+    @include fluid(font-size, 2.125rem, 3.25rem); // 34px 52px
+}
+
+%font-size-53 {
+    @include fluid(font-size, 2.1875rem, 3.3125rem); // 35px 53px
+}
+
+%font-size-54 {
+    @include fluid(font-size, 2.1875rem, 3.375rem); // 35px 54px
+}
+
+%font-size-55 {
+    @include fluid(font-size, 2.25rem, 3.4375rem); // 36px 55px
+}
+
+%font-size-56 {
+    @include fluid(font-size, 2.25rem, 3.5rem); // 36px 56px
+}
+
+%font-size-57 {
+    @include fluid(font-size, 2.3125rem, 3.5625rem); // 37px 57px
+}
+
+%font-size-58 {
+    @include fluid(font-size, 2.3125rem, 3.625rem); // 37px 58px
+}
+
+%font-size-59 {
+    @include fluid(font-size, 2.375rem, 3.6875rem); // 38px 59px
+}
+
+%font-size-60 {
+    @include fluid(font-size, 2.375rem, 3.75rem); // 38px 60px
+}
+
+/* ~~~~~~~~~~ Letter Spacing Classes ~~~~~~~~~~ */
+
+// For Adobe
+// %letter-spacing-25 {
+//     @include fluid( letter-spacing, 25);
+// }
+// %letter-spacing-50 {
+//     @include fluid( letter-spacing, 50);
+// }
+
+// %letter-spacing-100 {
+//     @include fluid( letter-spacing, 100);
+// }
+
+// For Sketch
+// %letter-spacing-25 {
+//     @include fluid( letter-spacing, .25);
+// }
+// %letter-spacing-50 {
+//     @include fluid( letter-spacing, .5);
+// }
+
+// %letter-spacing-100 {
+//     @include fluid( letter-spacing, 1);
+// }
+
+/* ~~~~~~~~~~ Animated Border Bottom ~~~~~~~~~~ */
+
+%animated-border-bottom {
+    padding-bottom: 0.125rem;
+    background-image: linear-gradient(to top, currentColor 1px, transparent 1px);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    text-decoration: none;
+
+    @include c-transition(background-size opacity, 0.4s);
+
+    &:hover,
+    &:focus {
+        background-size: 100% 100%;
+    }
+
+    &--width-2 {
+        background-image: linear-gradient(to top, currentColor 2px, transparent 2px);
+    }
+
+    &--reverse {
+        background-position: right;
+        background-size: 100% 100%;
+
+        &:hover,
+        &:focus {
+            background-size: 0% 100%;
+        }
+    }
+}
+
+/* ~~~~~~~~~~ Lock Postion ~~~~~~~~~~ */
+
+%lock-position {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+/* ~~~~~~~~~~ Hover opacity classes ~~~~~~~~~~ */
+
+%hover-opacity-0-75 {
+    &:hover,
+    &:focus {
+        opacity: 0.75;
+    }
+}
+
+/* ~~~~~~~~~~ Flex 0 0 auto ~~~~~~~~~~ */
+
+%flex-0-0-auto {
+    flex: 0 0 auto;
+}
+
+/* ~~~~~~~~~~ Crunch Button ~~~~~~~~~~ */
+
+// Remember: Don't add here a white color, because it works other
+$button-colors: (
+    'primary': $primary,
+    'secondary': $secondary,
+    'black': $black,
+);
+
+%crunch-button {
+    font-weight: $font-weight-bold;
+
+    &__text-only,
+    &__text-only-with-border-bottom {
+        position: relative;
+
+        @extend %animated-border-bottom;
+
+        &--small {
+            @extend %font-size-14;
+        }
+
+        &--medium {
+            @extend %font-size-16;
+        }
+
+        &--large {
+            @extend %font-size-18;
+        }
+
+        &--white-color {
+            background-image: linear-gradient(to top, $white 1px, transparent 1px);
+            color: $white;
+
+            &:hover,
+            &:focus,
+            &--focus {
+                color: $white;
+            }
+        }
+    }
+
+    &__text-only-with-border-bottom {
+        @extend %animated-border-bottom--reverse;
+    }
+
+    &__full-background,
+    &__outline {
+        position: relative;
+        z-index: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background-color: transparent;
+        text-align: center;
+        transition: all 0.6s ease !important;
+
+        @include fluid(
+            (
+                padding-x: (
+                    min: 0.75,
+                    max: 1em,
+                ),
+                padding-y: (
+                    min: 0.75,
+                    max: 0.625em,
+                ),
+            )
+        );
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        &::after {
+            bottom: 0;
+            left: 0;
+            width: calc(100% - 0rem);
+            border: 1px solid transparent;
+        }
+
+        &::before {
+            z-index: -1;
+            display: block;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+        }
+
+        &:hover,
+        &:focus,
+        &--focus {
+            &::before {
+                right: auto;
+                left: 0%;
+            }
+        }
+
+        &--small {
+            @extend %font-size-14;
+        }
+
+        &--medium {
+            @extend %font-size-16;
+        }
+
+        &--large {
+            @extend %font-size-18;
+        }
+    }
+
+    &__full-background {
+        &:hover,
+        &:focus,
+        &--focus {
+            &::before {
+                right: 0;
+                left: auto;
+                width: 0;
+            }
+        }
+
+        &::before {
+            right: auto;
+            left: 0;
+            width: 100%;
+        }
+
+        &--white-color {
+            color: $primary;
+
+            &::after {
+                border-color: $white;
+            }
+
+            &::before {
+                background-color: $white;
+            }
+
+            &:hover,
+            &:focus,
+            &--focus {
+                background-color: $primary;
+                color: $white;
+            }
+        }
+    }
+
+    &__outline {
+        &::before {
+            width: 0;
+        }
+
+        &:hover,
+        &:focus,
+        &--focus {
+            &::before {
+                width: 100%;
+            }
+        }
+
+        &--white-color {
+            color: $white;
+
+            &::after {
+                border-color: $white;
+            }
+
+            &::before {
+                background-color: $white;
+            }
+
+            &:hover,
+            &:focus,
+            &--focus {
+                color: $primary;
+            }
+        }
+    }
+}
+
+@each $name, $color in $button-colors {
+    %crunch-button__text-only--#{$name}-color,
+    %crunch-button__text-only-with-border-bottom--#{$name}-color {
+        background-image: linear-gradient(to top, $color 1px, transparent 1px);
+        color: $color;
+
+        &:hover,
+        &:focus,
+        &--focus {
+            color: $color;
+        }
+    }
+
+    %crunch-button__full-background--#{$name}-color {
+        color: $white;
+
+        &::after {
+            border-color: $color;
+        }
+
+        &::before {
+            background-color: $color;
+        }
+
+        &:hover,
+        &:focus,
+        &--focus {
+            background-color: transparent;
+            color: $color;
+        }
+    }
+
+    %crunch-button__outline--#{$name}-color {
+        color: $color;
+
+        &::after {
+            border-color: $color;
+        }
+
+        &::before {
+            background-color: $color;
+        }
+
+        &:hover,
+        &:focus,
+        &--focus {
+            color: $white;
+        }
+    }
+}
