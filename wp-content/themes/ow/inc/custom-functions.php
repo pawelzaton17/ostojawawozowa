@@ -197,7 +197,7 @@
                             if ($enqueueStyles) {
 
                                 $block_styles_uri = 'dist/acf_block_' . $snakeSlug . '.css';
-                                $block_styles_ver = date("ymd-Gis", filemtime(get_template_directory_uri() . '../../' . $block_styles_uri));
+                                $block_styles_ver = date("ymd-Gis", filemtime(get_stylesheet_directory() . '/' . $block_styles_uri));
 
                                 if (!is_admin() || (is_admin() && $enableAssetsForAdmin)) {
                                     wp_enqueue_style($slug.'-block-styles', get_template_directory_uri() . '/' . $block_styles_uri, false, $block_styles_ver);
@@ -211,7 +211,7 @@
                             if ($enqueueScripts) {
 
                                 $block_scripts_uri = 'dist/acf_block_' . $snakeSlug . '.bundle.js';
-                                $block_scripts_ver = date("ymd-Gis", filemtime(get_template_directory_uri() . '../../' . $block_scripts_uri));
+                                $block_scripts_ver = date("ymd-Gis", filemtime(get_stylesheet_directory() . '/' . $block_scripts_uri));
 
                                 if (!is_admin() || (is_admin() && $enableAssetsForAdmin)) {
                                     wp_enqueue_script($slug.'-block-scripts', get_template_directory_uri() . '/' . $block_scripts_uri, $block_scripts_ver, true);

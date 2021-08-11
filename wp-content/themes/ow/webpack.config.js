@@ -74,7 +74,10 @@ module.exports = [
             gravity_forms: path.resolve(__dirname, "src/components/template-parts/gravity-forms/index"),
 
             /** ACF Blocks */
-
+            acf_block_cols: path.resolve(
+                __dirname,
+                "src/components/template-parts/blocks/full-width/cols/index"
+            ),
         },
 
         /**
@@ -181,6 +184,7 @@ module.exports = [
             new FaviconsWebpackPlugin({
                 logo: "./images/favicon.png",
                 outputPath: "../images/favicon",
+                prefix: "./../../favicon/",
             }),
         ],
         /**
