@@ -65,32 +65,6 @@
             "mime_types": ""
         },
         {
-            "key": "field_61137e3868eaa",
-            "label": "Add button",
-            "name": "add_button",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_61137e0168ea9",
-                        "operator": "!=empty"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_61137e0168ea9",
             "label": "Button",
             "name": "button",
@@ -104,6 +78,52 @@
                 "id": ""
             },
             "return_format": "array"
+        },
+        {
+            "key": "field_6113e7fe42dd5",
+            "label": "Alt version",
+            "name": "alt",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6113e81142dd6",
+            "label": "Mobile Title",
+            "name": "mobile_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6113e7fe42dd5",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -123,5 +143,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1628668600
+    "modified": 1628694566
 }
