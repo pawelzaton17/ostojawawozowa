@@ -78,6 +78,10 @@ module.exports = [
                 __dirname,
                 "src/components/template-parts/blocks/full-width/cols/index"
             ),
+            acf_block_content_with_image: path.resolve(
+                __dirname,
+                "src/components/template-parts/blocks/full-width/content-with-image/index"
+            ),
         },
 
         /**

@@ -39,7 +39,15 @@ do_action('container_start');
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?>">
 
-    <?php get_template_part('template-parts/components/section-title', '', [ 'title' => $title ]); ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <?php get_template_part('template-parts/components/section-title', '', [ 'title' => $title ]); ?>
+
+            </div>
+        </div>
+    </div>
 
     <?php if ( have_rows( 'cols' ) ): ?>
 
