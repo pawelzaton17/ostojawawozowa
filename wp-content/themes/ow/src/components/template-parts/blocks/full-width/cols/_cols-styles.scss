@@ -1,0 +1,25 @@
+/**
+ * ACF Block Cols Template Part Styles
+ */
+
+.acf-block-cols {
+    &__col {
+        &:not(:last-of-type) {
+            .acf-block-cols__content-wrapper {
+                border-bottom: 1px solid $gray;
+
+                @include media-breakpoint-up(md) {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__icon {
+        max-height: 4.0625rem;
+
+        @include media-breakpoint-up(md) {
+            max-height: 5.625rem;
+        }
+    }
+}
