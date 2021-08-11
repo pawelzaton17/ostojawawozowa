@@ -392,10 +392,10 @@ function remove_empty_nodes_from_content($content)
  * Tags: emoji, special characters, missing characters
  * This function may affect emoji displaying. If you are not import data from API you can comment this code.
  */
-function remove_non_utf8_chars($content) {
-    return htmlspecialchars_decode(utf8_decode(htmlentities($content, ENT_COMPAT, 'utf-8', false)));
-}
-add_filter( 'the_content', 'remove_non_utf8_chars' );
+// function remove_non_utf8_chars($content) {
+//     return htmlspecialchars_decode(utf8_decode(htmlentities($content, ENT_COMPAT, 'utf-8', false)));
+// }
+// add_filter( 'the_content', 'remove_non_utf8_chars' );
 
 /**
  * Add XML encoding line to the top of uploaded SVG file
