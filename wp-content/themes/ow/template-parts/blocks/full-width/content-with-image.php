@@ -23,8 +23,17 @@ $additional_class = !empty($block['className']) ? ' ' .$block['className'] : nul
 $title    = get_field( 'title' );
 $content  = get_field( 'content' );
 $image_id = get_field( 'image' );
+$link     = get_field( 'button' );
+$is_alt   = get_field( 'alt' );
 $style    = '';
 
+if ( $is_alt )
+    $mobile_title = ! empty( get_field( 'mobile_title' ) ) ? get_field( 'mobile_title' ) : null;
+if ( $link ) {
+    $link_url    = $link['url'];
+    $link_title  = $link['title'];
+    $link_target = $link['target'] ? $link['target'] : '_self';
+}
 if ( ! empty( $image_id ) ) {
     $image_url = wp_get_attachment_image_url( $image_id, 'full' );
     $style     = "style='background-image: url( {$image_url} )'";
@@ -37,7 +46,6 @@ if (!empty($block['data']['__is_preview'])) : ?>
 <?php return;
 endif; ?>
 
-
 <?php
 /**
  * Begin Custom Block
@@ -45,24 +53,65 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?>">
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative c-my-10">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 c-px-md-7 c-px-lg-9 c-px-xl-6 c-py-md-5 d-md-flex flex-md-column justify-content-md-center">
 
-                <?php get_template_part('template-parts/components/section-title', '', [ 'title' => $title ]); ?>
+                <?php
+                if ( $is_alt ) :
+                    if ( ! empty( $mobile_title ) ) :
+                ?>
 
-                <div>
+                    <h2 class="font-size-55 font-weight-bold text-center d-md-none">
 
-                    <?= $content; ?>
+                        <?= $mobile_title; ?>
+
+                    </h2>
+
+                    <?php endif; ?>
+
+                <div class="d-none d-md-block">
+
+                <?php
+                endif;
+
+                    get_template_part('template-parts/components/section-title', '', [ 'title' => $title ]);
+                ?>
+
+                    <div class="acf-block-content-with-image__content entry-content c-mt-5<?= $is_alt ? ' acf-block-content-with-image__content--alt font-size-14 text-dark-gray c-mt-xl-4' : ' c-mt-xl-7'; ?>">
+
+                        <?= $content; ?>
+
+                    </div>
+
+                <?php if ( $is_alt ) : ?>
 
                 </div>
+
+                <?php
+                endif;
+
+                if( $link ) :
+                ?>
+
+                <div class="c-my-7 c-mt-md-5 c-mb-md-0 d-flex justify-content-center justify-content-md-start">
+                    <a href="<?= esc_url($link_url); ?>" target="<?= esc_attr($link_target); ?>" <?php if($link_target != '_self') echo 'rel="'.esc_attr('nofollow').'"'; ?> class="crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-black crunch-button__full-background--medium text-decoration-none font-family-primary">
+
+                        <?= esc_html($link_title); ?>
+
+                    </a>
+                </div>
+
+                <?php endif; ?>
             </div>
 
             <?php if ( ! empty( $image_url ) ) : ?>
 
-            <div class="col-md-6">
-                <figure class="acf-block-content-with-image__image background-cover w-100 img-fluid lazyload" data-lazy="true" <?= $style; ?>></figure>
+            <div class="acf-block-content-with-image__image-col col-md-6 c-p-0">
+                <div class="acf-block-content-with-image__image-wrapper h-100">
+                    <figure class="h-100 c-mb-0 background-cover w-100 img-fluid lazyload" data-lazy="true" <?= $style; ?>></figure>
+                </div>
             </div>
 
             <?php endif; ?>

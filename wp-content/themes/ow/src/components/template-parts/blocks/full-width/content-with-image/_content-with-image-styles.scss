@@ -3,13 +3,70 @@
  */
 
 .acf-block-content-with-image {
-    &__image {
-        height: 17.5rem;
+    p {
+        strong,
+        b {
+            color: $primary;
+            font-weight: $font-weight-regular;
+        }
+    }
 
+    &__content {
+        max-width: 19.25rem;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
 
         @include media-breakpoint-up(md) {
-            height: 100%;
+            text-align: left;
+        }
+        @include media-breakpoint-up(lg) {
+            max-width: 30.625rem;
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        &--alt {
+            @include media-breakpoint-up(lg) {
+                max-width: 23.75rem;
+            }
+        }
+
+        p {
+            &:not(:last-of-type) {
+                margin-bottom: 1.875rem;
+            }
+        }
+    }
+
+    &__image-col {
+        height: 17.5rem;
+
+        @include media-breakpoint-up(md) {
             min-height: 26.5rem;
+        }
+        @include media-breakpoint-up(xl) {
+            min-height: 31.25rem;
+        }
+    }
+
+    &__image-wrapper {
+        @include media-breakpoint-up(md) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 50%;
+        }
+    }
+
+    .crunch-button {
+        @include fluid(font-size, .875rem, 1rem);
+    }
+
+    .section-title {
+        @include media-breakpoint-up(xl) {
+            max-width: 25.375rem;
         }
     }
 }
