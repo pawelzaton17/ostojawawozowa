@@ -33,13 +33,5 @@
                 max-width: 16rem;
             }
         }
-
-        h3 {
-            padding-bottom: .875rem;
-            color: $gray-second;
-            font-weight: 700;
-            
-            @extend %font-size-18;
-        }
     }
 }

@@ -70,7 +70,7 @@ do_action('container_start');
 
                         </div>
                         <div class="col-8 col-md-12 d-md-flex flex-md-column justify-content-md-center align-items-md-center text-md-center">
-                            <h3>
+                            <h3 class="font-size-18 text-gray-second c-pb-3 font-weight-bold">
 
                                 <?= $col_title; ?>
 
