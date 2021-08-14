@@ -77,38 +77,71 @@ do_action('container_start');
 
                     <li class="acf-block-list__list-item">
                         <div class="acf-block-list__row row font-family-primary font-weight-light c-py-3">
-                            <div class="col-9">
+                            <div class="col-12 col-lg-9">
                                 <div class="row">
-                                    <div class="col-2 acf-block-list__item-title">
-                                        <?= $item_title; ?>
-                                    </div>
-                                    <div class="acf-block-list__item col-2 d-flex flex-column">
-                                        <span class="acf-block-list__label font-family-secondary font-weight-medium">Powierzchnia całkowita</span>
-                                        <?= $total_area ?>
-                                    </div>
-                                    <div class="acf-block-list__item col-2 d-flex flex-column">
-                                        <span class="acf-block-list__label font-family-secondary font-weight-medium">Powierzchnia ogrodu</span>
-                                        <?= $garden_area ?>
-                                    </div>
-                                    <div class="acf-block-list__item col-1 d-flex flex-column">
-                                        <span class="acf-block-list__label font-family-secondary font-weight-medium">Etap</span>
-                                        <?= $stage ?>
-                                    </div>
-                                    <div class="acf-block-list__item col-2 d-flex flex-column">
-                                        <span class="acf-block-list__label font-family-secondary font-weight-medium">Cena</span>
-                                        <?= $price ?>
-                                    </div>
-                                    <div class="acf-block-list__item col-2 d-flex flex-column">
-                                        <span class="acf-block-list__label font-family-secondary font-weight-medium">Status</span>
+                                    <div class="col-6 col-md-8 col-lg-2 acf-block-list__item-title">
 
+                                        <?= $item_title; ?>
+
+                                    </div>
+
+                                    <div class="col-6 col-md-4 d-lg-none">
+                                        <div class="row h-100 d-flex align-items-center">
+                                            <div class="col-3 c-px-2 d-flex h-100 c-py-2">
+                                                <a href="#" class="crunch-button crunch-button--file crunch-button__full-background crunch-button__full-background--primary-color crunch-button__full-background--medium text-decoration-none font-family-primary w-100">
+                                                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 2.625v9.208M4.958 9L8.5 12.542 12.042 9M14.167 15.375H2.833" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/></svg>
+                                                    <span class="c-ml-3 d-none d-xl-inline-flex">Pobierz rzut</span>
+                                                </a>
+                                            </div>
+                                            <div class="col-9 c-px-2 d-flex h-100 c-py-2">
+                                                <a href="<?= esc_url($link_url); ?>" target="<?= esc_attr($link_target); ?>" <?php if($link_target != '_self') echo 'rel="'.esc_attr('nofollow').'"'; ?>
+                                                   class="crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-black crunch-button__full-background--medium text-decoration-none font-family-primary w-100">
+
+                                                    <?= esc_html($link_title); ?>
+
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 d-lg-none c-my-3"></div>
+
+                                    <div class="acf-block-list__item col-4 col-lg-2 d-flex flex-column c-mb-2 c-mb-md-0">
+                                        <span class="acf-block-list__label text-light-gray line-height-1-3 font-family-secondary font-weight-medium">Powierzchnia całkowita</span>
+
+                                        <?= $total_area ?>
+
+                                    </div>
+                                    <div class="acf-block-list__item col-4 col-lg-2 d-flex flex-column c-mb-2 c-mb-md-0">
+                                        <span class="acf-block-list__label text-light-gray line-height-1-3 font-family-secondary font-weight-medium">Powierzchnia ogrodu</span>
+
+                                        <?= $garden_area ?>
+
+                                    </div>
+                                    <div class="acf-block-list__item col-4 col-lg-1 d-flex flex-column c-mb-2 c-mb-md-0">
+                                        <span class="acf-block-list__label text-light-gray line-height-1-3 font-family-secondary font-weight-medium">Etap</span>
+
+                                        <?= $stage ?>
+
+                                    </div>
+                                    <div class="acf-block-list__item col-4 col-lg-2 d-flex flex-column c-mb-2 c-mb-md-0">
+                                        <span class="acf-block-list__label text-light-gray line-height-1-3 font-family-secondary font-weight-medium">Cena</span>
+
+                                        <?= $price ?>
+
+                                    </div>
+                                    <div class="acf-block-list__item col-4 col-lg-2 d-flex flex-column c-mb-2 c-mb-md-0">
+                                        <span class="acf-block-list__label text-light-gray line-height-1-3 font-family-secondary font-weight-medium">Status</span
                                         <div class="acf-block-list__status--<?= $status_type; ?>">
                                             <i class="acf-block-list__status-icon d-inline-flex"></i>
+
                                             <?= $status ?>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-3">
+                            <div class="col-3 d-none d-lg-block">
                                 <div class="row h-100 d-flex align-items-center">
                                     <div class="col-6 c-px-2 d-flex">
                                         <a href="#" class="crunch-button crunch-button--file crunch-button__full-background crunch-button__full-background--primary-color crunch-button__full-background--medium text-decoration-none font-family-primary w-100">
