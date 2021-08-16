@@ -41,7 +41,7 @@ do_action('container_start');
 
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 d-flex justify-content-center c-py-8 c-py-md-2">
 
                 <?php get_template_part('template-parts/components/section-title', '', [ 'title' => $title ]); ?>
 
@@ -62,15 +62,15 @@ do_action('container_start');
             ?>
 
             <div class="acf-block-cols__col col-md-4">
-                <div class="acf-block-cols__content-wrapper">
+                <div class="acf-block-cols__content-wrapper c-pt-7 c-pb-3">
                     <div class="row">
-                        <div class="col-4 col-md-12">
+                        <div class="col-4 col-md-12 d-flex align-items-center">
 
-                            <?= wp_get_attachment_image( $icon_id, "full", "", array( "class" => "acf-block-cols__icon d-block h-auto w-100 lazyload", "data-lazy" => "true") ); ?>
+                            <?= wp_get_attachment_image( $icon_id, "full", "", array( "class" => "acf-block-cols__icon d-block h-auto w-100 lazyload c-mb-8 c-mb-md-6", "data-lazy" => "true") ); ?>
 
                         </div>
-                        <div class="col-8 col-md-12">
-                            <h3>
+                        <div class="col-8 col-md-12 d-md-flex flex-md-column justify-content-md-center align-items-md-center text-md-center">
+                            <h3 class="font-size-18 text-gray-second c-pb-3 font-weight-bold">
 
                                 <?= $col_title; ?>
 

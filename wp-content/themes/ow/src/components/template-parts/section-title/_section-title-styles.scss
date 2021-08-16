@@ -8,4 +8,12 @@
         height: 2px;
         background: $primary;
     }
+
+    &__heading {
+        font-size: 1.875rem;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 3rem;
+        }
+    }
 }

@@ -16,10 +16,22 @@
     }
 
     &__icon {
-        max-height: 4.0625rem;
+        max-height: 4.125rem;
 
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(lg) {
             max-height: 5.625rem;
+        }
+    }
+
+    &__content-wrapper {
+        p {
+            color: $dark-gray;
+            line-height: 180%;
+
+            @extend %font-size-14;
+            @include media-breakpoint-up(md) {
+                max-width: 16rem;
+            }
         }
     }
 }

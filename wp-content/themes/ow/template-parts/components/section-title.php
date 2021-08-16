@@ -5,11 +5,11 @@ if ( ! empty( $section_title ) ) :
 ?>
 
 <div class="section-title">
-    <h2 class="d-flex flex-column">
+    <h2 class="section-title__heading d-flex flex-column font-weight-bold text-gray-second">
 
         <?= $section_title; ?>
 
-        <i class="line"></i>
+        <i class="line c-mt-1"></i>
     </h2>
 </div>
 

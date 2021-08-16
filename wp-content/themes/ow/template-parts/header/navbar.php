@@ -1,4 +1,4 @@
-<nav class="navbar d-block p-0">
+<nav class="navbar d-none p-0">
     <span class="sr-only">Main navigation</span>
     <div class="container">
         <div class="row align-items-center justify-content-between w-100 no-gutters">

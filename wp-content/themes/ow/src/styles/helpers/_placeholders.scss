@@ -171,7 +171,7 @@
 }
 
 %font-size-35 {
-    @include fluid(font-size, 1.625rem, 2.1875rem); // 26px 35px
+    @include fluid(font-size, 1.875rem, 2rem); // 30px 35px
 }
 
 %font-size-36 {

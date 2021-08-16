@@ -72,14 +72,16 @@ do_action('container_start');
                     <?php endif; ?>
 
                 <div class="d-none d-md-block">
+                
+                <?php endif; ?>
 
-                <?php
-                endif;
+                <div class="col-12 d-flex justify-content-center justify-content-md-start c-py-8 c-py-md-2">
 
-                    get_template_part('template-parts/components/section-title', '', [ 'title' => $title ]);
-                ?>
+                        <?= get_template_part('template-parts/components/section-title', '', [ 'title' => $title ]);  ?> 
 
-                    <div class="acf-block-content-with-image__content entry-content c-mt-5<?= $is_alt ? ' acf-block-content-with-image__content--alt font-size-14 text-dark-gray c-mt-xl-4' : ' c-mt-xl-7'; ?>">
+                </div>
+
+                    <div class="acf-block-content-with-image__content entry-content c-mt-5 c-mb-8<?= $is_alt ? ' acf-block-content-with-image__content--alt font-size-14 text-dark-gray c-mt-xl-4' : ' c-mt-xl-7'; ?>">
 
                         <?= $content; ?>
 
