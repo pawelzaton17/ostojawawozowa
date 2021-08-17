@@ -41,9 +41,9 @@ do_action('container_start');
 
     <div class="container">
         <div class="row">
-            <div class="col-12 d-flex justify-content-center c-py-8 c-py-md-2">
+            <div class="col-12 text-center">
 
-                <?php get_template_part('template-parts/components/section-title', '', [ 'title' => $title, 'center' => false ]); ?>
+                <?php get_template_part('template-parts/components/section-title', '', [ 'title' => $title, 'center' => true ]); ?>
 
             </div>
         </div>
@@ -51,8 +51,8 @@ do_action('container_start');
 
     <?php if ( have_rows( 'cols' ) ): ?>
 
-    <div class="container">
-        <div class="row">
+    <div class="container c-mt-7 c-mt-md-0">
+        <div class="row c-px-xl-8">
 
             <?php
             while ( have_rows( 'cols' ) ): the_row();
@@ -70,12 +70,12 @@ do_action('container_start');
 
                         </div>
                         <div class="col-8 col-md-12 d-md-flex flex-md-column justify-content-md-center align-items-md-center text-md-center">
-                            <h3 class="font-size-18 text-gray-second c-pb-3 font-weight-bold">
+                            <h3 class="acf-block-cols__title text-gray-second font-weight-bold">
 
                                 <?= $col_title; ?>
 
                             </h3>
-                            <div>
+                            <div class="acf-block-cols__content font-weight-regular text-dark-gray line-height-1-8 c-mt-4">
 
                                 <?= $text; ?>
 
