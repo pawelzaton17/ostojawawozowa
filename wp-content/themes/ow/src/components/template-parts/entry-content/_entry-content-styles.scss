@@ -49,6 +49,17 @@
             }
         }
 
+        .main-footer & {
+            background: unset !important;
+            color: $white !important;
+
+            @include c-transition(opacity);
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+
         &[class*='-button'] {
             @include fluid(margin-top, 0.5, 1.5em);
         }
@@ -58,7 +69,7 @@
         top: -.75em;
         font-size: 50%;
     }
-    
+
     sub {
         bottom: -.25em;
         font-size: 50%;
