@@ -1,0 +1,93 @@
+/**
+ * ACF Block List Template Part Styles
+ */
+
+.acf-block-list {
+    &__item-title {
+        font-size: 1.5rem;
+
+        @include media-breakpoint-up(md) {
+            font-size: 1.75rem;
+        }
+        @include media-breakpoint-up(xxl) {
+            width: 18.2%;
+            font-size: 2.25rem;
+        }
+    }
+
+    &__label {
+        @include fluid(font-size, .625rem, .6875rem);
+    }
+
+    &__item {
+        font-size: 1.125rem;
+
+        @include media-breakpoint-up(xxl) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__status {
+        &--green {
+            color: #62731F;
+
+            .acf-block-list__status-icon {
+                background: #62731F;
+            }
+        }
+
+        &--red {
+            color: #F14646;
+
+            .acf-block-list__status-icon {
+                background: #F14646;
+            }
+        }
+
+        &--gray {
+            color: #BDBDBD;
+
+            .acf-block-list__status-icon {
+                background: #BDBDBD;
+            }
+        }
+    }
+
+    &__list-item {
+        border-bottom: 1px solid $gray;
+
+        &:hover {
+            .acf-block-list__row {
+                box-shadow: 0 0 1.0625rem rgba($black, .15);
+            }
+        }
+    }
+
+    &__row {
+        @include c-transition;
+    }
+
+    &__status-icon {
+        width: .5625rem;
+        height: .5625rem;
+        border-radius: 50%;
+    }
+
+    .crunch-button {
+        @extend %font-size-14;
+
+        svg {
+            path {
+                @include c-transition;
+            }
+        }
+
+        &--file {
+            &:hover {
+                path {
+                    stroke: $primary;
+                }
+            }
+        }
+    }
+}

@@ -10,6 +10,7 @@ $secondary: #FFD600;
 $gray: #E0E0E0;
 $gray-second: #333333;
 $dark-gray: #4F4F4F;
+$light-gray: #828282;
 
 $theme-colors: (
     "primary": $primary,
@@ -18,6 +19,7 @@ $theme-colors: (
     "gray": $gray,
     "gray-second": $gray-second,
     "dark-gray": $dark-gray,
+    "light-gray": $light-gray,
 );
 
 $theme-colors: map-remove($theme-colors, "success", "info", "warning", "danger", "light", "dark");

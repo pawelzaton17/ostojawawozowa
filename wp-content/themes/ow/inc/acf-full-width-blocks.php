@@ -54,7 +54,6 @@ function crunch_acf_full_width_blocks()
             'example' => true,
         ],
 
-
         [
             'name' => 'Content with image',
             'icon' => 'editor-justify',
@@ -68,18 +67,16 @@ function crunch_acf_full_width_blocks()
         ],
 
         [
-            'name' => 'Block numbers',
+            'name' => 'List',
             'icon' => 'editor-justify',
-            'keywords' => ['Block numbers',],
+            'keywords' => ['List', 'Lista lokali'],
             'type' => BLOCK_TYPE_FULL_WIDTH,
             'enqueue_styles' => true,
             'enqueue_scripts' => false,
             'enable_assets_for_admin' => false,
             'mode' => BLOCK_MODE_AUTO,
             'example' => true,
-         ],
-
-
+        ],
 
         /*
         [
