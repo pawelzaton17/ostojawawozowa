@@ -27,7 +27,10 @@ $contact_title = get_field( 'f_contact_title', 'options' );
 
                     </h2>
 
-                    <?php if ( have_rows( 'f_contact_cols', 'options' ) ) : ?>
+                    <?php
+                    if ( have_rows( 'f_contact_cols', 'options' ) ) :
+                        $i = 0;
+                    ?>
 
                     <div class="row c-mt-7">
 
@@ -39,7 +42,7 @@ $contact_title = get_field( 'f_contact_title', 'options' );
                             if ( ! empty( $heading ) && ! empty( $content ) ) :
                         ?>
 
-                        <div class="col-lg-6">
+                        <div class="col-lg-6<?= $i === 0 ? ' c-mb-md-6 c-mb-lg-0' : null; ?>">
                             <h4 class="main-footer__contact-title font-weight-bold">
 
                                 <?= $heading; ?>
@@ -54,6 +57,7 @@ $contact_title = get_field( 'f_contact_title', 'options' );
 
                         <?php
                             endif;
+                            $i++;
                         endwhile;
                         ?>
 
