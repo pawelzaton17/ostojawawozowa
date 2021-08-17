@@ -67,6 +67,20 @@ function crunch_acf_full_width_blocks()
             'example' => true,
         ],
 
+        [
+            'name' => 'Block numbers',
+            'icon' => 'editor-justify',
+            'keywords' => ['Block numbers',],
+            'type' => BLOCK_TYPE_FULL_WIDTH,
+            'enqueue_styles' => true,
+            'enqueue_scripts' => false,
+            'enable_assets_for_admin' => false,
+            'mode' => BLOCK_MODE_AUTO,
+            'example' => true,
+         ],
+
+
+
         /*
         [
             'name' => 'Example',
