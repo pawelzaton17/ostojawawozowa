@@ -15,6 +15,17 @@
         }
     }
 
+    &__title {
+        @include fluid(font-size, 1.125rem, 1.5rem);
+    }
+
+    &__content {
+        @include fluid(font-size, .875rem, 1.125rem);
+        @include media-breakpoint-up(md) {
+            max-width: 17rem;
+        }
+    }
+
     &__icon {
         max-height: 4.125rem;
 
@@ -23,15 +34,4 @@
         }
     }
 
-    &__content-wrapper {
-        p {
-            color: $dark-gray;
-            line-height: 180%;
-
-            @extend %font-size-14;
-            @include media-breakpoint-up(md) {
-                max-width: 16rem;
-            }
-        }
-    }
 }

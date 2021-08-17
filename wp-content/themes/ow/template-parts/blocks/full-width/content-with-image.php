@@ -77,7 +77,7 @@ do_action('container_start');
 
                 <div class="col-12 d-flex justify-content-center justify-content-md-start c-py-8 c-py-md-2">
 
-                        <?= get_template_part('template-parts/components/section-title', '', [ 'title' => $title ]);  ?>
+                        <?= get_template_part('template-parts/components/section-title', '', [ 'title' => $title, 'center' => false ]);  ?>
 
                 </div>
 

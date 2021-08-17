@@ -14,7 +14,6 @@
         add_image_size( '1920-auto', 1920);
         add_image_size( '1920-auto-2x', 1920*2);
 
-
     /**
      * Set Post Thumbnail dimension
      */

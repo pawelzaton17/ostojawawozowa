@@ -2,5 +2,43 @@
  * Footer Template Part Styles
  */
 
-    // .main-footer {
-    // }
+ .main-footer {
+     &__copyrights {
+         @include fluid(font-size, .6875rem, .875rem);
+     }
+
+     &__contact-title {
+         font-size: 1.5rem;
+     }
+
+     &__title {
+         &::after {
+             content: '';
+             position: absolute;
+             bottom: 0;
+             left: 0;
+             width: 1.875rem;
+             height: 3px;
+             background: $dark-green;
+
+             @include media-breakpoint-up(md) {
+                 width: 3.4375rem;
+                 background: $white;
+             }
+         }
+     }
+
+     &__socials-item {
+         max-width: 2.1875rem;
+         max-height: 2.1875rem;
+
+         @include media-breakpoint-up(md) {
+             max-width: 2.9375rem;
+             max-height: 2.9375rem;
+         }
+
+         &:not(:last-of-type) {
+             @include fluid(margin-right, 2rem, 1.4375rem);
+         }
+     }
+ }
