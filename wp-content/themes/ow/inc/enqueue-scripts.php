@@ -183,6 +183,22 @@ if (!function_exists('crunch_enqueue_scripts')) :
             wp_enqueue_style('acf-block-content-with-image', get_template_directory_uri() . '/' . $block_list_uri, false, $block_list_ver);
         }
 
+        /**
+         * ACF Block Numbers
+         */
+
+        /**
+         * Styles
+         */
+
+        $block_list_uri = 'dist/acf_block_numbers.css';
+
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_numbers_uri)) {
+            $block_list_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_list_uri));
+
+            wp_enqueue_style('acf-block-numbers', get_template_directory_uri() . '/' . $block_numbers_styles_uri, false, $block_numbers_styles_ver);
+        }
+
 
         /**
          * Error 404
