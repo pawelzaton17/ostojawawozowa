@@ -38,7 +38,7 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?>">
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> postion-relative">
     <div class="container">
         <div class="row">
 
@@ -99,12 +99,12 @@ do_action('container_start');
                     ?>
 
                     <div class="col-6">
-                        <h2 class="acf-block-numbers">
+                        <h2>
 
                             <?= $w_heading; ?>
 
                         </h2>
-                        <div class="acf-block-numbers">
+                        <div>
 
                             <?= $w_content; ?>
 
