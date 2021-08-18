@@ -1,5 +1,5 @@
 /**
- *  ACF Block Cols Template Part Webpack
+ *  ACF Block Numbers Template Part Webpack
  */
 
 /** Custom assets */
