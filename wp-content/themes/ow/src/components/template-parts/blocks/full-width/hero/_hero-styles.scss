@@ -1,0 +1,97 @@
+/**
+ * ACF Block Hero Template Part Styles
+ */
+
+.acf-block-hero {
+    @include media-breakpoint-up(lg) {
+        padding: 1.125rem 1.125rem 0;
+    }
+
+    &__slider-item {
+        height: 100vh;
+        max-height: 57.125rem;
+    }
+
+    &__title {
+        @include fluid(font-size, 1.6875rem, 2.25rem);
+
+        strong {
+            color: $white;
+        }
+
+        & > * {
+            line-height: 1.4;
+        }
+    }
+
+    &__content-wrapper {
+        bottom: 0;
+        left: 0;
+        background: rgba(#62731F, .97);
+
+        @include media-breakpoint-up(md) {
+            max-width: 31.25rem;
+            padding-bottom: 10.5rem;
+        }
+    }
+
+    .crunch-button {
+        color: $black;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    &__control-item {
+        @include c-transition;
+    }
+
+    &__controls {
+        bottom: 4.25rem;
+        height: 1.875rem;
+    }
+
+    &__control-icon {
+        width: .5rem;
+        height: auto;
+        fill: $white;
+    }
+
+    &__controls,
+    .tns-nav {
+        position: absolute;
+        top: auto;
+        left: 0;
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        @include media-breakpoint-up(md) {
+            max-width: 31.25rem;
+            padding: 0 4rem;
+        }
+    }
+
+    .tns-nav {
+        bottom: 2.125rem;
+        height: 3.125rem;
+
+        button {
+            width: 33.3%;
+            height: 3px;
+            border-radius: 0;
+            background: #5a6a1a;
+
+            &.tns-nav-active {
+                background: $white;
+            }
+        }
+    }
+
+    .tns-inner {
+        .tns-nav {
+            display: none;
+        }
+    }
+}
