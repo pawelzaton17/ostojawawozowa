@@ -72,9 +72,11 @@ do_action('container_start');
 
     </ul>
 
-    <?php endif; ?>
+    <?php
+    endif;
 
-    <?php if ( have_rows( 'slider' ) ): ?>
+    if ( have_rows( 'slider' ) ):
+    ?>
 
     <div class="js-tiny-slider-hero">
         <div class="js-tiny-slider crunch-tiny-slider position-relative">
