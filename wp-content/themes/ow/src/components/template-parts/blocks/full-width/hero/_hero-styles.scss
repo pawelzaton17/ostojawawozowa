@@ -7,9 +7,23 @@
         padding: 1.125rem 1.125rem 0;
     }
 
+    &__slider-row {
+        background: rgba($olive, .97);
+
+        @include media-breakpoint-up(md) {
+            background: transparent;
+        }
+    }
+
     &__slider-item {
         height: 100vh;
-        max-height: 57.125rem;
+        max-height: 25.25rem;
+        margin-bottom: 16.25rem;
+
+        @include media-breakpoint-up(md) {
+            max-height: 57.125rem;
+            margin-bottom: 0;
+        }
     }
 
     &__title {
@@ -25,18 +39,25 @@
     }
 
     &__content-wrapper {
-        bottom: 0;
+        bottom: -16.25rem;
         left: 0;
-        background: rgba(#62731F, .97);
+        padding-bottom: 5.25rem;
+        background: rgba($olive, .97);
 
         @include media-breakpoint-up(md) {
+            bottom: 0;
             max-width: 31.25rem;
             padding-bottom: 10.5rem;
         }
     }
 
     .crunch-button {
+        width: 100%;
         color: $black;
+
+        @include media-breakpoint-up(md) {
+            width: auto;
+        }
 
         &:hover {
             color: $white;
@@ -66,22 +87,49 @@
         display: flex;
         align-items: center;
         width: 100%;
+        padding: 0 4.5rem;
 
         @include media-breakpoint-up(md) {
             max-width: 31.25rem;
-            padding: 0 4rem;
+            padding: 0 2.5rem;
+        }
+        @include media-breakpoint-up(lg) {
+            padding: 0 2.8125rem;
+        }
+        @include media-breakpoint-up(xl) {
+            padding: 0 3.25rem;
+        }
+        @include media-breakpoint-up(xxl) {
+            padding: 0 3.5625rem;
         }
     }
 
     .tns-nav {
-        bottom: 2.125rem;
+        bottom: .4375rem;
         height: 3.125rem;
 
+        @include media-breakpoint-up(md) {
+            bottom: 2.125rem;
+        }
+
         button {
+            position: relative;
             width: 33.3%;
             height: 3px;
             border-radius: 0;
             background: #5a6a1a;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1.875rem;
+                margin: auto;
+            }
 
             &.tns-nav-active {
                 background: $white;

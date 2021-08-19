@@ -16,7 +16,7 @@ if (!empty($block['anchor'])) {
 }
 
 // Create class attribute allowing for custom "className" values.
-$class_name       = 'acf-block-hero';
+$class_name       = 'acf-block-hero overflow-hidden';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
@@ -43,7 +43,7 @@ do_action('container_start');
 
     <div class="js-tiny-slider-hero">
         <div class="js-tiny-slider crunch-tiny-slider position-relative">
-            <div class="js-tiny-slider-row">
+            <div class="acf-block-hero__slider-row js-tiny-slider-row">
 
             <?php
             while ( have_rows( 'slider' ) ) : the_row();
@@ -65,7 +65,7 @@ do_action('container_start');
 
                 <div class="acf-block-hero__slider-item tiny-slider-item">
                     <figure class="h-100 w-100 background-cover" <?= $style?>></figure>
-                    <div class="acf-block-hero__content-wrapper position-absolute c-p-7 c-pr-10">
+                    <div class="acf-block-hero__content-wrapper position-absolute c-p-7 c-pr-md-10">
                         <div class="acf-block-hero__title text-white c-mb-7">
 
                             <?= $title; ?>

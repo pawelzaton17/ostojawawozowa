@@ -20,7 +20,7 @@ const blockHeroSlider = () => {
         const tnsSlider = tns({
             container: slider,
             items: 1,
-            autoplay: true,
+            autoplay: false,
             mouseDrag: false,
             lazyload: true,
             nav: true,
