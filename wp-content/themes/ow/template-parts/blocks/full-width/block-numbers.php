@@ -81,7 +81,8 @@ do_action('container_start');
             <?php 
             endif;
 
-            if ( have_rows( 'w_items' ) ): ?>
+            if ( have_rows( 'w_items' ) ): 
+            ?>
 
             <div class="col-lg-6">
                 <div class="row">
