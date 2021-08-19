@@ -82,23 +82,23 @@ do_action('container_start');
         <div class="js-tiny-slider crunch-tiny-slider position-relative">
             <div class="acf-block-hero__slider-row js-tiny-slider-row">
 
-            <?php
-            while ( have_rows( 'slider' ) ) : the_row();
-                $title     = get_sub_field( 'title' );
-                $image_id  = get_sub_field( 'image' );
-                $link      = get_sub_field( 'link' );
-                $image_url = '';
+                <?php
+                while ( have_rows( 'slider' ) ) : the_row();
+                    $title     = get_sub_field( 'title' );
+                    $image_id  = get_sub_field( 'image' );
+                    $link      = get_sub_field( 'link' );
+                    $image_url = '';
 
-                if ( $link ) {
-                    $link_url    = $link['url'];
-                    $link_title  = $link['title'];
-                    $link_target = $link['target'] ? $link['target'] : '_self';
-                }
-                if ( $image_id ) {
-                    $image_url = wp_get_attachment_image_url( $image_id, 'full' );
-                    $style     = "style='background-image: url({$image_url})'";
-                }
-            ?>
+                    if ( $link ) {
+                        $link_url    = $link['url'];
+                        $link_title  = $link['title'];
+                        $link_target = $link['target'] ? $link['target'] : '_self';
+                    }
+                    if ( $image_id ) {
+                        $image_url = wp_get_attachment_image_url( $image_id, 'full' );
+                        $style     = "style='background-image: url({$image_url})'";
+                    }
+                ?>
 
                 <div class="acf-block-hero__slider-item tiny-slider-item">
                     <figure class="h-100 w-100 background-cover" <?= $style?>></figure>
@@ -116,7 +116,7 @@ do_action('container_start');
                     </div>
                 </div>
 
-            <?php endwhile; ?>
+                <?php endwhile; ?>
 
             </div>
             <div class="acf-block-hero__controls d-none d-md-block">
