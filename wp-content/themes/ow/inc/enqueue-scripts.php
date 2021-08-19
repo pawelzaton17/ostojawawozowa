@@ -168,6 +168,35 @@ if (!function_exists('crunch_enqueue_scripts')) :
         }
 
         /**
+         * ACF Block Hero
+         */
+
+        /**
+         * Styles
+         */
+
+        $block_hero_styles_uri = 'dist/acf_block_hero.css';
+
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_hero_styles_uri)) {
+            $block_hero_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_hero_styles_uri));
+
+            wp_enqueue_style('acf-block-hero', get_template_directory_uri() . '/' . $block_hero_styles_uri, false, $block_hero_styles_ver);
+        }
+
+        /**
+         * Scripts
+         */
+
+        $block_hero_scripts_uri = 'dist/acf_block_hero.bundle.js';
+
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_hero_scripts_uri)) {
+            $block_hero_scripts_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_hero_scripts_uri));
+
+            wp_enqueue_script('acf-block-hero-scripts', get_template_directory_uri() . '/' . $block_hero_scripts_uri, '', $block_hero_scripts_ver);
+        }
+
+
+        /**
          * ACF Block List
          */
 
@@ -243,9 +272,7 @@ if (!function_exists('crunch_enqueue_scripts')) :
             wp_enqueue_script('archive-default-post-scripts', get_template_directory_uri() . '/' . $archive_default_post_scripts_uri, '', $archive_default_post_scripts_ver, $in_footer);
         }
 
-        if (!is_user_logged_in()) {
-            wp_deregister_style( 'dashicons');
-        }
+        if (!is_user_logged_in()) wp_deregister_style('dashicons');
     }
 
     add_action('wp_enqueue_scripts', 'crunch_enqueue_scripts');

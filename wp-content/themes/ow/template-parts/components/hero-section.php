@@ -16,7 +16,8 @@
     $title = get_field( 'error_404_title', 'options' );
 } else {
     $title = get_the_title();
-} ?>
+}
+?>
 
 <section class="hero-section c-py-8 text-white bg-secondary">
     <div class="container">
