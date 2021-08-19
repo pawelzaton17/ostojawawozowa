@@ -37,7 +37,42 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?>">
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative">
+
+    <?php if ( have_rows( 'buttons' ) ) : ?>
+
+    <ul class="acf-block-hero__buttons d-none d-md-flex flex-column list-unstyled align-items-end position-absolute d-flex c-m-0">
+
+        <?php
+        while ( have_rows( 'buttons' ) ) : the_row();
+            $icon_id = get_sub_field( 'icon' );
+            $text    = get_sub_field( 'text' );
+        ?>
+
+        <li class="acf-block-hero__buttons-item z-index-2 d-flex<?= empty( $text ) ? ' acf-block-hero__buttons-item--alt' : null; ?>">
+            <figure class="c-mb-0">
+
+                <?= wp_get_attachment_image( $icon_id, "full", "", array( "class" => "acf-block-hero__icon d-block h-auto w-100 lazyload", "data-lazy" => "true") ); ?>
+
+            </figure>
+
+            <?php if ( ! empty( $text ) ) : ?>
+
+            <h6 class="d-none d-lg-flex align-items-center font-size-14 c-ml-3">
+
+                <?= $text; ?>
+
+            </h6>
+
+            <?php endif; ?>
+
+        </li>
+
+        <?php endwhile; ?>
+
+    </ul>
+
+    <?php endif; ?>
 
     <?php if ( have_rows( 'slider' ) ): ?>
 
