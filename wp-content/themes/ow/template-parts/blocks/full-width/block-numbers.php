@@ -88,7 +88,7 @@ do_action('container_start');
             <div class="secondcol">
                 <div class="row">
                     <div class="col-12 c-mb-9">
-                        <h2 class="acf-block-numbers__secondary-heading c-pb-4 c-pb-md-3 font-weight-bold font-size-36">
+                        <h2 class="acf-block-numbers__secondary-heading c-pb-4 c-pb-md-3 position-relative font-weight-bold font-size-36">
 
                             <?= $w_title; ?>
 
