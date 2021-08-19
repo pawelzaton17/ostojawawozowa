@@ -38,7 +38,7 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> postion-relative">
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative c-my-10">
     <div class="container">
         <div class="row">
 
@@ -46,8 +46,8 @@ do_action('container_start');
 
             <div class="col-lg-6">
                 <div class="row">
-                    <div class="col-8">
-                        <h2 class="acf-block-numbers__left-heading c-pb-4 c-pb-md-3 position-relative font-weight-bold font-size-36">
+                    <div class="col-12 c-mb-8">
+                        <h2 class="acf-block-numbers__primary-heading c-pb-4 c-pb-md-3 position-relative font-weight-bold font-size-36">
 
                             <?= $v_title; ?>
 
@@ -60,14 +60,14 @@ do_action('container_start');
                         $v_content     = get_sub_field( 'v_item_content' );
                     ?>
 
-                    <div class="col-6">
-                        <h2 class="acf-block-numbers__heading">
+                    <div class="col-6 col-md-3 col-lg-6 c-pl-lg-5 d-flex flex-column c-mb-7">
+                        <h2 class="acf-block-numbers__heading fw-lighter text-primary">
 
                             <?= $v_heading; ?>
 
                         </h2>
-                        <div class="acf-block-numbers__content">
-
+                        <div class="acf-block-numbers__content text-gray-second fw-bold font-size-14 line-height-1-5"
+                        
                             <?= $v_content; ?>
 
                         </div>
@@ -83,11 +83,12 @@ do_action('container_start');
 
             if ( have_rows( 'w_items' ) ): 
             ?>
-
-            <div class="col-lg-6">
+            
+        <div class="col-lg-6">
+            <div class="secondcol">
                 <div class="row">
-                    <div class="col-12">
-                        <h2 class="acf-block-numbers__right-heading c-pb-4 c-pb-md-3 position-relative font-weight-bold font-size-36">
+                    <div class="col-12 c-mb-9">
+                        <h2 class="acf-block-numbers__secondary-heading c-pb-4 c-pb-md-3 position-relative font-weight-bold font-size-36">
 
                             <?= $w_title; ?>
 
@@ -100,13 +101,13 @@ do_action('container_start');
                         $w_content     = get_sub_field( 'w_item_content' );
                     ?>
 
-                    <div class="col-6">
-                        <h2>
+                    <div class="col-6 col-md-4 col-lg-6 d-flex flex-column c-pb-3">
+                        <h2 class="font-size-11">
 
                             <?= $w_heading; ?>
 
                         </h2>
-                        <div>
+                    <div class="acf-block-numbers__content-second-col line-height-1-5">
 
                             <?= $w_content; ?>
 
@@ -117,7 +118,8 @@ do_action('container_start');
                 
                 </div>
             </div>
-            
+        </div>
+        
             <?php endif; ?>
 
         </div>
