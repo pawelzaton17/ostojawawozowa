@@ -81,7 +81,7 @@ function crunch_acf_full_width_blocks()
         [
             'name' => 'Block-numbers',
             'icon' => 'editor-justify',
-            'keywords' => ['Numbers', 'Istotne wartosci osiedla', 'Standard wykonania', 'Wartosci osiedla'],
+            'keywords' => ['Numbers', 'Istotne wartości osiedla', 'Standard wykonania', 'Wartosci osiedla'],
             'type' => BLOCK_TYPE_FULL_WIDTH,
             'enqueue_styles' => true,
             'enqueue_scripts' => true,

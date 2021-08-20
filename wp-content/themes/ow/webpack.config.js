@@ -71,7 +71,6 @@ module.exports = [
             ),
             list_styles: path.resolve(__dirname, "src/components/template-parts/list-styles/index"),
             blockquote: path.resolve(__dirname, "src/components/template-parts/blockquote/index"),
-            gravity_forms: path.resolve(__dirname, "src/components/template-parts/gravity-forms/index"),
 
             /** ACF Blocks */
             acf_block_cols: path.resolve(
