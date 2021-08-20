@@ -37,9 +37,9 @@ function crunch_acf_full_width_blocks()
             'type' => BLOCK_TYPE_FULL_WIDTH,
             'enqueue_styles' => false,
             'enqueue_scripts' => false,
-            'enable_assets_for_admin' => false,
+            'enable_assets_for_admin' => true,
             'mode' => BLOCK_MODE_AUTO,
-            'example' => true,
+            'example' => false,
         ],
 
         [
@@ -49,9 +49,9 @@ function crunch_acf_full_width_blocks()
             'type' => BLOCK_TYPE_FULL_WIDTH,
             'enqueue_styles' => true,
             'enqueue_scripts' => false,
-            'enable_assets_for_admin' => false,
+            'enable_assets_for_admin' => true,
             'mode' => BLOCK_MODE_AUTO,
-            'example' => true,
+            'example' => false,
         ],
 
         [
@@ -61,7 +61,7 @@ function crunch_acf_full_width_blocks()
             'type' => BLOCK_TYPE_FULL_WIDTH,
             'enqueue_styles' => true,
             'enqueue_scripts' => false,
-            'enable_assets_for_admin' => false,
+            'enable_assets_for_admin' => true,
             'mode' => BLOCK_MODE_AUTO,
             'example' => true,
         ],
@@ -73,9 +73,9 @@ function crunch_acf_full_width_blocks()
             'type' => BLOCK_TYPE_FULL_WIDTH,
             'enqueue_styles' => true,
             'enqueue_scripts' => false,
-            'enable_assets_for_admin' => false,
+            'enable_assets_for_admin' => true,
             'mode' => BLOCK_MODE_AUTO,
-            'example' => true,
+            'example' => false,
         ],
 
         [
@@ -87,7 +87,7 @@ function crunch_acf_full_width_blocks()
             'enqueue_scripts' => false,
             'enable_assets_for_admin' => true,
             'mode' => BLOCK_MODE_AUTO,
-            'example' => true,
+            'example' => false,
         ],
 
         [
@@ -97,9 +97,9 @@ function crunch_acf_full_width_blocks()
             'type' => BLOCK_TYPE_FULL_WIDTH,
             'enqueue_styles' => true,
             'enqueue_scripts' => true,
-            'enable_assets_for_admin' => false,
+            'enable_assets_for_admin' => true,
             'mode' => BLOCK_MODE_AUTO,
-            'example' => true,
+            'example' => false,
         ],
 
         /*
