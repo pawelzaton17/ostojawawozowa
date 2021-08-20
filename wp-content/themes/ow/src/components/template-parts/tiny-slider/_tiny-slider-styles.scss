@@ -3,24 +3,28 @@
  */
 
 .crunch-tiny-slider {
-    // &__controls {
-    //     position: absolute;
-    //     width: 100%;
-    //     transform: translateY(-50%);
-    //     top: 50%;
+     &__controls {
+         top: 50%;
+         width: 100%;
+         //position: absolute;
+         //transform: translateY(-50%);
 
-    //     .crunch-tiny-slider__control-button {
-    //         position: absolute;
-    //     }
+         .crunch-tiny-slider__control-button {
+             position: absolute;
+         }
 
-    //     .crunch-tiny-slider-button-prev {
-    //         left: 0;
-    //     }
+         .crunch-tiny-slider-button-prev {
+             left: 0;
+         }
 
-    //     .crunch-tiny-slider-button-next {
-    //         right: 0;
-    //     }
-    // }
+         .crunch-tiny-slider-button-next {
+             right: 0;
+         }
+     }
+
+    &__control-button {
+        max-width: 1.5rem;
+    }
 
     .tns-outer {
         $tns-controls: '.tns-controls';

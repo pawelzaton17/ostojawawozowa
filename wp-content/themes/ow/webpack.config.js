@@ -90,6 +90,10 @@ module.exports = [
                 __dirname,
                 "src/components/template-parts/blocks/full-width/block-numbers/index"
             ),
+            acf_block_hero: path.resolve(
+                __dirname,
+                "src/components/template-parts/blocks/full-width/hero/index"
+            ),
         },
 
         /**
