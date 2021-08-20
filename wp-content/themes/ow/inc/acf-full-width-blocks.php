@@ -79,12 +79,12 @@ function crunch_acf_full_width_blocks()
         ],
 
         [
-            'name' => 'Block-numbers',
+            'name' => 'Numbers',
             'icon' => 'editor-justify',
             'keywords' => ['Numbers', 'Istotne wartości osiedla', 'Standard wykonania', 'Wartosci osiedla'],
             'type' => BLOCK_TYPE_FULL_WIDTH,
             'enqueue_styles' => true,
-            'enqueue_scripts' => true,
+            'enqueue_scripts' => false,
             'enable_assets_for_admin' => false,
             'mode' => BLOCK_MODE_AUTO,
             'example' => true,

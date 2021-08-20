@@ -3,4 +3,4 @@
  */
 
 /** Custom assets */
-import "./_block-numbers-styles.scss";
+import "./_numbers-styles.scss";

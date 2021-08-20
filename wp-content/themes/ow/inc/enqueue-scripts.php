@@ -220,12 +220,12 @@ if (!function_exists('crunch_enqueue_scripts')) :
          * Styles
          */
 
-        $block_numbers_styles_uri = 'dist/acf_block_numbers.css';
+        $block_numbers_uri = 'dist/acf_block_numbers.css';
 
-        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_numbers_styles_uri)) {
-            $block_numbers_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_numbers_styles_uri));
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_numbers_uri)) {
+            $block_numbers_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_numbers_uri));
 
-            wp_enqueue_style('acf-block-numbers', get_template_directory_uri() . '/' . $block_numbers_styles_uri, false, $block_numbers_styles_ver);
+            wp_enqueue_style('acf-block-numbers', get_template_directory_uri() . '/' . $block_numbers_uri, false, $block_numbers_ver);
         }
 
 
