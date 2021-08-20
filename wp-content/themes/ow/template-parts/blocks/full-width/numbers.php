@@ -16,7 +16,7 @@ if (!empty($block['anchor'])) {
 }
 
 // Create class attribute allowing for custom "className" values.
-$class_name = 'acf-block-numbers';
+$class_name       = 'acf-block-numbers';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
@@ -38,76 +38,93 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative c-my-10">
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative c-pt-lg-9 c-pb-lg-6">
     <div class="container">
         <div class="row">
 
         <?php if ( have_rows( 'v_items' ) ): ?>
 
-            <div class="col-lg-6">
+            <div class="col-lg-7 c-pr-lg-9">
                 <div class="row">
                     <div class="col-12 c-mb-8">
-                        <h2 class="acf-block-numbers__primary-heading c-pb-4 c-pb-md-3 position-relative font-weight-bold font-size-36">
+                        <h2 class="acf-block-numbers__heading c-pb-4 c-pb-md-3 position-relative font-weight-bold font-size-36">
 
                             <?= $v_title; ?>
 
                         </h2>
                     </div>
 
-                    <?php  
+                    <?php
                     while ( have_rows( 'v_items' ) ): the_row();
-                        $v_heading     = get_sub_field( 'v_item_heading' );
-                        $v_content     = get_sub_field( 'v_item_content' );
+                        $v_heading = get_sub_field( 'v_item_heading' );
+                        $v_content = get_sub_field( 'v_item_content' );
+                        $add_sufix = get_sub_field( 'add_sufix' );
                     ?>
 
-                    <div class="col-6 col-md-3 col-lg-6 c-pl-lg-5 d-flex flex-column c-mb-7">
-                        <h2 class="acf-block-numbers__heading fw-lighter text-primary">
+                    <div class="col-6 c-pl-lg-5 d-flex flex-column c-mb-7">
+                        <h2 class="acf-block-numbers__item-title fw-lighter text-primary<?= $add_sufix ? ' d-flex' : null; ?>">
 
-                            <?= $v_heading; ?>
+                            <?php if ( $add_sufix ) : ?>
+
+                            <span>
+
+                            <?php
+                            endif;
+
+                            echo $v_heading;
+
+                            if ( $add_sufix ) :
+                            ?>
+
+                            </span>
+
+                            <span class="acf-block-numbers__sup-wrapper c-ml-xl-3">m<sup>2</sup></span>
+
+                            <?php endif; ?>
 
                         </h2>
-                        <div class="acf-block-numbers__content text-gray-second fw-bold font-size-14 line-height-1-5"
-                        
+                        <div class="acf-block-numbers__content acf-block-numbers__content--alt text-gray-second font-size-14 line-height-1-5">
+
                             <?= $v_content; ?>
 
                         </div>
                     </div>
 
                     <?php endwhile; ?>
-                
+
                 </div>
             </div>
-            
-            <?php 
-            endif;
 
-            if ( have_rows( 'w_items' ) ): 
-            ?>
-            
-        <div class="col-lg-6">
-            <div class="secondcol">
-                <div class="row">
-                    <div class="col-12 c-mb-9">
-                        <h2 class="acf-block-numbers__secondary-heading c-pb-4 c-pb-md-3 position-relative font-weight-bold font-size-36">
+        <?php
+        endif;
+
+        if ( have_rows( 'w_items' ) ):
+        ?>
+
+            <div class="col-lg-5 text-white">
+                <div class="acf-block-numbers__col-bg bg-primary"></div>
+                <div class="acf-block-numbers__col-row row c-py-9 c-py-lg-0 position-relative z-index-2">
+                    <div class="col-12 c-mb-7 c-mb-md-8">
+                        <h2 class="acf-block-numbers__heading c-pb-4 c-pb-md-3 position-relative font-weight-bold font-size-36">
 
                             <?= $w_title; ?>
 
                         </h2>
                     </div>
 
-                    <?php  
+                    <?php
                     while ( have_rows( 'w_items' ) ): the_row();
-                        $w_heading     = get_sub_field( 'w_item_heading' );
-                        $w_content     = get_sub_field( 'w_item_content' );
+                        $w_heading = get_sub_field( 'w_item_heading' );
+                        $w_content = get_sub_field( 'w_item_content' );
                     ?>
 
-                    <div class="col-6 col-md-4 col-lg-6 d-flex flex-column c-pb-3">
+                    <div class="col-6 col-md-4 col-lg-6 d-flex flex-column c-pb-4 c-pb-md-3 c-pb-lg-6">
                         <h2 class="font-size-11">
 
                             <?= $w_heading; ?>
 
                         </h2>
-                    <div class="acf-block-numbers__content-second-col line-height-1-5">
+                        <div class="acf-block-numbers__content c-mt-3 c-mt-lg-2 font-family-primary font-weight-light line-height-1-2">
 
                             <?= $w_content; ?>
 
@@ -115,15 +132,14 @@ do_action('container_start');
                     </div>
 
                     <?php endwhile; ?>
-                
+
                 </div>
             </div>
-        </div>
-        
-            <?php endif; ?>
+
+        <?php endif; ?>
 
         </div>
-    </div> 
+    </div>
 </section>
 
 <?php

@@ -3,65 +3,88 @@
  */
 
 .acf-block-numbers{
-    &__heading {
+    &__item-title {
         @include fluid(font-size, 3.438rem, 5.75rem);
+
+        @include media-breakpoint-up(lg) {
+            align-items: baseline;
+        }
+    }
+
+    &__heading {
+        @include fluid(font-size, 1.5rem, 2.25rem);
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 1.875rem;
+            height: 3px;
+            background: $primary;
+
+            @include media-breakpoint-up(md) {
+                width: 3.4375rem;
+            }
+        }
+
+        &:last-of-type {
+            &::after {
+                background: $white;
+            }
+        }
+    }
+
+    &__col-bg {
+        @include media-breakpoint-up(lg) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 54%;
+        }
+    }
+
+    &__col-row {
+        background: $primary;
+
+        @include media-breakpoint-up(lg) {
+            background: transparent;
+        }
+    }
+
+    &__sup-wrapper {
+        @include media-breakpoint-up(lg) {
+            font-size: 3.125rem;
+        }
+        @include media-breakpoint-up(xxl) {
+            font-size: 5.75rem;
+        }
     }
 
     &__content {
-        max-width: 7rem;
-
-        @include fluid(font-size, .875rem, 1.125rem);
-        @include media-breakpoint-up(lg) {
-            max-width: 15rem;
+        p {
+            margin-bottom: 0;
         }
-    }
 
-    &__primary-heading {
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 1.875rem;
-            height: 3px;
-            background: $primary;
+        &:not(&--alt) {
+            font-weight: $font-weight-light;
 
-            @include media-breakpoint-up(md) {
-                width: 3.4375rem;
+            @include fluid(font-size, 1.125rem, 1.75rem);
+
+            @include media-breakpoint-up(xxl) {
+                white-space: nowrap;
             }
         }
-    }
 
-    &__secondary-heading {
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 1.875rem;
-            height: 3px;
-            background: $primary;
+        &--alt {
+            max-width: 7rem;
+            font-weight: $font-weight-medium;
 
+            @include fluid(font-size, .875rem, 1.125rem);
             @include media-breakpoint-up(md) {
-                width: 3.4375rem;
+                max-width: 15rem;
             }
-        }
-    }
-
-    // &__secondcol-wrapper {
-    //     @include media-breakpoint-up(md) {
-    //         position: absolute;
-    //         top: 0;
-    //         right: 0;
-    //         bottom: 0;
-    //     }
-    // }
-
-    &__content-second-col {
-        font-size: 1.125rem;
-        
-        @include media-breakpoint-up(md) {
-            font-size: 1.75rem;
         }
     }
 }
