@@ -1,0 +1,67 @@
+/**
+ * ACF Block Numbers Template Part Styles
+ */
+
+.acf-block-numbers{
+    &__heading {
+        @include fluid(font-size, 3.438rem, 5.75rem);
+    }
+
+    &__content {
+        max-width: 7rem;
+
+        @include fluid(font-size, .875rem, 1.125rem);
+        @include media-breakpoint-up(lg) {
+            max-width: 15rem;
+        }
+    }
+
+    &__primary-heading {
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 1.875rem;
+            height: 3px;
+            background: $primary;
+
+            @include media-breakpoint-up(md) {
+                width: 3.4375rem;
+            }
+        }
+    }
+
+    &__secondary-heading {
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 1.875rem;
+            height: 3px;
+            background: $primary;
+
+            @include media-breakpoint-up(md) {
+                width: 3.4375rem;
+            }
+        }
+    }
+
+    // &__secondcol-wrapper {
+    //     @include media-breakpoint-up(md) {
+    //         position: absolute;
+    //         top: 0;
+    //         right: 0;
+    //         bottom: 0;
+    //     }
+    // }
+
+    &__content-second-col {
+        font-size: 1.125rem;
+        
+        @include media-breakpoint-up(md) {
+            font-size: 1.75rem;
+        }
+    }
+}

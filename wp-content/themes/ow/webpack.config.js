@@ -71,7 +71,6 @@ module.exports = [
             ),
             list_styles: path.resolve(__dirname, "src/components/template-parts/list-styles/index"),
             blockquote: path.resolve(__dirname, "src/components/template-parts/blockquote/index"),
-            gravity_forms: path.resolve(__dirname, "src/components/template-parts/gravity-forms/index"),
 
             /** ACF Blocks */
             acf_block_cols: path.resolve(
@@ -85,6 +84,10 @@ module.exports = [
             acf_block_list: path.resolve(
                 __dirname,
                 "src/components/template-parts/blocks/full-width/list/index"
+            ),
+            acf_block_numbers: path.resolve(
+                __dirname,
+                "src/components/template-parts/blocks/full-width/block-numbers/index"
             ),
             acf_block_hero: path.resolve(
                 __dirname,
