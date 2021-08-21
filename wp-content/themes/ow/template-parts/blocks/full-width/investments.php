@@ -65,18 +65,20 @@ do_action('container_start');
 
                 </div>
                 <div class="row">
-                    <div class="col-9">
+                    <div class="col-9 d-flex flex-column">
+                        <div class="acf-block-investmets__title">
 
-                        <?= $i_title; ?> 
+                            <?= $title; ?> 
 
+                        </div>
+                        <div class="acf-block-investmets__content">
+                            
+                            <?= $content; ?> 
+
+                        </div>
                     </div>
                     <div class="col-3">
                         <i class="acf-block-investments__arrow"><svg width="56" height="19" viewBox="0 0 56 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 9.5H54M54 9.5L45.5844 18M54 9.5L45.5844 1" stroke="white" stroke-width="2"/></svg></i>
-                    </div>
-                    <div class="col-12">
-
-                        <?= $content; ?>
-
                     </div>
                 </div>
             </div>
