@@ -58,7 +58,7 @@ do_action('container_start');
 
         <?php if ( ! empty( $bg_image ) ) : ?>
 
-            <div class="acf-block-investments__wrapper col-12 col-md-6 w-100 background-cover w-100 img-fluid c-my-4 position-relative lazyload" data-lazy="true">
+            <div class="acf-block-investments__wrapper col-12 col-md-6 w-100 background-cover img-fluid c-my-4 position-relative lazyload" data-lazy="true">
                 <div class="col-12 d-flex align-items-center">
                     <div class="acf-block-investmets__label d-flex align-items-center justify-content-center text-white bg-red c-py-2 c-px-4">
                         
