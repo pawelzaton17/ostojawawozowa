@@ -70,7 +70,7 @@ do_action('container_start');
                     <div class="col-9 d-flex flex-column">
                         <div class="acf-block-investmets__title">
 
-                            <?= $title; ?> 
+                            <?= $i_title; ?> 
 
                         </div>
                         <div class="acf-block-investmets__content">
