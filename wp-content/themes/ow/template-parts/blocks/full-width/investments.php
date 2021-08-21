@@ -68,11 +68,11 @@ do_action('container_start');
                 </div>
                 <div class="row">
                     <div class="col-9 d-flex flex-column">
-                        <div class="acf-block-investmets__title">
+                        <h2 class="acf-block-investmets__title">
 
                             <?= $i_title; ?> 
 
-                        </div>
+                        </h2>
                         <div class="acf-block-investmets__content">
                             
                             <?= $content; ?> 
