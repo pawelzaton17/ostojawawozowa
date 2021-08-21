@@ -51,9 +51,9 @@ do_action('container_start');
             <?php
             while( have_rows( 'item' ) ) : the_row();
                 $i_title    = get_sub_field( 'i_title' );
-                $content    = get_sub_field( 'content');
-                $bg_image   = get_sub_field( 'bg_image');
-                $label      = get_sub_field( 'label');
+                $content    = get_sub_field( 'content' );
+                $bg_image   = get_sub_field( 'bg_image' );
+                $label      = get_sub_field( 'label' );
             ?>
 
         <?php if ( ! empty( $bg_image ) ) : ?>
