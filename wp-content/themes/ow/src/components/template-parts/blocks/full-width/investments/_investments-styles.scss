@@ -3,4 +3,11 @@
  */
 
 .acf-block-investments{
+    &__wrapper {
+        min-height: 20.625rem;
+    
+    @include media-breakpoint-up(md) {
+        min-height: 36.438rem;
+    }
+    }
 }
