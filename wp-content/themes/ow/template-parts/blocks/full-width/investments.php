@@ -40,56 +40,83 @@ do_action('container_start');
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?>">
     <div class="container">
         <div class="row">
-            <div class="col-12 d-flex justify-content-center justify-content-md-start c-py-8 c-py-md-2">
+            <div class="col-12 d-flex justify-content-center justify-content-md-start c-py-6">
 
                 <?= get_template_part('template-parts/components/section-title', '', [ 'title' => $title, 'center' => false ]);  ?>
 
             </div>
         </div>
 
+        <?php if ( have_rows( 'item' ) ): ?>
+
+        <div class="row">
+
             <?php
             while( have_rows( 'item' ) ) : the_row();
-                $i_title    = get_sub_field( 'i_title' );
+                $item_title = get_sub_field( 'i_title' );
                 $content    = get_sub_field( 'content' );
-                $bg_image   = get_sub_field( 'bg_image' );
+                $image_id   = get_sub_field( 'bg_image' );
                 $label      = get_sub_field( 'label' );
 
-                $image_url  = wp_get_attachment_image_url( $bg_image, 'full' );
+                $image_url  = wp_get_attachment_image_url( $image_id, 'full' );
                 $style      = "style='background-image: url( {$image_url} )'";
-                ?>
+            ?>
 
-        <?php if ( ! empty( $bg_image ) ) : ?>
+            <div class="acf-block-investments__col col-12 col-lg-6 c-my-2">
+                <div class="h-100 w-100 position-relative">
+                    <figure class="acf-block-investments__figure background-cover position-absolute" <?= $style; ?>></figure>
 
-            <div class="acf-block-investments__wrapper col-12 col-md-6 background-cover img-fluid c-my-4 position-relative" data-lazy="true" <?= $style; ?> >
-                <div class="col-12 d-flex align-items-center">
-                    <div class="acf-block-investments__label d-flex align-items-center justify-content-center text-white bg-red c-py-2 c-px-4">
+                    <?php if ( ! empty( $label ) ) : ?>
+
+                    <div class="col-12 d-flex align-items-center justify-content-end c-pt-5">
+                        <div class="acf-block-investments__label d-flex align-items-center justify-content-center text-white bg-red c-py-2 c-px-4">
 
                         <?= $label; ?>
 
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-9 d-flex flex-column">
-                        <h2 class="acf-block-investments__title">
 
-                            <?= $i_title; ?>
+                    <?php endif; ?>
 
-                        </h2>
-                        <div class="acf-block-investments__content">
+                    <div class="acf-block-investments__maincontent row c-px-7 c-mb-7">
+                        <div class="col-10 d-flex flex-column">
+
+                            <?php if ( ! empty( $item_title ) ) : ?>
+
+                            <h2 class="acf-block-investments__title text-white c-pb-2">
+
+                                <?= $item_title; ?>
+
+                            </h2>
+
+                            <?php
+                            endif;
+
+                            if ( ! empty( $content ) ) :
+                            ?>
+
+                            <div class="acf-block-investments__content text-white">
 
                             <?= $content; ?>
 
+                            </div>
+
+                            <?php endif; ?>
+
                         </div>
-                    </div>
-                    <div class="col-3">
-                        <svg width="56" height="19" viewBox="0 0 56 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 9.5H54M54 9.5L45.5844 18M54 9.5L45.5844 1" stroke="white" stroke-width="2"/></svg>
+                        <div class="acf-block-investments__arrow col-2">
+                            <svg width="56" height="19" viewBox="0 0 56 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 9.5H54M54 9.5L45.5844 18M54 9.5L45.5844 1" stroke="white" stroke-width="2"/></svg>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <?php endwhile; ?>
+
+        </div>
+
         <?php endif; ?>
 
-            <?php endwhile; ?>
     </div>
 </section>
 

@@ -93,7 +93,7 @@ module.exports = [
                 __dirname,
                 "src/components/template-parts/blocks/full-width/hero/index"
             ),
-            acf_block_investmets: path.resolve(
+            acf_block_investments: path.resolve(
                 __dirname,
                 "src/components/template-parts/blocks/full-width/investments/index"
             ),
