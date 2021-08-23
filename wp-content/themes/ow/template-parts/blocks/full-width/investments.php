@@ -39,10 +39,10 @@ do_action('container_start');
 ?>
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?>">
-    <div class="conainer">
+    <div class="container">
         <div class="row">
             <div class="col-12 d-flex justify-content-center justify-content-md-start c-py-8 c-py-md-2">
-            
+
                 <?= get_template_part('template-parts/components/section-title', '', [ 'title' => $title, 'center' => false ]);  ?>
 
             </div>
@@ -60,22 +60,22 @@ do_action('container_start');
 
             <div class="acf-block-investments__wrapper col-12 col-md-6 w-100 background-cover img-fluid c-my-4 position-relative lazyload" data-lazy="true">
                 <div class="col-12 d-flex align-items-center">
-                    <div class="acf-block-investmets__label d-flex align-items-center justify-content-center text-white bg-red c-py-2 c-px-4">
-                        
-                        <?= $label; ?> 
+                    <div class="acf-block-investments__label d-flex align-items-center justify-content-center text-white bg-red c-py-2 c-px-4">
+
+                        <?= $label; ?>
 
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-9 d-flex flex-column">
-                        <h2 class="acf-block-investmets__title">
+                        <h2 class="acf-block-investments__title">
 
-                            <?= $i_title; ?> 
+                            <?= $i_title; ?>
 
                         </h2>
-                        <div class="acf-block-investmets__content">
-                            
-                            <?= $content; ?> 
+                        <div class="acf-block-investments__content">
+
+                            <?= $content; ?>
 
                         </div>
                     </div>
