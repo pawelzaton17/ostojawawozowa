@@ -103,7 +103,7 @@ function crunch_acf_full_width_blocks()
         ],
 
         [
-            'name' => 'Ivestments',
+            'name' => 'Investments',
             'icon' => 'editor-justify',
             'keywords' => ['Investments', 'Inwestycje'],
             'type' => BLOCK_TYPE_FULL_WIDTH,
