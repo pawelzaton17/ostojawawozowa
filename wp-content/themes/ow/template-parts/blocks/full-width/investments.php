@@ -20,12 +20,11 @@ $class_name       = 'acf-block-investments';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$title      = get_field( 'title' );
-$bg_image   = wp_get_attachment_image_url( $bg_image, 'full' );
+$title  = get_field( 'title' );
 
 // block preview
 if (!empty($block['data']['__is_preview'])) : ?>
-<img src="<?= get_template_directory_uri(); ?>/inc/block-previews/<?= $class_name; ?>.jpg" />
+<img src="<?= get_template_directory_uri(); ?>/inc/block-previews/<?= $class_name; ?>.jpg"  alt="preview"/>
 
 <?php return;
 endif; ?>
@@ -54,11 +53,14 @@ do_action('container_start');
                 $content    = get_sub_field( 'content' );
                 $bg_image   = get_sub_field( 'bg_image' );
                 $label      = get_sub_field( 'label' );
-            ?>
+
+                $image_url  = wp_get_attachment_image_url( $bg_image, 'full' );
+                $style      = "style='background-image: url( {$image_url} )'";
+                ?>
 
         <?php if ( ! empty( $bg_image ) ) : ?>
 
-            <div class="acf-block-investments__wrapper col-12 col-md-6 w-100 background-cover img-fluid c-my-4 position-relative lazyload" data-lazy="true">
+            <div class="acf-block-investments__wrapper col-12 col-md-6 background-cover img-fluid c-my-4 position-relative" data-lazy="true" <?= $style; ?> >
                 <div class="col-12 d-flex align-items-center">
                     <div class="acf-block-investments__label d-flex align-items-center justify-content-center text-white bg-red c-py-2 c-px-4">
 
@@ -80,7 +82,7 @@ do_action('container_start');
                         </div>
                     </div>
                     <div class="col-3">
-                        <i class="acf-block-investments__arrow"><svg width="56" height="19" viewBox="0 0 56 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 9.5H54M54 9.5L45.5844 18M54 9.5L45.5844 1" stroke="white" stroke-width="2"/></svg></i>
+                        <svg width="56" height="19" viewBox="0 0 56 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 9.5H54M54 9.5L45.5844 18M54 9.5L45.5844 1" stroke="white" stroke-width="2"/></svg>
                     </div>
                 </div>
             </div>
