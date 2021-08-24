@@ -78,7 +78,7 @@ do_action('container_start');
 
                     <?php endif; ?>
 
-                    <div class="acf-block-investments__maincontent row c-px-7 c-mb-7">
+                    <div class="acf-block-investments__main-content row position-absolute c-px-7 c-mb-7">
                         <div class="col-10 d-flex flex-column">
 
                             <?php if ( ! empty( $item_title ) ) : ?>
