@@ -55,9 +55,9 @@ do_action('container_start');
             endif;
 
             if ( ! empty ( $link ) ) :
-                $link_url = $link['url'];
-                $link_title = $link['title'];
-                $link_target = $link['target'] ? $link['target'] : '_self';
+                $link_url     = $link['url'];
+                $link_title   = $link['title'];
+                $link_target  = $link['target'] ? $link['target'] : '_self';
             ?>
 
         <div class="row">
