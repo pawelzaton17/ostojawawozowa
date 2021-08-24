@@ -168,6 +168,22 @@ if (!function_exists('crunch_enqueue_scripts')) :
         }
 
         /**
+         * ACF Block Investments
+         */
+
+        /**
+         * Styles
+         */
+
+        $block_investments_uri = 'dist/acf_block_investments.css';
+
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_investments_uri)) {
+            $block_investments_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_investments_uri));
+
+            wp_enqueue_style('acf-block-investments', get_template_directory_uri() . '/' . $block_investments_uri, false, $block_investments_styles_ver);
+        }
+
+        /**
          * ACF Block Hero
          */
 
