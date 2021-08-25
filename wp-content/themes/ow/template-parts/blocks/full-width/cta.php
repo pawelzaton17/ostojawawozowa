@@ -11,7 +11,7 @@
 
 // Create id attribute allowing for custom "anchor" value.
 $id = 'acf-block-cta-' . $block['id'];
-if (!empty($block['anchor'])) {
+if ( ! empty ($block[ 'anchor' ] ) ) {
     $id = $block['anchor'];
 }
 
@@ -20,12 +20,17 @@ $class_name = 'acf-block-cta';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$content  = get_field( 'content' );
-$link     = get_field( 'link' );
+$content = get_field( 'content' );
+$link    = get_field( 'link' );
+
+if ( ! empty ( $link ) ) :
+$link_url    = $link['url'];
+$link_title  = $link['title'];
+$link_target = $link['target'] ? $link['target'] : '_self';
 
 // block preview
 if (!empty($block['data']['__is_preview'])) : ?>Phe
-<img src="<?= get_template_directory_uri(); ?>/inc/block-previews/<?= $class_name; ?>.jpg" />
+<img src="<?= get_template_directory_uri(); ?>/inc/block-previews/<?= $class_name; ?>.jpg"  alt="block-preview"/>
 
 <?php return;
 endif; ?>
@@ -49,26 +54,28 @@ do_action('container_start');
                 <?= $content; ?>
 
             </div>
+
+            <?php endif; ?>
+
         </div>
-
-            <?php
-            endif;
-
-            if ( ! empty ( $link ) ) :
-                $link_url     = $link['url'];
-                $link_title   = $link['title'];
-                $link_target  = $link['target'] ? $link['target'] : '_self';
-            ?>
-
         <div class="row">
+
+            <?php if ( ! empty( $link_title ) ) : ?>
+
             <div class="col-12 d-flex justify-content-center align-items-center">
-                <a class="crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-decoration-none font-family-primary text-black" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?> </a>
+                <a class="crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-decoration-none font-family-primary text-black" href="<?= esc_url( $link_url ); ?>" target="<?= esc_attr( $link_target ); ?>">
+
+                    <?= esc_html( $link_title ); ?>
+
+                </a>
             </div>
+
+            <?php endif; ?>
+
         </div>
-
-            <?php endif ;?>
-
     </div>
+
+    <?php endif ;?>
 
 </section>
 
