@@ -76,7 +76,7 @@ do_action('container_start');
         </div>
     </div>
 
-            <?php endif; ?>
+    <?php endif; ?>
 
 </section>
 
