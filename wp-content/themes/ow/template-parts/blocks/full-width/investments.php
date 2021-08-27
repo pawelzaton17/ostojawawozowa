@@ -78,8 +78,8 @@ do_action('container_start');
 
                     <?php endif; ?>
 
-                    <div class="acf-block-investments__main-content row position-absolute c-px-7 c-mb-7">
-                        <div class="col-10 d-flex flex-column">
+                    <div class="acf-block-investments__main-content row position-absolute c-px-5 c-mb-7">
+                        <div class="col-9 col-md-10 d-flex flex-column">
 
                             <?php if ( ! empty( $item_title ) ) : ?>
 
@@ -104,7 +104,7 @@ do_action('container_start');
                             <?php endif; ?>
 
                         </div>
-                        <div class="acf-block-investments__arrow col-2">
+                        <div class="acf-block-investments__arrow col-3 col-md-2">
                             <svg width="56" height="19" viewBox="0 0 56 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 9.5H54M54 9.5L45.5844 18M54 9.5L45.5844 1" stroke="white" stroke-width="2"/></svg>
                         </div>
                     </div>
