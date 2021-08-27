@@ -26,7 +26,7 @@ $image   = get_field( 'image' );
 
 if ( ! empty( $image ) ) {
     $image_url = wp_get_attachment_image_url( $image, 'full' );
-    $a_style     = "style='background-image: url({$image_url})'";
+    $figure_style   = "style='background-image: url({$image_url})'";
 }
 // block preview
 if (!empty($block['data']['__is_preview'])) : ?>
@@ -46,7 +46,7 @@ do_action('container_start');
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> c-mb-6">
     <div class="container">
         <div class="row">
-            <div class="col-12 d-flex justify-content-center c-py-8 c-py-md-2">
+            <div class="col-12 d-flex justify-content-center c-py-6 c-py-md-2">
 
                 <?= get_template_part('template-parts/components/section-title', '', [ 'title' => $title, 'center' => false ]);  ?>
 
@@ -67,11 +67,11 @@ do_action('container_start');
             <?php
             endif;
 
-            if ( ! empty( $a_style ) ) :
+            if ( ! empty( $figure_style ) ) :
             ?>
 
             <div class="acf-block-about__col col-12 col-lg-7 position-relative">
-                <figure class="acf-block-about__figure h-100 w-100 background-cover" <?= $a_style; ?>></figure>
+                <figure class="acf-block-about__figure h-100 w-100 background-cover" <?= $figure_style; ?>></figure>
             </div>
         </div>
     </div>
