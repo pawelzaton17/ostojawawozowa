@@ -43,7 +43,7 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> c-mb-10">
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> c-mb-6">
     <div class="container">
         <div class="row">
             <div class="col-12 d-flex justify-content-center c-py-8 c-py-md-2">
@@ -52,21 +52,32 @@ do_action('container_start');
 
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-5">
-                <div class="content">
+        <div class="row c-mt-5 c-mt-md-9">
+
+            <?php if ( ! empty( $content ) ) : ?>
+
+            <div class="col-12 col-lg-5 d-flex flex-column justify-content-center">
+                <div class="font-size-18 c-pr-lg-6 c-mb-8 c-mb-lg-0">
 
                     <?= $content; ?>
 
                 </div>
             </div>
-            <div class="acf-block-about__col col-12 col-md-7 position-relative">
+
+            <?php
+            endif;
+
+            if ( ! empty( $a_style ) ) :
+            ?>
+
+            <div class="acf-block-about__col col-12 col-lg-7 position-relative">
                 <figure class="acf-block-about__figure h-100 w-100 background-cover position-absolute" <?= $a_style; ?>></figure>
             </div>
         </div>
     </div>
 
-\
+            <?php endif; ?>
+
 </section>
 
 <?php

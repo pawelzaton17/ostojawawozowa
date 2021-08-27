@@ -3,7 +3,12 @@
  */
 
 .acf-block-about {
-    background: red;
+    p {
+        strong,
+        b {
+            color: $black;
+        }
+    }
 
     &__figure{
         top: 0;
