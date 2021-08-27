@@ -3,4 +3,20 @@
  */
 
 .acf-block-about {
+    background: red;
+
+    &__figure{
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &__col {
+        min-height: 19.438rem;
+
+        @include media-breakpoint-up(md) {
+            min-height: 31.25rem;
+        }
+    }
 }

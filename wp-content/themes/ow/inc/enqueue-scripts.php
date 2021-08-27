@@ -200,7 +200,7 @@ if (!function_exists('crunch_enqueue_scripts')) :
         }
 
         /**
-         * ACF Block About
+         * ACF Block about
          */
 
         /**
