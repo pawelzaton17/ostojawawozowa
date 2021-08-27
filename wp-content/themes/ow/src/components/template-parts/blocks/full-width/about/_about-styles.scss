@@ -1,0 +1,31 @@
+/**
+ * ACF Block About Template Part Styles
+ */
+
+.acf-block-about {
+    p {
+        strong,
+        b {
+            color: $black;
+        }
+    }
+
+    &__figure{
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        @include media-breakpoint-up(md) {
+             position: absolute;
+        }
+    }
+
+    &__col {
+        min-height: 19.438rem;
+
+        @include media-breakpoint-up(md) {
+            min-height: 31.25rem;
+        }
+    }
+}
