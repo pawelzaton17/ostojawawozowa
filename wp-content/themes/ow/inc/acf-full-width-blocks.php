@@ -114,6 +114,18 @@ function crunch_acf_full_width_blocks()
             'example' => false,
         ],
 
+        [
+            'name' => 'CTA',
+            'icon' => 'editor-justify',
+            'keywords' => ['CTA', 'Call-to-action', 'Finansowanie'],
+            'type' => BLOCK_TYPE_FULL_WIDTH,
+            'enqueue_styles' => false,
+            'enqueue_scripts' => false,
+            'enable_assets_for_admin' => true,
+            'mode' => BLOCK_MODE_AUTO,
+            'example' => false,
+        ],
+
         /*
         [
             'name' => 'Example',
