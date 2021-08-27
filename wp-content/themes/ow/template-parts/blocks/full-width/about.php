@@ -25,8 +25,8 @@ $content = get_field( 'content' );
 $image   = get_field( 'image' );
 
 if ( ! empty( $image ) ) {
-    $image_url = wp_get_attachment_image_url( $image, 'full' );
-    $figure_style   = "style='background-image: url({$image_url})'";
+    $image_url    = wp_get_attachment_image_url( $image, 'full' );
+    $figure_style = "style='background-image: url({$image_url})'";
 }
 // block preview
 if (!empty($block['data']['__is_preview'])) : ?>
