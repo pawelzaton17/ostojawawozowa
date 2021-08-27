@@ -200,6 +200,22 @@ if (!function_exists('crunch_enqueue_scripts')) :
         }
 
         /**
+         * ACF Block About
+         */
+
+        /**
+         * Styles
+         */
+
+        $block_about_styles_uri = 'dist/acf_block_about.css';
+
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_about_styles_uri)) {
+            $block_about_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_about_styles_uri));
+
+            wp_enqueue_style('acf-block-about', get_template_directory_uri() . '/' . $block_about_styles_uri, false, $block_about_styles_ver);
+        }
+
+        /**
          * Scripts
          */
 
