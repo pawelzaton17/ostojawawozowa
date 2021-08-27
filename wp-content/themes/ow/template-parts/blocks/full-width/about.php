@@ -71,7 +71,7 @@ do_action('container_start');
             ?>
 
             <div class="acf-block-about__col col-12 col-lg-7 position-relative">
-                <figure class="acf-block-about__figure h-100 w-100 background-cover position-absolute" <?= $a_style; ?>></figure>
+                <figure class="acf-block-about__figure h-100 w-100 background-cover" <?= $a_style; ?>></figure>
             </div>
         </div>
     </div>
