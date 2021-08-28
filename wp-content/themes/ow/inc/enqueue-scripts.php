@@ -228,6 +228,35 @@ if (!function_exists('crunch_enqueue_scripts')) :
             wp_enqueue_style('acf-block-numbers', get_template_directory_uri() . '/' . $block_numbers_uri, false, $block_numbers_ver);
         }
 
+        /**
+         * ACF Block Variants
+         */
+
+        /**
+         * Styles
+         */
+
+        $block_variants_uri = 'dist/acf_block_variants.css';
+
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_variants_uri)) {
+            $block_variants_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_variants_uri));
+
+            wp_enqueue_style('acf-block-variants', get_template_directory_uri() . '/' . $block_variants_uri, false, $block_variants_ver);
+        }
+
+
+        /**
+         * Scripts
+         */
+
+        $block_variants_scripts_uri = 'dist/acf_block_variants.bundle.js';
+
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_variants_scripts_uri)) {
+            $block_variants_scripts_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_variants_scripts_uri));
+
+            wp_enqueue_script('acf-block-variants-scripts', get_template_directory_uri() . '/' . $block_variants_scripts_uri, '', $block_variants_scripts_ver);
+        }
+
 
         /**
          * Error 404
