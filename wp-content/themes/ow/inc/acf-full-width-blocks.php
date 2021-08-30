@@ -103,6 +103,18 @@ function crunch_acf_full_width_blocks()
         ],
 
         [
+            'name' => 'Variants',
+            'icon' => 'editor-justify',
+            'keywords' => ['Variants', 'Warianty', 'Aranżacje'],
+            'type' => BLOCK_TYPE_FULL_WIDTH,
+            'enqueue_styles' => true,
+            'enqueue_scripts' => true,
+            'enable_assets_for_admin' => true,
+            'mode' => BLOCK_MODE_AUTO,
+            'example' => false,
+        ],
+
+        [
             'name' => 'Investments',
             'icon' => 'editor-justify',
             'keywords' => ['Investments', 'Inwestycje'],

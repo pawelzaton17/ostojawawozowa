@@ -1,0 +1,71 @@
+/**
+ * ACF Block Variants Template Part Styles
+ */
+
+.acf-block-variants {
+    &__heading {
+        @include fluid(font-size, 1.5rem, 2.25rem);
+    }
+
+    &__content {
+        @include fluid(font-size, 1.125rem, 1.5rem);
+    }
+
+    &__content-wrapper {
+        @include media-breakpoint-up(lg) {
+            margin-bottom: -4.0625rem;
+        }
+    }
+
+    &__list-item {
+        padding: .3125rem;
+    }
+
+    &__image-col {
+        height: 17.5rem;
+
+        @include media-breakpoint-up(md) {
+            min-height: 26.5rem;
+        }
+        @include media-breakpoint-up(xl) {
+            min-height: 43.5rem;
+        }
+
+        .tns-inner,
+        .tns-outer {
+            height: 100%;
+        }
+    }
+
+    &__image-wrapper {
+        @include media-breakpoint-up(lg) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 41%;
+        }
+    }
+
+    &__tab-btn {
+        color: $primary;
+
+        &.active {
+            color: $white;
+
+            &::after {
+                background: $primary;
+            }
+        }
+    }
+
+    &__tab-wrapper {
+        @include media-breakpoint-up(lg) {
+            width: 38.125rem;
+        }
+    }
+
+    &__tab-heading {
+        font-size: 1.5rem;
+    }
+}
