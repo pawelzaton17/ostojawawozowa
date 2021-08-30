@@ -97,6 +97,14 @@ module.exports = [
                 __dirname,
                 "src/components/template-parts/blocks/full-width/variants/index"
             ),
+            acf_block_investments: path.resolve(
+                __dirname,
+                "src/components/template-parts/blocks/full-width/investments/index"
+            ),
+            acf_block_about: path.resolve(
+                __dirname,
+                "src/components/template-parts/blocks/full-width/about/index"
+            ),
         },
 
         /**
