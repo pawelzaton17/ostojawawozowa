@@ -1,5 +1,5 @@
 /**
- * ACF Block Hero Template Part Scripts
+ * Deafult post scripts
  *
  */
 
@@ -9,10 +9,8 @@ import "tiny-slider/dist/tiny-slider.css";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { tns } from "tiny-slider/src/tiny-slider";
 
-/** Init Tiny Slider with dots and custom controls */
-
-const blockHeroSlider = () => {
-    const commonCarouselWrapper = document.querySelectorAll(".js-tiny-slider-hero");
+const singleItemSlider = () => {
+    const commonCarouselWrapper = document.querySelectorAll(".js-tiny-slider-single");
 
     [...commonCarouselWrapper].forEach((sliderWrapper) => {
         const slider = sliderWrapper.querySelector(".js-tiny-slider-row");
@@ -21,11 +19,11 @@ const blockHeroSlider = () => {
             container: slider,
             items: 1,
             autoplay: false,
-            mouseDrag: false,
+            mouseDrag: true,
             lazyload: true,
             nav: true,
             navPosition: "bottom",
-            loop: false,
+            loop: true,
             controls: true,
             mode: "gallery",
             animateDelay: 300,
@@ -37,19 +35,20 @@ const blockHeroSlider = () => {
         });
         // Slider counter
         let sliderInfo = tnsSlider.getInfo();
+
         sliderWrapper.querySelector(
             ".slider-info-print"
         ).innerHTML = `${sliderInfo.slideBy} / ${sliderInfo.slideCount}`;
 
         tnsSlider.events.on("indexChanged", () => {
             sliderInfo = tnsSlider.getInfo();
-            sliderWrapper.querySelector(".slider-info-print").innerHTML = `${
-                sliderInfo.index + 1
-            } / ${sliderInfo.slideCount}`;
+            sliderWrapper.querySelector(
+                ".slider-info-print"
+            ).innerHTML = `${sliderInfo.displayIndex} / ${sliderInfo.slideCount}`;
         });
     });
 };
 
-if (document.querySelector(".js-tiny-slider")) {
-    blockHeroSlider();
+if (document.querySelector(".js-tiny-slider-single")) {
+    singleItemSlider();
 }
