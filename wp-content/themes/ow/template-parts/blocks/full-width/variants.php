@@ -20,10 +20,10 @@ $class_name       = 'acf-block-variants';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$title    = get_field( 'title' );
-$content  = get_field( 'content' );
-$alt      = get_field( 'alt' );
-$style    = '';
+$title   = get_field( 'title' );
+$content = get_field( 'content' );
+$alt     = get_field( 'alt' );
+$style   = '';
 
 // block preview
 if (!empty($block['data']['__is_preview'])) : ?>
