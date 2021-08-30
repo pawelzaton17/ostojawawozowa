@@ -10,6 +10,17 @@
         }
     }
 
+    .line {
+        width: 2.1875rem;
+        height: 2px;
+        background: $primary;
+
+        @include media-breakpoint-up(md) {
+            width: 3.4375rem;
+            height: 3px;
+        }
+    }
+
     &__figure{
         top: 0;
         right: 0;
@@ -21,11 +32,27 @@
         }
     }
 
-    &__col {
+    &__col-primary {
         min-height: 19.438rem;
 
         @include media-breakpoint-up(md) {
             min-height: 31.25rem;
+        }
+    }
+
+    &__heading {
+        &--alt {
+            @include media-breakpoint-up(lg) {
+                max-width: 14rem;
+            }
+        }
+    }
+
+    &__content {
+        &--alt {
+            @include media-breakpoint-up(lg) {
+                max-width: 25rem;
+            }
         }
     }
 }
