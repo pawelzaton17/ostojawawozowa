@@ -37,12 +37,12 @@ import "partials/main-tag/index";
 import "partials/entry-content/index";
 import "partials/crunch-button/index";
 import "partials/crunch-dropdown/index";
-// import "partials/tiny-slider/index";
+import "partials/tiny-slider/index";
 // import "partials/crunch-modal/index";
 // import "partials/jarallax/index";
 // import "partials/pagination/index";
 
 /** Custom Assets */
 
-// import "./_default-post-styles.scss";
-// import "./default-post-scripts";
+import "./_default-post-styles.scss";
+import "./default-post-scripts";
