@@ -55,7 +55,7 @@ do_action('container_start');
             </div>
         </div>
         <div class="row c-mt-5 c-mt-md-9">
-            <div class="d-flex flex-column justify-content-center<?= $is_alt ? ' col-12 col-lg-4' : ' col-12 col-lg-5'; ?>">
+            <div class="d-flex flex-column justify-content-center<?= $is_alt ? ' col-lg-4' : ' col-lg-5'; ?>">
 
                 <?php if ( ! empty( $heading ) ) : ?>
 
@@ -84,7 +84,7 @@ do_action('container_start');
 
             <?php if ( ! empty( $figure_style ) ) : ?>
 
-            <div class="acf-block-about__col-primary position-relative<?= $is_alt ? ' col-12 col-lg-8' : ' col-12 col-lg-7 '; ?>">
+            <div class="acf-block-about__col-primary position-relative<?= $is_alt ? ' col-lg-8' : ' col-lg-7'; ?>">
                 <figure class="acf-block-about__figure h-100 w-100 background-cover"<?= $figure_style; ?>></figure>
             </div>
 
