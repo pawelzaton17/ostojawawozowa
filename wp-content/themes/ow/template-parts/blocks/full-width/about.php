@@ -22,7 +22,9 @@ $additional_class = !empty($block['className']) ? ' ' .$block['className'] : nul
 // Load values and assing defaults.
 $title   = get_field( 'title' );
 $content = get_field( 'content' );
+$heading = get_field( 'heading' );
 $image   = get_field( 'image' );
+$is_alt  = get_field( 'alt' );
 
 if ( ! empty( $image ) ) {
     $image_url    = wp_get_attachment_image_url( $image, 'full' );
@@ -53,33 +55,43 @@ do_action('container_start');
             </div>
         </div>
         <div class="row c-mt-5 c-mt-md-9">
+            <div class="d-flex flex-column justify-content-center<?= $is_alt ? ' col-12 col-lg-4' : ' col-12 col-lg-5'; ?>">
 
-            <?php if ( ! empty( $content ) ) : ?>
+                <?php if ( ! empty( $heading ) ) : ?>
 
-            <div class="col-12 col-lg-5 d-flex flex-column justify-content-center">
-                <div class="font-size-18 c-pr-lg-6 c-mb-8 c-mb-lg-0">
+                <h2 class="acf-block-about__heading font-size-36 fw-bold position-relative c-pb-4<?= $is_alt ? ' acf-block-about__heading--alt' : ' null'; ?>">
+
+                    <?= $heading; ?>
+
+                </h2>
+                <i class="line c-mb-6"></i>
+
+                <?php
+                endif;
+
+                if ( ! empty( $content ) ) :
+                ?>
+
+                <div class="acf-block-about__content font-size-18 c-pr-lg-6 c-mb-8 c-mb-lg-0<?= $is_alt ? ' acf-block-about__content--alt' : ' null'; ?>">
 
                     <?= $content; ?>
 
                 </div>
+
+                <?php endif; ?>
+
             </div>
 
-            <?php
-            endif;
+            <?php if ( ! empty( $figure_style ) ) : ?>
 
-            if ( ! empty( $figure_style ) ) :
-            ?>
-
-            <div class="acf-block-about__col col-12 col-lg-7 position-relative">
-                <figure class="acf-block-about__figure h-100 w-100 background-cover" <?= $figure_style; ?>></figure>
+            <div class="acf-block-about__col-primary position-relative<?= $is_alt ? ' col-12 col-lg-8' : ' col-12 col-lg-7 '; ?>">
+                <figure class="acf-block-about__figure h-100 w-100 background-cover"<?= $figure_style; ?>></figure>
             </div>
 
             <?php endif; ?>
 
         </div>
     </div>
-
-
 </section>
 
 <?php
