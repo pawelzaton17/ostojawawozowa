@@ -105,6 +105,10 @@ module.exports = [
                 __dirname,
                 "src/components/template-parts/blocks/full-width/about/index"
             ),
+            acf_block_heading_with_content: path.resolve(
+                __dirname,
+                "src/components/template-parts/blocks/full-width/heading-with-content/index"
+            ),
         },
 
         /**
