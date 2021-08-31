@@ -216,6 +216,22 @@ if (!function_exists('crunch_enqueue_scripts')) :
         }
 
         /**
+         * ACF Block Heading with content
+         */
+
+        /**
+         * Styles
+         */
+
+        $block_heading_with_content_styles_uri = 'dist/acf_block_heading_with_content.css';
+
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_heading_with_content_styles_uri)) {
+            $block_heading_with_content_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_heading_with_content_styles_uri));
+
+            wp_enqueue_style('acf-block-heading-with-content', get_template_directory_uri() . '/' . $block_heading_with_content_styles_uri, false, $block_heading_with_content_styles_ver);
+        }
+
+        /**
          * Scripts
          */
 
