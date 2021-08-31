@@ -57,18 +57,17 @@ do_action('container_start');
            </div>
            <div class="col-md-6 col-lg-4 offset-lg-1">
 
-           <?php if ( ! empty( $content ) ) : ?>
+               <?php if ( ! empty( $content ) ) : ?>
 
-           <div class="acf-block-heading-with-content__content m-auto text-dark-gray c-pt-7 c-pt-md-0 text-center text-md-start">
+               <div class="acf-block-heading-with-content__content m-auto text-dark-gray c-pt-7 c-pt-md-0 text-center text-md-start">
 
-               <?= $content; ?>
+                   <?= $content; ?>
+
+               </div>
+
+               <?php endif; ?>
 
            </div>
-
-           <?php endif; ?>
-
-           </div>
-
        </div>
    </div>
 </section>
