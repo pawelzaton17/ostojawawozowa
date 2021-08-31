@@ -57,13 +57,19 @@ do_action('container_start');
                 $content    = get_sub_field( 'content' );
                 $image_id   = get_sub_field( 'bg_image' );
                 $label      = get_sub_field( 'label' );
+                $link       = get_sub_field( 'link' );
 
                 $image_url  = wp_get_attachment_image_url( $image_id, 'full' );
                 $style      = "style='background-image: url( {$image_url} )'";
+
+                if ( $link ) {
+                    $link_url    = $link['url'];
+                    $link_target = $link['target'] ? $link['target'] : '_self';
+                }
             ?>
 
             <div class="acf-block-investments__col col-12 col-lg-6 c-my-2">
-                <div class="h-100 w-100 position-relative">
+                <a class="h-100 w-100 position-relative text-decoration-none d-block" href="<?= esc_url( $link_url ); ?>" target="<?= esc_attr( $link_target ); ?>">
                     <figure class="acf-block-investments__figure background-cover position-absolute" <?= $style; ?>></figure>
 
                     <?php if ( ! empty( $label ) ) : ?>
@@ -108,7 +114,7 @@ do_action('container_start');
                             <svg width="56" height="19" viewBox="0 0 56 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 9.5H54M54 9.5L45.5844 18M54 9.5L45.5844 1" stroke="white" stroke-width="2"/></svg>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
 
             <?php endwhile; ?>

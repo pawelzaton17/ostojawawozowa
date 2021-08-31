@@ -50,7 +50,7 @@ do_action('container_start');
         <div class="row">
             <div class="col-12 d-flex justify-content-center c-py-6 c-py-md-2">
 
-                <?= get_template_part('template-parts/components/section-title', '', [ 'title' => $title, 'center' => false ]);  ?>
+                <?= get_template_part('template-parts/components/section-title', '', [ 'title' => $title, 'center' => true ]);  ?>
 
             </div>
         </div>
