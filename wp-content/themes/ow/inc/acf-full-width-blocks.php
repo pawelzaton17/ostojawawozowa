@@ -38,7 +38,7 @@ function crunch_acf_full_width_blocks()
             'enqueue_styles' => false,
             'enqueue_scripts' => false,
             'enable_assets_for_admin' => true,
-            'mode' => BLOCK_MODE_AUTO,
+            'mode' => BLOCK_MODE_EDIT,
             'example' => false,
         ],
 
@@ -50,7 +50,7 @@ function crunch_acf_full_width_blocks()
             'enqueue_styles' => true,
             'enqueue_scripts' => false,
             'enable_assets_for_admin' => true,
-            'mode' => BLOCK_MODE_AUTO,
+            'mode' => BLOCK_MODE_EDIT,
             'example' => false,
         ],
 
@@ -62,7 +62,7 @@ function crunch_acf_full_width_blocks()
             'enqueue_styles' => true,
             'enqueue_scripts' => false,
             'enable_assets_for_admin' => true,
-            'mode' => BLOCK_MODE_AUTO,
+            'mode' => BLOCK_MODE_EDIT,
             'example' => true,
         ],
 
@@ -74,7 +74,7 @@ function crunch_acf_full_width_blocks()
             'enqueue_styles' => true,
             'enqueue_scripts' => false,
             'enable_assets_for_admin' => true,
-            'mode' => BLOCK_MODE_AUTO,
+            'mode' => BLOCK_MODE_EDIT,
             'example' => false,
         ],
 
@@ -86,7 +86,7 @@ function crunch_acf_full_width_blocks()
             'enqueue_styles' => true,
             'enqueue_scripts' => false,
             'enable_assets_for_admin' => true,
-            'mode' => BLOCK_MODE_AUTO,
+            'mode' => BLOCK_MODE_EDIT,
             'example' => false,
         ],
 
@@ -98,7 +98,7 @@ function crunch_acf_full_width_blocks()
             'enqueue_styles' => true,
             'enqueue_scripts' => true,
             'enable_assets_for_admin' => true,
-            'mode' => BLOCK_MODE_AUTO,
+            'mode' => BLOCK_MODE_EDIT,
             'example' => false,
         ],
 
@@ -110,7 +110,7 @@ function crunch_acf_full_width_blocks()
             'enqueue_styles' => true,
             'enqueue_scripts' => true,
             'enable_assets_for_admin' => true,
-            'mode' => BLOCK_MODE_AUTO,
+            'mode' => BLOCK_MODE_EDIT,
             'example' => false,
         ],
 
@@ -122,7 +122,7 @@ function crunch_acf_full_width_blocks()
             'enqueue_styles' => true,
             'enqueue_scripts' => false,
             'enable_assets_for_admin' => true,
-            'mode' => BLOCK_MODE_AUTO,
+            'mode' => BLOCK_MODE_EDIT,
             'example' => false,
         ],
 
@@ -134,7 +134,7 @@ function crunch_acf_full_width_blocks()
             'enqueue_styles' => false,
             'enqueue_scripts' => false,
             'enable_assets_for_admin' => true,
-            'mode' => BLOCK_MODE_AUTO,
+            'mode' => BLOCK_MODE_EDIT,
             'example' => false,
         ],
 
@@ -146,7 +146,7 @@ function crunch_acf_full_width_blocks()
             'enqueue_styles' => true,
             'enqueue_scripts' => false,
             'enable_assets_for_admin' => true,
-            'mode' => BLOCK_MODE_AUTO,
+            'mode' => BLOCK_MODE_EDIT,
             'example' => false,
         ],
 
@@ -158,7 +158,7 @@ function crunch_acf_full_width_blocks()
             'enqueue_styles' => true,
             'enqueue_scripts' => false,
             'enable_assets_for_admin' => true,
-            'mode' => BLOCK_MODE_AUTO,
+            'mode' => BLOCK_MODE_EDIT,
             'example' => false,
         ],
 
@@ -171,7 +171,7 @@ function crunch_acf_full_width_blocks()
             'enqueue_styles' => false,
             'enqueue_scripts' => false,
             'enable_assets_for_admin' => false,
-            'mode' => BLOCK_MODE_AUTO,
+            'mode' => BLOCK_MODE_EDIT,
             'example' => true,
             'align' => false,
             'post_types' => false,
