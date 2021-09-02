@@ -3,29 +3,48 @@
  */
 
 .mm-menu {
-    --mm-color-background: #4f4f4f;
-
-    &__logo-wrapper {
-        @include fluid(
-            (
-                width: (
-                    min: 12.75rem,
-                    max: 1.5,
-                    to: md,
-                ),
-                height: (
-                    min: 2.25rem,
-                    max: 1.5,
-                    to: md,
-                ),
-            )
-        );
-
-        @extend %hover-opacity-0-75;
-    }
+    --mm-color-background: $white;
 
     .mm-panel {
+        padding: 6.5rem 1rem 1.5rem 2.625rem;
+
+        .mobile-navigation {
+            ul {
+                padding-left: 0;
+                list-style-type: none;
+            }
+        }
+
+        .page_item {
+            @include c-transition(color);
+
+            &:not(:last-of-type) {
+                margin-bottom: 1.5rem;
+
+                @include media-breakpoint-up(lg) {
+                    margin-bottom: 2.75rem;
+                }
+            }
+
+            &:hover {
+                color: $primary;
+            }
+
+            a {
+                font-weight: $font-weight-bold;
+                font-family: $font-family-primary;
+                @include fluid(font-size, 1.125rem, 1.5rem);
+            }
+
+            &.current_page_item {
+                a {
+                    color: $primary;
+                }
+            }
+        }
+
         .mm-navbar {
+            display: none;
             border-color: rgba(#808080, 0.3);
             color: $white;
             font-size: 0.9em;
