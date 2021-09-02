@@ -1,7 +1,12 @@
 html {
   /* CSS custom property for the polyfill */
-  --scroll-behavior: unset;
+  --scroll-behavior: smooth;
 
   /* Normal CSS property for browsers with native support */
-  scroll-behavior: unset;
+  scroll-behavior: smooth;
+}
+
+*[id] {
+    scroll-snap-type: block;
+    scroll-margin: 8rem;
 }
