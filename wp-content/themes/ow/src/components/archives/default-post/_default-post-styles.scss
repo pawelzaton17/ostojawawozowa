@@ -4,6 +4,22 @@
 
 
 .single-post-preview {
+    &:not(:last-of-type) {
+        border: none;
+
+        @include fluid(margin-bottom, 1.5rem , 5.25rem);
+    }
+
+    &:first-of-type {
+        @include fluid(margin-top, 5.25rem, 10.5rem);
+
+        @include media-breakpoint-up(lg) {
+            padding: 5.25rem 0;
+            border-top: 1px solid $gray;
+            border-bottom: 1px solid $gray;
+        }
+    }
+
     &__slider-wrapper {
         height: 20rem;
     }
@@ -17,6 +33,7 @@
 
     &__slider-counter {
         bottom: 0;
+        left: 0;
         width: 4.5rem;
         height: 3.125rem;
     }
@@ -49,5 +66,27 @@
 
     .tns-nav {
         display: none;
+    }
+
+    &__list {
+        grid-template-columns: repeat(2, .4fr);
+    }
+
+    &__list-item {
+        &:before {
+            content: '';
+            position: absolute;
+            top: .6rem;
+            bottom: 0;
+            left: 0;
+            width: .5rem;
+            height: .5rem;
+            border-radius: 50%;
+            background: $primary;
+
+            @include media-breakpoint-up(md) {
+                top: .5rem;
+            }
+        }
     }
 }
