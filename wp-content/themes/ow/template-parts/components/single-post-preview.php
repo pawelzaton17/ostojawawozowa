@@ -13,13 +13,13 @@
     $label               = get_field( 's_label', $post->ID );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post-preview d-block' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post-preview d-block ' ); ?>>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6 col-lg-7 d-flex flex-column justify-content-center c-my-6 c-my-md-0">
 
             <?php if ( ! empty( $label ) ) : ?>
 
-            <h4>
+            <h4 class="font-size-14 text-dark-gray c-pb-2">
 
                 <?= $label; ?>
 
@@ -27,7 +27,7 @@
 
             <?php endif; ?>
 
-            <h2>
+            <h2 class="font-size-36 text-gray-second fw-bold c-pb-4">
 
                 <?php the_title(); ?>
 
@@ -35,14 +35,14 @@
 
             <?php if ( have_rows( 's_list',  $post->ID  ) ) : ?>
 
-            <ul>
+            <ul class="single-post-preview__list list-unstyled d-flex flex-column d-lg-grid">
 
                 <?php
                 while ( have_rows( 's_list', $post->ID) ) : the_row();
                     $item = get_sub_field( 'item' );
                 ?>
 
-                <li>
+                <li class="single-post-preview__list-item position-relative font-size-14 text-dark-gray c-pb-2 c-pl-5">
 
                     <?= $item; ?>
 
@@ -58,7 +58,7 @@
 
         <?php if ( have_rows( 's_gallery',  $post->ID ) ) : ?>
 
-        <div class="col-md-4 c-p-0 js-tiny-slider-single position-relative">
+        <div class="col-md-6 col-lg-5 js-tiny-slider-single position-relative">
             <div class="position-relative">
                 <div class="js-tiny-slider overflow-hidden">
                     <div class="single-post-preview__slider-wrapper js-tiny-slider-row">
