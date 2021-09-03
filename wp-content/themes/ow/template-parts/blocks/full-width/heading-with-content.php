@@ -45,7 +45,7 @@ do_action('container_start');
 
                <?php if ( ! empty( $title ) ) : ?>
 
-               <h2 class="acf-block-heading-with-content__heading fw-bold text-gray-second text-center text-md-start">
+               <h2 class="acf-block-heading-with-content__heading fw-bold text-gray-second text-center text-md-start font-size-48">
 
                    <?= $title; ?>
 
@@ -55,11 +55,11 @@ do_action('container_start');
                <?php endif; ?>
 
            </div>
-           <div class="col-md-6 col-lg-4 offset-lg-1">
+           <div class="col-md-6 col-lg-4">
 
                <?php if ( ! empty( $content ) ) : ?>
 
-               <div class="acf-block-heading-with-content__content m-auto text-dark-gray c-pt-7 c-pt-md-0 text-center text-md-start">
+               <div class="acf-block-heading-with-content__content m-auto text-dark-gray c-pt-7 c-pt-md-0 text-center text-md-start c-pl-md-3">
 
                    <?= $content; ?>
 
