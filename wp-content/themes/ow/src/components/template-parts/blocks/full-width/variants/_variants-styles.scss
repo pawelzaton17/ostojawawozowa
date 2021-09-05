@@ -68,4 +68,13 @@
     &__tab-heading {
         font-size: 1.5rem;
     }
+
+    &__popup-wrapper {
+        max-width: 55.625rem;
+    }
+
+    &__popup-image {
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 }

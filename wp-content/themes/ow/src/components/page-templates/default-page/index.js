@@ -21,7 +21,7 @@
 // import "bootstrap/scss/_list-group.scss";
 // import "bootstrap/scss/_close.scss";
 // import "bootstrap/scss/_toasts.scss";
-// import "bootstrap/scss/_modal.scss";
+import "bootstrap/scss/_modal.scss";
 // import "bootstrap/scss/_tooltip.scss";
 // import "bootstrap/scss/_popover.scss";
 // import "bootstrap/scss/_carousel.scss";
@@ -48,5 +48,5 @@ import "partials/tiny-slider/index";
  * Custom Assets
  */
 
-// import "./_default-page-styles.scss";
-// import "./default-page-scripts";
+import "./_default-page-styles.scss";
+import "./default-page-scripts";

@@ -49,3 +49,47 @@
 /**
  * Custom Functions
  */
+
+/** Modal */
+
+const modalClass = "js-modal";
+const modalTriggersClass = "js-modal-trigger";
+const modalCloseTriggersClass = "js-modal-close";
+
+document.addEventListener("DOMContentLoaded", () => {
+    const el = document.querySelectorAll(`.${modalTriggersClass}`);
+    const modalCloseTrigger = document.querySelectorAll(`.${modalCloseTriggersClass}`);
+
+    // Go through all elements and open selected modal by checking ID of clicked button
+    for (let i = 0; i < el.length; i += 1) {
+        el[i].addEventListener("click", () => {
+            const modalTargetUrl = el[i].getAttribute("data-target-modal");
+            const modal = document.querySelector(`${modalTargetUrl}`);
+
+            if (modal.length) {
+                return;
+            }
+            if (!modal.classList.contains("opened")) {
+                modal.classList.add("opened");
+                document.body.classList.add("modal-opened");
+                document.body.style.overflow = "hidden";
+            } else {
+                modal.classList.remove("opened");
+                document.body.classList.remove("modal-opened");
+                document.body.style.overflow = "initial";
+            }
+        });
+    }
+
+    // Modal close trigger support
+    for (let i = 0; i < modalCloseTrigger.length; i += 1) {
+        modalCloseTrigger[i].addEventListener("click", () => {
+            const modals = document.querySelectorAll(`.${modalClass}`);
+            [].forEach.call(modals, (modal) => {
+                modal.classList.remove("opened");
+                document.body.classList.remove("modal-opened");
+                document.body.style.overflow = "initial";
+            });
+        });
+    }
+});

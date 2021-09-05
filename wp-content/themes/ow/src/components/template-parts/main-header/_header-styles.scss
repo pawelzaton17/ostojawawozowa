@@ -13,6 +13,10 @@
         padding: 1.125rem 1.125rem 0;
     }
 
+    .modal-opened & {
+        transform: translateY(-100%);
+    }
+
     .navbar {
         &__wrapper {
             max-width: 100%;

@@ -152,7 +152,10 @@ do_action('container_start');
                                 if ( ! empty( $button_text ) ) :
                                 ?>
 
-                                <button class="font-size-14 border-0 crunch-button crunch-button__full-background crunch-button__full-background--medium crunch-button__full-background--secondary-color text-decoration-none font-family-primary text-black">
+                                <button
+                                    class="js-modal-trigger font-size-14 border-0 crunch-button crunch-button__full-background crunch-button__full-background--medium crunch-button__full-background--secondary-color text-decoration-none font-family-primary text-black"
+                                    data-target-modal="#variants-modal-<?= $i; ?>"
+                                >
                                     <svg class="c-mr-2" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M10.6524 10.7085L14.7826 14.6666" stroke="#333333" stroke-width="1.2" stroke-linecap="round"/>
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M7.39133 11.8334C9.84059 11.8334 11.8261 9.93058 11.8261 7.58337C11.8261 5.23616 9.84059 3.33337 7.39133 3.33337C4.94206 3.33337 2.95654 5.23616 2.95654 7.58337C2.95654 9.93058 4.94206 11.8334 7.39133 11.8334Z" stroke="#333333" stroke-width="1.2"/>
@@ -226,6 +229,42 @@ do_action('container_start');
                     <?php endif; ?>
 
                 </div>
+
+                <?php if( have_rows( 'popup_slider' ) ): ?>
+
+                <div class="js-modal modal fade" id="variants-modal-<?= $i; ?>">
+                    <div class="acf-block-variants__popup-wrapper m-auto overflow-hidden bg-white h-100 position-relative c-p-4">
+                        <i class="js-modal-close modal__close z-index-2 position-absolute c-p-3 d-block bg-secondary">
+                            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M27.9566 27.9568L10.0433 10.0434" stroke="#333333" stroke-width="1.2" stroke-linecap="round"/>
+                                <path d="M27.9567 10.0434L10.0434 27.9568" stroke="#333333" stroke-width="1.2" stroke-linecap="round"/>
+                            </svg>
+                        </i>
+                        <div class="js-tiny-slider-variants-modal h-100">
+                            <div class="acf-block-variants__popup-slider h-100 js-tiny-slider-row">
+
+                                <?php
+                                while( have_rows( 'popup_slider' ) ): the_row();
+                                    $popup_image_id = get_sub_field( 'image' );
+
+                                    if ( ! empty( $popup_image_id ) ) {
+                                        $popup_image_url = wp_get_attachment_image_url( $popup_image_id, 'full' );
+                                        $popup_style     = "style='background-image: url( {$popup_image_url} )'";
+                                    }
+                                ?>
+
+                                <a href="<?= $popup_image_url ?>" class="h-100" target="_blank">
+                                    <figure class="acf-block-variants__popup-image h-100 c-mb-0 background-cover w-100 img-fluid lazyload " data-lazy="true" <?= $popup_style; ?>></figure>
+                                </a>
+
+                                <?php endwhile; ?>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <?php endif; ?>
 
                 <?php
                     $i++;
