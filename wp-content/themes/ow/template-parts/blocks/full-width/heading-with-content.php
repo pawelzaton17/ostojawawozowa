@@ -55,11 +55,11 @@ do_action('container_start');
                <?php endif; ?>
 
            </div>
-           <div class="col-md-6 col-lg-4">
+           <div class="col-md-6 col-lg-5">
 
                <?php if ( ! empty( $content ) ) : ?>
 
-               <div class="acf-block-heading-with-content__content m-auto text-dark-gray c-pt-7 c-pt-md-0 text-center text-md-start c-pl-md-3">
+               <div class="acf-block-heading-with-content__content m-auto text-dark-gray c-pt-7 c-pt-md-0 text-center text-md-start c-pl-7 c-pl-md-7 c-pl-xxl-5">
 
                    <?= $content; ?>
 
