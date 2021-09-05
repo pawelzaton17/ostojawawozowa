@@ -25,7 +25,7 @@ $content = get_field( 'content' );
 
 // block preview
 if (!empty($block['data']['__is_preview'])) : ?>
-<img src="<?= get_template_directory_uri(); ?>/inc/block-previews/<?= $class_name; ?>.jpg"  alt="block-preview"/>
+<img src="<?= get_template_directory_uri(); ?>/inc/block-previews/<?= $class_name; ?>.jpg"  alt="block-heading-with-content-preview"/>
 
 <?php return;
 endif; ?>
