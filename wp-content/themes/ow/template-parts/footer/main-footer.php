@@ -42,7 +42,7 @@ $contact_title = get_field( 'f_contact_title', 'options' );
                             if ( ! empty( $heading ) && ! empty( $content ) ) :
                         ?>
 
-                        <div class="col-lg-6<?= $i === 0 ? ' c-mb-md-6 c-mb-lg-0' : null; ?>">
+                        <div class="col-lg-6<?= $i === 0 ? ' c-mb-6 c-mb-lg-0' : null; ?>">
                             <h4 class="main-footer__contact-title font-weight-bold">
 
                                 <?= $heading; ?>

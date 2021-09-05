@@ -4,18 +4,15 @@
         "orderby"   => "name",
         'parent'    => 0,
         "order"     => "ASC"
-        // Please check the id of "Uncategorized" category and add line with correct id to exclude it:
-        // "exclude" => 1
     );
 
     global $post;
-    $terms_post_category = wp_get_post_terms($post->ID, 'category', $category_args);
-    $label               = get_field( 's_label', $post->ID );
+    $label = get_field( 's_label', $post->ID );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post-preview d-block ' ); ?>>
     <div class="row">
-        <div class="col-md-6 col-lg-7 d-flex flex-column justify-content-center c-my-6 c-my-md-0">
+        <div class="col-md-6 col-lg-7 d-flex flex-column justify-content-center c-my-4 c-my-md-0">
 
             <?php if ( ! empty( $label ) ) : ?>
 

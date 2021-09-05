@@ -11,7 +11,6 @@ defined('ABSPATH') || exit;
 
 get_header();
 the_post();
-
 ?>
 
 <main id="main">

@@ -28,6 +28,14 @@
         }
     }
 
+    &__link {
+        &:hover {
+            svg {
+                transform: translateX(3px);
+            }
+        }
+    }
+
     &__main-content {
         right: 0;
         bottom: 0;
@@ -35,12 +43,6 @@
     }
 
     &__arrow {
-        &:hover {
-            svg {
-                transform: translateX(3px);
-            }
-        }
-
         svg {
             @include c-transition(transform);
         }

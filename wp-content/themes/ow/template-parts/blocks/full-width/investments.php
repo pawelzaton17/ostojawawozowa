@@ -69,7 +69,7 @@ do_action('container_start');
             ?>
 
             <div class="acf-block-investments__col col-12 col-lg-6 c-my-2">
-                <a class="h-100 w-100 position-relative text-decoration-none d-block" href="<?= esc_url( $link_url ); ?>" target="<?= esc_attr( $link_target ); ?>">
+                <a class="acf-block-investments__link h-100 w-100 position-relative text-decoration-none d-block" href="<?= esc_url( $link_url ); ?>" target="<?= esc_attr( $link_target ); ?>">
                     <figure class="acf-block-investments__figure background-cover position-absolute" <?= $style; ?>></figure>
 
                     <?php if ( ! empty( $label ) ) : ?>

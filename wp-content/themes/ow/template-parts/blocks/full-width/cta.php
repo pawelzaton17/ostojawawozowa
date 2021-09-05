@@ -23,13 +23,14 @@ $additional_class = !empty($block['className']) ? ' ' .$block['className'] : nul
 $content = get_field( 'content' );
 $link    = get_field( 'link' );
 
-if ( ! empty ( $link ) ) :
-$link_url    = $link['url'];
-$link_title  = $link['title'];
-$link_target = $link['target'] ? $link['target'] : '_self';
+if ( ! empty ( $link ) ) {
+    $link_url    = $link['url'];
+    $link_title  = $link['title'];
+    $link_target = $link['target'] ? $link['target'] : '_self';
+}
 
 // block preview
-if (!empty($block['data']['__is_preview'])) : ?>Phe
+if (!empty($block['data']['__is_preview'])) : ?>
 <img src="<?= get_template_directory_uri(); ?>/inc/block-previews/<?= $class_name; ?>.jpg"  alt="block-preview"/>
 
 <?php return;
@@ -45,38 +46,40 @@ do_action('container_start');
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> c-my-9">
     <div class="container">
+
+        <?php if ( ! empty( $content ) ) : ?>
+
         <div class="row">
-
-            <?php if ( ! empty( $content ) ) : ?>
-
             <div class="col-12 col-md-9 col-lg-7 col-xxl-6 d-flex justify-content-center align-items-center text-center m-auto font-size-28 line-height-1-8 c-py-3">
 
                 <?= $content; ?>
 
             </div>
-
-            <?php endif; ?>
-
         </div>
+
+        <?php
+        endif;
+
+        if ( ! empty( $link_title ) ) :
+        ?>
+
         <div class="row">
-
-            <?php if ( ! empty( $link_title ) ) : ?>
-
             <div class="col-12 d-flex justify-content-center align-items-center">
-                <a class="crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-decoration-none font-family-primary text-black" href="<?= esc_url( $link_url ); ?>" target="<?= esc_attr( $link_target ); ?>">
+                <a
+                    class="crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-decoration-none font-family-primary text-black"
+                    href="<?= esc_url( $link_url ); ?>"
+                    target="<?= esc_attr( $link_target ); ?>"
+                >
 
                     <?= esc_html( $link_title ); ?>
 
                 </a>
             </div>
-
-            <?php endif; ?>
-
         </div>
+
+        <?php endif; ?>
+
     </div>
-
-    <?php endif ;?>
-
 </section>
 
 <?php
