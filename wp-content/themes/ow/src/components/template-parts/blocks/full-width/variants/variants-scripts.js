@@ -62,17 +62,18 @@ const blockVariantsModalSlider = () => {
     });
 };
 
-if (document.querySelector(".js-tiny-slider")) {
+if (document.querySelectorAll(".js-tiny-slider-variants")) {
     blockVariantsSlider();
     blockVariantsModalSlider();
 }
 
 document.querySelectorAll(".acf-block-variants__tab-btn").forEach((el) => {
     el.addEventListener("show.bs.tab", () => {
+        const elParent = el.closest(".acf-block-variants");
         const targetClass = el.dataset.bsTarget;
-        const extraTab = document.querySelector(`#acf-block-variants__tab-alt ${targetClass}`);
+        const extraTab = elParent.querySelector(`#acf-block-variants__tab-alt ${targetClass}`);
 
-        document.querySelectorAll(".acf-block-variants__tab").forEach((tab) => {
+        elParent.querySelectorAll(".acf-block-variants__tab").forEach((tab) => {
             tab.classList.remove("show", "active");
         });
         extraTab.classList.add("show", "active");

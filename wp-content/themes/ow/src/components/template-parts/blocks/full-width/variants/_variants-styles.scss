@@ -41,9 +41,21 @@
         @include media-breakpoint-up(lg) {
             position: absolute;
             top: 0;
-            right: 0;
             bottom: 0;
-            left: 41%;
+        }
+
+        &:not(&--alt) {
+            @include media-breakpoint-up(lg) {
+                right: 0;
+                left: 41%;
+            }
+        }
+
+        &--alt {
+            @include media-breakpoint-up(lg) {
+                right: 41%;
+                left: 0;
+            }
         }
     }
 
@@ -60,8 +72,24 @@
     }
 
     &__tab-wrapper {
-        @include media-breakpoint-up(lg) {
-            width: 38.125rem;
+        &:not(&--alt) {
+            @include media-breakpoint-up(lg) {
+                width: 38.125rem;
+            }
+        }
+
+        &--alt {
+            @include media-breakpoint-up(lg) {
+                left: -19rem;
+                width: 43rem;
+                padding-left: 4.25rem;
+            }
+            @include media-breakpoint-up(xl) {
+                left: -16rem;
+            }
+            @include media-breakpoint-up(xxl) {
+                left: -6.875rem;
+            }
         }
     }
 

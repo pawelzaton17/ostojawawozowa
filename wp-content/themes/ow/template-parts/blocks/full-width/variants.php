@@ -42,8 +42,14 @@ do_action('container_start');
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative">
     <div class="container">
-        <div class="row">
+        <div class="row<?= $alt ? ' d-flex flex-row-reverse' : null; ?>">
             <div class="col-lg-5 acf-block-variants__content-wrapper d-md-flex justify-content-end flex-column">
+
+                <?php if ( $alt ) : ?>
+
+                <div class="c-pl-lg-4 c-pl-xxl-10 c-ml-xl-6">
+
+                <?php endif; ?>
 
                 <?php if ( ! empty( $title ) ) : ?>
 
@@ -105,11 +111,20 @@ do_action('container_start');
                 <?php
                 endif;
 
+                if ( $alt ) :
+                ?>
+
+                </div>
+
+                <?php endif; ?>
+
+
+                <?php
                 if ( have_rows( 'tabs' ) ) :
                     $i = 0;
                 ?>
 
-                <div class="acf-block-variants__tab-wrapper list-unstyled tab-content bg-white z-index-2 position-relative c-mt-7 c-mt-md-2 c-pt-3">
+                <div class="acf-block-variants__tab-wrapper list-unstyled tab-content bg-white z-index-2 position-relative c-mt-7 c-mt-md-2 c-pt-3<?= $alt ? ' acf-block-variants__tab-wrapper--alt' : null; ?>">
 
                     <?php
                     while ( have_rows( 'tabs' ) ) : the_row();
@@ -208,7 +223,7 @@ do_action('container_start');
 
                     <?php if ( have_rows( 'slider' ) ) : ?>
 
-                    <div class="acf-block-variants__image-wrapper h-100 js-tiny-slider-row">
+                    <div class="acf-block-variants__image-wrapper h-100 js-tiny-slider-row<?= $alt ? ' acf-block-variants__image-wrapper--alt' : null; ?>">
 
                         <?php
                         while ( have_rows( 'slider' ) ) : the_row();
