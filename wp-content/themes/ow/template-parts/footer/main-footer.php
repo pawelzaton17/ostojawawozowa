@@ -18,11 +18,10 @@ $contact_title = get_field( 'f_contact_title', 'options' );
 
                         <?= $form_id; ?>
 
-                        <div class="c-mt-4">
-                            <p class="font-size-10">Klikając przycisk wyślij potwierdzasz, że przeczytałaś(eś) Regulamin i akceptujesz jego treść.</p>
-                            <p class="font-size-10">Ta strona jest chroniona przez reCAPTCHA i mają zastosowanie Polityka Prywatności i Warunki korzystania z usług Google.</p>
+                        <div class="c-mt-4 font-size-10">
+                            <p>Klikając przycisk wyślij potwierdzasz, że przeczytałaś(eś) Regulamin i akceptujesz jego treść.</p>
+                            <p>Ta strona jest chroniona przez reCAPTCHA i mają zastosowanie Polityka Prywatności i Warunki korzystania z usług Google.</p>
                         </div>
-
                     </div>
                 </div>
                 <div class="col-md-6">

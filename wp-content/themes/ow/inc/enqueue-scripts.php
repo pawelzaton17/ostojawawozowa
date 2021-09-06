@@ -112,7 +112,6 @@ if (!function_exists('crunch_enqueue_scripts')) :
         $gravity_forms_styles_uri = 'dist/gravity_forms.css';
 
         if (file_exists(plugin_dir_path(__FILE__) . '../' . $gravity_forms_styles_uri)) {
-            var_dump('asdcvds');
             $gravity_forms_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $gravity_forms_styles_uri));
 
             wp_enqueue_style('gravity-forms-styles', get_template_directory_uri() . '/' . $gravity_forms_styles_uri, false, $gravity_forms_styles_ver);
