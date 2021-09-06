@@ -4,8 +4,6 @@ if ( ! class_exists( 'GFForms' ) ) {
 	die();
 }
 
-use Gravity_Forms\Gravity_Forms\TranslationsPress_Updater;
-
 /**
  * Class GF_System_Report
  *
@@ -51,9 +49,9 @@ class GF_System_Report {
 		wp_print_styles( array( 'thickbox' ) );
 
 		?>
-		<div class="alert info">
+		<div class="updated gform_system_report_alert inline">
 			<p><?php _e( 'The following is a system report containing useful technical information for troubleshooting issues. If you need further help after viewing the report, click on the "Copy System Report" button below to copy the report and paste it in your message to support.', 'gravityforms' ); ?></p>
-			<button class="button" onclick="function (e) { e.preventDefault() }" id="gf_copy_report" data-clipboard-target="#gf_system_report"><?php _e( 'Copy System Report', 'gravityforms' ); ?> <i aria-hidden="true" class="dashicons dashicons-arrow-right-alt" ></i></button>
+			<p class="inline"><a href="#" class="button-primary" id="gf_copy_report" data-clipboard-target="#gf_system_report"><?php _e( 'Copy System Report', 'gravityforms' ); ?></a></p>
 
 			<div class="gf_copy_message inline" id="gf_copy_error_message">
 				<p><span class="dashicons dashicons-yes"></span><?php esc_html_e( 'Report generated!', 'gravityforms' ); echo ' <b>Press Ctrl+C to copy it.</b>'; ?></p>
@@ -63,7 +61,6 @@ class GF_System_Report {
 				<p><span class="dashicons dashicons-yes"></span><?php esc_html_e( 'Report Copied!', 'gravityforms' ) ?></p>
 			</div>
 
-
 			<textarea id="gf_system_report" readonly="readonly" ><?php echo esc_html( $system_report_text ) ?></textarea>
 		</div>
 		<script type="text/javascript">
@@ -71,6 +68,7 @@ class GF_System_Report {
 
 				clipboard = new Clipboard('#gf_copy_report');
 				clipboard.on('success', function(e) {
+					console.log('here');
 					setTimeout( function(){ jQuery('#gf_copy_success').attr( 'style', 'display:inline-block !important;' )}, 300 );
 					setTimeout( function(){ jQuery('#gf_copy_success').attr( 'style', 'display:none !important;' ) }, 5000 );
 					e.clearSelection();
@@ -139,7 +137,7 @@ class GF_System_Report {
 				}
 
 				// Open section table.
-				echo '<table cellpadding="0" cellspacing="0" class="gform_system_report wp-list-table fixed striped feeds">';
+				echo '<table class="gform_system_report wp-list-table widefat fixed striped feeds">';
 
 				// Add table header.
 				echo '<thead><tr><th colspan="2">' . rgar( $table, 'title' ) . '</th></tr></thead>';
@@ -172,6 +170,10 @@ class GF_System_Report {
 				echo '</tbody></table><br />';
 
 			}
+
+			// Add horizontal divider.
+			echo $i !== count( $sections ) - 1 ? '<div class="hr-divider"></div>' : '';
+
 		}
 
 		// Close form.
@@ -282,7 +284,7 @@ class GF_System_Report {
 
 					$message = sprintf( esc_html__( 'Current status: %s', 'gravityforms' ), $status );
 
-					$message .= ' ' . sprintf( '<img id="gf-spinner" src="%s" />', GFCommon::get_base_url() . '/images/spinner.svg' );
+					$message .= ' ' . sprintf( '<img id="gf-spinner" src="%s" />', GFCommon::get_base_url() . '/images/spinner.gif' );
 
 					$ajax_url = admin_url( 'admin-ajax.php' );
 
@@ -429,11 +431,6 @@ class GF_System_Report {
 						'items'        => self::get_database(),
 					),
 					array(
-						'title'        => esc_html__( 'Translations', 'gravityforms' ),
-						'title_export' => 'Translations',
-						'items'        => self::get_translations(),
-					),
-					array(
 						'title'        => esc_html__( 'Log Files', 'gravityforms' ),
 						'title_export' => 'Log Files',
 						'items'        => self::get_available_logs(),
@@ -457,11 +454,6 @@ class GF_System_Report {
 								'label'        => esc_html__( 'Site URL', 'gravityforms' ),
 								'label_export' => 'Site URL',
 								'value'        => get_site_url(),
-							),
-							array(
-								'label'        => esc_html__( 'REST API Base URL', 'gravityforms' ),
-								'label_export' => 'REST API Base URL',
-								'value'        => rest_url(),
 							),
 							array(
 								'label'        => esc_html__( 'WordPress Version', 'gravityforms' ),
@@ -591,8 +583,8 @@ class GF_System_Report {
 								'value'              => esc_html( phpversion() ),
 								'type'               => 'version_check',
 								'version_compare'    => '>=',
-								'minimum_version'    => '7.3',
-								'validation_message' => esc_html__( 'Recommended: PHP 7.3 or higher.', 'gravityforms' ),
+								'minimum_version'    => '7.1',
+								'validation_message' => esc_html__( 'Recommended: PHP 7.1 or higher.', 'gravityforms' ),
 							),
 							array(
 								'label'        => esc_html__( 'Memory Limit', 'gravityforms' ) . ' (memory_limit)',
@@ -657,18 +649,13 @@ class GF_System_Report {
 						),
 					),
 					array(
-						'title'        => esc_html__( 'Database Server', 'gravityforms' ),
-						'title_export' => 'Database Server',
+						'title'        => esc_html__( 'MySQL', 'gravityforms' ),
+						'title_export' => 'MySQL',
 						'items'        => array(
-							array(
-								'label'        => esc_html__( 'Database Management System', 'gravityforms' ),
-								'label_export' => 'Database Management System',
-								'value'        => esc_html( GFCommon::get_dbms_type() ),
-							),
 							array(
 								'label'              => esc_html__( 'Version', 'gravityforms' ),
 								'label_export'       => 'Version',
-								'value'              => esc_html( GFCommon::get_db_version() ),
+								'value'              => esc_html( $wpdb->db_version() ),
 								'type'               => 'version_check',
 								'version_compare'    => '>',
 								'minimum_version'    => '5.0.0',
@@ -863,7 +850,7 @@ class GF_System_Report {
 		$is_writable = wp_is_writable( $upload_path );
 
 		$disable_css      = get_option( 'rg_gforms_disable_css' );
-		$enable_html5     = get_option( 'rg_gforms_enable_html5', false );
+		$enable_html5     = get_option( 'rg_gforms_enable_html5' );
 		$no_conflict_mode = get_option( 'gform_enable_noconflict' );
 		$updates          = get_option( 'gform_enable_background_updates' );
 
@@ -880,11 +867,20 @@ class GF_System_Report {
 			$validation_message = sprintf( esc_html__( 'This site has not been registered. %1$sPlease register your site%2$s.', 'gravityforms' ), '<a class="thickbox" href="#TB_inline?width=400&inlineId=gform_register_site">', '</a>' );
 		}
 
-		$web_api       = GFWebAPI::get_instance();
-		$is_v2_enabled = $web_api->is_v2_enabled( $web_api->get_plugin_settings() );
+		$locale = apply_filters( 'plugin_locale', get_locale(), 'gravityforms' );
 
 		// Prepare versions array.
 		$gravityforms = array(
+			array(
+				'export_only'               => true,
+				'label'                     => esc_html__( 'Registration', 'gravityforms' ),
+				'label_export'              => 'Registration',
+				'value'                     => $is_registered ? esc_html__( 'Site registered ', 'gravityforms' ) . ' ( ' . $site_key . ' ) ' : '',
+				'is_valid'                  => $is_registered,
+				'value_export'              => $is_registered ? 'Site registered ( ' . $site_key . ' ) ' : 'Not registered',
+				'validation_message'        => $validation_message,
+				'validation_message_export' => '',
+			),
 			array(
 				'label'              => esc_html__( 'Version', 'gravityforms' ),
 				'label_export'       => 'Version',
@@ -940,20 +936,10 @@ class GF_System_Report {
 				'value_export' => $updates ? 'Yes' : 'No',
 			),
 			array(
-				'label'        => esc_html__( 'REST API v2', 'gravityforms' ),
-				'label_export' => 'REST API v2',
-				'value'        => $is_v2_enabled ? __( 'Yes', 'gravityforms' ) : __( 'No', 'gravityforms' ),
-				'value_export' => $is_v2_enabled ? 'Yes' : 'No',
-			),
-			array(
-				'export_only'               => true,
-				'label'                     => esc_html__( 'Registration', 'gravityforms' ),
-				'label_export'              => 'Registration',
-				'value'                     => $is_registered ? esc_html__( 'Site registered ', 'gravityforms' ) . ' ( ' . $site_key . ' ) ' : '',
-				'is_valid'                  => $is_registered,
-				'value_export'              => $is_registered ? 'Site registered ( ' . $site_key . ' ) ' : 'Site not registered',
-				'validation_message'        => $validation_message,
-				'validation_message_export' => '',
+				'label'        => esc_html__( 'Locale', 'gravityforms' ),
+				'label_export' => 'Locale',
+				'value'        => $locale,
+				'value_export' => $locale,
 			),
 		);
 
@@ -1646,58 +1632,6 @@ class GF_System_Report {
 		}
 
 		return $tzstring;
-	}
-
-	/**
-	 * Get translations info.
-	 *
-	 * @since  2.5.6
-	 *
-	 * @return array
-	 */
-	public static function get_translations() {
-		$items = array(
-			array(
-				'label'        => esc_html__( 'Site Locale', 'gravityforms' ),
-				'label_export' => 'Site Locale',
-				'value'        => get_locale(),
-			),
-		);
-
-		if ( function_exists( 'get_user_locale' ) ) {
-			$items[] = array(
-				// translators: %d: The ID of the currently logged in user.
-				'label'        => sprintf( esc_html__( 'User (ID: %d) Locale', 'gravityforms' ), get_current_user_id() ),
-				'label_export' => sprintf( 'User (ID: %d) Locale', get_current_user_id() ),
-				'value'        => get_user_locale(),
-			);
-		}
-
-		$items[] = array(
-			'label' => 'Gravity Forms',
-			'value' => implode( ', ', GFCommon::get_installed_translations() ),
-		);
-
-		if ( ! class_exists( 'GFAddOn' ) ) {
-			return $items;
-		}
-
-		$addons = GFAddOn::get_registered_addons( true );
-
-		foreach ( $addons as $addon ) {
-			$locales = $addon->get_installed_locales();
-
-			if ( empty( $locales ) ) {
-				continue;
-			}
-
-			$items[] = array(
-				'label' => $addon->get_short_title(),
-				'value' => implode( ', ', $locales ),
-			);
-		}
-
-		return $items;
 	}
 
 }

@@ -11,6 +11,12 @@
          font-size: 1.5rem;
      }
 
+     &__form-wrapper {
+         @include media-breakpoint-up(lg) {
+             max-width: 29.375rem;
+         }
+     }
+
      &__title {
          &::after {
              content: '';

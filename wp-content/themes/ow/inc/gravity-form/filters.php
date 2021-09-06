@@ -47,7 +47,7 @@ function input_to_button( $button, $form ) {
     foreach( $input->attributes as $attribute ) {
         $new_button->setAttribute( $attribute->name, $attribute->value );
     }
-    $new_button->setAttribute("class", $input->getAttribute( 'class' )." crunch-button crunch-button__full-background crunch-button__full-background--font-size-14 crunch-button__full-background--primary-color crunch-button__full-background--hover-darken crunch-button__full-background--min-width-none crunch-button--with-letter-spacing text-uppercase border-0 ml-auto");
+    $new_button->setAttribute("class", $input->getAttribute( 'class' )." crunch-button crunch-button__full-background crunch-button__full-background--font-size-18 crunch-button__full-background--secondary-color crunch-button__full-background--hover-darken crunch-button__full-background--min-width-none crunch-button--with-letter-spacing border-0 ml-auto text-black");
     $input->parentNode->replaceChild( $new_button, $input );
 
     return $dom->saveHtml( $new_button );

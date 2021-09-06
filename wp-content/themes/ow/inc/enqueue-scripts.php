@@ -38,13 +38,10 @@ if (!function_exists('crunch_enqueue_scripts')) :
         /**
          * Update WordPress jQuery & jQuery Migrate
          */
-        if(!is_front_page()) {
-            wp_deregister_script('jquery-core');
-            wp_enqueue_script('jquery-core', "https://code.jquery.com/jquery-3.5.0.min.js", array(), '3.5.0', '__return_false');
-            wp_deregister_script('jquery-migrate');
-            wp_enqueue_script('jquery-migrate', "https://code.jquery.com/jquery-migrate-3.2.0.min.js", array(), '3.2.0', '__return_false');
-        }
-
+        wp_deregister_script( 'jquery-core' );
+        wp_enqueue_script( 'jquery-core', "https://code.jquery.com/jquery-3.5.0.min.js", array(), '3.5.0' );
+        wp_deregister_script( 'jquery-migrate' );
+        wp_enqueue_script( 'jquery-migrate', "https://code.jquery.com/jquery-migrate-3.2.0.min.js", array(), '3.2.0' );
 
         /**
          * Default Page
@@ -114,8 +111,8 @@ if (!function_exists('crunch_enqueue_scripts')) :
 
         $gravity_forms_styles_uri = 'dist/gravity_forms.css';
 
-
-        if (is_singular() && has_block('gravityforms/form') && file_exists(plugin_dir_path(__FILE__) . '../' . $gravity_forms_styles_uri)) {
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $gravity_forms_styles_uri)) {
+            var_dump('asdcvds');
             $gravity_forms_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $gravity_forms_styles_uri));
 
             wp_enqueue_style('gravity-forms-styles', get_template_directory_uri() . '/' . $gravity_forms_styles_uri, false, $gravity_forms_styles_ver);
@@ -128,7 +125,7 @@ if (!function_exists('crunch_enqueue_scripts')) :
 
         $gravity_forms_scripts_uri = 'dist/gravity_forms.bundle.js';
 
-        if (is_singular() && has_block('gravityforms/form') && file_exists(plugin_dir_path(__FILE__) . '../' . $gravity_forms_scripts_uri)) {
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $gravity_forms_scripts_uri)) {
             $gravity_forms_scripts_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $gravity_forms_scripts_uri));
 
             wp_enqueue_script('gravity-forms-scripts', get_template_directory_uri() . '/' . $gravity_forms_scripts_uri, '', $gravity_forms_scripts_ver, $in_footer);
