@@ -43,7 +43,7 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative d-none d-lg-block">
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative d-none d-lg-block bg-gray-4">
     <div class="container-fluid">
 
         <?php
