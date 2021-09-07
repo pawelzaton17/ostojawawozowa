@@ -141,7 +141,11 @@ do_action('container_start');
 
                             </i>
                             <div class="c-pl-4">
-                                <h5 class="font-size-18"><?= $title; ?></h5>
+                                <h5 class="font-size-18">
+
+                                    <?= $title; ?>
+
+                                </h5>
 
                                 <?php if( have_rows( 'extra_info' ) ): ?>
 
