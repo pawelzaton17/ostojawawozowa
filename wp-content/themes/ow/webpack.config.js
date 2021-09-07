@@ -113,6 +113,10 @@ module.exports = [
                 __dirname,
                 "src/components/template-parts/blocks/full-width/map/index"
             ),
+            acf_block_image_with_content: path.resolve(
+                __dirname,
+                "src/components/template-parts/blocks/full-width/image-with-content/index"
+            ),
         },
 
         /**
