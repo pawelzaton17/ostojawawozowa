@@ -1,0 +1,38 @@
+/**
+ * ACF Block Image with content Template Part Styles
+ */
+
+.acf-block-image-with-content {
+    &__col-primary {
+        min-height: 23.563rem;
+
+        @include media-breakpoint-up(md) {
+            min-height: 26.5rem;
+        }
+    }
+
+    .line {
+        width: 2.1875rem;
+        height: 2px;
+        background: $white;
+
+        @include media-breakpoint-up(md) {
+            width: 3.4375rem;
+            height: 3px;
+        }
+    }
+
+    &__content {
+        max-width: 16rem;
+    }
+
+    .crunch-button {
+        max-width: 12rem;
+        padding: .75rem 0;
+
+        @include fluid(font-size, .813rem, 1rem);
+        @include media-breakpoint-up(md) {
+            max-width: 15rem;
+        }
+    }
+}
