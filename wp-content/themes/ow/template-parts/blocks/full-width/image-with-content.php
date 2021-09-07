@@ -60,17 +60,16 @@ do_action('container_start');
 
             <div class="col-md-6 c-p-0 c-p-md-3">
                 <div class="acf-block-image-with-content__col-primary position-relative">
-                    <figure class="acf-block-image-with-content__figure h-100 w-100 background-cover"<?= $image_style; ?>></figure>
+                    <figure class="h-100 w-100 background-cover position-absolute"<?= $image_style; ?>></figure>
                 </div>
             </div>
 
-            <?php
-            endif;
-
-            if ( ! empty( $title ) ) :
-            ?>
+            <?php endif; ?>
 
             <div class="col-md-4 d-flex flex-column justify-content-center c-ml-md-7">
+
+                <?php if ( ! empty( $title ) ) : ?>
+
                 <h2 class="acf-block-image-with-content__heading fw-bold font-size-48 text-white c-mt-8 c-mt-md-0">
 
                     <?= $title; ?>
@@ -81,7 +80,7 @@ do_action('container_start');
                 <?php
                 endif;
 
-                if ( !empty( $content ) ) :
+                if ( ! empty( $content ) ) :
                 ?>
 
                 <div class="acf-block-image-with-content__content font-size-14 text-white c-py-4">
@@ -93,7 +92,7 @@ do_action('container_start');
                 <?php
                 endif;
 
-                if (empty( ! $link_title ) ) :
+                if ( ! empty( $link_title ) ) :
                 ?>
 
                 <a class="crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-black crunch-button__full-background--medium text-decoration-none font-family-primary font-size-13" href="<?= esc_url( $link_url ); ?>" target="<?= esc_attr( $link_target ); ?>">
