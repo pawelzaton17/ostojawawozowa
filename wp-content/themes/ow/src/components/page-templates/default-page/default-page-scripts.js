@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
             if (!modal.classList.contains("opened")) {
-                modal.classList.add("opened");
+                modal.classList.add("opened", "show");
                 document.body.classList.add("modal-opened");
                 document.body.style.overflow = "hidden";
             } else {
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modalCloseTrigger[i].addEventListener("click", () => {
             const modals = document.querySelectorAll(`.${modalClass}`);
             [].forEach.call(modals, (modal) => {
-                modal.classList.remove("opened");
+                modal.classList.remove("opened", "show");
                 document.body.classList.remove("modal-opened");
                 document.body.style.overflow = "initial";
             });
