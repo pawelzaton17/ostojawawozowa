@@ -163,6 +163,18 @@ function crunch_acf_full_width_blocks()
         ],
 
         [
+            'name' => 'Map',
+            'icon' => 'editor-justify',
+            'keywords' => ['Map', 'Mapa', 'Bliskie miejsca'],
+            'type' => BLOCK_TYPE_FULL_WIDTH,
+            'enqueue_styles' => true,
+            'enqueue_scripts' => true,
+            'enable_assets_for_admin' => true,
+            'mode' => BLOCK_MODE_EDIT,
+            'example' => false,
+        ],
+
+        [
             'name' => 'Image with content',
             'icon' => 'editor-justify',
             'keywords' => ['Image with content', 'Finansowanie zakupu', 'Financing the purchase'],

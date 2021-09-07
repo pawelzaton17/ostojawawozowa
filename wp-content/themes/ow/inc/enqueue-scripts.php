@@ -239,6 +239,33 @@ if (!function_exists('crunch_enqueue_scripts')) :
             wp_enqueue_script('acf-block-hero-scripts', get_template_directory_uri() . '/' . $block_hero_scripts_uri, '', $block_hero_scripts_ver);
         }
 
+        /**
+         * ACF Block Map
+         */
+
+        /**
+         * Styles
+         */
+
+        $block_map_styles_uri = 'dist/acf_block_map.css';
+
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_map_styles_uri)) {
+            $block_map_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_map_styles_uri));
+
+            wp_enqueue_style('acf-block-heading-with-content', get_template_directory_uri() . '/' . $block_map_styles_uri, false, $block_map_styles_ver);
+        }
+
+        /**
+         * Scripts
+         */
+
+        $block_map_scripts_uri = 'dist/acf_block_map.bundle.js';
+
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_map_scripts_uri)) {
+            $block_map_scripts_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_map_scripts_uri));
+
+            wp_enqueue_script('acf-block-map-scripts', get_template_directory_uri() . '/' . $block_map_scripts_uri, '', $block_map_scripts_ver);
+        }
 
         /**
          * ACF Block List
