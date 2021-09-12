@@ -39,7 +39,7 @@ function define_global_variables()
 {
     /** Set $default_container */
     global $default_container;
-    $default_container = "col-md-10 col-lg-9 col-xl-8";
+    $default_container = "col-md-10 col-lg-9 col-xl-12";
 }
 
 add_action("after_setup_theme", "define_global_variables");
