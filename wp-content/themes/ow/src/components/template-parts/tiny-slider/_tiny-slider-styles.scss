@@ -20,6 +20,10 @@
          .crunch-tiny-slider-button-next {
              right: 0;
          }
+
+         &:focus {
+             outline: none;
+         }
      }
 
     &__control-button {

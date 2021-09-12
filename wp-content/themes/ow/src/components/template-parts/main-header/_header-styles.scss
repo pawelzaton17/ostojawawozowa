@@ -88,6 +88,9 @@
         &__burger-wrapper {
             max-width: 6.75rem;
             height: 3.75rem;
+            transform: translateX(0);
+
+            @include c-transition(transform, .4s, ease);
 
             @include media-breakpoint-up(md) {
                 max-width: 8.5rem;
@@ -96,6 +99,16 @@
 
             @include media-breakpoint-up(lg) {
                 max-width: 9.875rem;
+            }
+
+            .mm-wrapper_opening & {
+                //left: 80vw;
+                transform: translateX(80vw);
+
+                @include media-breakpoint-up(md) {
+                    //left: 27.5rem;
+                    transform: translateX(27.5rem);
+                }
             }
         }
 

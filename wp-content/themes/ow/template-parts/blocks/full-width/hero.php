@@ -41,7 +41,7 @@ do_action('container_start');
 
     <?php if ( have_rows( 'buttons' ) ) : ?>
 
-    <ul class="acf-block-hero__buttons d-none d-md-flex flex-column list-unstyled align-items-end position-absolute d-flex c-m-0">
+    <ul class="acf-block-hero__buttons d-none d-md-flex flex-column list-unstyled z-index-2 align-items-end position-fixed d-flex c-m-0">
 
         <?php
         while ( have_rows( 'buttons' ) ) : the_row();
@@ -78,7 +78,7 @@ do_action('container_start');
     if ( have_rows( 'slider' ) ):
     ?>
 
-    <div class="js-tiny-slider-hero">
+    <div class="js-tiny-slider-hero overflow-hidden">
         <div class="js-tiny-slider crunch-tiny-slider position-relative">
             <div class="acf-block-hero__slider-row js-tiny-slider-row">
 

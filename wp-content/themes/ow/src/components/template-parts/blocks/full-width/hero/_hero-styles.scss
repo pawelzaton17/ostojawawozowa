@@ -9,10 +9,11 @@
 
     &__buttons {
         right: 0;
-        bottom: 14%;
+        bottom: 8.125rem;
 
         @include media-breakpoint-up(lg) {
             right: 1.125rem;
+            bottom: 6.625rem;
         }
     }
 
