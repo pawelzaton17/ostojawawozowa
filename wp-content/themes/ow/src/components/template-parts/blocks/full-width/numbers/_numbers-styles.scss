@@ -4,7 +4,7 @@
 
 .acf-block-numbers{
     &__item-title {
-        @include fluid(font-size, 3.438rem, 5.75rem);
+        @include fluid(font-size, 2.875rem, 5.75rem);
 
         @include media-breakpoint-up(lg) {
             align-items: baseline;
@@ -21,16 +21,18 @@
             left: 0;
             width: 1.875rem;
             height: 3px;
-            background: $primary;
+            background: $white;
 
             @include media-breakpoint-up(md) {
                 width: 3.4375rem;
             }
         }
+    }
 
-        &:last-of-type {
+    &__heading-wrapper {
+        .acf-block-numbers__heading {
             &::after {
-                background: $white;
+                background: $primary;
             }
         }
     }
@@ -65,6 +67,8 @@
     &__content {
         p {
             margin-bottom: 0;
+
+            @include fluid(font-size, .875rem, 1.75rem);
         }
 
         &:not(&--alt) {
