@@ -44,7 +44,7 @@ do_action('container_start');
 
         <?php if ( have_rows( 'v_items' ) ): ?>
 
-            <div class="col-lg-7 c-pr-lg-9">
+            <div class="acf-block-numbers__heading-wrapper col-lg-7 c-pr-lg-9">
                 <div class="row">
                     <div class="col-12 c-mb-8">
                         <h2 class="acf-block-numbers__heading c-pb-4 c-pb-md-3 position-relative font-weight-bold font-size-36">
@@ -78,7 +78,7 @@ do_action('container_start');
 
                             </span>
 
-                            <span class="acf-block-numbers__sup-wrapper c-ml-xl-3">m<sup>2</sup></span>
+                            <span class="acf-block-numbers__sup-wrapper c-ml-3">m<sup>2</sup></span>
 
                             <?php endif; ?>
 
