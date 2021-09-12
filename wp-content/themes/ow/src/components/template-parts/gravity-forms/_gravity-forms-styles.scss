@@ -54,6 +54,10 @@
                 &:hover {
                     color: $secondary !important;
                 }
+
+                .contact-modal-wrapper & {
+                    font-size: .875rem !important;
+                }
             }
         }
 
@@ -197,6 +201,10 @@
                     &.hidden_label {
                         margin-top: 1.25rem;
 
+                        .contact-modal-wrapper & {
+                            margin-top: .625rem;
+                        }
+
                         div.ginput_container {
                             margin-top: 0 !important;
                         }
@@ -268,6 +276,28 @@
                             &:focus {
                                 border-color: $secondary !important;
                                 outline: none !important;
+                            }
+                        }
+
+                        .contact-modal-wrapper & {
+                            input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']):not(.chosen-focus-input):not(.chosen-search-input),
+                            textarea {
+                                height: 3.875rem;
+                                background-color: $gray-5 !important;
+                                color: $black !important;
+                                font-family: $font-family-secondary !important;
+
+                                @extend %font-size-14;
+
+                                &::placeholder {
+                                    color: rgba($gray-second, .5) !important;
+
+                                    @extend %font-size-14;
+                                }
+
+                                &:focus {
+                                    border-color: $primary !important;
+                                }
                             }
                         }
 

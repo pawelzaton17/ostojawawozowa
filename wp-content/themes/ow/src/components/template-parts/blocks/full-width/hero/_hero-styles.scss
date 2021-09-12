@@ -96,7 +96,8 @@
             width: auto;
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
             color: $white;
         }
     }

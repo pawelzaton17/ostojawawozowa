@@ -46,4 +46,41 @@
              @include fluid(margin-right, 2rem, 1.4375rem);
          }
      }
+
+     &__popup-wrapper {
+         max-width: 33.75rem;
+         max-height: 44.125rem;
+     }
  }
+
+.contact-modal-wrapper {
+    .gform_confirmation_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+}
+
+.contact-modal {
+    &__confirm-wrapper {
+        max-width: 18.75rem;
+
+        button {
+            border: none;
+        }
+    }
+
+    &__title {
+        .line {
+            width: 2.1875rem;
+            height: 2px;
+            background: $primary;
+
+            @include media-breakpoint-up(md) {
+                width: 3.4375rem;
+                height: 3px;
+            }
+        }
+    }
+}

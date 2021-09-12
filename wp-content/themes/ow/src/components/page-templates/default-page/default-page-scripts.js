@@ -81,15 +81,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    function modalsClassController() {
+        const modals = document.querySelectorAll(`.${modalClass}`);
+        [].forEach.call(modals, (modal) => {
+            modal.classList.remove("opened", "show");
+            document.body.classList.remove("modal-opened");
+            document.body.style.overflow = "initial";
+        });
+    }
+
     // Modal close trigger support
     for (let i = 0; i < modalCloseTrigger.length; i += 1) {
         modalCloseTrigger[i].addEventListener("click", () => {
-            const modals = document.querySelectorAll(`.${modalClass}`);
-            [].forEach.call(modals, (modal) => {
-                modal.classList.remove("opened", "show");
-                document.body.classList.remove("modal-opened");
-                document.body.style.overflow = "initial";
-            });
+            modalsClassController();
         });
     }
+
+    // Modals has an extra close button that appears after the event "gform_confirmation_loaded"
+    // eslint-disable-next-line no-undef
+    $(document).on("gform_confirmation_loaded", () => {
+        const closeTrigger = document.querySelector(".js-modal-close-contact");
+        closeTrigger.addEventListener("click", () => {
+            modalsClassController();
+        });
+    });
 });

@@ -49,7 +49,10 @@ do_action('container_start');
             $text    = get_sub_field( 'text' );
         ?>
 
-        <li class="acf-block-hero__buttons-item z-index-2 d-flex<?= empty( $text ) ? ' acf-block-hero__buttons-item--alt' : null; ?>">
+        <li
+            class="acf-block-hero__buttons-item js-modal-trigger z-index-2 d-flex<?= empty( $text ) ? ' acf-block-hero__buttons-item--alt' : null; ?>"
+            data-target-modal="<?= empty( $text ) ? '#phone-modal' : '#contact-modal' ?>"
+        >
             <figure class="c-mb-0">
 
                 <?= wp_get_attachment_image( $icon_id, "full", "", array( "class" => "acf-block-hero__icon d-block h-auto w-100 lazyload", "data-lazy" => "true") ); ?>
@@ -108,7 +111,13 @@ do_action('container_start');
                             <?= $title; ?>
 
                         </div>
-                        <a href="<?= esc_url($link_url); ?>" target="<?= esc_attr($link_target); ?>" <?php if($link_target != '_self') echo 'rel="'.esc_attr('nofollow').'"'; ?> class="crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-decoration-none font-family-primary">
+                        <a
+                            href="<?= esc_url($link_url); ?>"
+                            class="js-modal-trigger crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-decoration-none font-family-primary"
+                            data-target-modal="#contact-modal"
+                            target="<?= esc_attr($link_target); ?>"
+                            <?php if($link_target != '_self') echo 'rel="'.esc_attr('nofollow').'"'; ?>
+                        >
 
                             <?= esc_html($link_title); ?>
 

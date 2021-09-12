@@ -15,10 +15,16 @@
     }
 
     &__heading {
-        font-size: 1.875rem;
+        &:not(&--modal) {
+            font-size: 1.875rem;
 
-        @include media-breakpoint-up(lg) {
-            font-size: 3rem;
+            @include media-breakpoint-up(lg) {
+                font-size: 3rem;
+            }
+        }
+
+        &--modal {
+            @extend %font-size-30;
         }
     }
 }
