@@ -53,6 +53,11 @@
         @include media-breakpoint-up(lg) {
             background: transparent;
         }
+
+        p {
+            @include fluid(font-size, .875rem, 1.75rem);
+
+        }
     }
 
     &__sup-wrapper {
@@ -67,8 +72,6 @@
     &__content {
         p {
             margin-bottom: 0;
-
-            @include fluid(font-size, .875rem, 1.75rem);
         }
 
         &:not(&--alt) {
