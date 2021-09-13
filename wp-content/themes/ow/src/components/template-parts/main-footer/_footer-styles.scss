@@ -50,15 +50,51 @@
      &__popup-wrapper {
          max-width: 33.75rem;
          max-height: 44.125rem;
+
+         &--phone {
+             max-height: 31.5rem;
+         }
      }
  }
 
-.contact-modal-wrapper {
+.contact-modal-wrapper,
+.phone-modal-wrapper {
     .gform_confirmation_wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100%;
+    }
+}
+
+.gform_wrapper .top_label li.gfield.gf_inline {
+    &.phone-modal__input {
+        @include media-breakpoint-up(md) {
+            width: 80% !important;
+        }
+    }
+
+    &.phone-modal__button {
+        @include media-breakpoint-up(md) {
+            width: 20% !important;
+        }
+
+        button {
+            height: 3.875rem !important;
+            margin-top: .25rem;
+        }
+    }
+}
+
+.phone-modal {
+    &__heading-content {
+        max-width: 19.25rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    button {
+        border: 0;
     }
 }
 

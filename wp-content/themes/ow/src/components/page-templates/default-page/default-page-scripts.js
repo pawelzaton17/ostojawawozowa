@@ -55,10 +55,12 @@
 const modalClass = "js-modal";
 const modalTriggersClass = "js-modal-trigger";
 const modalCloseTriggersClass = "js-modal-close";
+const newModalTrigger = "js-modal-open-new-modal";
 
 document.addEventListener("DOMContentLoaded", () => {
     const el = document.querySelectorAll(`.${modalTriggersClass}`);
     const modalCloseTrigger = document.querySelectorAll(`.${modalCloseTriggersClass}`);
+    const openNewModal = document.querySelectorAll(`.${newModalTrigger}`);
 
     // Go through all elements and open selected modal by checking ID of clicked button
     for (let i = 0; i < el.length; i += 1) {
@@ -77,6 +79,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 modal.classList.remove("opened");
                 document.body.classList.remove("modal-opened");
                 document.body.style.overflow = "initial";
+            }
+        });
+    }
+
+    // Some modals can redirect to another modal with a form
+    for (let i = 0; i < openNewModal.length; i += 1) {
+        openNewModal[i].addEventListener("click", (e) => {
+            const modalTargetId = el[i].getAttribute("data-target-modal");
+            const modalToOpen = document.querySelector(`${modalTargetId}`);
+            const clickedModal = e.target.closest(".js-modal");
+
+            if (modalToOpen.length) {
+                return;
+            }
+            clickedModal.classList.remove("opened", "show");
+            if (!modalToOpen.classList.contains("opened")) {
+                modalToOpen.classList.add("opened", "show");
+                document.body.classList.add("modal-opened");
+                document.body.style.overflow = "hidden";
             }
         });
     }
