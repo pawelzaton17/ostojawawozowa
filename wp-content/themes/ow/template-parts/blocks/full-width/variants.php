@@ -248,7 +248,7 @@ do_action('container_start');
                 <?php if( have_rows( 'popup_slider' ) ): ?>
 
                 <div class="js-modal modal fade" id="variants-modal-<?= $i; ?>">
-                    <div class="acf-block-variants__popup-wrapper m-auto overflow-hidden bg-white h-100 position-relative c-p-4">
+                    <div class="acf-block-variants__popup-wrapper m-auto overflow-hidden bg-white h-100 w-100 position-relative c-p-4">
                         <i class="js-modal-close modal__close z-index-2 position-absolute c-p-3 d-block bg-secondary">
                             <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M27.9566 27.9568L10.0433 10.0434" stroke="#333333" stroke-width="1.2" stroke-linecap="round"/>

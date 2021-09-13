@@ -3,6 +3,11 @@
  */
 
 .acf-block-hero {
+    @include media-breakpoint-up(md) {
+        height: 100vh;
+        max-height: 58rem;
+        margin-bottom: 0;
+    }
     @include media-breakpoint-up(lg) {
         padding: 1.125rem 1.125rem 0;
     }
