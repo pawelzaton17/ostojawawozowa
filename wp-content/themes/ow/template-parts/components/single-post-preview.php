@@ -35,7 +35,7 @@
             <ul class="single-post-preview__list list-unstyled d-flex flex-column d-lg-grid">
 
                 <?php
-                while ( have_rows( 's_list', $post->ID) ) : the_row();
+                while ( have_rows( 's_list', $post->ID ) ) : the_row();
                     $item = get_sub_field( 'item' );
                 ?>
 

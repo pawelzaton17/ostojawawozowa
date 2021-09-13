@@ -35,4 +35,10 @@
             max-width: 15rem;
         }
     }
+
+    .section-title {
+        .line {
+            background: $primary;
+        }
+    }
 }

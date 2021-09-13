@@ -18,6 +18,12 @@
 
     &__slider-wrapper {
         height: 20rem;
+
+        .acf-block-image-with-content & {
+            @include media-breakpoint-up(md) {
+                height: 25rem;
+            }
+        }
     }
 
     &__arrows {
