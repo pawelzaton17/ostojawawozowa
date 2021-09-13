@@ -3,6 +3,10 @@
  */
 
 .acf-block-image-with-content {
+    &--alt {
+        background: rgba($gray-6, .3);
+    }
+
     &__col-primary {
         min-height: 23.563rem;
 

@@ -64,7 +64,7 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); echo ! $is_alt ? ' bg-primary' : ' bg-gray-6'; ?>">
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); echo ! $is_alt ? ' bg-primary' : ' acf-block-image-with-content--alt'; ?>">
     <div class="container c-py-10 c-py-md-7">
 
         <?php if ( ! $is_alt ) : ?>
