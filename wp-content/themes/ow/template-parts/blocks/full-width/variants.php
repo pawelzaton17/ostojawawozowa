@@ -116,10 +116,9 @@ do_action('container_start');
 
                 </div>
 
-                <?php endif; ?>
-
-
                 <?php
+                endif;
+
                 if ( have_rows( 'tabs' ) ) :
                     $i = 0;
                 ?>

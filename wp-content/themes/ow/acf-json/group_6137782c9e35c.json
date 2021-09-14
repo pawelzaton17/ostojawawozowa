@@ -89,6 +89,30 @@
                     "mime_types": ""
                 },
                 {
+                    "key": "field_6140fbb8e24a2",
+                    "label": "Main image (tablet)",
+                    "name": "main_image_tablet",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
                     "key": "field_61377917d6ddd",
                     "label": "Tab background color",
                     "name": "bg_color",
@@ -285,5 +309,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1631026665
+    "modified": 1631648712
 }

@@ -3,6 +3,10 @@
  */
 
 .acf-block-map {
+    @include media-breakpoint-up(lg) {
+        background: $gray-4;
+    }
+
     &__content-col {
         max-width: 24.6875rem;
     }
@@ -71,7 +75,7 @@
     }
 
     &__figure {
-        background-position: center bottom;
+        background-position: center right;
         background-size: contain;
         background-repeat: no-repeat;
         opacity: 0;
@@ -80,6 +84,36 @@
 
         &--active {
             opacity: 1;
+        }
+    }
+
+    &__tabs-mobile-item {
+        width: 50%;
+
+        @include media-breakpoint-up(md) {
+            width: 25%;
+        }
+
+        .crunch-button {
+            height: 3rem;
+
+            &.active {
+                background: $primary;
+                color: $white;
+            }
+        }
+    }
+
+    &__tabs-mobile-figure {
+        height: 42rem;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &__tabs-mobile-place {
+        @include media-breakpoint-up(md) {
+            width: 50%;
         }
     }
 }

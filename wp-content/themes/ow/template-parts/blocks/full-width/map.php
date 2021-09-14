@@ -43,8 +43,179 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative d-none d-lg-block bg-gray-4">
-    <div class="container-fluid">
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative">
+
+    <div class="d-lg-none">
+        <div class="container d-lg-none c-mb-7">
+            <div class="row">
+                <div class="col-12 text-center">
+
+                    <?php get_template_part('template-parts/components/section-title', '', [ 'title' => $title, 'center' => true ]); ?>
+
+                </div>
+            </div>
+        </div>
+
+        <?php
+        if ( have_rows( 'tabs' ) ) :
+            $i = 0;
+        ?>
+
+        <ul class="list-unstyled nav nav-pills d-flex" id="map-tab" role="tablist">
+
+            <?php
+            while ( have_rows( 'tabs' ) ) : the_row();
+                $tab_title = get_sub_field( 'tab_title' );
+            ?>
+
+            <li class="acf-block-map__tabs-mobile-item nav-link" role="presentation">
+                <button
+                    class="w-100 font-size-14 border-0 crunch-button crunch-button__outline crunch-button__outline--primary-color crunch-button__outline--medium text-decoration-none font-family-primary<?= $i == 0 ? ' active' : null; ?>"
+                    data-bs-toggle="pill"
+                    data-bs-target="<?= ".{$block['id']}-{$i}" ?>"
+                    role="tab"
+                    aria-selected="<?= $i == 0 ? 'true' : 'false'; ?>"
+                >
+                    <span class="z-index-2">
+
+                        <?= $tab_title; ?>
+
+                    </span>
+                </button>
+            </li>
+
+            <?php
+                $i++;
+            endwhile;
+            ?>
+
+        </ul>
+
+        <?php
+        endif;
+
+        if ( have_rows( 'tabs' ) ) :
+            $i = 0;
+        ?>
+
+        <div class="list-unstyled tab-content bg-white">
+
+            <?php
+            while ( have_rows( 'tabs' ) ) : the_row();
+                $tab_color       = get_sub_field( 'bg_color' );
+                $image_mobile_id = get_sub_field( 'main_image_mobile' );
+                $image_tablet_id = get_sub_field( 'main_image_tablet' );
+
+                if ( ! empty( $image_mobile_id ) ) {
+                    $image_mobile_url   = wp_get_attachment_image_url( $image_mobile_id, 'full' );
+                    $mobile_image_style = "style='background-image: url({$image_mobile_url})'";
+                }
+                if ( ! empty( $image_tablet_id ) ) {
+                    $image_tablet_url   = wp_get_attachment_image_url( $image_tablet_id, 'full' );
+                    $tablet_image_style = "style='background-image: url({$image_tablet_url})'";
+                }
+            ?>
+
+                <div
+                    class="acf-block-variants__tab tab-pane fade<?= $i == 0 ? ' show active' : null; echo " {$block['id']}-{$i}"; ?>"
+                    role="tabpanel"
+                >
+
+                    <div class="row c-mt-7 c-mb-10">
+
+                        <?php
+                        while( have_rows( 'items' ) ): the_row();
+                            $icon_id      = get_sub_field( 'icon' );
+                            $title_mobile = get_sub_field( 'title' );
+                            $style        = "style='background-color: {$tab_color}'";
+                        ?>
+
+                        <div class="col-md-6">
+                            <div class="d-flex c-mb-4 c-mx-4">
+                                <i class="acf-block-map__icon-wrapper position-relative d-flex align-items-center justify-content-center" <?= $style; ?>>
+
+                                    <?= wp_get_attachment_image( $icon_id, "19-19", "", array( "class" => "acf-block-map__tab-icon d-block h-100 w-100 lazyload", "data-lazy" => "true") ); ?>
+
+                                </i>
+                                <div class="c-pl-4">
+                                    <h5 class="font-size-18">
+
+                                        <?= $title_mobile; ?>
+
+                                    </h5>
+
+                                    <?php if( have_rows( 'extra_info' ) ): ?>
+
+                                        <ul class="d-flex c-m-0 list-unstyled">
+
+                                            <?php
+                                            while( have_rows( 'extra_info' ) ): the_row();
+                                                $extra_item_content = get_sub_field( 'extra_content' );
+                                                $extra_item_icon_id = get_sub_field( 'extra_icon' );
+                                                ?>
+
+                                                <li class="d-flex align-items-center text-dark-gray c-pr-3">
+                                                    <i>
+
+                                                        <?= wp_get_attachment_image( $extra_item_icon_id, "19-19", "", array( "class" => "d-block h-100 w-100 lazyload", "data-lazy" => "true") ); ?>
+
+                                                    </i>
+                                                    <p class="font-size-14 c-m-0">
+
+                                                        <?= $extra_item_content; ?>
+
+                                                    </p>
+                                                </li>
+
+                                            <?php endwhile; ?>
+
+                                        </ul>
+
+                                    <?php endif; ?>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php endwhile; ?>
+
+                    </div>
+
+                    <div class="bg-gray-7">
+                        <figure
+                            class="acf-block-map__tabs-mobile-figure d-md-none c-m-0"
+                            <?= $mobile_image_style; ?>
+                        ></figure>
+                        <figure
+                            class="acf-block-map__tabs-mobile-figure d-none d-md-block c-m-0"
+                            <?= $tablet_image_style; ?>
+                        ></figure>
+                    </div>
+                </div>
+
+            <?php
+                $i++;
+            endwhile;
+            ?>
+
+        </div>
+
+        <?php endif; ?>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container-fluid d-none d-lg-block">
 
         <?php
         if( have_rows( 'tabs' ) ) :
