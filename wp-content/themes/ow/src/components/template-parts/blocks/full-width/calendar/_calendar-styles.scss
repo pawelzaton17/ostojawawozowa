@@ -5,20 +5,16 @@
 .acf-block-calendar {
     &__heading-primary {
         max-width: 32rem;
-        font-size: 1.875rem;
 
-        @include media-breakpoint-up(lg) {
-             @include fluid(font-size, 1.875rem, 3rem);
-        }
+        @include fluid(font-size, 1.875rem, 3rem, lg);
     }
 
     &__heading_secondary {
         max-width: 12rem;
-        font-size: 1.125rem;
 
+        @include fluid(font-size, 1.125rem, 1.5rem);
         @include media-breakpoint-up(md) {
             max-width: 100%;
-            font-size: 1.5rem;
         }
     }
 
