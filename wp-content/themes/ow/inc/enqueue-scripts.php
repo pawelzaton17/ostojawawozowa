@@ -331,6 +331,22 @@ if (!function_exists('crunch_enqueue_scripts')) :
             wp_enqueue_style('acf-block-image_with_content', get_template_directory_uri() . '/' . $block_image_with_content_styles_uri, false, $block_image_with_content_styles_ver);
         }
 
+        /**
+         * ACF Block Calendar
+         */
+
+        /**
+         * Styles
+         */
+
+        $block_calendar_styles_uri = 'dist/acf_block_calendar.css';
+
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_calendar_styles_uri)) {
+            $block_calendar_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_calendar_styles_uri));
+
+            wp_enqueue_style('acf-block-calendar', get_template_directory_uri() . '/' . $block_calendar_styles_uri, false, $block_calendar_styles_ver);
+        }
+
 
         /**
          * Scripts

@@ -1,0 +1,39 @@
+/**
+ * ACF Block Calendar Template Part Styles
+ */
+
+.acf-block-calendar {
+    &__heading-primary {
+        max-width: 32rem;
+        font-size: 1.875rem;
+
+        @include media-breakpoint-up(lg) {
+             @include fluid(font-size, 1.875rem, 3rem);
+        }
+    }
+
+    &__heading_secondary {
+        max-width: 12rem;
+        font-size: 1.125rem;
+
+        @include media-breakpoint-up(md) {
+            max-width: 100%;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__content {
+        max-width: 23rem;
+    }
+
+    .line {
+        width: 2.1875rem;
+        height: 2px;
+        background: $primary;
+
+        @include media-breakpoint-up(md) {
+            width: 3.4375rem;
+            height: 3px;
+        }
+    }
+}
