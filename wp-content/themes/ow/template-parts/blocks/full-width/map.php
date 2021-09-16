@@ -311,7 +311,7 @@ do_action('container_start');
                                 <?= wp_get_attachment_image( $icon_id, "19-19", "", array( "class" => "acf-block-map__tab-icon d-block h-100 w-100 lazyload", "data-lazy" => "true") ); ?>
 
                             </i>
-                            <div class="c-pl-4">
+                            <div class="acf-block-map__icon-title c-pl-4">
                                 <h5 class="font-size-18">
 
                                     <?= $title; ?>
