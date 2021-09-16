@@ -143,7 +143,7 @@ if (!function_exists('crunch_enqueue_scripts')) :
         if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_cols_styles_uri)) {
             $block_cols_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_cols_styles_uri));
 
-            wp_enqueue_style('acf-block-cols', get_template_directory_uri() . '/' . $block_cols_styles_uri, false, $block_cols_styles_ver);
+            wp_enqueue_style('acf-block-cols-styles', get_template_directory_uri() . '/' . $block_cols_styles_uri, false, $block_cols_styles_ver);
         }
 
 
@@ -160,7 +160,7 @@ if (!function_exists('crunch_enqueue_scripts')) :
         if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_content_with_image_styles_uri)) {
             $block_content_with_image_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_content_with_image_styles_uri));
 
-            wp_enqueue_style('acf-block-content-with-image', get_template_directory_uri() . '/' . $block_content_with_image_styles_uri, false, $block_content_with_image_styles_ver);
+            wp_enqueue_style('acf-block-content-with-image-styles', get_template_directory_uri() . '/' . $block_content_with_image_styles_uri, false, $block_content_with_image_styles_ver);
         }
 
         /**
@@ -176,7 +176,7 @@ if (!function_exists('crunch_enqueue_scripts')) :
         if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_investments_uri)) {
             $block_investments_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_investments_uri));
 
-            wp_enqueue_style('acf-block-investments', get_template_directory_uri() . '/' . $block_investments_uri, false, $block_investments_styles_ver);
+            wp_enqueue_style('acf-block-investments-styles', get_template_directory_uri() . '/' . $block_investments_uri, false, $block_investments_styles_ver);
         }
 
         /**
@@ -192,39 +192,7 @@ if (!function_exists('crunch_enqueue_scripts')) :
         if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_hero_styles_uri)) {
             $block_hero_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_hero_styles_uri));
 
-            wp_enqueue_style('acf-block-hero', get_template_directory_uri() . '/' . $block_hero_styles_uri, false, $block_hero_styles_ver);
-        }
-
-        /**
-         * ACF Block about
-         */
-
-        /**
-         * Styles
-         */
-
-        $block_about_styles_uri = 'dist/acf_block_about.css';
-
-        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_about_styles_uri)) {
-            $block_about_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_about_styles_uri));
-
-            wp_enqueue_style('acf-block-about', get_template_directory_uri() . '/' . $block_about_styles_uri, false, $block_about_styles_ver);
-        }
-
-        /**
-         * ACF Block Heading with content
-         */
-
-        /**
-         * Styles
-         */
-
-        $block_heading_with_content_styles_uri = 'dist/acf_block_heading_with_content.css';
-
-        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_heading_with_content_styles_uri)) {
-            $block_heading_with_content_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_heading_with_content_styles_uri));
-
-            wp_enqueue_style('acf-block-heading-with-content', get_template_directory_uri() . '/' . $block_heading_with_content_styles_uri, false, $block_heading_with_content_styles_ver);
+            wp_enqueue_style('acf-block-hero-styles', get_template_directory_uri() . '/' . $block_hero_styles_uri, false, $block_hero_styles_ver);
         }
 
         /**
@@ -240,6 +208,38 @@ if (!function_exists('crunch_enqueue_scripts')) :
         }
 
         /**
+         * ACF Block about
+         */
+
+        /**
+         * Styles
+         */
+
+        $block_about_styles_uri = 'dist/acf_block_about.css';
+
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_about_styles_uri)) {
+            $block_about_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_about_styles_uri));
+
+            wp_enqueue_style('acf-block-about-styles', get_template_directory_uri() . '/' . $block_about_styles_uri, false, $block_about_styles_ver);
+        }
+
+        /**
+         * ACF Block Heading with content
+         */
+
+        /**
+         * Styles
+         */
+
+        $block_heading_with_content_styles_uri = 'dist/acf_block_heading_with_content.css';
+
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_heading_with_content_styles_uri)) {
+            $block_heading_with_content_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_heading_with_content_styles_uri));
+
+            wp_enqueue_style('acf-block-heading-with-content-styles', get_template_directory_uri() . '/' . $block_heading_with_content_styles_uri, false, $block_heading_with_content_styles_ver);
+        }
+
+        /**
          * ACF Block Map
          */
 
@@ -252,7 +252,7 @@ if (!function_exists('crunch_enqueue_scripts')) :
         if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_map_styles_uri)) {
             $block_map_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_map_styles_uri));
 
-            wp_enqueue_style('acf-block-heading-with-content', get_template_directory_uri() . '/' . $block_map_styles_uri, false, $block_map_styles_ver);
+            wp_enqueue_style('acf-block-map-styles', get_template_directory_uri() . '/' . $block_map_styles_uri, false, $block_map_styles_ver);
         }
 
         /**
@@ -280,7 +280,7 @@ if (!function_exists('crunch_enqueue_scripts')) :
         if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_list_uri)) {
             $block_list_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_list_uri));
 
-            wp_enqueue_style('acf-block-content-with-image', get_template_directory_uri() . '/' . $block_list_uri, false, $block_list_ver);
+            wp_enqueue_style('acf-block-content-with-image-styles', get_template_directory_uri() . '/' . $block_list_uri, false, $block_list_ver);
         }
 
         /**
@@ -296,7 +296,7 @@ if (!function_exists('crunch_enqueue_scripts')) :
         if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_numbers_uri)) {
             $block_numbers_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_numbers_uri));
 
-            wp_enqueue_style('acf-block-numbers', get_template_directory_uri() . '/' . $block_numbers_uri, false, $block_numbers_ver);
+            wp_enqueue_style('acf-block-numbers-styles', get_template_directory_uri() . '/' . $block_numbers_uri, false, $block_numbers_ver);
         }
 
         /**
@@ -312,7 +312,19 @@ if (!function_exists('crunch_enqueue_scripts')) :
         if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_variants_uri)) {
             $block_variants_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_variants_uri));
 
-            wp_enqueue_style('acf-block-variants', get_template_directory_uri() . '/' . $block_variants_uri, false, $block_variants_ver);
+            wp_enqueue_style('acf-block-variants-styles', get_template_directory_uri() . '/' . $block_variants_uri, false, $block_variants_ver);
+        }
+
+        /**
+         * Scripts
+         */
+
+        $block_variants_scripts_uri = 'dist/acf_block_variants.bundle.js';
+
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_variants_scripts_uri)) {
+            $block_variants_scripts_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_variants_scripts_uri));
+
+            wp_enqueue_script('acf-block-variants-scripts', get_template_directory_uri() . '/' . $block_variants_scripts_uri, '', $block_variants_scripts_ver);
         }
 
         /**
@@ -328,7 +340,7 @@ if (!function_exists('crunch_enqueue_scripts')) :
         if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_image_with_content_styles_uri)) {
             $block_image_with_content_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_image_with_content_styles_uri));
 
-            wp_enqueue_style('acf-block-image_with_content', get_template_directory_uri() . '/' . $block_image_with_content_styles_uri, false, $block_image_with_content_styles_ver);
+            wp_enqueue_style('acf-block-image_with_content-styles', get_template_directory_uri() . '/' . $block_image_with_content_styles_uri, false, $block_image_with_content_styles_ver);
         }
 
         /**
@@ -344,22 +356,20 @@ if (!function_exists('crunch_enqueue_scripts')) :
         if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_calendar_styles_uri)) {
             $block_calendar_styles_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_calendar_styles_uri));
 
-            wp_enqueue_style('acf-block-calendar', get_template_directory_uri() . '/' . $block_calendar_styles_uri, false, $block_calendar_styles_ver);
+            wp_enqueue_style('acf-block-calendar-styles', get_template_directory_uri() . '/' . $block_calendar_styles_uri, false, $block_calendar_styles_ver);
         }
-
 
         /**
          * Scripts
          */
 
-        $block_variants_scripts_uri = 'dist/acf_block_variants.bundle.js';
+        $block_calendar_scripts_uri = 'dist/acf_block_calendar.bundle.js';
 
-        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_variants_scripts_uri)) {
-            $block_variants_scripts_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_variants_scripts_uri));
+        if (file_exists(plugin_dir_path(__FILE__) . '../' . $block_calendar_scripts_uri)) {
+            $block_calendar_scripts_ver = date("ymd-Gis", filemtime(plugin_dir_path(__FILE__) . '../' . $block_calendar_scripts_uri));
 
-            wp_enqueue_script('acf-block-variants-scripts', get_template_directory_uri() . '/' . $block_variants_scripts_uri, '', $block_variants_scripts_ver);
+            wp_enqueue_script('acf-block-calendar-scripts', get_template_directory_uri() . '/' . $block_calendar_scripts_uri, '', $block_calendar_scripts_ver);
         }
-
 
         /**
          * Error 404
