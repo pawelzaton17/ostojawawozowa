@@ -9,7 +9,7 @@
             </i>
             <div class="h-100 overflow-auto">
 
-                <?= do_shortcode('[gravityform id="2" ajax="true"]'); ?>
+                <?= do_shortcode('[gravityform id="9" ajax="true"]'); ?>
 
             </div
         </div>
@@ -24,7 +24,7 @@
             </i>
             <div class="h-100 overflow-auto">
 
-                <?= do_shortcode('[gravityform id="3" ajax="true"]'); ?>
+                <?= do_shortcode('[gravityform id="10" ajax="true"]'); ?>
 
             </div
         </div>

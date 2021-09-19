@@ -32,4 +32,42 @@
             height: 3px;
         }
     }
+
+    &__button {
+        max-width: 6.125rem;
+        height: 3rem;
+        border: 2px solid transparent;
+
+        @include c-transition(border-color);
+
+        @include media-breakpoint-up(md) {
+            max-width: 7.5rem;
+        }
+        @include media-breakpoint-up(xl) {
+            max-width: 9.125rem;
+        }
+
+        &:hover {
+            border-color: $primary;
+        }
+    }
+
+    &__list-item {
+        &:not(:last-of-type) {
+            margin-bottom: 1rem;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 1.25rem
+            }
+        }
+    }
+
+    &__arrows,
+    &__controls {
+        height: 0;
+    }
+
+    &__controls {
+        top: 50%;
+    }
 }

@@ -3,4 +3,5 @@
  */
 
 /** Custom assets */
+import "./calendar-scripts";
 import "./_calendar-styles.scss";
