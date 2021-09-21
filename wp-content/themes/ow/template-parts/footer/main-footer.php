@@ -2,7 +2,6 @@
 $form_title    = get_field( 'f_form_title', 'options' );
 $form_id       = get_field( 'f_form_id', 'options' );
 $contact_title = get_field( 'f_contact_title', 'options' );
-$custom_id     = get_field( 'scroll_trigger' );
 
 ?>
 <div class="js-main-footer-wrapper">
