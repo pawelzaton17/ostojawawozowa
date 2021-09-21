@@ -106,4 +106,54 @@
         background-size: contain;
         background-repeat: no-repeat;
     }
+
+    &__slider-wrapper {
+        position: relative;
+
+        @include media-breakpoint-up(lg) {
+            position: static;
+        }
+    }
+
+    .main-variants-controls {
+        &__controls {
+            @include media-breakpoint-up(lg) {
+                top: auto;
+                right: 3.125rem;
+                bottom: 3.125rem;
+                left: auto;
+                width: 6.25rem;
+                height: 0;
+            }
+        }
+
+        &__button {
+            @include media-breakpoint-up(lg) {
+                transform: translateX(0);
+            }
+
+            &--next {
+                @include media-breakpoint-up(md) {
+                    transform: translateX(50%);
+                }
+            }
+
+            &--prev {
+                @include media-breakpoint-up(md) {
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+
+    &--alt {
+        .main-variants-controls {
+            &__controls {
+                @include media-breakpoint-up(lg) {
+                    right: auto;
+                    left: 3.125rem;
+                }
+            }
+        }
+    }
 }

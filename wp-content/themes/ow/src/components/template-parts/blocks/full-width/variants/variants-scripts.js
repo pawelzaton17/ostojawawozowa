@@ -25,7 +25,7 @@ const blockVariantsSlider = () => {
             nav: false,
             navPosition: "bottom",
             loop: true,
-            controls: false,
+            controls: true,
             mode: "gallery",
             animateDelay: 300,
             controlsText: [

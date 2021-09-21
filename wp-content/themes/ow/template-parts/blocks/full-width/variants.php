@@ -25,6 +25,10 @@ $content = get_field( 'content' );
 $alt     = get_field( 'alt' );
 $style   = '';
 
+if ( $alt ) {
+    $class_name .= ' acf-block-variants--alt';
+}
+
 // block preview
 if (!empty($block['data']['__is_preview'])) : ?>
 <img src="<?= get_template_directory_uri(); ?>/inc/block-previews/<?= $class_name; ?>.jpg" />
@@ -242,6 +246,22 @@ do_action('container_start');
 
                     <?php endif; ?>
 
+                    <div class="single-post-preview__controls main-variants-controls__controls single-post-preview__controls--main-variants single-post-preview__controls--variants position-absolute">
+                        <div class="single-post-preview__arrows w-100 position-absolute">
+                            <div class="crunch-tiny-slider__controls d-flex align-items-center h-100 js-crunch-tiny-slider-custom-controls">
+                                <button type="button" class="single-post-preview__button main-variants-controls__button single-post-preview__button--alt single-post-preview__button--prev d-flex align-items-center justify-content-center bg-primary crunch-tiny-slider__control-button crunch-tiny-slider-button-prev border-0">
+                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.82129 1.61865L1.357 7.08294L6.82129 12.5472" stroke="white" stroke-width="1.8"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="single-post-preview__button main-variants-controls__button single-post-preview__button--alt single-post-preview__button--next d-flex align-items-center justify-content-center bg-primary crunch-tiny-slider__control-button crunch-tiny-slider-button-next border-0">
+                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.17822 12.3813L6.64251 6.91706L1.17822 1.45278" stroke="white" stroke-width="1.8"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <?php if( have_rows( 'popup_slider' ) ): ?>
