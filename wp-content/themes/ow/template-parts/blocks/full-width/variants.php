@@ -40,7 +40,7 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative">
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative" data-anim="fade-up-long">
     <div class="container">
         <div class="row<?= $alt ? ' d-flex flex-row-reverse' : null; ?>">
             <div class="col-lg-5 acf-block-variants__content-wrapper d-md-flex justify-content-end flex-column">

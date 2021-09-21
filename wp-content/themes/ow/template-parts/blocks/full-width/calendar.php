@@ -24,6 +24,7 @@ $heading_primary   = get_field( 'title_primary' );
 $content           = get_field( 'content' );
 $heading_secondary = get_field( 'title_secondary' );
 
+
 // block preview
 if (!empty($block['data']['__is_preview'])) : ?>
 <img src="<?= get_template_directory_uri(); ?>/inc/block-previews/<?= $class_name; ?>.jpg"  alt="block-preview"/>
@@ -39,7 +40,7 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> c-my-9">
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> c-my-9" data-anim="fade-up-long" >
     <div class="container">
         <div class="row">
             <div class="col-lg-6 d-flex flex-column flex-md-row flex-lg-column align-items-md-center align-items-lg-start c-mb-10 c-mb-lg-0">

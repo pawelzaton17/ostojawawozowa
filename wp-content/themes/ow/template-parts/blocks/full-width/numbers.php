@@ -38,7 +38,7 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative c-my-10 c-pt-lg-9 c-pb-lg-6">
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative c-my-10 c-pt-lg-9 c-pb-lg-6" data-anim="fade-up-long">
     <div class="container">
         <div class="row">
 
