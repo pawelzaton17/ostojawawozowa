@@ -41,23 +41,24 @@ const blockVariantsModalSlider = () => {
     const commonCarouselWrapper = document.querySelectorAll(".js-tiny-slider-variants-modal");
     [...commonCarouselWrapper].forEach((sliderWrapper) => {
         const slider = sliderWrapper.querySelector(".js-tiny-slider-row");
+        const controlsContainer = sliderWrapper.querySelector(".crunch-tiny-slider__controls");
         tns({
             container: slider,
             items: 1,
-            autoplay: true,
+            autoplay: false,
             mouseDrag: true,
-            autoplayButtonOutput: false,
             lazyload: true,
-            nav: false,
+            nav: true,
             navPosition: "bottom",
             loop: true,
-            controls: false,
+            controls: true,
             mode: "gallery",
             animateDelay: 300,
             controlsText: [
                 "<svg class='tns-controls__icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 253.21 442.83'><title>icon__chevron-regular-left--black-color</title><path d='M229.9,439.31l19.8-19.79a12,12,0,0,0,0-17L69,221.41,249.7,40.28a12,12,0,0,0,0-17L229.9,3.51a12,12,0,0,0-17,0L3.51,212.93a12,12,0,0,0,0,17L212.93,439.31A12,12,0,0,0,229.9,439.31Z'/></svg>",
                 "<svg class='tns-controls__icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 253.21 442.83'><title>icon__chevron-regular-right--black-color</title><path d='M23.31,3.52,3.51,23.31a12,12,0,0,0,0,17l180.7,181.13L3.51,402.54a12,12,0,0,0,0,17l19.8,19.79a12,12,0,0,0,17,0L249.7,229.9a12,12,0,0,0,0-17L40.28,3.52A12,12,0,0,0,23.31,3.52Z'/></svg>",
             ],
+            controlsContainer,
         });
     });
 };

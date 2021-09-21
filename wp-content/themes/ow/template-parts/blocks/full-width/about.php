@@ -45,7 +45,7 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> c-mb-6" data-anim="fade-up-long">
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> c-mb-6" data-anim="fade-in">
     <div class="container">
         <div class="row">
             <div class="col-12 d-flex justify-content-center c-py-6 c-py-md-2">

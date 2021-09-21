@@ -74,6 +74,12 @@
                 transform: translateX(-50%);
             }
         }
+
+        &--alt {
+            @include media-breakpoint-up(md) {
+                transform: translateX(0);
+            }
+        }
     }
 
     .tns-nav {

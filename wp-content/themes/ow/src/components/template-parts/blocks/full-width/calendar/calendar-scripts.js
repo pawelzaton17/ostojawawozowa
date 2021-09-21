@@ -19,6 +19,7 @@ const calendarSlider = () => {
         tns({
             container: slider,
             items: 3,
+            slideBy: 3,
             autoplay: false,
             mouseDrag: true,
             lazyload: true,
@@ -76,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 data-item-time="9:00 - 12:00"
                                 data-target-modal="#calendar-modal"
                             >
-                                9:00 - 12:00
+                                8:00 - 10:00
                             </button>
                         </li>
                         <li class="acf-block-calendar__list-item">
@@ -87,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 data-item-time="12:00 - 15:00"
                                 data-target-modal="#calendar-modal"
                             >
-                                12:00 - 15:00
+                                10:00 - 16:00
                             </button>
                         </li>
                         <li class="acf-block-calendar__list-item">
@@ -98,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 data-item-time="15:00 - 16:00"
                                 data-target-modal="#calendar-modal"
                             >
-                                15:00 - 16:00
+                                16:00 - 20:00
                             </button>
                         </li>
                     </ul>

@@ -40,7 +40,7 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> c-my-9" data-anim="fade-up-long" >
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> c-my-9" data-anim="fade-in" >
     <div class="container">
         <div class="row">
             <div class="col-lg-6 d-flex flex-column flex-md-row flex-lg-column align-items-md-center align-items-lg-start c-mb-10 c-mb-lg-0">

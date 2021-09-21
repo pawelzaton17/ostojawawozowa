@@ -53,7 +53,7 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative c-my-10" data-anim="fade-up-long">
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative c-my-10" data-anim="fade-in">
     <div class="container">
         <div class="row">
             <div class="col-md-6 c-px-md-7 c-px-lg-9 c-px-xl-6 c-py-md-5 d-md-flex flex-md-column justify-content-md-center">

@@ -40,7 +40,7 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative" data-anim="fade-up-long">
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative" data-anim="fade-in">
     <div class="container">
         <div class="row<?= $alt ? ' d-flex flex-row-reverse' : null; ?>">
             <div class="col-lg-5 acf-block-variants__content-wrapper d-md-flex justify-content-end flex-column">
@@ -274,6 +274,22 @@ do_action('container_start');
                                 <?php endwhile; ?>
 
                             </div>
+                            <div class="single-post-preview__controls position-absolute">
+                                <div class="single-post-preview__arrows w-100 position-absolute">
+                                    <div class="crunch-tiny-slider__controls d-flex align-items-center h-100 js-crunch-tiny-slider-custom-controls">
+                                        <button type="button" class="single-post-preview__button single-post-preview__button--alt single-post-preview__button--prev d-flex align-items-center justify-content-center bg-primary crunch-tiny-slider__control-button crunch-tiny-slider-button-prev border-0">
+                                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.82129 1.61865L1.357 7.08294L6.82129 12.5472" stroke="white" stroke-width="1.8"/>
+                                            </svg>
+                                        </button>
+                                        <button type="button" class="single-post-preview__button single-post-preview__button--alt single-post-preview__button--next d-flex align-items-center justify-content-center bg-primary crunch-tiny-slider__control-button crunch-tiny-slider-button-next border-0">
+                                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.17822 12.3813L6.64251 6.91706L1.17822 1.45278" stroke="white" stroke-width="1.8"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -284,26 +300,6 @@ do_action('container_start');
                     $i++;
                 endwhile;
                 ?>
-
-                <div class="acf-block-hero__controls d-none d-md-block">
-                    <div class="container d-flex align-items-center h-100">
-                        <div class="row w-100">
-                            <div class="col-10">
-                                <div class="text-white slider-info-print font-size-15 font-weight-medium"></div>
-                            </div>
-                            <div class="col-2 position-relative">
-                                <div class="crunch-tiny-slider__controls d-flex align-items-center h-100 js-crunch-tiny-slider-custom-controls">
-                                    <button type="button" class="acf-block-hero__control-item crunch-tiny-slider__control-button crunch-tiny-slider-button-prev hover-opacity-0-75 bg-transparent border-0">
-                                        <svg class="acf-block-hero__control-icon crunch-tiny-slider__control-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 253.21 442.83"><title>icon__chevron-regular-left--black-color</title><path d="M229.9,439.31l19.8-19.79a12,12,0,0,0,0-17L69,221.41,249.7,40.28a12,12,0,0,0,0-17L229.9,3.51a12,12,0,0,0-17,0L3.51,212.93a12,12,0,0,0,0,17L212.93,439.31A12,12,0,0,0,229.9,439.31Z"/></svg>
-                                    </button>
-                                    <button type="button" class="acf-block-hero__control-item crunch-tiny-slider__control-button crunch-tiny-slider-button-next hover-opacity-0-75 bg-transparent border-0">
-                                        <svg class="acf-block-hero__control-icon crunch-tiny-slider__control-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 253.21 442.83"><title>icon__chevron-regular-right--black-color</title><path d="M23.31,3.52,3.51,23.31a12,12,0,0,0,0,17l180.7,181.13L3.51,402.54a12,12,0,0,0,0,17l19.8,19.79a12,12,0,0,0,17,0L249.7,229.9a12,12,0,0,0,0-17L40.28,3.52A12,12,0,0,0,23.31,3.52Z"/></svg>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 

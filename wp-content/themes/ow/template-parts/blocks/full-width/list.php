@@ -37,7 +37,7 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?>" data-anim="fade-up-long"
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?>" data-anim="fade-in"
 
     <div class="container">
         <div class="row">
