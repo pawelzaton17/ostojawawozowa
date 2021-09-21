@@ -27,4 +27,8 @@
             fill: $black;
         }
     }
+
+    .modal-opened & {
+        opacity: 0;
+    }
 }
