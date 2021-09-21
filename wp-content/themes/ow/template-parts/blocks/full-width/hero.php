@@ -51,7 +51,7 @@ do_action('container_start');
 
         <li
             class="acf-block-hero__buttons-item js-modal-trigger z-index-2 d-flex<?= empty( $text ) ? ' acf-block-hero__buttons-item--alt' : null; ?>"
-            data-target-modal="<?= empty( $text ) ? '#phone-modal' : '#contact-modal' ?>"
+            data-target-modal="<?= empty( $text ) ? '#contact-modal' : '#phone-modal' ?>"
         >
             <figure class="c-mb-0">
 
