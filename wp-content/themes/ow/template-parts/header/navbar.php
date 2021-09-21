@@ -2,7 +2,7 @@
 $logo = get_field( 'header_logo', 'options' );
 ?>
 <nav class="navbar p-0">
-    <div class="navbar__wrapper container c-p-0">
+    <div class="navbar__wrapper container">
         <div class="row align-items-center justify-content-between w-100 no-gutters c-m-0">
             <div class="col-8 col-md-3 col-lg-10 col-xxl-8 navbar__col d-flex align-items-center">
                 <div class="row w-100">
