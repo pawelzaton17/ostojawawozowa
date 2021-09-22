@@ -62,12 +62,43 @@
         }
     }
 
+    &__calendar-wrapper {
+        @include media-breakpoint-up(md) {
+            background: $olive-2;
+        }
+    }
+
     &__arrows,
     &__controls {
-        height: 0;
+        @include media-breakpoint-up(md) {
+            position: absolute;
+            height: 0;
+        }
     }
 
     &__controls {
         top: 50%;
+        margin-top: 1rem;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+        }
+    }
+
+    &__mobile-controls {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0 .625rem;
+        height: 3.25rem;
+
+        button {
+            background: $primary;
+
+            &:focus,
+            &:hover {
+                background: $primary;
+                color: $white;
+            }
+        }
     }
 }
