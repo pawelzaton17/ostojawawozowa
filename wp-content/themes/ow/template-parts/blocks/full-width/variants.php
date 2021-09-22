@@ -78,11 +78,16 @@ do_action('container_start');
                 <?php
                 endif;
 
-                if ( have_rows('tabs') ) :
-                    $i = 0;
+                if ( have_rows( 'tabs' ) ) :
+                    $i          = 0;
+                    $tabs_count = count( get_field( 'tabs' ) );
                 ?>
 
-                <ul class="list-unstyled nav nav-pills c-mt-5 c-mt-md-3" id="variants-tab" role="tablist">
+                <ul
+                    id="variants-tab"
+                    class="list-unstyled nav nav-pills c-mt-5 c-mt-md-3<?= $tabs_count >= 2 ? null : ' d-none'; ?>"
+                    role="tablist"
+                >
 
                     <?php
                     while ( have_rows( 'tabs' ) ) : the_row();
