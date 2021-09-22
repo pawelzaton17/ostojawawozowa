@@ -19,8 +19,8 @@ $contact_title = get_field( 'f_contact_title', 'options' );
                         <?= $form_id; ?>
 
                         <div class="c-mt-4 font-size-10">
-                            <p>Klikając przycisk wyślij potwierdzasz, że przeczytałaś(eś) Regulamin i akceptujesz jego treść.</p>
-                            <p>Ta strona jest chroniona przez reCAPTCHA i mają zastosowanie Polityka Prywatności i Warunki korzystania z usług Google.</p>
+                            <p>Klikając przycisk wyślij potwierdzasz, że przeczytałaś(eś) <a href="<?= esc_url( home_url( '/' ) ); ?>regulamin" class="text-decoration-none text-white" target="_blank">Regulamin</a> i akceptujesz jego treść.</p>
+                            <p>Ta strona jest chroniona przez reCAPTCHA i mają zastosowanie <a href="<?= esc_url( home_url( '/' ) ); ?>privacy-policy" class="text-decoration-none text-white" target="_blank">Polityka Prywatności</a> i Warunki korzystania z usług Google.</p>
                         </div>
                     </div>
                 </div>
