@@ -70,7 +70,7 @@ do_action('container_start');
 
             </div>
             <div class="col-lg-6 d-flex justify-content-md-center c-p-0">
-                <div class="row w-100 m-auto">
+                <div class="row acf-block-calendar__calendar-row w-100 m-auto">
                     <div class="col-12 d-flex flex-row justify-content-md-center c-mb-5 align-items-center">
 
                         <?php if ( ! empty( $heading_secondary ) ) : ?>
@@ -87,32 +87,32 @@ do_action('container_start');
                         <?php endif; ?>
 
                     </div>
-                    <div class="col-12 acf-block-calendar__calendar-wrapper js-tiny-slider-calendar c-px-0 c-px-md-5 c-py-md-5 position-relative">
-                        <div class="js-tiny-slider overflow-hidden c-py-7 c-px-5 c-py-md-0 c-px-md-0 bg-olive-2">
+                    <div class="col-12 acf-block-calendar__calendar-wrapper js-tiny-slider-calendar c-px-0 c-py-md-5 position-relative">
+                        <div class="js-tiny-slider overflow-hidden c-py-7 c-px-5 c-py-md-0 bg-olive-2">
                             <div id="js-calendar" class="js-tiny-slider-row d-flex"></div>
                         </div>
                         <div class="single-post-preview__controls acf-block-calendar__controls">
                             <div class="single-post-preview__arrows acf-block-calendar__arrows w-100 position-md-absolute">
-                                <div class="crunch-tiny-slider__controls d-flex align-items-center h-100 js-crunch-tiny-slider-custom-controls">
-                                    <div class="d-none d-md-block">
-                                        <button type="button" class="single-post-preview__button single-post-preview__button--prev d-flex align-items-center justify-content-center bg-primary crunch-tiny-slider__control-button crunch-tiny-slider-button-prev border-0">
+                                <div class="crunch-tiny-slider__controls d-flex align-items-center h-100 js-crunch-tiny-slider-custom-controls acf-block-calendar__mobile-controls w-100 c-px-6 c-px-md-0">
+                                    <div type="button" class="w-100">
+                                        <div class="d-md-none border-0 crunch-button crunch-button--file crunch-button__full-background crunch-button__full-background--primary-color text-decoration-none font-family-primary w-100 font-size-14">
+                                            Wcześniejszy termin
+                                        </div>
+                                        <div class="d-none d-md-flex single-post-preview__button single-post-preview__button--prev d-flex align-items-center justify-content-center bg-primary crunch-tiny-slider__control-button crunch-tiny-slider-button-prev border-0">
                                             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M6.82129 1.61865L1.357 7.08294L6.82129 12.5472" stroke="white" stroke-width="1.8"/>
                                             </svg>
-                                        </button>
-                                        <button type="button" class="single-post-preview__button single-post-preview__button--next d-flex align-items-center justify-content-center bg-primary crunch-tiny-slider__control-button crunch-tiny-slider-button-next border-0">
+                                        </div>
+                                    </div>
+                                    <div type="button" class="w-100">
+                                        <div class="d-md-none border-0 crunch-button crunch-button--file crunch-button__full-background crunch-button__full-background--primary-color text-decoration-none font-family-primary w-100 font-size-14">
+                                            Pózniejszy termin
+                                        </div>
+                                        <div class="d-none d-md-flex single-post-preview__button single-post-preview__button--next d-flex align-items-center justify-content-center bg-primary crunch-tiny-slider__control-button crunch-tiny-slider-button-next border-0">
                                             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M1.17822 12.3813L6.64251 6.91706L1.17822 1.45278" stroke="white" stroke-width="1.8"/>
                                             </svg>
-                                        </button>
-                                    </div>
-                                    <div class="acf-block-calendar__mobile-controls w-100 d-md-none c-px-6">
-                                        <button type="button" class="border-0 crunch-button crunch-button--file crunch-button__full-background crunch-button__full-background--primary-color text-decoration-none font-family-primary w-100 font-size-14">
-                                            Wcześniejszy termin
-                                        </button>
-                                        <button type="button" class="border-0 crunch-button crunch-button--file crunch-button__full-background crunch-button__full-background--primary-color text-decoration-none font-family-primary w-100 font-size-14">
-                                            Pózniejszy termin
-                                        </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

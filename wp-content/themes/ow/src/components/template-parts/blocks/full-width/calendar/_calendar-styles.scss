@@ -40,7 +40,7 @@
 
         @include c-transition(border-color);
 
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(sm) {
             max-width: 7.5rem;
         }
         @include media-breakpoint-up(xl) {
@@ -49,6 +49,15 @@
 
         &:hover {
             border-color: $primary;
+        }
+    }
+
+    &__calendar-row {
+        @include media-breakpoint-up(md) {
+            max-width: 40.25rem;
+        }
+        @include media-breakpoint-up(lg) {
+            max-width: unset;
         }
     }
 
@@ -90,15 +99,5 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 0 .625rem;
         height: 3.25rem;
-
-        button {
-            background: $primary;
-
-            &:focus,
-            &:hover {
-                background: $primary;
-                color: $white;
-            }
-        }
     }
 }
