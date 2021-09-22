@@ -181,7 +181,7 @@ do_action('container_start');
 
                     </div>
 
-                    <div class="bg-gray-7">
+                    <div>
                         <figure
                             class="acf-block-map__tabs-mobile-figure d-md-none c-m-0"
                             <?= $mobile_image_style; ?>
@@ -203,13 +203,6 @@ do_action('container_start');
         <?php endif; ?>
 
     </div>
-
-
-
-
-
-
-
 
 
 
