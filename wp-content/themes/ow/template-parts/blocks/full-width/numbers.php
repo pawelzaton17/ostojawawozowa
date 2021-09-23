@@ -101,7 +101,7 @@ do_action('container_start');
         if ( have_rows( 'w_items' ) ):
         ?>
 
-            <div class="col-lg-5 text-white">
+            <div class="acf-block-numbers__col-wrapper col-lg-5 text-white">
                 <div class="acf-block-numbers__col-bg bg-primary"></div>
                 <div class="acf-block-numbers__col-row row c-py-9 c-py-lg-0 position-relative z-index-2">
                     <div class="col-12 c-mb-7 c-mb-md-8">
@@ -118,7 +118,7 @@ do_action('container_start');
                         $w_content = get_sub_field( 'w_item_content' );
                     ?>
 
-                    <div class="col-6 col-md-4 col-lg-6 d-flex flex-column c-pb-4 c-pb-md-3 c-pb-lg-6">
+                    <div class="acf-block-numbers__col-content col-6 col-md-4 col-lg-6 d-flex flex-column c-pb-4 c-pb-md-3 c-pb-lg-6 c-pl-lg-0">
                         <h2 class="font-size-11">
 
                             <?= $w_heading; ?>
