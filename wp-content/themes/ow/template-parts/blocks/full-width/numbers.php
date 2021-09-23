@@ -23,13 +23,13 @@ $additional_class = !empty($block['className']) ? ' ' .$block['className'] : nul
 $v_title = get_field( 'v_title' );
 $w_title = get_field( 'w_title' );
 
+
 // block preview
 if (!empty($block['data']['__is_preview'])) : ?>
 <img src="<?= get_template_directory_uri(); ?>/inc/block-previews/<?= $class_name; ?>.jpg" />
 
 <?php return;
 endif; ?>
-
 
 <?php
 /**
@@ -116,9 +116,12 @@ do_action('container_start');
                     while ( have_rows( 'w_items' ) ): the_row();
                         $w_heading = get_sub_field( 'w_item_heading' );
                         $w_content = get_sub_field( 'w_item_content' );
-                    ?>
+                        $text_wrap = get_sub_field( 'alt' );
 
-                    <div class="acf-block-numbers__col-content col-6 col-md-4 col-lg-6 d-flex flex-column c-pb-4 c-pb-md-3 c-pb-lg-6 c-pl-lg-0">
+                        ?>
+
+                    <div class="acf-block-numbers__col-content col-6 col-md-4 col-lg-6 d-flex flex-column c-pb-4 c-pb-md-3 c-pb-lg-6 c-pl-lg-0<?= $text_wrap ? ' text-nowrap' : ' null'; ?>
+">
                         <h2 class="font-size-11">
 
                             <?= $w_heading; ?>
