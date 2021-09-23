@@ -51,14 +51,18 @@
         background: $primary;
 
         @include media-breakpoint-up(lg) {
+            margin-left: -.875rem;
             background: transparent;
+        }
+        @include media-breakpoint-up(xl) {
+            margin-left: 0;
         }
 
         p {
-            @include fluid(font-size, .875rem, 1.75rem);
-
+            @include fluid(font-size, .875rem, 1.63rem);
         }
     }
+
 
     &__sup-wrapper {
         @include media-breakpoint-up(lg) {
@@ -92,6 +96,12 @@
             @include media-breakpoint-up(md) {
                 max-width: 15rem;
             }
+        }
+    }
+
+    &__col-content {
+        @include media-breakpoint-up(lg) {
+            white-space: nowrap;
         }
     }
 }
