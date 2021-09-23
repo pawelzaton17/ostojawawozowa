@@ -206,6 +206,25 @@
                     "toolbar": "full",
                     "media_upload": 1,
                     "delay": 0
+                },
+                {
+                    "key": "field_614cfae969010",
+                    "label": "White space wrap?",
+                    "name": "alt",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
                 }
             ]
         }
@@ -227,5 +246,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1629476736
+    "modified": 1632434958
 }
