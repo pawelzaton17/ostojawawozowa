@@ -11,16 +11,18 @@ import { tns } from "tiny-slider/src/tiny-slider";
 
 const heroButtonItem = document.querySelectorAll(".acf-block-hero__buttons-item");
 
-heroButtonItem.forEach((el) => {
-    el.addEventListener("mouseover", () => {
-        const textItem = el.querySelector(".js-hero-buttons-text");
+document.addEventListener("DOMContentLoaded", () => {
+    heroButtonItem.forEach((el) => {
+        el.addEventListener("mouseover", () => {
+            const textItem = el.querySelector(".js-hero-buttons-text");
 
-        textItem.classList.add("is-visible");
-    });
-    el.addEventListener("mouseout", () => {
-        const textItem = el.querySelector(".js-hero-buttons-text");
+            textItem.classList.add("is-visible");
+        });
+        el.addEventListener("mouseout", () => {
+            const textItem = el.querySelector(".js-hero-buttons-text");
 
-        textItem.classList.remove("is-visible");
+            textItem.classList.remove("is-visible");
+        });
     });
 });
 

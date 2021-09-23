@@ -84,6 +84,27 @@ document.addEventListener("DOMContentLoaded", () => {
             modalsClassController();
         });
     });
+
+    document.addEventListener(
+        "click",
+        (event) => {
+            if (
+                !event.target.matches(`.${modalTriggersClass}`) &&
+                !event.target.closest(`.${modalTriggersClass}`) &&
+                !event.target.matches(`.${modalCloseTriggersClass}`) &&
+                !event.target.closest(".js-modal-item")
+            ) {
+                document.querySelectorAll(`.${modalClass}`).forEach((modal) => {
+                    if (modal.classList.contains("opened")) {
+                        document.body.classList.remove("modal-opened");
+                        document.body.style.overflow = "initial";
+                        modal.classList.remove("opened", "show");
+                    }
+                });
+            }
+        },
+        false
+    );
 });
 
 const singleItemSlider = () => {
