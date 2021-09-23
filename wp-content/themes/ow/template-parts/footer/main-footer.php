@@ -19,7 +19,7 @@ $contact_title = get_field( 'f_contact_title', 'options' );
 
                         <div class="c-mt-4 font-size-10">
                             <p>Klikając przycisk wyślij potwierdzasz, że przeczytałaś(eś) <a href="<?= esc_url( home_url( '/' ) ); ?>regulamin" class="text-white" target="_blank">Regulamin</a> i akceptujesz jego treść.</p>
-                            <p>Ta strona jest chroniona przez reCAPTCHA i mają zastosowanie <a href="<?= esc_url( home_url( '/' ) ); ?>privacy-policy" class="text-white" target="_blank">Polityka Prywatności</a> i Warunki korzystania z usług Google.</p>
+                            <p>Ta strona jest chroniona przez reCAPTCHA i mają zastosowanie <a href="<?= esc_url( home_url( '/' ) ); ?>polityka-prywatnosci" class="text-white" target="_blank">Polityka Prywatności</a> i Warunki korzystania z usług Google.</p>
                         </div>
                     </div>
                 </div>
