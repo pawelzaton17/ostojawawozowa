@@ -16,7 +16,11 @@
         opacity: 1;
         visibility: visible;
 
-        @include c-transition(opacity);
+        @include c-transition(opacity background);
+
+        &:hover {
+            background: darken($secondary, 3%) !important;
+        }
     }
 
     &__chevron {

@@ -9,6 +9,21 @@ import "tiny-slider/dist/tiny-slider.css";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { tns } from "tiny-slider/src/tiny-slider";
 
+const heroButtonItem = document.querySelectorAll(".acf-block-hero__buttons-item");
+
+heroButtonItem.forEach((el) => {
+    el.addEventListener("mouseover", () => {
+        const textItem = el.querySelector(".js-hero-buttons-text");
+
+        textItem.classList.add("is-visible");
+    });
+    el.addEventListener("mouseout", () => {
+        const textItem = el.querySelector(".js-hero-buttons-text");
+
+        textItem.classList.remove("is-visible");
+    });
+});
+
 /** Init Tiny Slider with dots and custom controls */
 
 const blockHeroSlider = () => {

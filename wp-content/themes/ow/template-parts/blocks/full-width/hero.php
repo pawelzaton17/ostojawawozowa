@@ -45,13 +45,14 @@ do_action('container_start');
 
         <?php
         while ( have_rows( 'buttons' ) ) : the_row();
-            $icon_id = get_sub_field( 'icon' );
-            $text    = get_sub_field( 'text' );
+            $icon_id  = get_sub_field( 'icon' );
+            $text     = get_sub_field( 'text' );
+            $modal_id = get_sub_field( 'modal_id' );
         ?>
 
         <li
-            class="acf-block-hero__buttons-item js-modal-trigger z-index-2 d-flex<?= empty( $text ) ? ' acf-block-hero__buttons-item--alt' : null; ?>"
-            data-target-modal="<?= empty( $text ) ? '#contact-modal' : '#phone-modal' ?>"
+            class="acf-block-hero__buttons-item js-modal-trigger z-index-2 overflow-hidden d-flex<?= empty( $text ) ? ' acf-block-hero__buttons-item--alt' : null; ?>"
+            data-target-modal="<?= $modal_id; ?>"
         >
             <figure class="c-mb-0">
 
@@ -61,7 +62,7 @@ do_action('container_start');
 
             <?php if ( ! empty( $text ) ) : ?>
 
-            <h6 class="d-none d-lg-flex align-items-center font-size-14 c-ml-3">
+            <h6 class="acf-block-hero__buttons-item-text d-flex js-hero-buttons-text align-items-center font-size-14">
 
                 <?= $text; ?>
 
