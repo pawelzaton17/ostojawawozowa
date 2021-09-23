@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Hide modal if user click outside
     document.addEventListener(
         "click",
         (event) => {
