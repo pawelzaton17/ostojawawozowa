@@ -23,7 +23,11 @@ $additional_class = !empty($block['className']) ? ' ' .$block['className'] : nul
 $heading_primary   = get_field( 'title_primary' );
 $content           = get_field( 'content' );
 $heading_secondary = get_field( 'title_secondary' );
+$custom_id         = get_field( 'all_custom_id' );
 
+if ( ! empty( $custom_id ) ) {
+    $id .= " {$custom_id}";
+}
 
 // block preview
 if (!empty($block['data']['__is_preview'])) : ?>

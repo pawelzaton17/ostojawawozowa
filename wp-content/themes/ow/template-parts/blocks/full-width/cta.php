@@ -20,8 +20,13 @@ $class_name = 'acf-block-cta';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$content = get_field( 'content' );
-$link    = get_field( 'link' );
+$content   = get_field( 'content' );
+$link      = get_field( 'link' );
+$custom_id = get_field( 'all_custom_id' );
+
+if ( ! empty( $custom_id ) ) {
+    $id .= " {$custom_id}";
+}
 
 if ( ! empty ( $link ) ) {
     $link_url    = $link['url'];

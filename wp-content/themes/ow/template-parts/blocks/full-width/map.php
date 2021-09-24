@@ -20,8 +20,13 @@ $class_name = 'acf-block-map';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$title = get_field( 'title' );
-$link  = get_field( 'button' );
+$title     = get_field( 'title' );
+$link      = get_field( 'button' );
+$custom_id = get_field( 'all_custom_id' );
+
+if ( ! empty( $custom_id ) ) {
+    $id .= " {$custom_id}";
+}
 
 if ( $link ) {
     $link_url = $link['url'];

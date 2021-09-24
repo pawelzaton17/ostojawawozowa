@@ -20,8 +20,13 @@ $class_name       = 'acf-block-numbers';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$v_title = get_field( 'v_title' );
-$w_title = get_field( 'w_title' );
+$v_title   = get_field( 'v_title' );
+$w_title   = get_field( 'w_title' );
+$custom_id = get_field( 'all_custom_id' );
+
+if ( ! empty( $custom_id ) ) {
+    $id .= " {$custom_id}";
+}
 
 
 // block preview
