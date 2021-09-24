@@ -26,6 +26,11 @@ $image       = get_field( 'image' );
 $link        = get_field( 'button' );
 $is_alt      = get_field( 'alt' );
 $alt_heading = '';
+$custom_id   = get_field( 'all_custom_id' );
+
+if ( ! empty( $custom_id ) ) {
+    $id .= " {$custom_id}";
+}
 
 if ( $is_alt ) {
     $alt_heading = get_field( 'alt_heading' );

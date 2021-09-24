@@ -20,11 +20,16 @@ $class_name = 'acf-block-about';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$title   = get_field( 'title' );
-$content = get_field( 'content' );
-$heading = get_field( 'heading' );
-$image   = get_field( 'image' );
-$is_alt  = get_field( 'alt' );
+$title     = get_field( 'title' );
+$content   = get_field( 'content' );
+$heading   = get_field( 'heading' );
+$image     = get_field( 'image' );
+$is_alt    = get_field( 'alt' );
+$custom_id = get_field( 'all_custom_id' );
+
+if ( ! empty( $custom_id ) ) {
+    $id .= " {$custom_id}";
+}
 
 if ( ! empty( $image ) ) {
     $image_url    = wp_get_attachment_image_url( $image, 'full' );

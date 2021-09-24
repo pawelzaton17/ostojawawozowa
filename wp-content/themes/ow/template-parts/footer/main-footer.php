@@ -2,9 +2,14 @@
 $form_title    = get_field( 'f_form_title', 'options' );
 $form_id       = get_field( 'f_form_id', 'options' );
 $contact_title = get_field( 'f_contact_title', 'options' );
+$custom_id     = get_field( 'f_custom_id', 'options' );
+
+if ( ! empty( $custom_id ) ) {
+    $id = "id='{$custom_id}";
+}
 ?>
 <div class="js-main-footer-wrapper">
-    <footer class="main-footer text-white bg-primary">
+    <footer class="<?= $custom_id; ?> main-footer text-white bg-primary">
         <div class="container c-py-10">
             <div class="row">
                 <div class="col-md-6 c-mb-6 c-mb-md-0">
@@ -19,7 +24,7 @@ $contact_title = get_field( 'f_contact_title', 'options' );
 
                         <div class="c-mt-4 font-size-10">
                             <p>Klikając przycisk wyślij potwierdzasz, że przeczytałaś(eś) <a href="<?= esc_url( home_url( '/' ) ); ?>regulamin" class="text-white" target="_blank">Regulamin</a> i akceptujesz jego treść.</p>
-                            <p>Ta strona jest chroniona przez reCAPTCHA i mają zastosowanie <a href="<?= esc_url( home_url( '/' ) ); ?>privacy-policy" class="text-white" target="_blank">Polityka Prywatności</a> i Warunki korzystania z usług Google.</p>
+                            <p>Ta strona jest chroniona przez reCAPTCHA i mają zastosowanie <a href="<?= esc_url( home_url( '/' ) ); ?>polityka-prywatnosci" class="text-white" target="_blank">Polityka Prywatności</a> i Warunki korzystania z usług Google.</p>
                         </div>
                     </div>
                 </div>

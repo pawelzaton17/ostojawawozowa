@@ -20,7 +20,11 @@ $class_name       = 'acf-block-hero overflow-hidden';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-//$title = get_field( 'title' );
+$custom_id = get_field( 'all_custom_id' );
+
+if ( ! empty( $custom_id ) ) {
+    $id .= " {$custom_id}";
+}
 
 // block preview
 if (!empty($block['data']['__is_preview'])) : ?>
