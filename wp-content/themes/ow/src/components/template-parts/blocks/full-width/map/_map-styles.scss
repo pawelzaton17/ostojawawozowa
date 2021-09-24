@@ -3,7 +3,7 @@
  */
 
 .acf-block-map {
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xxl) {
         background: $gray-4;
     }
 
@@ -117,11 +117,16 @@
         @media (min-width: 425px) {
             height: 48rem;
         }
-
         @include media-breakpoint-up(md) {
             height: 32rem;
+            background-color: $gray-4;
         }
-
+        @include media-breakpoint-up(lg) {
+            height: 40rem;
+        }
+        @include media-breakpoint-up(xxl) {
+            background-color: transparent;
+        }
     }
 
     &__tabs-mobile-place {

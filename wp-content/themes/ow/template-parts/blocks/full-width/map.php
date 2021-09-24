@@ -10,7 +10,7 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'acf-block-about-' . $block['id'];
+$id = 'acf-block-map-' . $block['id'];
 if ( ! empty ($block[ 'anchor' ] ) ) {
     $id = $block['anchor'];
 }
@@ -49,9 +49,8 @@ do_action('container_start');
 ?>
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative" data-anim="fade-in">
-
-    <div class="d-lg-none">
-        <div class="container d-lg-none c-mb-7">
+    <div class="d-xxl-none">
+        <div class="container c-mb-7">
             <div class="row">
                 <div class="col-12 text-center">
 
@@ -208,12 +207,7 @@ do_action('container_start');
         <?php endif; ?>
 
     </div>
-
-
-
-
-
-    <div class="container-fluid d-none d-lg-block">
+    <div class="container-fluid d-none d-xxl-block">
 
         <?php
         if( have_rows( 'tabs' ) ) :
