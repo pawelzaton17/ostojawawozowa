@@ -66,6 +66,10 @@
         }
     }
 
+    &__slider-button {
+        height: 3.25rem;
+    }
+
     &__calendar-row {
         @include media-breakpoint-up(md) {
             max-width: 40.25rem;
