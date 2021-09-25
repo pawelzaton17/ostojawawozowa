@@ -76,6 +76,17 @@
     &__collapse-content {
         overflow-y: auto;
         max-height: 18.875rem;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 95%;
+            height: 3rem;
+            background: rgb(255,255,255);
+            background: linear-gradient(0deg, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 100%);
+        }
     }
 
     &__figure {

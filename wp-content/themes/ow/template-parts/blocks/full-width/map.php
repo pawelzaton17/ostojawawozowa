@@ -263,7 +263,7 @@ do_action('container_start');
                     $box_bg        = "style='background-color: {$tab_color}'";
                 ?>
 
-                <div class="accordion-item border-0">
+                <div class="accordion-item border-0 position-relative">
                     <div
                         id="tab-heading-<?= $tab_index; ?>"
                         class="js-acf-block-map__heading-wrapper acf-block-map__heading-wrapper position-relative d-flex align-items-center justify-content-between c-py-3 c-mb-2"
