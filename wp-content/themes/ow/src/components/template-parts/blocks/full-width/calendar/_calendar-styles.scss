@@ -43,12 +43,26 @@
         @include media-breakpoint-up(sm) {
             max-width: 7.5rem;
         }
+        @include media-breakpoint-up(md) {
+            max-width: 9.25rem;
+        }
+        @include media-breakpoint-up(lg) {
+            max-width: 7.5rem;
+        }
         @include media-breakpoint-up(xl) {
             max-width: 9.125rem;
         }
 
         &:hover {
             border-color: $primary;
+        }
+    }
+
+    &__slider-buttons {
+        width: 100%;
+
+        @include media-breakpoint-up(md) {
+            width: auto;
         }
     }
 
@@ -71,7 +85,8 @@
         }
     }
 
-    &__calendar-wrapper {
+    &__calendar-wrapper,
+    &__buttons-wrapper {
         @include media-breakpoint-up(md) {
             background: $olive-2;
         }
@@ -99,5 +114,62 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 0 .625rem;
         height: 3.25rem;
+    }
+
+    &__buttons-wrapper {
+        @include media-breakpoint-up(md) {
+            display: grid{};
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__modal-button {
+        height: 3.25rem;
+
+        &--short {
+            margin-bottom: 1rem;
+            background-color: $olive-3;
+
+            @include media-breakpoint-up(md) {
+                max-width: 9.25rem;
+                margin: 0 2.75rem 0 0;
+            }
+            @include media-breakpoint-up(lg) {
+                max-width: 7.5rem;
+                margin-right: .875rem;
+            }
+            @include media-breakpoint-up(xl) {
+                max-width: 9.125rem;
+                margin-right: 1rem;
+            }
+            @include media-breakpoint-up(xxl) {
+                margin-right: 2.75rem;
+            }
+
+            &:hover {
+                background-color: darken($olive-3, 3%);
+            }
+        }
+
+        &--long {
+            background-color: $secondary;
+
+            @include media-breakpoint-up(md) {
+                max-width: 21.125rem;
+            }
+            @include media-breakpoint-up(lg) {
+                max-width: 15.875rem;
+            }
+            @include media-breakpoint-up(xl) {
+                max-width: 19.1875rem;
+            }
+            @include media-breakpoint-up(xxl) {
+                max-width: 21rem;
+            }
+
+            &:hover {
+                background-color: darken($secondary, 3%);
+            }
+        }
     }
 }
