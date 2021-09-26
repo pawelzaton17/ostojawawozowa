@@ -69,7 +69,8 @@ do_action('container_start');
 
             <?php
             while ( have_rows( 'tabs' ) ) : the_row();
-                $tab_title = get_sub_field( 'tab_title' );
+                $tab_title  = get_sub_field( 'tab_title' );
+                $tabs_count = count( get_sub_field( 'items' ) );
             ?>
 
             <li class="acf-block-map__tabs-mobile-item nav-link" role="presentation">
@@ -82,7 +83,7 @@ do_action('container_start');
                 >
                     <span class="z-index-2">
 
-                        <?= $tab_title; ?>
+                        <?= $tab_title; echo " ({$tabs_count})"; ?>
 
                     </span>
                 </button>
