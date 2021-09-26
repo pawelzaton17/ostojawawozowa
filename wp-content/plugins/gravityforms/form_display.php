@@ -1033,7 +1033,7 @@ class GFFormDisplay {
 				if ( gf_upgrade()->get_submissions_block() ){
 					$validation_message = "<div class='gf_submission_limit_message'><p>" . esc_html__( 'Your form was not submitted. Please try again in a few minutes.', 'gravityforms' ) . '</p></div>';
 				} else {
-					$validation_message = "<div class='validation_error'>" . esc_html__( 'There was a problem with your submission.', 'gravityforms' ) . ' ' . esc_html__( 'Błędy zostały podkreślone poniżej.', 'gravityforms' ) . '</div>';
+					$validation_message = "<div class='validation_error'>" . esc_html__( '', 'gravityforms' ) . 'Wystąpił problem z Twoim zgłoszeniem. ' . esc_html__( 'Błędy zostały podkreślone poniżej.', 'gravityforms' ) . '</div>';
 				}
 				$form_string .= gf_apply_filters( array( 'gform_validation_message', $form_id ), $validation_message, $form );
 			}
