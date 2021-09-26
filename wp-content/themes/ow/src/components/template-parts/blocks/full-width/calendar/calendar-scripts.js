@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <ul class="list-unstyled c-m-0">
                         <li class="acf-block-calendar__list-item">
                             <button
-                                class="acf-block-calendar__button js-modal-trigger js-calendar-time-trigger w-100 bg-white font-size-14 text-center font-family-primary"
+                                class="acf-block-calendar__button js-modal-trigger js-calendar-time-trigger w-100 bg-white line-height-1-4 text-center font-family-primary"
                                 data-item-day="${DayAsString(currentDate.getDay())}"
                                 data-item-date="${currentDate.getDate()}.${currentDate.getMonth() + 1}.${currentDate.getFullYear()}"
                                 data-item-time="9:00 - 12:00"
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </li>
                         <li class="acf-block-calendar__list-item">
                             <button
-                                class="acf-block-calendar__button js-modal-trigger js-calendar-time-trigger w-100 bg-white font-size-14 text-center font-family-primary"
+                                class="acf-block-calendar__button js-modal-trigger js-calendar-time-trigger w-100 bg-white line-height-1-4 text-center font-family-primary"
                                 data-item-day="${DayAsString(currentDate.getDay())}"
                                 data-item-date="${currentDate.getDate()}.${currentDate.getMonth() + 1}.${currentDate.getFullYear()}"
                                 data-item-time="12:00 - 15:00"
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </li>
                         <li class="acf-block-calendar__list-item">
                             <button
-                                class="acf-block-calendar__button js-modal-trigger js-calendar-time-trigger w-100 bg-white font-size-14 text-center font-family-primary"
+                                class="acf-block-calendar__button js-modal-trigger js-calendar-time-trigger w-100 bg-white line-height-1-4 text-center font-family-primary"
                                 data-item-day="${DayAsString(currentDate.getDay())}"
                                 data-item-date="${currentDate.getDate()}.${currentDate.getMonth() + 1}.${currentDate.getFullYear()}"
                                 data-item-time="15:00 - 16:00"

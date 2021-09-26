@@ -93,14 +93,14 @@ do_action('container_start');
 
                     <div>
                         <div class="col-12 acf-block-calendar__calendar-wrapper js-tiny-slider-calendar c-px-0 c-py-md-5 position-relative">
-                            <div class="js-tiny-slider overflow-hidden c-py-7 c-px-5 c-py-md-0 bg-olive-2">
+                            <div class="js-tiny-slider overflow-hidden c-py-7 c-px-2 c-px-sm-5 c-py-md-0 bg-olive-2">
                                 <div id="js-calendar" class="js-tiny-slider-row d-flex"></div>
                             </div>
                             <div class="single-post-preview__controls acf-block-calendar__controls">
                                 <div class="single-post-preview__arrows acf-block-calendar__arrows w-100 position-md-absolute">
                                     <div class="crunch-tiny-slider__controls d-flex align-items-center h-100 js-crunch-tiny-slider-custom-controls acf-block-calendar__mobile-controls w-100 c-px-6 c-px-md-0">
                                         <div class="acf-block-calendar__slider-buttons">
-                                            <div class="d-md-none border-0 crunch-button acf-block-calendar__slider-button crunch-button--file crunch-button__full-background crunch-button__full-background--primary-color text-decoration-none font-family-primary w-100 font-size-14">
+                                            <div class="d-md-none border-0 line-height-1-2 crunch-button acf-block-calendar__slider-button crunch-button--file crunch-button__full-background crunch-button__full-background--primary-color text-decoration-none font-family-primary w-100 font-size-14">
                                                 Wcześniejszy termin
                                             </div>
                                             <div class="d-none d-md-flex single-post-preview__button single-post-preview__button--prev d-flex align-items-center justify-content-center bg-primary crunch-tiny-slider__control-button crunch-tiny-slider-button-prev border-0">
@@ -110,7 +110,7 @@ do_action('container_start');
                                             </div>
                                         </div>
                                         <div class="acf-block-calendar__slider-buttons">
-                                            <div class="d-md-none border-0 crunch-button crunch-button--file acf-block-calendar__slider-button crunch-button__full-background crunch-button__full-background--primary-color text-decoration-none font-family-primary w-100 font-size-14">
+                                            <div class="d-md-none border-0 line-height-1-2 crunch-button crunch-button--file acf-block-calendar__slider-button crunch-button__full-background crunch-button__full-background--primary-color text-decoration-none font-family-primary w-100 font-size-14">
                                                 Pózniejszy termin
                                             </div>
                                             <div class="d-none d-md-flex single-post-preview__button single-post-preview__button--next d-flex align-items-center justify-content-center bg-primary crunch-tiny-slider__control-button crunch-tiny-slider-button-next border-0">

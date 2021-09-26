@@ -34,14 +34,19 @@
     }
 
     &__button {
-        max-width: 6.125rem;
+        max-width: 5.125rem;
         height: 3rem;
         border: 2px solid transparent;
+        font-size: .75rem;
 
         @include c-transition(border-color);
 
+        @media only screen and (min-width: 360px) {
+            max-width: 6.125rem;
+        }
         @include media-breakpoint-up(sm) {
             max-width: 7.5rem;
+            font-size: .875rem;
         }
         @include media-breakpoint-up(md) {
             max-width: 9.25rem;
@@ -181,5 +186,9 @@
                 background-color: darken($secondary, 3%);
             }
         }
+    }
+
+    .single-post-preview__button {
+        cursor: pointer;
     }
 }
