@@ -24,7 +24,7 @@ if ( ! empty( $custom_id ) ) {
 
                         <div class="c-mt-4 font-size-10">
                             <p>Klikając przycisk wyślij potwierdzasz, że przeczytałaś(eś) <a href="<?= esc_url( home_url( '/' ) ); ?>regulamin" class="text-white" target="_blank">Regulamin</a> i akceptujesz jego treść.</p>
-                            <p>Ta strona jest chroniona przez reCAPTCHA i mają zastosowanie <a href="<?= esc_url( home_url( '/' ) ); ?>polityka-prywatnosci" class="text-white" target="_blank">Polityka Prywatności</a> i Warunki korzystania z usług Google.</p>
+                            <p>Ta strona jest chroniona przez reCAPTCHA i mają zastosowanie <a href="<?= esc_url( home_url( '/' ) ); ?>polityka-prywatnosci" class="text-white" target="_blank">Polityka Prywatności</a> i <a href="https://policies.google.com/terms" class="text-white" target="_blank">Warunki korzystania z usług Google</a> .</p>
                         </div>
                     </div>
                 </div>
@@ -114,9 +114,8 @@ if ( ! empty( $custom_id ) ) {
                 <div class="row">
                     <div class="col-12">
 					    <span class="main-footer__copyrights">
-
-                            <?= get_bloginfo('name'); ?> © <?= date('Y'); ?>
-
+                            <p class="text-center c-m-0">Administratorem Twoich danych osobowych jest Tomasz Kraus prowadzący działalność gospodarczą pod firmą Joymile Tomasz Kraus, NIP: 678-299-34-54, ul. Staromostowa 4/17, 30-506 Kraków. Więcej informacji na temat przetwarzania danych osobowych znajdziesz w naszej Polityce Prywatności.  Informacje zamieszczone na stronie internetowej nie stanowią oferty handlowej w rozumieniu przepisów Kodeksu Cywilnego, mają charakter wyłącznie reklamowy. Szczegółowe warunki zakupu określane są na podstawie indywidualnej umowy sprzedaży (umowy deweloperskiej)
+</p>
                         </span>
                     </div>
                 </div>

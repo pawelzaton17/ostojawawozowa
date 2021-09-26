@@ -4,7 +4,9 @@
 
  .main-footer {
      &__copyrights {
-         @include fluid(font-size, .6875rem, .875rem);
+         p {
+             @include fluid(font-size, .6875rem, .875rem);
+         }
      }
 
      &__contact-title {
