@@ -18,13 +18,13 @@
         .page_item {
             @include c-transition(color);
 
-            &:not(:last-of-type) {
-                margin-bottom: 1.5rem;
-
-                @include media-breakpoint-up(lg) {
-                    margin-bottom: 2.75rem;
-                }
-            }
+            //&:not(:last-of-type) {
+            //    margin-bottom: 1.5rem;
+            //
+            //    @include media-breakpoint-up(lg) {
+            //        margin-bottom: 2.75rem;
+            //    }
+            //}
 
             &:hover {
                 color: $primary;
@@ -84,22 +84,51 @@
             }
 
             .mm-listitem {
-                font-size: 0.8em;
+                @include c-transition(color);
 
-                &:after {
-                    border-color: rgba(#808080, 0.3);
-                }
+                &:not(:last-of-type) {
+                    margin-bottom: 1.5rem;
 
-                &.current-menu-item,
-                &.current_page_item {
-                    color: $primary;
-
-                    .mm-btn_next {
-                        &:after {
-                            border-color: $primary;
-                        }
+                    @include media-breakpoint-up(lg) {
+                        margin-bottom: 2.75rem;
                     }
                 }
+
+                &.current_page_item {
+                    a {
+                        color: $primary;
+                    }
+                }
+
+                &:after {
+                    display: none;
+                }
+
+                a {
+                    padding: 0;
+                    color: $black;
+                    font-weight: $font-weight-bold;
+                    font-family: $font-family-primary;
+                    line-height: normal;
+
+                    @include fluid(font-size, 1.125rem, 1.5rem);
+                }
+                //font-size: 0.8em;
+
+                //&:after {
+                //    border-color: rgba(#808080, 0.3);
+                //}
+
+                //&.current-menu-item,
+                //&.current_page_item {
+                //    color: $primary;
+                //
+                //    .mm-btn_next {
+                //        &:after {
+                //            border-color: $primary;
+                //        }
+                //    }
+                //}
 
                 // If you have navbar-button uncomments this. Remember to check button and text colors before and after hover.
 

@@ -56,20 +56,6 @@ $logo = get_field( 'header_logo', 'options' );
                 </div>
             </div>
             <div class="col-4 col-md-2 c-p-0 d-flex justify-content-end">
-
-                <?php
-                    wp_nav_menu([
-                        'menu'            => 'Main Navigation',
-                        'theme_location'  => 'main_navigation',
-                        'container_id'    => false,
-                        'menu_id'         => false,
-                        'menu_class'      => 'navbar-nav d-none d-lg-flex flex-row position-relative js-main-navigation-animation',
-                        'depth'           => 2,
-                        'fallback_cb'     => 'bs4navwalker::fallback',
-                        'walker'          => new bs4navwalker()
-                    ]);
-                ?>
-
                 <div class="bg-secondary position-relative navbar__burger-wrapper w-100 d-flex align-items-center">
                     <a class="mburger position-absolute h-100 mburger--spin js-mburger d-flex align-items-center text-decoration-none" href="#mobile-navigation">
                         <div>
