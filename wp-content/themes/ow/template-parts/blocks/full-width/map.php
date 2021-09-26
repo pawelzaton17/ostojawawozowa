@@ -126,7 +126,7 @@ do_action('container_start');
                     role="tabpanel"
                 >
 
-                    <div class="row c-mt-7 c-mb-10">
+                    <div class="row c-my-7">
 
                         <?php
                         while( have_rows( 'items' ) ): the_row();
