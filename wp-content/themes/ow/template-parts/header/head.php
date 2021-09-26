@@ -1,5 +1,5 @@
 <!doctype html>
-<html <?php language_attributes(); ?> style="scroll-behavior: smooth;">
+<html <?php language_attributes(); ?> style="scroll-behavior: smooth; overflow-x: hidden;">
 
 <head>
     <meta charset="<?php bloginfo('charset') ?>" />
