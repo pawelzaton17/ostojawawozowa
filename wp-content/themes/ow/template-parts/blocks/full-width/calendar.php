@@ -99,7 +99,7 @@ do_action('container_start');
                             <div class="single-post-preview__controls acf-block-calendar__controls">
                                 <div class="single-post-preview__arrows acf-block-calendar__arrows w-100 position-md-absolute">
                                     <div class="crunch-tiny-slider__controls d-flex align-items-center h-100 js-crunch-tiny-slider-custom-controls acf-block-calendar__mobile-controls w-100 c-px-6 c-px-md-0">
-                                        <div class="acf-block-calendar__slider-buttons" type="button">
+                                        <div class="acf-block-calendar__slider-buttons">
                                             <div class="d-md-none border-0 crunch-button acf-block-calendar__slider-button crunch-button--file crunch-button__full-background crunch-button__full-background--primary-color text-decoration-none font-family-primary w-100 font-size-14">
                                                 Wcześniejszy termin
                                             </div>
@@ -109,7 +109,7 @@ do_action('container_start');
                                                 </svg>
                                             </div>
                                         </div>
-                                        <div class="acf-block-calendar__slider-buttons" type="button">
+                                        <div class="acf-block-calendar__slider-buttons">
                                             <div class="d-md-none border-0 crunch-button crunch-button--file acf-block-calendar__slider-button crunch-button__full-background crunch-button__full-background--primary-color text-decoration-none font-family-primary w-100 font-size-14">
                                                 Pózniejszy termin
                                             </div>
@@ -170,7 +170,7 @@ do_action('container_start');
             </i>
             <div class="h-100 overflow-auto">
 
-                Inny termin
+                <?= do_shortcode('[gravityform id="12" ajax="true"]'); ?>
 
             </div
         </div>

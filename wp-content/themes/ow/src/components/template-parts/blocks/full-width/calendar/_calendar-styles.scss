@@ -68,6 +68,12 @@
 
     &__slider-button {
         height: 3.25rem;
+        outline: none;
+
+        &:hover,
+        &:focus {
+            outline: none;
+        }
     }
 
     &__calendar-row {
