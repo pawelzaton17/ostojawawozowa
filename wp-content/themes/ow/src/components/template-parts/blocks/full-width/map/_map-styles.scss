@@ -19,21 +19,6 @@
     &__icon-wrapper {
         width: 3.25rem;
         height: 3.25rem;
-
-        @include media-breakpoint-up(xxl) {
-            &::after {
-                content: '';
-                position: absolute;
-                right: 0;
-                bottom: -.3125rem;
-                left: 0;
-                width: .625rem;
-                height: .625rem;
-                margin: auto;
-                background: inherit;
-                transform: rotate(45deg);
-            }
-        }
     }
 
     &__icon-title {
