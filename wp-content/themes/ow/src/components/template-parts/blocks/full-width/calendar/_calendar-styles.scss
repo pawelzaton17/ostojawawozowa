@@ -37,6 +37,7 @@
         max-width: 5.125rem;
         height: 3rem;
         border: 2px solid transparent;
+        outline: none;
         font-size: .75rem;
 
         @include c-transition(border-color);
@@ -61,13 +62,22 @@
         &:hover {
             border-color: $primary;
         }
+
+        &:focus {
+            outline: none;
+        }
     }
 
     &__slider-buttons {
         width: 100%;
+        outline: none;
 
         @include media-breakpoint-up(md) {
             width: auto;
+        }
+
+        &:focus {
+            outline: none;
         }
     }
 
