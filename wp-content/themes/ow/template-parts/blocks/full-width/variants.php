@@ -182,7 +182,7 @@ do_action('container_start');
 
                                 <button
                                     class="js-modal-trigger font-size-14 border-0 crunch-button crunch-button__full-background crunch-button__full-background--medium crunch-button__full-background--secondary-color text-decoration-none font-family-primary text-black"
-                                    data-target-modal="#variants-modal-<?= $i; ?>"
+                                    data-target-modal="#<?= $block['id']; ?>-modal-<?= $i; ?>"
                                 >
                                     <svg class="c-mr-2" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M10.6524 10.7085L14.7826 14.6666" stroke="#333333" stroke-width="1.2" stroke-linecap="round"/>
@@ -285,7 +285,7 @@ do_action('container_start');
 
                 <?php if( have_rows( 'popup_slider' ) ): ?>
 
-                <div class="js-modal modal fade" id="variants-modal-<?= $i; ?>">
+                <div class="js-modal modal fade" id="<?= $block['id']; ?>-modal-<?= $i; ?>">
                     <div class="acf-block-variants__popup-wrapper js-modal-item m-auto overflow-hidden bg-white h-100 w-100 position-relative c-p-4">
                         <i class="js-modal-close modal__close z-index-2 position-absolute c-p-3 d-block bg-secondary">
                             <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
