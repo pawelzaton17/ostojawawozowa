@@ -327,7 +327,7 @@ do_action('container_start');
                                             <?= wp_get_attachment_image( $extra_item_icon_id, "19-19", "", array( "class" => "d-block h-100 w-100 lazyload", "data-lazy" => "true") ); ?>
 
                                         </i>
-                                        <p class="font-size-14 c-m-0">
+                                        <p class="font-size-14 c-m-0 c-pl-1">
 
                                             <?= $extra_item_content; ?>
 
