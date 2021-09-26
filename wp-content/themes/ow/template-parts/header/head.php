@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="<?php bloginfo('charset') ?>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <link rel="apple-touch-icon" sizes="57x57" href="<?= get_template_directory_uri(); ?>/images/favicon/apple-touch-icon-57x57.png">
