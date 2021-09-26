@@ -185,7 +185,7 @@ do_action('container_start');
             </i>
             <div class="h-100 overflow-auto">
 
-                Umów się
+                <?= do_shortcode('[gravityform id="13" ajax="true"]'); ?>
 
             </div
         </div>

@@ -44,7 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Some modals can redirect to another modal with a form
     for (let i = 0; i < openNewModal.length; i += 1) {
         openNewModal[i].addEventListener("click", (e) => {
-            const modalTargetId = el[i].getAttribute("data-target-modal");
+            e.preventDefault();
+            const modalTargetId = openNewModal[i].getAttribute("data-target-modal");
             const modalToOpen = document.querySelector(`${modalTargetId}`);
             const clickedModal = e.target.closest(".js-modal");
 
