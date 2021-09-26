@@ -17,7 +17,7 @@
             },
             "collapsed": "",
             "min": 0,
-            "max": 3,
+            "max": 10,
             "layout": "table",
             "button_label": "",
             "sub_fields": [
@@ -142,25 +142,6 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
-                },
-                {
-                    "key": "field_614cc42304df8",
-                    "label": "Modal ID",
-                    "name": "modal_id",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
                 }
             ]
         }
@@ -182,5 +163,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1632420943
+    "modified": 1632683245
 }
