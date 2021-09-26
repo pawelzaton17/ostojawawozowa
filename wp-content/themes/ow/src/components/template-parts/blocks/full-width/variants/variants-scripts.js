@@ -48,7 +48,7 @@ const blockVariantsModalSlider = () => {
             autoplay: false,
             mouseDrag: true,
             lazyload: true,
-            nav: true,
+            nav: false,
             navPosition: "bottom",
             loop: true,
             controls: true,
