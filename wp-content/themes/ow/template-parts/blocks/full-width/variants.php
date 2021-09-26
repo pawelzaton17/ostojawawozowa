@@ -256,6 +256,12 @@ do_action('container_start');
 
                     <?php endif; ?>
 
+                    <?php
+                    $slider_items_count = count( get_sub_field( 'slider' ) );
+
+                    if ( $slider_items_count > 1 ) :
+                    ?>
+
                     <div class="single-post-preview__controls main-variants-controls__controls single-post-preview__controls--main-variants single-post-preview__controls--variants position-absolute">
                         <div class="single-post-preview__arrows w-100 position-absolute">
                             <div class="crunch-tiny-slider__controls d-flex align-items-center h-100 js-crunch-tiny-slider-custom-controls">
@@ -272,6 +278,9 @@ do_action('container_start');
                             </div>
                         </div>
                     </div>
+
+                    <?php endif; ?>
+
                 </div>
 
                 <?php if( have_rows( 'popup_slider' ) ): ?>
