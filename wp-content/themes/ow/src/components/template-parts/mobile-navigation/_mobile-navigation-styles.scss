@@ -84,8 +84,6 @@
             }
 
             .mm-listitem {
-                @include c-transition(color);
-
                 &:not(:last-of-type) {
                     margin-bottom: 1.5rem;
 
@@ -94,9 +92,11 @@
                     }
                 }
 
-                &.current_page_item {
-                    a {
-                        color: $primary;
+                &.menu-item-type-post_type {
+                    &.current_page_item {
+                        a {
+                            color: $primary;
+                        }
                     }
                 }
 
@@ -112,50 +112,8 @@
                     line-height: normal;
 
                     @include fluid(font-size, 1.125rem, 1.5rem);
+                    @include c-transition(color);
                 }
-                //font-size: 0.8em;
-
-                //&:after {
-                //    border-color: rgba(#808080, 0.3);
-                //}
-
-                //&.current-menu-item,
-                //&.current_page_item {
-                //    color: $primary;
-                //
-                //    .mm-btn_next {
-                //        &:after {
-                //            border-color: $primary;
-                //        }
-                //    }
-                //}
-
-                // If you have navbar-button uncomments this. Remember to check button and text colors before and after hover.
-
-                // &.navbar-button {
-                //     @include fluid-margin(x, 3);
-                //     @include fluid-margin(top, 5);
-                //     @include fluid-margin(bottom, 3);
-
-                //     &::after {
-                //         display: none;
-                //     }
-
-                //     a {
-                //         min-width: 10rem;
-                //         color: $white !important;
-
-                //         @extend %crunch-button,
-                //                 %crunch-button__full-background,
-                //                 %crunch-button__full-background--primary-color,
-                //                 %crunch-button__full-background--medium;
-
-                //         &:hover,
-                //         &:focus {
-                //             color: $white !important;
-                //         }
-                //     }
-                // }
 
                 &__text {
                     color: rgba($white, 0.75);
