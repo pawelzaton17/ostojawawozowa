@@ -90,7 +90,7 @@ do_action('container_start');
 
                 <ul
                     id="variants-tab"
-                    class="list-unstyled nav nav-pills c-mt-5 c-mt-md-3<?= $tabs_count >= 2 ? null : ' d-none'; ?>"
+                    class="acf-block-variants__list-wrapper list-unstyled nav nav-pills c-mt-5 c-mt-md-3<?= $tabs_count >= 2 ? null : ' d-none'; ?>"
                     role="tablist"
                 >
 
@@ -99,7 +99,7 @@ do_action('container_start');
                         $tab_title = get_sub_field( 'tab_title' );
                     ?>
 
-                    <li class="acf-block-variants__list-item nav-link<?= $i == 0 ? ' c-pl-0' : null; ?>" role="presentation">
+                    <li class="acf-block-variants__list-item nav-link" role="presentation">
                         <button
                             class="acf-block-variants__tab-btn font-size-14 border-0 crunch-button crunch-button__outline crunch-button__outline--primary-color crunch-button__outline--medium text-decoration-none font-family-primary<?= $i == 0 ? ' active' : null; ?>"
                             data-bs-toggle="pill"
