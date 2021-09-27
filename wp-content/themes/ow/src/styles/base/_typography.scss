@@ -25,6 +25,10 @@ body {
     }
 }
 
+* {
+    touch-action: manipulation;
+}
+
 /* ~~~~~~~~~~ Headlines ~~~~~~~~~~ */
 
 h1,

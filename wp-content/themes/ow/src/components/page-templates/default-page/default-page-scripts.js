@@ -162,6 +162,6 @@ const cookiesExtraContent = document.querySelector(".cookies-content");
 if (cookiesTrigger) {
     cookiesTrigger.addEventListener("click", () => {
         cookiesContent.style.display = "none";
-        cookiesExtraContent.style.display = "block";
+        cookiesExtraContent.style.display = "inline-block";
     });
 }
