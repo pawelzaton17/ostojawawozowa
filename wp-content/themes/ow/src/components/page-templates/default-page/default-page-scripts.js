@@ -152,3 +152,16 @@ const singleItemSlider = () => {
 if (document.querySelector(".js-tiny-slider-single")) {
     singleItemSlider();
 }
+
+// Cookies bar scripts
+
+const cookiesTrigger = document.querySelector(".cookies-trigger");
+const cookiesContent = document.querySelector(".cookies-default");
+const cookiesExtraContent = document.querySelector(".cookies-content");
+
+if (cookiesTrigger) {
+    cookiesTrigger.addEventListener("click", () => {
+        cookiesContent.style.display = "none";
+        cookiesExtraContent.style.display = "block";
+    });
+}

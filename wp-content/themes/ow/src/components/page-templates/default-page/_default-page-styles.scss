@@ -13,6 +13,34 @@
     }
 }
 
+#eu-cookie-bar {
+    padding: .9375rem 0;
+    @extend %font-size-14;
+
+    @include media-breakpoint-up(md) {
+        padding: .3125rem 0;
+    }
+
+    button {
+        border-radius: 0;
+    }
+
+    .cookies-default {
+        display: inline-flex;
+    }
+
+    .cookies-trigger {
+        margin-left: .3125rem;
+        font-weight: 700;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .cookies-content {
+        display: none;
+    }
+}
+
 .single-post-preview {
     border-bottom: 1px solid $gray;
 
