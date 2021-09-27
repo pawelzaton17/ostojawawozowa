@@ -81,7 +81,7 @@ do_action('container_start');
                     role="tab"
                     aria-selected="<?= $i == 0 ? 'true' : 'false'; ?>"
                 >
-                    <span class="z-index-2">
+                    <span class="z-index-2 line-height-1-2">
 
                         <?= $tab_title; echo " ({$tabs_count})"; ?>
 
