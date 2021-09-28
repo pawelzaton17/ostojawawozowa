@@ -138,7 +138,7 @@ do_action('container_start');
                     $i = 0;
                 ?>
 
-                <div class="acf-block-variants__tab-wrapper list-unstyled tab-content bg-white z-index-2 position-relative c-mt-7 c-mt-md-2 c-pt-3<?= $alt ? ' acf-block-variants__tab-wrapper--alt' : null; ?>">
+                <div class="acf-block-variants__tab-wrapper list-unstyled tab-content bg-white z-index-1 position-relative c-mt-7 c-mt-md-2 c-pt-3<?= $alt ? ' acf-block-variants__tab-wrapper--alt' : null; ?>">
 
                     <?php
                     while ( have_rows( 'tabs' ) ) : the_row();
