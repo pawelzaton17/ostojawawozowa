@@ -19,6 +19,37 @@
          }
      }
 
+     &__copyrights-col {
+         p {
+             @include media-breakpoint-up(xxl) {
+                 white-space: nowrap;
+             }
+         }
+
+         ul {
+             li:first-of-type {
+                 position: relative;
+                 margin-right: 1px;
+                 padding-right: .65rem;
+
+                 &:after {
+                     content: '';
+                     position: absolute;
+                     top: 0.35rem;
+                     right: .26rem;
+                     bottom: 0;
+                     width: 1px;
+                     height: .6rem;
+                     background: $white;
+
+                     @include media-breakpoint-up(lg) {
+                         top: .25rem;
+                     }
+                 }
+             }
+         }
+     }
+
      &__title {
          &::after {
              content: '';
@@ -54,7 +85,7 @@
          max-height: 44.125rem;
 
          &--phone {
-             max-height: 31.5rem;
+             max-height: 36rem;
          }
      }
  }

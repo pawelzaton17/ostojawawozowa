@@ -10,7 +10,7 @@ if ( ! empty( $custom_id ) ) {
 ?>
 <div <?= $id; ?> class="js-main-footer-wrapper">
     <footer class="main-footer text-white bg-primary">
-        <div class="container c-py-10">
+        <div class="container c-pt-10">
             <div class="row">
                 <div class="col-md-6 c-mb-6 c-mb-md-0">
                     <h2 class="main-footer__title c-pb-4 c-pb-md-3 position-relative font-weight-bold font-size-36">
@@ -24,7 +24,7 @@ if ( ! empty( $custom_id ) ) {
 
                         <div class="c-mt-4 font-size-10">
                             <p>Klikając przycisk wyślij potwierdzasz, że przeczytałaś(eś) <a href="<?= esc_url( home_url( '/' ) ); ?>regulamin" class="text-white" target="_blank">Regulamin</a> i akceptujesz jego treść.</p>
-                            <p>Ta strona jest chroniona przez reCAPTCHA i mają zastosowanie <a href="<?= esc_url( home_url( '/' ) ); ?>polityka-prywatnosci" class="text-white" target="_blank">Polityka Prywatności</a> i <a href="https://policies.google.com/terms" class="text-white" target="_blank">Warunki korzystania z usług Google</a> .</p>
+                            <p>Ta strona jest chroniona przez reCAPTCHA i mają zastosowanie <a href="<?= esc_url( home_url( '/' ) ); ?>polityka-prywatnosci" class="text-white" target="_blank">Polityka Prywatności</a> i <a href="https://policies.google.com/terms" class="text-white" target="_blank">Warunki korzystania z usług Google</a>.</p>
                         </div>
                     </div>
                 </div>
@@ -109,13 +109,23 @@ if ( ! empty( $custom_id ) ) {
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="main-footer__copyrights-col col-12 c-mt-7 c-mt-md-4 c-mt-xl-0">
+                    <p class="font-size-10 c-m-0">Informacje zamieszczone na stronie internetowej nie stanowią oferty handlowej w rozumieniu przepisów Kodeksu Cywilnego, mają charakter wyłącznie reklamowy. Szczegółowe warunki zakupu określane są na podstawie indywidualnej umowy sprzedaży (umowy deweloperskiej).</p>
+                    <ul class="list-unstyled d-flex font-size-10">
+                        <li><a href="<?= esc_url( home_url( '/' ) ); ?>polityka-prywatnosci" class="text-white" target="_blank">Polityka prywatnosci</a></li>
+                        <li><a href="<?= esc_url( home_url( '/' ) ); ?>regulamin" class="text-white" target="_blank">Regulamin</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div class="bg-dark-green c-py-2">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
 					    <span class="main-footer__copyrights">
-                            <p class="text-center c-m-0">Administratorem Twoich danych osobowych jest Tomasz Kraus prowadzący działalność gospodarczą pod firmą Joymile Tomasz Kraus, NIP: 678-299-34-54, ul. Staromostowa 4/17, 30-506 Kraków. Więcej informacji na temat przetwarzania danych osobowych znajdziesz w naszej Polityce Prywatności.  Informacje zamieszczone na stronie internetowej nie stanowią oferty handlowej w rozumieniu przepisów Kodeksu Cywilnego, mają charakter wyłącznie reklamowy. Szczegółowe warunki zakupu określane są na podstawie indywidualnej umowy sprzedaży (umowy deweloperskiej)
-</p>
+                            <p class="c-m-0"> OstojaWąwozowa © 2021</p>
                         </span>
                     </div>
                 </div>
