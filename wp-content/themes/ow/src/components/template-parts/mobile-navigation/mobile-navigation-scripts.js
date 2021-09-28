@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const menu = new window.Mmenu(
         ".js-mobile-navigation",
         {
+            pageScroll: true,
             extensions: [
                 "pagedim-black",
                 "position-right",
