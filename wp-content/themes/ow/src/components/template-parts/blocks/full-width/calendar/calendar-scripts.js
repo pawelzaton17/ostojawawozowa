@@ -39,28 +39,29 @@ const calendarSlider = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    const calendarWrapper = document.querySelector("#js-calendar");
-    const formDateInput = document.querySelector(".js-calendar-form-input");
-    const formTextarea = document.querySelector(".js-calendar-textarea").querySelector("textarea");
+    if (document.querySelector(".js-tiny-slider-calendar")) {
+        const calendarWrapper = document.querySelector("#js-calendar");
+        const formDateInput = document.querySelector(".js-calendar-form-input");
+        const formTextarea = document.querySelector(".js-calendar-textarea").querySelector("textarea");
 
-    function DayAsString(dayIndex) {
-        const weekdays = new Array(7);
-        weekdays[0] = "Niedziela";
-        weekdays[1] = "Poniedziałek";
-        weekdays[2] = "Wtorek";
-        weekdays[3] = "Środa";
-        weekdays[4] = "Czwartek";
-        weekdays[5] = "Piątek";
-        weekdays[6] = "Sobota";
+        function DayAsString(dayIndex) {
+            const weekdays = new Array(7);
+            weekdays[0] = "Niedziela";
+            weekdays[1] = "Poniedziałek";
+            weekdays[2] = "Wtorek";
+            weekdays[3] = "Środa";
+            weekdays[4] = "Czwartek";
+            weekdays[5] = "Piątek";
+            weekdays[6] = "Sobota";
 
-        return weekdays[dayIndex];
-    }
+            return weekdays[dayIndex];
+        }
 
-    function GetDatesAndShow(startDate, daysToAdd) {
-        for (let i = 0; i <= daysToAdd; i += 1) {
-            const currentDate = new Date();
-            currentDate.setDate(startDate.getDate() + i);
-            calendarWrapper.innerHTML += `
+        function GetDatesAndShow(startDate, daysToAdd) {
+            for (let i = 0; i <= daysToAdd; i += 1) {
+                const currentDate = new Date();
+                currentDate.setDate(startDate.getDate() + i);
+                calendarWrapper.innerHTML += `
                 <div
                     class="d-flex flex-column text-center"
                     data-day="${DayAsString(currentDate.getDay())}"
@@ -105,26 +106,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     </ul>
                 </div>
             `;
+            }
         }
-    }
 
-    const startDate = new Date();
-    GetDatesAndShow(startDate, 14);
+        const startDate = new Date();
+        GetDatesAndShow(startDate, 14);
 
-    // Calendar buttons with time
-    document.querySelectorAll(".js-calendar-time-trigger").forEach((el) => {
-        el.addEventListener("click", () => {
-            const elDate = el.dataset.itemDate;
-            const elTime = el.dataset.itemTime;
+        // Calendar buttons with time
+        document.querySelectorAll(".js-calendar-time-trigger").forEach((el) => {
+            el.addEventListener("click", () => {
+                const elDate = el.dataset.itemDate;
+                const elTime = el.dataset.itemTime;
 
-            formTextarea.innerHTML = "";
-            formTextarea.innerHTML = `Chcę umówić się na oglądanie mieszkania w Państwa inwestycji dnia ${elDate}, ${elTime}`;
-            formDateInput.querySelector("input").value = `${elDate}, ${elTime}`;
+                formTextarea.innerHTML = "";
+                formTextarea.innerHTML = `Chcę umówić się na oglądanie mieszkania w Państwa inwestycji dnia ${elDate}, ${elTime}`;
+                formDateInput.querySelector("input").value = `${elDate}, ${elTime}`;
+            });
         });
-    });
 
-    // Init slider
-    if (document.querySelector(".js-tiny-slider-calendar")) {
         calendarSlider();
     }
 });

@@ -71,20 +71,34 @@ do_action('container_start');
 
         <div class="row">
             <div class="col-12 d-flex justify-content-center align-items-center">
-                <a
-                    class="crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-decoration-none font-family-primary text-black"
-                    href="<?= esc_url( $link_url ); ?>"
-                    target="<?= esc_attr( $link_target ); ?>"
+                <button
+                    class="js-modal-trigger border-0 crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-decoration-none font-family-primary text-black"
+                    data-target-modal="#<?= $block['id']; ?>-financing-modal"
                 >
 
                     <?= esc_html( $link_title ); ?>
 
-                </a>
+                </button>
             </div>
         </div>
 
         <?php endif; ?>
 
+    </div>
+    <div class="js-modal modal contact-modal-wrapper fade" id="<?= $block['id']; ?>-financing-modal">
+        <div class="main-footer__popup-wrapper js-modal-item m-auto overflow-hidden bg-white h-100 position-relative c-py-4 c-px-6">
+            <i class="js-modal-close modal__close z-index-2 position-absolute c-p-3 d-block">
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M27.9566 27.9568L10.0433 10.0434" stroke="#333333" stroke-width="1.2" stroke-linecap="round"/>
+                    <path d="M27.9567 10.0434L10.0434 27.9568" stroke="#333333" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+            </i>
+            <div class="h-100 overflow-auto">
+
+                <?= do_shortcode('[gravityform id="14" ajax="true"]'); ?>
+
+            </div
+        </div>
     </div>
 </section>
 
