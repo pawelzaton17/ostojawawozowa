@@ -20,12 +20,13 @@ $class_name = 'acf-block-cta';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$content   = get_field( 'content' );
-$link      = get_field( 'link' );
-$custom_id = get_field( 'all_custom_id' );
+$content       = get_field( 'content' );
+$link          = get_field( 'link' );
+$get_custom_id = get_field( 'all_custom_id' );
+$custom_id     = '';
 
-if ( ! empty( $custom_id ) ) {
-    $id .= " {$custom_id}";
+if ( ! empty( $get_custom_id ) ) {
+    $custom_id = "id='{$get_custom_id}'";
 }
 
 if ( ! empty ( $link ) ) {
@@ -50,7 +51,7 @@ do_action('container_start');
 ?>
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> c-my-9">
-    <div class="container">
+    <div <?= $custom_id; ?> class="container">
 
         <?php if ( ! empty( $content ) ) : ?>
 

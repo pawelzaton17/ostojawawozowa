@@ -20,12 +20,13 @@ $class_name       = 'acf-block-numbers';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$v_title   = get_field( 'v_title' );
-$w_title   = get_field( 'w_title' );
-$custom_id = get_field( 'all_custom_id' );
+$v_title       = get_field( 'v_title' );
+$w_title       = get_field( 'w_title' );
+$get_custom_id = get_field( 'all_custom_id' );
+$custom_id     = '';
 
-if ( ! empty( $custom_id ) ) {
-    $id .= " {$custom_id}";
+if ( ! empty( $get_custom_id ) ) {
+    $custom_id = "id='{$get_custom_id}'";
 }
 
 
@@ -44,7 +45,7 @@ do_action('container_start');
 ?>
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative c-my-10 c-pt-lg-9 c-pb-lg-6" data-anim="fade-in">
-    <div class="container">
+    <div <?= $custom_id; ?> class="container">
         <div class="row">
 
         <?php if ( have_rows( 'v_items' ) ): ?>

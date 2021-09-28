@@ -20,16 +20,17 @@ $class_name = 'acf-block-content-with-image';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$title     = get_field( 'title' );
-$content   = get_field( 'content' );
-$image_id  = get_field( 'image' );
-$link      = get_field( 'button' );
-$is_alt    = get_field( 'alt' );
-$style     = '';
-$custom_id = get_field( 'all_custom_id' );
+$title         = get_field( 'title' );
+$content       = get_field( 'content' );
+$image_id      = get_field( 'image' );
+$link          = get_field( 'button' );
+$is_alt        = get_field( 'alt' );
+$get_custom_id = get_field( 'all_custom_id' );
+$style         = '';
+$custom_id     = '';
 
-if ( ! empty( $custom_id ) ) {
-    $id .= " {$custom_id}";
+if ( ! empty( $get_custom_id ) ) {
+    $custom_id = "id='{$get_custom_id}'";
 }
 
 if ( $is_alt )
@@ -59,7 +60,7 @@ do_action('container_start');
 ?>
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative c-my-10" data-anim="fade-in">
-    <div class="container">
+    <div <?= $custom_id; ?> class="container">
         <div class="row">
             <div class="col-md-6 c-px-md-7 c-px-lg-9 c-px-xl-6 c-py-md-5 d-md-flex flex-md-column justify-content-md-center">
 

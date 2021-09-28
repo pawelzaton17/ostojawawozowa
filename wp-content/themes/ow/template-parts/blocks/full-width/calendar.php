@@ -23,10 +23,11 @@ $additional_class = !empty($block['className']) ? ' ' .$block['className'] : nul
 $heading_primary   = get_field( 'title_primary' );
 $content           = get_field( 'content' );
 $heading_secondary = get_field( 'title_secondary' );
-$custom_id         = get_field( 'all_custom_id' );
+$get_custom_id     = get_field( 'all_custom_id' );
+$custom_id         = '';
 
-if ( ! empty( $custom_id ) ) {
-    $id .= " {$custom_id}";
+if ( ! empty( $get_custom_id ) ) {
+    $custom_id = "id='{$get_custom_id}'";
 }
 
 // block preview
@@ -45,7 +46,7 @@ do_action('container_start');
 ?>
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> c-my-9" data-anim="fade-in" >
-    <div class="container">
+    <div <?= $custom_id; ?> class="container">
         <div class="row">
             <div class="col-lg-6 d-flex flex-column flex-md-row flex-lg-column align-items-md-center align-items-lg-start c-mb-10 c-mb-lg-0">
 

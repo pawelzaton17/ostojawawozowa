@@ -20,10 +20,11 @@ $class_name       = 'acf-block-hero overflow-hidden';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$custom_id = get_field( 'all_custom_id' );
+$get_custom_id = get_field( 'all_custom_id' );
+$custom_id     = '';
 
-if ( ! empty( $custom_id ) ) {
-    $id .= " {$custom_id}";
+if ( ! empty( $get_custom_id ) ) {
+    $custom_id = "id='{$get_custom_id}'";
 }
 
 // block preview
@@ -86,7 +87,7 @@ do_action('container_start');
     if ( have_rows( 'slider' ) ):
     ?>
 
-    <div class="js-tiny-slider-hero overflow-hidden">
+    <div <?= $custom_id; ?> class="js-tiny-slider-hero overflow-hidden">
         <div class="js-tiny-slider crunch-tiny-slider position-relative">
             <div class="acf-block-hero__slider-row js-tiny-slider-row">
 
@@ -118,8 +119,7 @@ do_action('container_start');
                         </div>
                         <a
                             href="<?= esc_url($link_url); ?>"
-                            class="js-modal-trigger crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-decoration-none font-family-primary"
-                            data-target-modal="#contact-modal"
+                            class="crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-decoration-none font-family-primary"
                             target="<?= esc_attr($link_target); ?>"
                             <?php if($link_target != '_self') echo 'rel="'.esc_attr('nofollow').'"'; ?>
                         >

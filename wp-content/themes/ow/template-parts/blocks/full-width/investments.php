@@ -20,11 +20,12 @@ $class_name       = 'acf-block-investments';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$title     = get_field( 'title' );
-$custom_id = get_field( 'all_custom_id' );
+$title         = get_field( 'title' );
+$get_custom_id = get_field( 'all_custom_id' );
+$custom_id     = '';
 
-if ( ! empty( $custom_id ) ) {
-    $id .= " {$custom_id}";
+if ( ! empty( $get_custom_id ) ) {
+    $custom_id = "id='{$get_custom_id}'";
 }
 
 // block preview
@@ -43,7 +44,7 @@ do_action('container_start');
 ?>
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?>" data-anim="fade-in">
-    <div class="container">
+    <div <?= $custom_id; ?> class="container">
         <div class="row">
             <div class="col-12 d-flex justify-content-center justify-content-md-start c-py-6">
 

@@ -20,12 +20,13 @@ $class_name = 'acf-block-heading-with-content';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$title     = get_field( 'title' );
-$content   = get_field( 'content' );
-$custom_id = get_field( 'all_custom_id' );
+$title         = get_field( 'title' );
+$content       = get_field( 'content' );
+$get_custom_id = get_field( 'all_custom_id' );
+$custom_id     = '';
 
-if ( ! empty( $custom_id ) ) {
-    $id .= " {$custom_id}";
+if ( ! empty( $get_custom_id ) ) {
+    $custom_id = "id='{$get_custom_id}'";
 }
 
 // block preview

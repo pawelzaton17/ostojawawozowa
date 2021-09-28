@@ -20,12 +20,13 @@ $class_name = 'acf-block-map';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$title     = get_field( 'title' );
-$link      = get_field( 'button' );
-$custom_id = get_field( 'all_custom_id' );
+$title         = get_field( 'title' );
+$link          = get_field( 'button' );
+$get_custom_id = get_field( 'all_custom_id' );
+$custom_id     = '';
 
-if ( ! empty( $custom_id ) ) {
-    $id .= " {$custom_id}";
+if ( ! empty( $get_custom_id ) ) {
+    $custom_id = "id='{$get_custom_id}'";
 }
 
 if ( $link ) {
@@ -49,6 +50,13 @@ do_action('container_start');
 ?>
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative" data-anim="fade-in">
+
+    <?php if ( ! empty( $get_custom_id ) ) : ?>
+
+    <div <?= $custom_id; ?>></div>
+
+    <?php endif; ?>
+
     <div class="d-xxl-none">
         <div class="container c-mb-7">
             <div class="row">

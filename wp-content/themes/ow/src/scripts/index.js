@@ -25,7 +25,7 @@ import "helpers/remove-empty-p-tags";
 // import "helpers/hash-scroll-animation";
 
 /** Template Parts */
-import "partials/cookie-notice/index";
+// import "partials/cookie-notice/index";
 import "partials/screen-reader-shortcut-header/index";
 
 /** Object Fit IE Polyfill */

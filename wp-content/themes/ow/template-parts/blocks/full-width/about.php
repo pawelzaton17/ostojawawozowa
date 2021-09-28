@@ -20,15 +20,16 @@ $class_name = 'acf-block-about';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$title     = get_field( 'title' );
-$content   = get_field( 'content' );
-$heading   = get_field( 'heading' );
-$image     = get_field( 'image' );
-$is_alt    = get_field( 'alt' );
-$custom_id = get_field( 'all_custom_id' );
+$title         = get_field( 'title' );
+$content       = get_field( 'content' );
+$heading       = get_field( 'heading' );
+$image         = get_field( 'image' );
+$is_alt        = get_field( 'alt' );
+$get_custom_id = get_field( 'all_custom_id' );
+$custom_id     = '';
 
-if ( ! empty( $custom_id ) ) {
-    $id .= " {$custom_id}";
+if ( ! empty( $get_custom_id ) ) {
+    $custom_id = "id='{$get_custom_id}'";
 }
 
 if ( ! empty( $image ) ) {
@@ -51,7 +52,7 @@ do_action('container_start');
 ?>
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> c-mb-6" data-anim="fade-in">
-    <div class="container">
+    <div <?= $custom_id; ?> class="container">
         <div class="row">
             <div class="col-12 d-flex justify-content-center c-py-6 c-py-md-2">
 

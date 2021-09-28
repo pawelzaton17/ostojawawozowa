@@ -20,14 +20,15 @@ $class_name       = 'acf-block-variants';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$title     = get_field( 'title' );
-$content   = get_field( 'content' );
-$alt       = get_field( 'alt' );
-$style     = '';
-$custom_id = get_field( 'all_custom_id' );
+$title         = get_field( 'title' );
+$content       = get_field( 'content' );
+$alt           = get_field( 'alt' );
+$style         = '';
+$get_custom_id = get_field( 'all_custom_id' );
+$custom_id     = '';
 
-if ( ! empty( $custom_id ) ) {
-    $id .= " {$custom_id}";
+if ( ! empty( $get_custom_id ) ) {
+    $custom_id = "id='{$get_custom_id}'";
 }
 
 if ( $alt ) {
@@ -50,7 +51,7 @@ do_action('container_start');
 ?>
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> position-relative" data-anim="fade-in">
-    <div class="container">
+    <div <?= $custom_id; ?> class="container">
         <div class="row<?= $alt ? ' d-flex flex-row-reverse' : null; ?>">
             <div class="col-lg-5 acf-block-variants__content-wrapper d-md-flex justify-content-end flex-column">
 
