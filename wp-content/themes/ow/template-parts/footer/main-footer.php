@@ -112,7 +112,7 @@ if ( ! empty( $custom_id ) ) {
         <div class="container">
             <div class="row">
                 <div class="main-footer__copyrights-col col-12 c-mt-7 c-mt-md-4 c-mt-xl-0">
-                    <p class="font-size-10 c-m-0">Informacje zmaieszczone na stronie internetowej nie stanowią oferty handlowej w rozumieniu przepisów Kodeksu Cywlinego, mają charakter wyłącznie reklamowy. Szczegółowe warunki zakupu okreslane są na podstawie idywidualnej umowy sprzedaży (umowy deweloperskiej).</p>
+                    <p class="font-size-10 c-m-0">Informacje zamieszczone na stronie internetowej nie stanowią oferty handlowej w rozumieniu przepisów Kodeksu Cywilnego, mają charakter wyłącznie reklamowy. Szczegółowe warunki zakupu określane są na podstawie indywidualnej umowy sprzedaży (umowy deweloperskiej).</p>
                     <ul class="list-unstyled d-flex font-size-10">
                         <li><a href="<?= esc_url( home_url( '/' ) ); ?>polityka-prywatnosci" class="text-white" target="_blank">Polityka prywatnosci</a></li>
                         <li><a href="<?= esc_url( home_url( '/' ) ); ?>regulamin" class="text-white" target="_blank">Regulamin</a></li>
