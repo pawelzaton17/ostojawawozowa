@@ -109,7 +109,7 @@ do_action('container_start');
 
             <div class="acf-block-numbers__col-wrapper col-lg-5 text-white">
                 <div class="acf-block-numbers__col-bg bg-primary"></div>
-                <div class="acf-block-numbers__col-row row c-py-9 c-py-lg-0 position-relative z-index-2">
+                <div class="acf-block-numbers__col-row row c-py-9 c-py-lg-0 position-relative z-index-1">
                     <div class="col-12 c-mb-7 c-mb-md-8">
                         <h2 class="acf-block-numbers__heading c-pb-4 c-pb-md-3 position-relative font-weight-bold font-size-36">
 
