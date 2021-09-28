@@ -40,7 +40,6 @@ const calendarSlider = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const calendarWrapper = document.querySelector("#js-calendar");
-    const formDateSpan = document.querySelector(".js-calendar-form-date");
     const formDateInput = document.querySelector(".js-calendar-form-input");
     const formTextarea = document.querySelector(".js-calendar-textarea").querySelector("textarea");
 
@@ -75,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 class="acf-block-calendar__button js-modal-trigger js-calendar-time-trigger w-100 bg-white line-height-1-4 text-center font-family-primary"
                                 data-item-day="${DayAsString(currentDate.getDay())}"
                                 data-item-date="${currentDate.getDate()}.${currentDate.getMonth() + 1}.${currentDate.getFullYear()}"
-                                data-item-time="9:00 - 12:00"
+                                data-item-time="8:00 - 10:00"
                                 data-target-modal="#calendar-modal"
                             >
                                 8:00 - 10:00
@@ -86,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 class="acf-block-calendar__button js-modal-trigger js-calendar-time-trigger w-100 bg-white line-height-1-4 text-center font-family-primary"
                                 data-item-day="${DayAsString(currentDate.getDay())}"
                                 data-item-date="${currentDate.getDate()}.${currentDate.getMonth() + 1}.${currentDate.getFullYear()}"
-                                data-item-time="12:00 - 15:00"
+                                data-item-time="10:00 - 16:00"
                                 data-target-modal="#calendar-modal"
                             >
                                 10:00 - 16:00
@@ -97,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 class="acf-block-calendar__button js-modal-trigger js-calendar-time-trigger w-100 bg-white line-height-1-4 text-center font-family-primary"
                                 data-item-day="${DayAsString(currentDate.getDay())}"
                                 data-item-date="${currentDate.getDate()}.${currentDate.getMonth() + 1}.${currentDate.getFullYear()}"
-                                data-item-time="15:00 - 16:00"
+                                data-item-time="16:00 - 20:00"
                                 data-target-modal="#calendar-modal"
                             >
                                 16:00 - 20:00
@@ -118,8 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const elDate = el.dataset.itemDate;
             const elTime = el.dataset.itemTime;
 
+            formTextarea.innerHTML = "";
             formTextarea.innerHTML = `Chcę umówić się na oglądanie mieszkania w Państwa inwestycji dnia ${elDate}, ${elTime}`;
-            formDateSpan.innerHTML = `${elDate}, ${elTime}`;
             formDateInput.querySelector("input").value = `${elDate}, ${elTime}`;
         });
     });
