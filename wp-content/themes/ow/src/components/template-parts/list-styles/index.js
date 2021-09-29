@@ -4,3 +4,4 @@
 
 /** Custom assets */
 import "./_list-styles.scss";
+import "./list-scripts";

@@ -81,10 +81,10 @@ do_action('container_start');
                     ?>
 
                     <li class="acf-block-list__list-item">
-                        <div class="acf-block-list__row row font-family-primary font-weight-light c-py-3">
+                        <div class="acf-block-list__row js-list-row row font-family-primary font-weight-light c-py-3">
                             <div class="col-12 col-lg-9">
                                 <div class="row">
-                                    <div class="col-6 col-md-8 col-lg-12 col-xl-2 acf-block-list__item-title">
+                                    <div class="col-6 col-md-8 col-lg-12 col-xl-2 acf-block-list__item-title js-list-item-title">
 
                                         <?= $item_title; ?>
 
@@ -155,12 +155,14 @@ do_action('container_start');
                                         </a>
                                     </div>
                                     <div class="col-6 col-lg-12 col-xl-6 c-px-2 d-flex">
-                                        <a href="<?= esc_url($link_url); ?>" target="<?= esc_attr($link_target); ?>" <?php if($link_target != '_self') echo 'rel="'.esc_attr('nofollow').'"'; ?>
-                                           class="crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-black crunch-button__full-background--medium text-decoration-none font-family-primary w-100">
+                                        <button
+                                            class="js-modal-trigger js-list-modal-trigger border-0 crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-black crunch-button__full-background--medium text-decoration-none font-family-primary w-100"
+                                            data-target-modal="#<?= $block['id']; ?>-list-modal"
+                                        >
 
                                             <?= esc_html($link_title); ?>
 
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -175,6 +177,22 @@ do_action('container_start');
     </div>
 
     <?php endif; ?>
+
+    <div class="js-modal modal contact-modal-wrapper fade" id="<?= $block['id']; ?>-list-modal">
+        <div class="main-footer__popup-wrapper js-modal-item m-auto overflow-hidden bg-white h-100 position-relative c-py-4 c-px-6">
+            <i class="js-modal-close modal__close z-index-2 position-absolute c-p-3 d-block">
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M27.9566 27.9568L10.0433 10.0434" stroke="#333333" stroke-width="1.2" stroke-linecap="round"/>
+                    <path d="M27.9567 10.0434L10.0434 27.9568" stroke="#333333" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+            </i>
+            <div class="h-100 overflow-auto">
+
+                <?= do_shortcode('[gravityform id="15" ajax="true"]'); ?>
+
+            </div
+        </div>
+    </div>
 
 </section>
 
