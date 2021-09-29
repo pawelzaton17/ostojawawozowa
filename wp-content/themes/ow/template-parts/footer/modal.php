@@ -7,7 +7,7 @@
                     <path d="M27.9567 10.0434L10.0434 27.9568" stroke="#333333" stroke-width="1.2" stroke-linecap="round"/>
                 </svg>
             </i>
-            <div class="h-100 overflow-auto">
+            <div class="h-100 overflow-auto c-px-3">
 
                 <?= do_shortcode('[gravityform id="9" ajax="true"]'); ?>
 
@@ -22,7 +22,7 @@
                     <path d="M27.9567 10.0434L10.0434 27.9568" stroke="#333333" stroke-width="1.2" stroke-linecap="round"/>
                 </svg>
             </i>
-            <div class="h-100 overflow-auto">
+            <div class="h-100 overflow-auto c-px-3">
 
                 <?= do_shortcode('[gravityform id="10" ajax="true"]'); ?>
 
