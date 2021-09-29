@@ -45,7 +45,7 @@ do_action('container_start');
 ?>
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> c-my-7" data-anim="fade-in">
-   <div class="container">
+   <div <?= $custom_id; ?> class="container">
        <div class="row">
            <div class="col-md-6 col-lg-4 d-flex flex-column align-items-sm-center align-items-md-start">
 

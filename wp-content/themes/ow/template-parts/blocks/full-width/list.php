@@ -43,7 +43,7 @@ endif; ?>
 do_action('container_start');
 ?>
 
-<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?>" data-anim="fade-in"
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?>" data-anim="fade-in">
     <div <?= $custom_id; ?> class="container">
         <div class="row">
             <div class="col-12 text-center">

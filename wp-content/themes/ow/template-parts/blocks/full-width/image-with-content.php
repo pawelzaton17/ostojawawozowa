@@ -20,16 +20,17 @@ $class_name = 'acf-block-image-with-content';
 $additional_class = !empty($block['className']) ? ' ' .$block['className'] : null;
 
 // Load values and assing defaults.
-$title       = get_field( 'title' );
-$content     = get_field( 'content' );
-$image       = get_field( 'image' );
-$link        = get_field( 'button' );
-$is_alt      = get_field( 'alt' );
+$title         = get_field( 'title' );
+$content       = get_field( 'content' );
+$image         = get_field( 'image' );
+$link          = get_field( 'button' );
+$is_alt        = get_field( 'alt' );
+$get_custom_id = get_field( 'all_custom_id' );
 $alt_heading = '';
-$custom_id   = get_field( 'all_custom_id' );
+$custom_id     = '';
 
-if ( ! empty( $custom_id ) ) {
-    $id .= " {$custom_id}";
+if ( ! empty( $get_custom_id ) ) {
+    $custom_id = "id='{$get_custom_id}'";
 }
 
 if ( $is_alt ) {
@@ -54,7 +55,6 @@ if ( ! empty( $image ) ) {
     $image_style = "style='background-image: url({$image_url})'";
 }
 
-
 // block preview
 if (!empty($block['data']['__is_preview'])) : ?>
 <img src="<?= get_template_directory_uri(); ?>/inc/block-previews/<?= $class_name; ?>.jpg" />
@@ -70,7 +70,7 @@ do_action('container_start');
 ?>
 
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); echo ! $is_alt ? ' bg-primary' : ' acf-block-image-with-content--alt'; ?>" data-anim="fade-in">
-    <div class="container c-py-10 c-py-md-7">
+    <div <?= $custom_id; ?> class="container c-py-10 c-py-md-7">
 
         <?php if ( ! $is_alt ) : ?>
 
