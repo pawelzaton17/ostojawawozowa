@@ -42,7 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (document.querySelector(".js-tiny-slider-calendar")) {
         const calendarWrapper = document.querySelector("#js-calendar");
         const formDateInput = document.querySelector(".js-calendar-form-input");
-        const formTextarea = document.querySelector(".js-calendar-textarea").querySelector("textarea");
+        const formTextarea = document.querySelector(".js-calendar-textarea");
+
+        if (formTextarea) {
+            const formTextareaElement = formTextarea.querySelector("textarea");
+        }
 
         function DayAsString(dayIndex) {
             const weekdays = new Array(7);
@@ -118,9 +122,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 const elDate = el.dataset.itemDate;
                 const elTime = el.dataset.itemTime;
 
-                formTextarea.innerHTML = "";
-                formTextarea.innerHTML = `Chcę umówić się na oglądanie mieszkania w Państwa inwestycji dnia ${elDate}, ${elTime}`;
-                formDateInput.querySelector("input").value = `${elDate}, ${elTime}`;
+                if (formTextarea) {
+                    formTextareaElement.innerHTML = "";
+                    formTextareaElement.innerHTML = `Chcę umówić się na oglądanie mieszkania w Państwa inwestycji dnia ${elDate}, ${elTime}`;
+                }
+                if (formDateInput) {
+                    formDateInput.querySelector("input").value = `${elDate}, ${elTime}`;
+                }
             });
         });
 

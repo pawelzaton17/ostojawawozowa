@@ -91,8 +91,8 @@
         "@babel/plugin-transform-runtime": "^7.12.10",
         "@babel/polyfill": "^7.4.4",
         "@babel/runtime": "^7.12.5",
-        "bootstrap": "^5.0.2",
         "animejs": "^3.2.0",
+        "bootstrap": "^5.0.2",
         "browserslist": "^4.16.6",
         "core-js": "^3.8.1",
         "glightbox": "^2.0.5",
@@ -104,6 +104,7 @@
         "postcss-reporter": "^6.0.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
+        "smoothscroll-polyfill": "^0.4.4",
         "webfontloader": "1.6.28"
     }
 }

@@ -28,7 +28,12 @@ import "helpers/remove-empty-p-tags";
 // import "partials/cookie-notice/index";
 import "partials/screen-reader-shortcut-header/index";
 
+/** Safari smooth scroll polyfill */
+import smoothscroll from "smoothscroll-polyfill";
+
 /** Object Fit IE Polyfill */
 import objectFitImages from "object-fit-images";
+
+smoothscroll.polyfill();
 
 objectFitImages();
