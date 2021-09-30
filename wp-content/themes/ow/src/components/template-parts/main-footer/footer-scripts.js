@@ -26,6 +26,25 @@ const stickyFooter = () => {
     }
 };
 
+const modalButtons = document.querySelectorAll(".main-footer__buttons-item");
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (modalButtons) {
+        modalButtons.forEach((el) => {
+            el.addEventListener("mouseover", () => {
+                const textItem = el.querySelector(".js-main-footer-buttons-text");
+
+                textItem.classList.add("is-visible");
+            });
+            el.addEventListener("mouseout", () => {
+                const textItem = el.querySelector(".js-main-footer-buttons-text");
+
+                textItem.classList.remove("is-visible");
+            });
+        });
+    }
+});
+
 window.addEventListener("load", () => {
     stickyFooter();
 });

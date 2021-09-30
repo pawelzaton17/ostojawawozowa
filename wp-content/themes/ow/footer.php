@@ -9,6 +9,7 @@
 ?>
 
 <?php get_template_part('template-parts/footer/main-footer'); ?>
+<?php get_template_part('template-parts/footer/modal-buttons'); ?>
 <?php get_template_part('template-parts/footer/modal'); ?>
 
 </div>
