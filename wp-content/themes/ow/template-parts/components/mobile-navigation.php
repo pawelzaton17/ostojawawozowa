@@ -6,10 +6,12 @@ $menu_logo_id = get_field( 'h_menu_logo', 'options' );
 
         <?php if ( ! empty( $menu_logo_id ) ) : ?>
 
-        <figure class="mobile-navigation__logo position-absolute c-mb-0">
+        <figure class="mobile-navigation__logo position-absolute c-mb-0 text-center">
+            <a class="d-inline-flex" href="<?= esc_url( home_url( '/' ) ); ?>">
 
-            <?= wp_get_attachment_image( $menu_logo_id, "full", "", array( "class" => "d-block h-auto w-100 lazyload", "data-lazy" => "true") ); ?>
+                <?= wp_get_attachment_image( $menu_logo_id, "full", "", array( "class" => "d-block h-auto w-100 lazyload", "data-lazy" => "true") ); ?>
 
+            </a>
         </figure>
 
         <?php
