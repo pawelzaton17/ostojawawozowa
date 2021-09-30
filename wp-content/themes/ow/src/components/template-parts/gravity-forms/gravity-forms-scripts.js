@@ -153,7 +153,7 @@
      * Keyup for Phone Number (max chars)
      */
     delegateEvent("keydown", ".ginput_container_phone input", () => {
-        const max_chars = 16;
+        const max_chars = 9;
 
         if (event.target.value.length >= max_chars) {
            event.target.value = event.target.value.substr(0, max_chars);
@@ -203,6 +203,16 @@
         });
     });
 
+    function setMaxLengthForPhoneInput() {
+        const phoneInputElements = document.querySelectorAll(".ginput_container_phone");
+
+        phoneInputElements.forEach((el) => {
+            const elInput = el.querySelector("input");
+
+            elInput.maxLength = 9;
+        });
+    }
+
     /**
      * Init Functions
      */
@@ -215,5 +225,6 @@
     document.addEventListener("DOMContentLoaded", () => {
         setupRadio();
         setupFiles();
+        setMaxLengthForPhoneInput();
         initChosen();
     });
