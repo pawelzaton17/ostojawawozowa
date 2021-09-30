@@ -44,10 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const formDateInput = document.querySelector(".js-calendar-form-input");
         const formTextarea = document.querySelector(".js-calendar-textarea");
 
-        if (formTextarea) {
-            const formTextareaElement = formTextarea.querySelector("textarea");
-        }
-
         function DayAsString(dayIndex) {
             const weekdays = new Array(7);
             weekdays[0] = "Niedziela";
@@ -123,6 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 const elTime = el.dataset.itemTime;
 
                 if (formTextarea) {
+                    const formTextareaElement = formTextarea.querySelector("textarea");
+
                     formTextareaElement.innerHTML = "";
                     formTextareaElement.innerHTML = `Chcę umówić się na oglądanie mieszkania w Państwa inwestycji dnia ${elDate}, ${elTime}`;
                 }
