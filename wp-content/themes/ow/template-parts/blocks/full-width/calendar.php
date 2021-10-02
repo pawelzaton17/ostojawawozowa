@@ -48,7 +48,7 @@ do_action('container_start');
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?> c-my-9" data-anim="fade-in" >
     <div <?= $custom_id; ?> class="container">
         <div class="row">
-            <div class="col-lg-6 d-flex flex-column flex-md-row flex-lg-column align-items-md-center align-items-lg-start c-mb-10 c-mb-lg-0">
+            <div class="col-lg-6 d-flex flex-column flex-md-row flex-lg-column align-items-md-center align-items-lg-start c-mb-3 c-mb-md-10 c-mb-lg-0">
 
                 <?php if ( ! empty( $heading_primary ) ) : ?>
 
@@ -65,7 +65,7 @@ do_action('container_start');
                 if ( ! empty( $content ) ) :
                 ?>
 
-                <div class="acf-block-calendar__content d-none d-md-block font-size-14 text-dark-gray c-py-6">
+                <div class="acf-block-calendar__content font-size-14 text-dark-gray c-py-6">
 
                     <?= $content; ?>
 
