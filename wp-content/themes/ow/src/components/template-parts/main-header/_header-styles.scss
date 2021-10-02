@@ -77,7 +77,7 @@
                 background: $white;
             }
             @include media-breakpoint-up(lg) {
-                max-width: 51.875rem;
+                max-width: 54.875rem;
             }
 
             @include c-transition(opacity);

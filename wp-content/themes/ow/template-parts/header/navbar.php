@@ -38,7 +38,7 @@ $logo = get_field( 'header_logo', 'options' );
                                 <a
                                     href="<?= esc_url($link_url); ?>"
                                     target="<?= esc_attr($link_target); ?>" <?php if($link_target != '_self') echo 'rel="'.esc_attr('nofollow').'"'; ?>
-                                    class="navbar__quick-nav-link text-decoration-none font-size-18 js-scroll-to"
+                                    class="navbar__quick-nav-link text-decoration-none font-size-17 js-scroll-to"
                                 >
 
                                     <?= esc_html($link_title); ?>
