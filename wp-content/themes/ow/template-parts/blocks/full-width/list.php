@@ -27,11 +27,6 @@ $image_tablet  = get_field( 'image_tablet' );
 $image_mobile  = get_field( 'image_mobile' );
 $custom_id     = '';
 
-//if ( ! empty( $image ) ) {
-//    $image_url    = wp_get_attachment_image_url( $image, 'full' );
-//    $image_style  = "style='background-image: url({$image_url})'";
-//}
-
 if ( ! empty( $get_custom_id ) ) {
     $custom_id = "id='{$get_custom_id}'";
 }
