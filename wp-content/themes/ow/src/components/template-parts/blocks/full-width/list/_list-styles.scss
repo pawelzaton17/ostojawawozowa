@@ -92,4 +92,16 @@
             }
         }
     }
+
+    &__main-image {
+        height: 25rem;
+
+        &--tablet {
+            height: 36rem;
+        }
+
+        &--desktop {
+            height: auto;
+        }
+    }
 }

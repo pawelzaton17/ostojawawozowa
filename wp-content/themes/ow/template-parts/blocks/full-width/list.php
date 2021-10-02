@@ -22,7 +22,15 @@ $additional_class = !empty($block['className']) ? ' ' .$block['className'] : nul
 // Load values and assing defaults.
 $title         = get_field( 'title' );
 $get_custom_id = get_field( 'all_custom_id' );
+$image         = get_field( 'image' );
+$image_tablet  = get_field( 'image_tablet' );
+$image_mobile  = get_field( 'image_mobile' );
 $custom_id     = '';
+
+//if ( ! empty( $image ) ) {
+//    $image_url    = wp_get_attachment_image_url( $image, 'full' );
+//    $image_style  = "style='background-image: url({$image_url})'";
+//}
 
 if ( ! empty( $get_custom_id ) ) {
     $custom_id = "id='{$get_custom_id}'";
@@ -46,7 +54,7 @@ do_action('container_start');
 <section id="<?= esc_attr($id); ?>" class="<?= esc_attr($class_name.$additional_class); ?>" data-anim="fade-in">
     <div <?= $custom_id; ?> class="container">
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-12 text-center c-mb-5">
 
                 <?php get_template_part('template-parts/components/section-title', '', [ 'title' => $title, 'center' => true ]); ?>
 
@@ -54,7 +62,27 @@ do_action('container_start');
         </div>
     </div>
 
-    <?php if ( have_rows( 'list' ) ): ?>
+    <?php if ( ! empty( $image ) ) : ?>
+
+    <div class="container-fluid bg-primary c-py-md-3 c-px-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 c-px-0">
+
+                    <?= wp_get_attachment_image( $image, "full", "", array( "class" => "acf-block-list__main-image--desktop d-none d-xl-block d-xl h-auto w-100 lazyload", "data-lazy" => "true") ); ?>
+                    <?= wp_get_attachment_image( $image_tablet, "full", "", array( "class" => "acf-block-list__main-image--tablet d-none d-md-block d-xl-none h-auto w-100 lazyload", "data-lazy" => "true") ); ?>
+                    <?= wp_get_attachment_image( $image_mobile, "full", "", array( "class" => "acf-block-list__main-image d-block d-md-none h-auto w-100 lazyload", "data-lazy" => "true") ); ?>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php
+    endif;
+
+    if ( have_rows( 'list' ) ) :
+    ?>
 
     <div class="container c-mt-9 c-mt-md-7">
         <div class="row">
