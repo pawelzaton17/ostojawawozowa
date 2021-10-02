@@ -118,7 +118,7 @@ do_action('container_start');
 
                                     </div>
                                     <div class="acf-block-list__item col-4 col-lg-3 col-xl-2 d-flex flex-column c-mb-2 c-mb-md-0">
-                                        <span class="acf-block-list__label text-light-gray line-height-1-3 font-family-secondary font-weight-medium">Powierzchnia ogrodu</span>
+                                        <span class="acf-block-list__label text-light-gray line-height-1-3 font-family-secondary font-weight-medium">Powierzchnia terenu</span>
 
                                         <?= $garden_area ?>
 
