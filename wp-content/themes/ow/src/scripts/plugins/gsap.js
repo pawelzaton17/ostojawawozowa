@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     trigger: box,
                     scrub: false,
                     toggleActions: "play pause resume reverse",
-                    start: "30px 97.5%",
+                    start: "100px 97.5%",
                 },
                 duration: ".5",
                 autoAlpha: 1,
