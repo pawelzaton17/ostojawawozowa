@@ -59,14 +59,14 @@ do_action('container_start');
 
     <?php if ( ! empty( $image ) ) : ?>
 
-    <div class="container-fluid bg-primary c-py-md-3 c-px-0">
+    <div class="container-fluid bg-primary c-py-md-7 c-px-0">
         <div class="container">
             <div class="row">
                 <div class="col-12 c-px-0">
 
-                    <?= wp_get_attachment_image( $image, "full", "", array( "class" => "acf-block-list__main-image--desktop d-none d-xl-block d-xl h-auto w-100 lazyload", "data-lazy" => "true") ); ?>
-                    <?= wp_get_attachment_image( $image_tablet, "full", "", array( "class" => "acf-block-list__main-image--tablet d-none d-md-block d-xl-none h-auto w-100 lazyload", "data-lazy" => "true") ); ?>
-                    <?= wp_get_attachment_image( $image_mobile, "full", "", array( "class" => "acf-block-list__main-image d-block d-md-none h-auto w-100 lazyload", "data-lazy" => "true") ); ?>
+                    <?= wp_get_attachment_image( $image, "full", "", array( "class" => "d-none d-xl-block d-xl h-100 w-100 lazyload", "data-lazy" => "true") ); ?>
+                    <?= wp_get_attachment_image( $image_tablet, "full", "", array( "class" => "d-none d-md-block d-xl-none h-100 w-100 lazyload", "data-lazy" => "true") ); ?>
+                    <?= wp_get_attachment_image( $image_mobile, "full", "", array( "class" => "d-block d-md-none h-100 w-100 lazyload", "data-lazy" => "true") ); ?>
 
                 </div>
             </div>
