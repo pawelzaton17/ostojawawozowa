@@ -122,12 +122,14 @@ do_action('container_start');
                                                 </a>
                                             </div>
                                             <div class="col-9 c-px-2 d-flex h-100 c-py-2">
-                                                <a href="<?= esc_url($link_url); ?>" target="<?= esc_attr($link_target); ?>" <?php if($link_target != '_self') echo 'rel="'.esc_attr('nofollow').'"'; ?>
-                                                   class="crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-black crunch-button__full-background--medium text-decoration-none font-family-primary w-100">
+                                                <button
+                                                    class="js-modal-trigger js-list-modal-trigger border-0 crunch-button crunch-button__full-background crunch-button__full-background--secondary-color text-black crunch-button__full-background--medium text-decoration-none font-family-primary w-100"
+                                                    data-target-modal="#<?= $block['id']; ?>-list-modal"
+                                                >
 
                                                     <?= esc_html($link_title); ?>
 
-                                                </a>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
