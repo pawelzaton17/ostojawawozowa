@@ -70,10 +70,12 @@
 
     &__slider-buttons {
         width: 100%;
+        background: $primary;
         outline: none;
 
         @include media-breakpoint-up(md) {
             width: auto;
+            background: transparent;
         }
 
         &:focus {
@@ -88,6 +90,17 @@
         &:hover,
         &:focus {
             outline: none;
+        }
+    }
+
+    &__slider-button-item {
+        &:hover {
+            background: $primary;
+            color: $white;
+
+            &:before {
+                background: $primary;
+            }
         }
     }
 

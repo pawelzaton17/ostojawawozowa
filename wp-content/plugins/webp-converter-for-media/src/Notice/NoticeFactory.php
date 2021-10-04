@@ -3,6 +3,7 @@
 namespace WebpConverter\Notice;
 
 use WebpConverter\HookableInterface;
+use WebpConverter\PluginInfo;
 
 /**
  * Adds integration for list of notices.
@@ -10,9 +11,16 @@ use WebpConverter\HookableInterface;
 class NoticeFactory implements HookableInterface {
 
 	/**
-	 * Integrates with WordPress hooks.
-	 *
-	 * @return void
+	 * @var PluginInfo
+	 */
+	private $plugin_info;
+
+	public function __construct( PluginInfo $plugin_info ) {
+		$this->plugin_info = $plugin_info;
+	}
+
+	/**
+	 * {@inheritdoc}
 	 */
 	public function init_hooks() {
 		$this->set_integration( new ThanksNotice() );
@@ -27,6 +35,6 @@ class NoticeFactory implements HookableInterface {
 	 * @return void
 	 */
 	private function set_integration( NoticeInterface $notice ) {
-		( new NoticeIntegration( $notice ) )->init_hooks();
+		( new NoticeIntegration( $this->plugin_info, $notice ) )->init_hooks();
 	}
 }

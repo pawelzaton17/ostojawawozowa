@@ -2,14 +2,19 @@
 
 namespace WebpConverter\Conversion\Media;
 
-use WebpConverter\PluginAccessAbstract;
-use WebpConverter\PluginAccessInterface;
 use WebpConverter\HookableInterface;
+use WebpConverter\PluginData;
+use WebpConverter\Settings\Option\ExtraFeaturesOption;
 
 /**
  * Initializes image conversion when uploading images to media library.
  */
-class Upload extends PluginAccessAbstract implements PluginAccessInterface, HookableInterface {
+class Upload implements HookableInterface {
+
+	/**
+	 * @var PluginData
+	 */
+	private $plugin_data;
 
 	/**
 	 * Paths of converted images.
@@ -18,10 +23,12 @@ class Upload extends PluginAccessAbstract implements PluginAccessInterface, Hook
 	 */
 	private $converted_paths = [];
 
+	public function __construct( PluginData $plugin_data ) {
+		$this->plugin_data = $plugin_data;
+	}
+
 	/**
-	 * Integrates with WordPress hooks.
-	 *
-	 * @return void
+	 * {@inheritdoc}
 	 */
 	public function init_hooks() {
 		add_filter( 'wp_update_attachment_metadata', [ $this, 'init_attachment_convert' ], 10, 2 );
@@ -43,7 +50,6 @@ class Upload extends PluginAccessAbstract implements PluginAccessInterface, Hook
 
 		$paths = $this->get_sizes_paths( $data );
 		$paths = apply_filters( 'webpc_attachment_paths', $paths, $attachment_id );
-		$paths = apply_filters( 'webpc_files_paths', $paths, false );
 
 		$paths                 = array_diff( $paths, $this->converted_paths );
 		$this->converted_paths = array_merge( $this->converted_paths, $paths );
@@ -95,9 +101,9 @@ class Upload extends PluginAccessAbstract implements PluginAccessInterface, Hook
 	 * @return void
 	 */
 	private function init_conversion( array $paths ) {
-		$settings = $this->get_plugin()->get_settings();
+		$settings = $this->plugin_data->get_plugin_settings();
 
-		if ( in_array( 'cron_conversion', $settings['features'] ) ) {
+		if ( in_array( ExtraFeaturesOption::OPTION_VALUE_CRON_CONVERSION, $settings[ ExtraFeaturesOption::OPTION_NAME ] ) ) {
 			wp_schedule_single_event( ( time() + 1 ), 'webpc_convert_paths', [ $paths ] );
 		} else {
 			do_action( 'webpc_convert_paths', $paths );

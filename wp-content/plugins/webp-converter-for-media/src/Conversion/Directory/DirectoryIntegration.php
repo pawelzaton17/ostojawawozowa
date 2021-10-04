@@ -2,15 +2,13 @@
 
 namespace WebpConverter\Conversion\Directory;
 
-use WebpConverter\HookableInterface;
 use WebpConverter\Conversion\OutputPath;
+use WebpConverter\HookableInterface;
 
 /**
  * Returns various types of paths for directories.
  */
 class DirectoryIntegration implements HookableInterface {
-
-	const DIRS_EXCLUDED = [ '.', '..', '.git', '.svn', 'node_modules' ];
 
 	/**
 	 * Objects of supported directories.
@@ -20,16 +18,13 @@ class DirectoryIntegration implements HookableInterface {
 	private $directories = [];
 
 	/**
-	 * Integrates with WordPress hooks.
-	 *
-	 * @return void
+	 * {@inheritdoc}
 	 */
 	public function init_hooks() {
 		add_filter( 'webpc_dir_name', [ $this, 'get_dir_as_name' ], 0, 2 );
 		add_filter( 'webpc_dir_path', [ $this, 'get_dir_as_path' ], 0, 2 );
 		add_filter( 'webpc_dir_url', [ $this, 'get_dir_as_url' ], 0, 2 );
 		add_filter( 'webpc_uploads_prefix', [ $this, 'get_prefix_path' ], 0 );
-		add_filter( 'webpc_dir_excluded', [ $this, 'get_excluded_dirs' ], 0 );
 	}
 
 	/**
@@ -151,15 +146,5 @@ class DirectoryIntegration implements HookableInterface {
 		$diff_path = sprintf( '/%s/', $diff_dir );
 
 		return str_replace( '//', '/', $diff_path );
-	}
-
-	/**
-	 * Returns list of directories excluded from source file search.
-	 *
-	 * @return string[] Relative paths of excluded directories.
-	 * @internal
-	 */
-	public function get_excluded_dirs(): array {
-		return self::DIRS_EXCLUDED;
 	}
 }

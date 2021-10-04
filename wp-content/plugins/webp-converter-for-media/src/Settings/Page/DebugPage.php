@@ -3,42 +3,54 @@
 
 namespace WebpConverter\Settings\Page;
 
-use WebpConverter\Loader\LoaderAbstract;
-use WebpConverter\Settings\SettingsSave;
-use WebpConverter\Helper\ViewLoader;
+use WebpConverter\Error\Detector\RewritesErrorsDetector;
 use WebpConverter\Helper\FileLoader;
-use WebpConverter\Error\RewritesError;
+use WebpConverter\Helper\ViewLoader;
+use WebpConverter\Loader\LoaderAbstract;
+use WebpConverter\PluginData;
+use WebpConverter\PluginInfo;
+use WebpConverter\Settings\SettingsSave;
 
 /**
  * Supports debug tab in plugin settings page.
  */
-class DebugPage extends PageAbstract implements PageInterface {
+class DebugPage extends PageAbstract {
 
 	const PAGE_VIEW_PATH = 'views/settings-debug.php';
 
 	/**
-	 * Returns status if view is active.
-	 *
-	 * @return bool Is view active?
+	 * @var PluginInfo
 	 */
-	public function is_page_active(): bool {
-		return ( isset( $_GET['action'] ) && ( $_GET['action'] === 'server' ) ); // phpcs:ignore
+	private $plugin_info;
+
+	/**
+	 * @var FileLoader
+	 */
+	private $file_loader;
+
+	public function __construct( PluginInfo $plugin_info, PluginData $plugin_data, FileLoader $file_loader = null ) {
+		$this->plugin_info = $plugin_info;
+		$this->file_loader = $file_loader ?: new FileLoader( $plugin_info, $plugin_data );
 	}
 
 	/**
-	 * Displays view for plugin settings page.
-	 *
-	 * @return void
+	 * {@inheritdoc}
+	 */
+	public function is_page_active(): bool {
+		return ( isset( $_GET['action'] ) && ( $_GET['action'] === 'server' ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	}
+
+	/**
+	 * {@inheritdoc}
 	 */
 	public function show_page_view() {
-		$plugin       = $this->get_plugin();
 		$uploads_url  = apply_filters( 'webpc_dir_url', '', 'uploads' );
 		$uploads_path = apply_filters( 'webpc_dir_path', '', 'uploads' );
 		$ver_param    = sprintf( 'ver=%s', time() );
 
 		do_action( LoaderAbstract::ACTION_NAME, true, true );
 
-		ViewLoader::load_view(
+		( new ViewLoader( $this->plugin_info ) )->load_view(
 			self::PAGE_VIEW_PATH,
 			[
 				'settings_url'          => sprintf(
@@ -51,33 +63,29 @@ class DebugPage extends PageAbstract implements PageInterface {
 					'%s&action=server',
 					PageIntegration::get_settings_page_url()
 				),
-				'size_png_path'         => FileLoader::get_file_size_by_path(
-					$uploads_path . RewritesError::PATH_OUTPUT_FILE_PNG
+				'size_png_path'         => $this->file_loader->get_file_size_by_path(
+					$uploads_path . RewritesErrorsDetector::PATH_OUTPUT_FILE_PNG
 				),
-				'size_png2_path'        => FileLoader::get_file_size_by_path(
-					$uploads_path . RewritesError::PATH_OUTPUT_FILE_PNG2
+				'size_png2_path'        => $this->file_loader->get_file_size_by_path(
+					$uploads_path . RewritesErrorsDetector::PATH_OUTPUT_FILE_PNG2
 				),
-				'size_png_url'          => FileLoader::get_file_size_by_url(
-					$uploads_url . RewritesError::PATH_OUTPUT_FILE_PNG,
-					$plugin,
+				'size_png_url'          => $this->file_loader->get_file_size_by_url(
+					$uploads_url . RewritesErrorsDetector::PATH_OUTPUT_FILE_PNG,
 					false,
 					$ver_param
 				),
-				'size_png2_url'         => FileLoader::get_file_size_by_url(
-					$uploads_url . RewritesError::PATH_OUTPUT_FILE_PNG2,
-					$plugin,
+				'size_png2_url'         => $this->file_loader->get_file_size_by_url(
+					$uploads_url . RewritesErrorsDetector::PATH_OUTPUT_FILE_PNG2,
 					false,
 					$ver_param
 				),
-				'size_png_as_webp_url'  => FileLoader::get_file_size_by_url(
-					$uploads_url . RewritesError::PATH_OUTPUT_FILE_PNG,
-					$plugin,
+				'size_png_as_webp_url'  => $this->file_loader->get_file_size_by_url(
+					$uploads_url . RewritesErrorsDetector::PATH_OUTPUT_FILE_PNG,
 					true,
 					$ver_param
 				),
-				'size_png2_as_webp_url' => FileLoader::get_file_size_by_url(
-					$uploads_url . RewritesError::PATH_OUTPUT_FILE_PNG2,
-					$plugin,
+				'size_png2_as_webp_url' => $this->file_loader->get_file_size_by_url(
+					$uploads_url . RewritesErrorsDetector::PATH_OUTPUT_FILE_PNG2,
 					true,
 					$ver_param
 				),

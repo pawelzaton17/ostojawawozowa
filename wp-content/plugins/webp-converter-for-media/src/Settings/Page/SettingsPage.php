@@ -7,40 +7,52 @@ use WebpConverter\Conversion\Endpoint\PathsEndpoint;
 use WebpConverter\Conversion\Endpoint\RegenerateEndpoint;
 use WebpConverter\Helper\ViewLoader;
 use WebpConverter\Loader\LoaderAbstract;
-use WebpConverter\Settings\Option\OptionFactory;
+use WebpConverter\PluginData;
+use WebpConverter\PluginInfo;
+use WebpConverter\Settings\PluginOptions;
 use WebpConverter\Settings\SettingsSave;
 
 /**
  * Supports default tab in plugin settings page.
  */
-class SettingsPage extends PageAbstract implements PageInterface {
+class SettingsPage extends PageAbstract {
 
 	const PAGE_VIEW_PATH = 'views/settings.php';
 
 	/**
-	 * Returns status if view is active.
-	 *
-	 * @return bool Is view active?
+	 * @var PluginInfo
+	 */
+	private $plugin_info;
+
+	/**
+	 * @var PluginData
+	 */
+	private $plugin_data;
+
+	public function __construct( PluginInfo $plugin_info, PluginData $plugin_data ) {
+		$this->plugin_info = $plugin_info;
+		$this->plugin_data = $plugin_data;
+	}
+
+	/**
+	 * {@inheritdoc}
 	 */
 	public function is_page_active(): bool {
 		return ( ! isset( $_GET['action'] ) || ( $_GET['action'] !== 'server' ) ); // phpcs:ignore
 	}
 
 	/**
-	 * Displays view for plugin settings page.
-	 *
-	 * @return void
+	 * {@inheritdoc}
 	 */
 	public function show_page_view() {
-		$settings_save = new SettingsSave();
-		$settings_save->set_plugin( $this->get_plugin() );
-		$settings_save->save_settings();
+		( new SettingsSave( $this->plugin_data ) )->save_settings();
 
-		ViewLoader::load_view(
+		( new ViewLoader( $this->plugin_info ) )->load_view(
 			self::PAGE_VIEW_PATH,
 			[
-				'errors'             => apply_filters( 'webpc_server_errors_messages', [], false, true ),
-				'options'            => ( new OptionFactory() )->get_options(),
+				'errors_messages'    => apply_filters( 'webpc_server_errors_messages', [] ),
+				'errors_codes'       => apply_filters( 'webpc_server_errors', [] ),
+				'options'            => ( new PluginOptions() )->get_options(),
 				'submit_value'       => SettingsSave::SUBMIT_VALUE,
 				'settings_url'       => sprintf(
 					'%1$s&%2$s=%3$s',
@@ -52,8 +64,8 @@ class SettingsPage extends PageAbstract implements PageInterface {
 					'%s&action=server',
 					PageIntegration::get_settings_page_url()
 				),
-				'api_paths_url'      => ( new PathsEndpoint() )->get_route_url(),
-				'api_regenerate_url' => ( new RegenerateEndpoint() )->get_route_url(),
+				'api_paths_url'      => ( new PathsEndpoint( $this->plugin_data ) )->get_route_url(),
+				'api_regenerate_url' => ( new RegenerateEndpoint( $this->plugin_data ) )->get_route_url(),
 			]
 		);
 

@@ -5,11 +5,11 @@ namespace WebpConverter\Settings\Option;
 use WebpConverter\Conversion\Method\MethodFactory;
 
 /**
- * Handles data about "Conversion method" field in plugin settings.
+ * {@inheritdoc}
  */
-class ConversionMethodOption extends OptionAbstract implements OptionInterface {
+class ConversionMethodOption extends OptionAbstract {
 
-	const LOADER_TYPE = 'method';
+	const OPTION_NAME = 'method';
 
 	/**
 	 * Object of integration class supports all output formats.
@@ -18,66 +18,58 @@ class ConversionMethodOption extends OptionAbstract implements OptionInterface {
 	 */
 	private $methods_integration;
 
-	/**
-	 * ConversionMethodOption constructor.
-	 */
 	public function __construct() {
 		$this->methods_integration = new MethodFactory();
 	}
 
 	/**
-	 * Returns name of option.
-	 *
-	 * @return string Option name.
+	 * {@inheritdoc}
 	 */
-	public function get_name(): string {
-		return self::LOADER_TYPE;
+	public function get_priority(): int {
+		return 40;
 	}
 
 	/**
-	 * Returns type of field.
-	 *
-	 * @return string Field type.
+	 * {@inheritdoc}
+	 */
+	public function get_name(): string {
+		return self::OPTION_NAME;
+	}
+
+	/**
+	 * {@inheritdoc}
 	 */
 	public function get_type(): string {
 		return OptionAbstract::OPTION_TYPE_RADIO;
 	}
 
 	/**
-	 * Returns label of option.
-	 *
-	 * @return string Option label.
+	 * {@inheritdoc}
 	 */
 	public function get_label(): string {
 		return __( 'Conversion method', 'webp-converter-for-media' );
 	}
 
 	/**
-	 * Returns additional information of field.
-	 *
-	 * @return string Additional information.
+	 * {@inheritdoc}
 	 */
 	public function get_info(): string {
 		return __( 'The configuration for advanced users.', 'webp-converter-for-media' );
 	}
 
 	/**
-	 * Returns available values for field.
+	 * {@inheritdoc}
 	 *
-	 * @param mixed[] $settings Plugin settings.
-	 *
-	 * @return string[] Values for field.
+	 * @return string[]
 	 */
 	public function get_values( array $settings ): array {
 		return $this->methods_integration->get_methods();
 	}
 
 	/**
-	 * Returns unavailable values for field.
+	 * {@inheritdoc}
 	 *
-	 * @param mixed[] $settings Plugin settings.
-	 *
-	 * @return string[] Disabled values for field.
+	 * @return string[]
 	 */
 	public function get_disabled_values( array $settings ): array {
 		$methods           = $this->methods_integration->get_methods();
@@ -86,11 +78,7 @@ class ConversionMethodOption extends OptionAbstract implements OptionInterface {
 	}
 
 	/**
-	 * Returns default value of field.
-	 *
-	 * @param mixed[]|null $settings Plugin settings.
-	 *
-	 * @return string Default value of field.
+	 * {@inheritdoc}
 	 */
 	public function get_default_value( array $settings = null ): string {
 		$methods_available = $this->methods_integration->get_available_methods();

@@ -6,11 +6,11 @@ use WebpConverter\Conversion\Format\FormatFactory;
 use WebpConverter\Conversion\Format\WebpFormat;
 
 /**
- * Handles data about "Supported output formats" field in plugin settings.
+ * {@inheritdoc}
  */
-class OutputFormatsOption extends OptionAbstract implements OptionInterface {
+class OutputFormatsOption extends OptionAbstract {
 
-	const LOADER_TYPE = 'output_formats';
+	const OPTION_NAME = 'output_formats';
 
 	/**
 	 * Object of integration class supports all conversion methods.
@@ -19,74 +19,66 @@ class OutputFormatsOption extends OptionAbstract implements OptionInterface {
 	 */
 	private $formats_integration;
 
-	/**
-	 * OutputFormatsOption constructor.
-	 */
 	public function __construct() {
 		$this->formats_integration = new FormatFactory();
 	}
 
 	/**
-	 * Returns name of option.
-	 *
-	 * @return string Option name.
+	 * {@inheritdoc}
 	 */
-	public function get_name(): string {
-		return self::LOADER_TYPE;
+	public function get_priority(): int {
+		return 50;
 	}
 
 	/**
-	 * Returns type of field.
-	 *
-	 * @return string Field type.
+	 * {@inheritdoc}
+	 */
+	public function get_name(): string {
+		return self::OPTION_NAME;
+	}
+
+	/**
+	 * {@inheritdoc}
 	 */
 	public function get_type(): string {
 		return OptionAbstract::OPTION_TYPE_CHECKBOX;
 	}
 
 	/**
-	 * Returns label of option.
-	 *
-	 * @return string Option label.
+	 * {@inheritdoc}
 	 */
 	public function get_label(): string {
 		return __( 'List of supported output formats', 'webp-converter-for-media' );
 	}
 
 	/**
-	 * Returns available values for field.
+	 * {@inheritdoc}
 	 *
-	 * @param mixed[] $settings Plugin settings.
-	 *
-	 * @return string[] Values for field.
+	 * @return string[]
 	 */
 	public function get_values( array $settings ): array {
 		return $this->formats_integration->get_formats();
 	}
 
 	/**
-	 * Returns default value of field.
+	 * {@inheritdoc}
 	 *
-	 * @param mixed[]|null $settings Plugin settings.
-	 *
-	 * @return string[] Default value of field.
+	 * @return string[]
 	 */
 	public function get_default_value( array $settings = null ): array {
-		$method  = $settings['method'] ?? ( new ConversionMethodOption() )->get_default_value();
+		$method  = $settings[ ConversionMethodOption::OPTION_NAME ] ?? ( new ConversionMethodOption() )->get_default_value();
 		$formats = array_keys( $this->formats_integration->get_available_formats( $method ) );
 
 		return ( in_array( WebpFormat::FORMAT_EXTENSION, $formats ) ) ? [ WebpFormat::FORMAT_EXTENSION ] : [];
 	}
 
 	/**
-	 * Returns unavailable values for field.
+	 * {@inheritdoc}
 	 *
-	 * @param mixed[] $settings Plugin settings.
-	 *
-	 * @return string[] Disabled values for field.
+	 * @return string[]
 	 */
 	public function get_disabled_values( array $settings ): array {
-		$method            = $settings['method'] ?? ( new ConversionMethodOption() )->get_default_value();
+		$method            = $settings[ ConversionMethodOption::OPTION_NAME ] ?? ( new ConversionMethodOption() )->get_default_value();
 		$formats           = $this->formats_integration->get_formats();
 		$formats_available = $this->formats_integration->get_available_formats( $method );
 		return array_keys( array_diff( $formats, $formats_available ) );
