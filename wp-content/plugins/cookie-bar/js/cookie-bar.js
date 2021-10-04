@@ -1,6 +1,7 @@
 jQuery(document).ready(function($) {
 	if(!euReadCookie("euCookiesAcc")){
 		$("#eu-cookie-bar").show();
+		$("#eu-cookie-bar").addClass("d-flex");
 	}
 });
 function euSetCookie(cookieName, cookieValue, nDays) {
@@ -16,7 +17,7 @@ function euReadCookie(cookieName) {
 	if (ind==-1) ind=theCookie.indexOf(";"+cookieName+"=");
 	if (ind==-1 || cookieName=="") return "";
 	var ind1=theCookie.indexOf(";",ind+1);
-	if (ind1==-1) ind1=theCookie.length; 
+	if (ind1==-1) ind1=theCookie.length;
 	return unescape(theCookie.substring(ind+cookieName.length+2,ind1));
 }
 function euDeleteCookie(cookieName) {
@@ -28,5 +29,6 @@ function euDeleteCookie(cookieName) {
 function euAcceptCookiesWP() {
 	euSetCookie('euCookiesAcc', true, 365);
 	jQuery("#eu-cookie-bar").hide();
+	$("#eu-cookie-bar").removeClass("d-flex");
 	jQuery("html").css("margin-top","0");
 }
