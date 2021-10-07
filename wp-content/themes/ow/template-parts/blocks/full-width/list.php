@@ -116,7 +116,7 @@ do_action('container_start');
                                     <div class="col-6 col-md-4 d-lg-none">
                                         <div class="row h-100 d-flex align-items-center">
                                             <div class="col-3 c-px-2 d-flex h-100 c-py-2">
-                                                <a href="#" class="crunch-button crunch-button--file crunch-button__full-background crunch-button__full-background--primary-color crunch-button__full-background--medium text-decoration-none font-family-primary w-100">
+                                                <a href="<?= $file; ?>" target="_blank" class="crunch-button crunch-button--file crunch-button__full-background crunch-button__full-background--primary-color crunch-button__full-background--medium text-decoration-none font-family-primary w-100">
                                                     <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 2.625v9.208M4.958 9L8.5 12.542 12.042 9M14.167 15.375H2.833" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/></svg>
                                                     <span class="c-ml-3 d-none d-xl-inline-flex">Pobierz rzut</span>
                                                 </a>
