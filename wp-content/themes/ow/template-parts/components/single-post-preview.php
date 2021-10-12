@@ -55,7 +55,7 @@
 
         <?php if ( have_rows( 's_gallery',  $post->ID ) ) : ?>
 
-        <div class="col-md-6 col-lg-5 js-tiny-slider-single position-relative">
+        <div class="single-post-preview__image col-md-6 col-lg-5 js-tiny-slider-single position-relative">
             <div class="position-relative">
                 <div class="js-tiny-slider overflow-hidden">
                     <div class="single-post-preview__slider-wrapper js-tiny-slider-row">
