@@ -31,18 +31,6 @@ function crunch_acf_full_width_blocks()
     crunch_register_blocks([
 
         [
-            'name' => 'Example',
-            'icon' => 'editor-justify',
-            'keywords' => ['example'],
-            'type' => BLOCK_TYPE_FULL_WIDTH,
-            'enqueue_styles' => false,
-            'enqueue_scripts' => false,
-            'enable_assets_for_admin' => true,
-            'mode' => BLOCK_MODE_EDIT,
-            'example' => false,
-        ],
-
-        [
             'name' => 'Cols',
             'icon' => 'editor-justify',
             'keywords' => ['cols', 'three', 'kolumny', 'trzy'],
@@ -96,7 +84,7 @@ function crunch_acf_full_width_blocks()
             'keywords' => ['Hero'],
             'type' => BLOCK_TYPE_FULL_WIDTH,
             'enqueue_styles' => true,
-            'enqueue_scripts' => false,
+            'enqueue_scripts' => true,
             'enable_assets_for_admin' => true,
             'mode' => BLOCK_MODE_EDIT,
             'example' => false,
@@ -108,7 +96,7 @@ function crunch_acf_full_width_blocks()
             'keywords' => ['Variants', 'Warianty', 'Aranżacje'],
             'type' => BLOCK_TYPE_FULL_WIDTH,
             'enqueue_styles' => true,
-            'enqueue_scripts' => false,
+            'enqueue_scripts' => true,
             'enable_assets_for_admin' => true,
             'mode' => BLOCK_MODE_EDIT,
             'example' => false,
@@ -168,7 +156,7 @@ function crunch_acf_full_width_blocks()
             'keywords' => ['Map', 'Mapa', 'Bliskie miejsca'],
             'type' => BLOCK_TYPE_FULL_WIDTH,
             'enqueue_styles' => true,
-            'enqueue_scripts' => false,
+            'enqueue_scripts' => true,
             'enable_assets_for_admin' => true,
             'mode' => BLOCK_MODE_EDIT,
             'example' => false,

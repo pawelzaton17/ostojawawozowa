@@ -60,7 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
         function GetDatesAndShow(startDate, daysToAdd) {
             for (let i = 0; i <= daysToAdd; i += 1) {
                 const currentDate = new Date();
-                currentDate.setDate(startDate.getDate() + i);
+
+                currentDate.setDate(startDate.getDate() + i + 1);
                 calendarWrapper.innerHTML += `
                 <div
                     class="d-flex flex-column text-center"

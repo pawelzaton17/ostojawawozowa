@@ -136,16 +136,21 @@ const singleItemSlider = () => {
         // Slider counter
         let sliderInfo = tnsSlider.getInfo();
 
-        sliderWrapper.querySelector(
-            ".slider-info-print"
-        ).innerHTML = `${sliderInfo.slideBy} / ${sliderInfo.slideCount}`;
-
-        tnsSlider.events.on("indexChanged", () => {
-            sliderInfo = tnsSlider.getInfo();
+        if (sliderInfo.slideCount > 1) {
             sliderWrapper.querySelector(
                 ".slider-info-print"
-            ).innerHTML = `${sliderInfo.displayIndex} / ${sliderInfo.slideCount}`;
-        });
+            ).innerHTML = `${sliderInfo.slideBy} / ${sliderInfo.slideCount}`;
+
+            tnsSlider.events.on("indexChanged", () => {
+                sliderInfo = tnsSlider.getInfo();
+                sliderWrapper.querySelector(
+                    ".slider-info-print"
+                ).innerHTML = `${sliderInfo.displayIndex} / ${sliderInfo.slideCount}`;
+            });
+        } else {
+            controlsContainer.classList.add("d-none");
+            sliderWrapper.querySelector(".slider-info-print").classList.add("d-none");
+        }
     });
 };
 

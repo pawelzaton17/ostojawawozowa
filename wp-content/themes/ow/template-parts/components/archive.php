@@ -16,7 +16,9 @@
             <div class="col-12 d-flex justify-content-center justify-content-md-start c-py-6">
                 <div class="section-title w-100 text-center">
                     <h2 class="section-title__heading flex-column font-weight-bold text-gray-second d-inline-flex align-items-center">
-                        Dziennik budowy
+
+                        <?= the_title(); ?>
+
                         <i class="line c-mt-3"></i>
                     </h2>
                 </div>
